@@ -193,15 +193,8 @@
     return [animals count];
 }
 
-- (NSUInteger)numberOfVisibleItemsInCarousel:(iCarousel *)carousel
-{
-    //limit the number of items views loaded concurrently (for performance reasons)
-    return 7;
-}
-
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index
 {
-    NSLog([NSString stringWithFormat:@"%d", index]);
     //create a numbered view
 	UIView *view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[animals objectAtIndex:index]]];
 	return view;
@@ -209,13 +202,13 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
 {
-    NSLog([NSString stringWithFormat:@"%d", index]);
     //set item label
     //remember to always set any properties of your carousel item
     //views outside of the `if (view == nil) {...}` check otherwise
     //you'll get weird issues with carousel item content appearing
     //in the wrong place in the carousel
-    label.text = [[descriptions objectAtIndex:index] stringValue];
+    
+    view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[animals objectAtIndex:index]]];
     
     return view;
 }
@@ -233,12 +226,6 @@
     return 240;
 }
 
-
-- (BOOL)carouselShouldWrap:(iCarousel *)carousel
-{
-    //wrap all carousels
-    return wrap;
-}
 
 - (void)carouselDidEndScrollingAnimation:(iCarousel *)aCarousel
 {
