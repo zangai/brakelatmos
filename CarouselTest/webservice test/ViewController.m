@@ -16,6 +16,7 @@
 @implementation ViewController{
     NSMutableData *receivedData;
     NSString *GUID;
+    NSString *baseAPIUrl;
     NSMutableArray *trustedHosts;
 }
 
@@ -28,6 +29,7 @@
 {
     [super viewDidLoad];
     GUID = @"";
+    baseAPIUrl = @"https://atm-vserver2.avans.nl/api.ashx?command=";
     trustedHosts = [[NSMutableArray alloc] init];
     trustedHosts = [NSMutableArray arrayWithObjects:@"atm-vserver2.avans.nl", @"avans.nl", @"ipsum.groep-t.be", nil];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -57,29 +59,38 @@
     
 }
 
-- (IBAction)logIn:(id)sender {
-    NSString *urlString = @"https://atm-vserver2.avans.nl/api.ashx";
-    urlString = [urlString stringByAppendingString:@"?command=login&username="];
-    urlString = [urlString stringByAppendingString:GebruikerText.text];
-    urlString = [urlString stringByAppendingString:@"&hash="];
-    NSString *hash = [self sha1: [WachtwoordText.text stringByAppendingString:[self sha1:WachtwoordText.text]]];
-    urlString = [urlString stringByAppendingString:hash];
+-(void)makeApiCall:(NSString*)command formdata:(NSString*) parameters
+{
+    NSString *urlString = [baseAPIUrl stringByAppendingString:command];
+    NSURL *aUrl = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:aUrl
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:60.0];
     
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:[parameters dataUsingEncoding:NSUTF8StringEncoding]];
     
-    NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]
-                                cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                timeoutInterval:60.0];
-
-    NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    NSURLConnection *connection= [[NSURLConnection alloc] initWithRequest:request
+                                                                 delegate:self];
     
-    if (theConnection) {
+    if (connection) {
         // Create the NSMutableData to hold the received data.
         // receivedData is an instance variable declared elsewhere.
         receivedData = [NSMutableData data] ;
     } else {
         // Inform the user that the connection failed.
     }
+}
+
+- (IBAction)logIn:(id)sender {
+    NSString *hash = [self sha1: [WachtwoordText.text stringByAppendingString:[self sha1:WachtwoordText.text]]];
     
+    NSString *formData = @"username=";
+    formData = [formData stringByAppendingString:GebruikerText.text];
+    formData = [formData stringByAppendingString:@"&hash="];
+    
+    formData = [formData stringByAppendingString:hash];
+    [self makeApiCall:@"login" formdata:formData];
 }
 
 
@@ -132,22 +143,10 @@
     [super viewDidUnload];
 }
 - (IBAction)getBuildings:(id)sender {
-    NSString *urlString = @"https://atm-vserver2.avans.nl/api.ashx";
-    urlString = [urlString stringByAppendingString:@"?command=getBuildings&userToken="];
-    urlString = [urlString stringByAppendingString:GUID];    
+    NSString *formData = @"userToken=";
+    formData = [formData stringByAppendingString:GUID];
     
-    NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:urlString]
-                                              cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                          timeoutInterval:60.0];
-    
-    NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
-    
-    if (theConnection) {
-        // Create the NSMutableData to hold the received data.
-        // receivedData is an instance variable declared elsewhere.
-        receivedData = [NSMutableData data] ;
-    } else {
-        // Inform the user that the connection failed.
-    }
+    [self makeApiCall:@"getBuildings" formdata:formData];
+    [self performSegueWithIdentifier: @"goToOtherPage" sender: self];
 }
 @end

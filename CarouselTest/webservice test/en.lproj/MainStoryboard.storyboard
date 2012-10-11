@@ -22,7 +22,7 @@
                                 <rect key="frame" x="464" y="503" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="67d-Q4-VOO">
                                 <rect key="frame" x="483" y="549" width="60" height="44"/>
@@ -72,8 +72,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="getBuildings:" destination="2" eventType="touchUpInside" id="X0c-jT-2cn"/>
-                                    <segue destination="jvz-I6-PWi" kind="push" id="dZp-GM-hMf"/>
+                                    <segue destination="jvz-I6-PWi" kind="modal" id="9ha-cp-8St"/>
                                 </connections>
                             </button>
                         </subviews>
