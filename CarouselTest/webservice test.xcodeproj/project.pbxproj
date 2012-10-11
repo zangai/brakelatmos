@@ -108,10 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				8A47A18F1626C77F00A162B8 /* Resources */,
+				8A47A1AA1626DAE500A162B8 /* iCarousel */,
 				8A2E3D06161AF60F0065D459 /* AppDelegate.h */,
 				8A2E3D07161AF60F0065D459 /* AppDelegate.m */,
-				8A47A18C1626BE1300A162B8 /* iCarousel.h */,
-				8A47A18D1626BE1300A162B8 /* iCarousel.m */,
 				8A47A1831626BB8E00A162B8 /* CarouselViewController.m */,
 				8A2E3D0F161AF60F0065D459 /* MainStoryboard.storyboard */,
 				8A47A1821626BB8E00A162B8 /* CarouselViewController.h */,
@@ -148,6 +147,15 @@
 				8A47A1961626C79500A162B8 /* Zebra.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		8A47A1AA1626DAE500A162B8 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				8A47A18C1626BE1300A162B8 /* iCarousel.h */,
+				8A47A18D1626BE1300A162B8 /* iCarousel.m */,
+			);
+			name = iCarousel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

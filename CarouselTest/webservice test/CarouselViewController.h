@@ -12,7 +12,7 @@
 
 @interface CarouselViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
 
-@property (strong, nonatomic) IBOutlet iCarousel *carousel;
+@property (strong, nonatomic, retain) IBOutlet iCarousel *carousel;
 @property (strong, nonatomic) IBOutlet UILabel *label;
 @property (nonatomic) BOOL wrap;
 @property (strong, nonatomic) NSMutableArray *animals;

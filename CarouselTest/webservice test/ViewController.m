@@ -61,14 +61,40 @@
 }
 
 - (IBAction)logIn:(id)sender {
-    NSString *hash = [self sha1: [WachtwoordText.text stringByAppendingString:[self sha1:WachtwoordText.text]]];
-    
-    NSString *formData = @"username=";
-    formData = [formData stringByAppendingString:GebruikerText.text];
-    formData = [formData stringByAppendingString:@"&hash="];
-    
-    formData = [formData stringByAppendingString:hash];
-    [self makeApiCall:@"login" formdata:formData];
+    NSString* username = GebruikerText.text;
+    if([username isEqualToString:@""])
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Geen gebruikersnaam"
+                                                        message:@"Er is geen gebruikersnaam opgegeven"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    else
+    {
+        NSString* password = WachtwoordText.text;
+        if([password isEqualToString:@""])
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Geen wachtwoord"
+                                                            message:@"Er is geen wachtwoord opgegeven"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        else
+        {
+            NSString *hash = [self sha1: [password stringByAppendingString:[self sha1:password]]];
+            
+            NSString *formData = @"username=";
+            formData = [formData stringByAppendingString:username];
+            formData = [formData stringByAppendingString:@"&hash="];
+            
+            formData = [formData stringByAppendingString:hash];
+            [self makeApiCall:@"login" formdata:formData];
+        }
+    }
 }
 
 -(void)makeApiCall:(NSString*)command formdata:(NSString*) parameters
@@ -115,8 +141,19 @@
     NSString *rData = [[NSString alloc] initWithData:receivedData encoding:NSASCIIStringEncoding];
     GUID = [rData substringWithRange:NSMakeRange(15, 36)];
     
-
-    tokenLabel.text = rData;
+    if([GUID isEqualToString:@"00000000-0000-0000-0000-000000000000"])
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ongeldige inloggegevens"
+                              message:@"De opgegeven gebruiksnaam en wachtwoord komen niet overeen met gegevens in het systeem."
+                              delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+    }
+    else
+    {
+        [self performSegueWithIdentifier:@"goToCarousel" sender:self];
+    }
 }
 
 - (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {

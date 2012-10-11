@@ -35,6 +35,8 @@
 
 
 
+
+
 - (void)viewDidLoad
 {
     carousel.type = iCarouselTypeCoverFlow2;
@@ -48,7 +50,25 @@
     formData = [formData stringByAppendingString:GUID];
         
     [self makeApiCall:@"getBuildings" formdata:formData];
-    //[self performSegueWithIdentifier: @"goToOtherPage" sender: self];
+    
+    wrap = NO;
+    self.animals = [NSMutableArray arrayWithObjects:@"Bear.png",
+                    @"Zebra.png",
+                    @"Tiger.png",
+                    @"Goat.png",
+                    @"Birds.png",
+                    @"Giraffe.png",
+                    @"Chimp.png",
+                    nil];
+    self.descriptions = [NSMutableArray arrayWithObjects:@"Bears Eat: Honey",
+                         @"Zebras Eat: Grass",
+                         @"Tigers Eat: Meat",
+                         @"Goats Eat: Weeds",
+                         @"Birds Eat: Seeds",
+                         @"Giraffes Eat: Trees",
+                         @"Chimps Eat: Bananas",
+                         nil];
+
 }
 
 
