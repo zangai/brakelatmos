@@ -72,7 +72,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jvz-I6-PWi" kind="modal" id="9ha-cp-8St"/>
+                                    <segue destination="jvz-I6-PWi" kind="modal" identifier="goToCarousel" id="9ha-cp-8St"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -138,7 +138,6 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
-                <relationship kind="action" name="getBuildings:"/>
                 <relationship kind="action" name="logIn:"/>
                 <relationship kind="outlet" name="GebruikerText" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="WachtwoordText" candidateClass="UITextField"/>

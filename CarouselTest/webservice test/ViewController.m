@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "CarouselViewController.h"
 #import <CommonCrypto/CommonDigest.h>
 
 
@@ -59,6 +60,17 @@
     
 }
 
+- (IBAction)logIn:(id)sender {
+    NSString *hash = [self sha1: [WachtwoordText.text stringByAppendingString:[self sha1:WachtwoordText.text]]];
+    
+    NSString *formData = @"username=";
+    formData = [formData stringByAppendingString:GebruikerText.text];
+    formData = [formData stringByAppendingString:@"&hash="];
+    
+    formData = [formData stringByAppendingString:hash];
+    [self makeApiCall:@"login" formdata:formData];
+}
+
 -(void)makeApiCall:(NSString*)command formdata:(NSString*) parameters
 {
     NSString *urlString = [baseAPIUrl stringByAppendingString:command];
@@ -82,18 +94,6 @@
     }
 }
 
-- (IBAction)logIn:(id)sender {
-    NSString *hash = [self sha1: [WachtwoordText.text stringByAppendingString:[self sha1:WachtwoordText.text]]];
-    
-    NSString *formData = @"username=";
-    formData = [formData stringByAppendingString:GebruikerText.text];
-    formData = [formData stringByAppendingString:@"&hash="];
-    
-    formData = [formData stringByAppendingString:hash];
-    [self makeApiCall:@"login" formdata:formData];
-}
-
-
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
     // This method is called when the server has determined that it
@@ -107,7 +107,6 @@
     
 }
 
-
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
     // Append the new data to receivedData.
@@ -119,7 +118,6 @@
 
     tokenLabel.text = rData;
 }
-
 
 - (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
     return [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust];
@@ -142,11 +140,16 @@
     [self setGetBuildingsButton:nil];
     [super viewDidUnload];
 }
-- (IBAction)getBuildings:(id)sender {
-    NSString *formData = @"userToken=";
-    formData = [formData stringByAppendingString:GUID];
-    
-    [self makeApiCall:@"getBuildings" formdata:formData];
-    [self performSegueWithIdentifier: @"goToOtherPage" sender: self];
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"goToCarousel"]) {
+        
+        // Get destination view
+        CarouselViewController *vc = [segue destinationViewController];
+        
+        vc.GUID = GUID;
+    }
 }
+
 @end

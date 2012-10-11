@@ -15,6 +15,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *GebruikerText;
 @property (weak, nonatomic) IBOutlet UILabel *tokenLabel;
 @property (weak, nonatomic) IBOutlet UIButton *getBuildingsButton;
-- (IBAction)getBuildings:(id)sender;
 
 @end

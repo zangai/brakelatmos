@@ -17,4 +17,5 @@
 @property (nonatomic) BOOL wrap;
 @property (strong, nonatomic) NSMutableArray *animals;
 @property (strong, nonatomic) NSMutableArray *descriptions;
+@property (strong, nonatomic) NSString *GUID;
 @end
