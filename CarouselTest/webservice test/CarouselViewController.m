@@ -18,12 +18,13 @@
     NSString *baseAPIUrl;
     NSMutableArray *trustedHosts;
     NSString* buildingsJSON;
+    int selectedIndex;
 }
 @synthesize GUID;
 @synthesize carousel;
 @synthesize label;
 @synthesize wrap;
-@synthesize animals, descriptions;
+@synthesize buildings, descriptions;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,7 +42,8 @@
     //data of some kind - don't store data in your item views
     //or the recycling mechanism will destroy your data once
     //your item views move off-screen
-    self.animals = [NSMutableArray arrayWithObjects:@"Bear.png",
+    
+    self.buildings = [NSMutableArray arrayWithObjects:@"Bear.png",
                     @"Zebra.png",
                     @"Tiger.png",
                     @"Goat.png",
@@ -59,41 +61,21 @@
                          nil];
 }
 
-
-
 - (void)viewDidLoad
 {
     carousel.type = iCarouselTypeCoverFlow2;
     [super viewDidLoad];
-   
+    wrap = NO;
+    
     baseAPIUrl = @"https://atm-vserver2.avans.nl/api.ashx?command=";
     trustedHosts = [[NSMutableArray alloc] init];
     trustedHosts = [NSMutableArray arrayWithObjects:@"atm-vserver2.avans.nl", @"avans.nl", @"ipsum.groep-t.be", nil];
     
     NSString *formData = @"userToken=";
     formData = [formData stringByAppendingString:GUID];
-        
+    
     [self makeApiCall:@"getBuildings" formdata:formData];
-    
-    wrap = NO;
-    
     //parse buildingsJSON for buildings
-    self.animals = [NSMutableArray arrayWithObjects:@"Bear.png",
-                    @"Zebra.png",
-                    @"Tiger.png",
-                    @"Goat.png",
-                    @"Birds.png",
-                    @"Giraffe.png",
-                    @"Chimp.png",
-                    nil];
-    self.descriptions = [NSMutableArray arrayWithObjects:@"Bears Eat: Honey",
-                         @"Zebras Eat: Grass",
-                         @"Tigers Eat: Meat",
-                         @"Goats Eat: Weeds",
-                         @"Birds Eat: Seeds",
-                         @"Giraffes Eat: Trees",
-                         @"Chimps Eat: Bananas",
-                         nil];
 }
 
 -(void)makeApiCall:(NSString*)command formdata:(NSString*) parameters {
@@ -190,26 +172,19 @@
 
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
-    return [animals count];
+    return [buildings count];
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index
 {
     //create a numbered view
-	UIView *view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[animals objectAtIndex:index]]];
+	UIView *view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[buildings objectAtIndex:index]]];
 	return view;
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
-{
-    //set item label
-    //remember to always set any properties of your carousel item
-    //views outside of the `if (view == nil) {...}` check otherwise
-    //you'll get weird issues with carousel item content appearing
-    //in the wrong place in the carousel
-    
-    view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[animals objectAtIndex:index]]];
-    
+{   
+    view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[buildings objectAtIndex:index]]];
     return view;
 }
 
@@ -219,17 +194,16 @@
 	return 0;
 }
 
-
 - (CGFloat)carouselItemWidth:(iCarousel *)carousel
 {
     //usually this should be slightly wider than the item views
     return 240;
 }
 
-
 - (void)carouselDidEndScrollingAnimation:(iCarousel *)aCarousel
 {
     [label setText:[NSString stringWithFormat:@"%@", [descriptions objectAtIndex:aCarousel.currentItemIndex]]];
+    selectedIndex = aCarousel.currentItemIndex;
 }
 
 @end
