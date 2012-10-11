@@ -10,10 +10,8 @@
 
 @interface ViewController : UIViewController
 - (IBAction)logIn:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *getBuildings;
 @property (weak, nonatomic) IBOutlet UITextField *WachtwoordText;
 @property (weak, nonatomic) IBOutlet UITextField *GebruikerText;
 @property (weak, nonatomic) IBOutlet UILabel *tokenLabel;
-@property (weak, nonatomic) IBOutlet UIButton *getBuildingsButton;
 
 @end

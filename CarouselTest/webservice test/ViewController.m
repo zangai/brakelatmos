@@ -24,7 +24,6 @@
 @synthesize GebruikerText;
 @synthesize WachtwoordText;
 @synthesize tokenLabel;
-@synthesize getBuildingsButton;
 
 - (void)viewDidLoad
 {
@@ -152,6 +151,10 @@
     }
     else
     {
+        //CarouselViewController *myNewVC = [[CarouselViewController alloc] init];
+        //myNewVC.GUID = GUID;
+        //[self presentModalViewController:myNewVC animated:YES];
+        
         [self performSegueWithIdentifier:@"goToCarousel" sender:self];
     }
 }
@@ -173,8 +176,6 @@
     [self setWachtwoordText:nil];
     [self setGebruikerText:nil];
     [self setTokenLabel:nil];
-    [self setGetBuildings:nil];
-    [self setGetBuildingsButton:nil];
     [super viewDidUnload];
 }
 
