@@ -17,6 +17,7 @@
     NSMutableData *receivedData;
     NSString *baseAPIUrl;
     NSMutableArray *trustedHosts;
+    NSString* buildingsJSON;
 }
 @synthesize GUID;
 @synthesize carousel;
@@ -33,7 +34,30 @@
     return self;
 }
 
-
+- (void)awakeFromNib
+{
+    //set up data
+    //your carousel should always be driven by an array of
+    //data of some kind - don't store data in your item views
+    //or the recycling mechanism will destroy your data once
+    //your item views move off-screen
+    self.animals = [NSMutableArray arrayWithObjects:@"Bear.png",
+                    @"Zebra.png",
+                    @"Tiger.png",
+                    @"Goat.png",
+                    @"Birds.png",
+                    @"Giraffe.png",
+                    @"Chimp.png",
+                    nil];
+    self.descriptions = [NSMutableArray arrayWithObjects:@"Bears Eat: Honey",
+                         @"Zebras Eat: Grass",
+                         @"Tigers Eat: Meat",
+                         @"Goats Eat: Weeds",
+                         @"Birds Eat: Seeds",
+                         @"Giraffes Eat: Trees",
+                         @"Chimps Eat: Bananas",
+                         nil];
+}
 
 
 
@@ -52,6 +76,8 @@
     [self makeApiCall:@"getBuildings" formdata:formData];
     
     wrap = NO;
+    
+    //parse buildingsJSON for buildings
     self.animals = [NSMutableArray arrayWithObjects:@"Bear.png",
                     @"Zebra.png",
                     @"Tiger.png",
@@ -68,12 +94,9 @@
                          @"Giraffes Eat: Trees",
                          @"Chimps Eat: Bananas",
                          nil];
-
 }
 
-
--(void)makeApiCall:(NSString*)command formdata:(NSString*) parameters
-{
+-(void)makeApiCall:(NSString*)command formdata:(NSString*) parameters {
     NSString *urlString = [baseAPIUrl stringByAppendingString:command];
     NSURL *aUrl = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:aUrl
@@ -95,8 +118,7 @@
     }
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     // This method is called when the server has determined that it
     // has enough information to create the NSURLResponse.
     
@@ -108,17 +130,12 @@
     
 }
 
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     // Append the new data to receivedData.
     // receivedData is an instance variable declared elsewhere.
     [receivedData appendData:data];
-    NSString *rData = [[NSString alloc] initWithData:receivedData encoding:NSASCIIStringEncoding];
-    
-    label.text = rData;
+    buildingsJSON = [[NSString alloc] initWithData:receivedData encoding:NSASCIIStringEncoding];
 }
-
 
 - (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
     return [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust];
@@ -167,6 +184,7 @@
     return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
+
 #pragma mark -
 #pragma mark iCarousel methods
 
@@ -183,9 +201,23 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index
 {
+    NSLog([NSString stringWithFormat:@"%d", index]);
     //create a numbered view
 	UIView *view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[animals objectAtIndex:index]]];
 	return view;
+}
+
+- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
+{
+    NSLog([NSString stringWithFormat:@"%d", index]);
+    //set item label
+    //remember to always set any properties of your carousel item
+    //views outside of the `if (view == nil) {...}` check otherwise
+    //you'll get weird issues with carousel item content appearing
+    //in the wrong place in the carousel
+    label.text = [[descriptions objectAtIndex:index] stringValue];
+    
+    return view;
 }
 
 - (NSUInteger)numberOfPlaceholdersInCarousel:(iCarousel *)carousel
@@ -212,4 +244,5 @@
 {
     [label setText:[NSString stringWithFormat:@"%@", [descriptions objectAtIndex:aCarousel.currentItemIndex]]];
 }
+
 @end
