@@ -197,7 +197,7 @@
 - (CGFloat)carouselItemWidth:(iCarousel *)carousel
 {
     //usually this should be slightly wider than the item views
-    return 240;
+    return 300;//240
 }
 
 - (void)carouselDidEndScrollingAnimation:(iCarousel *)aCarousel

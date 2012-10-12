@@ -143,25 +143,74 @@
     // Append the new data to receivedData.
     // receivedData is an instance variable declared elsewhere.
     [receivedData appendData:data];
-    NSString *rData = [[NSString alloc] initWithData:receivedData encoding:NSASCIIStringEncoding];
-    GUID = [rData substringWithRange:NSMakeRange(15, 36)];
     
-    if([GUID isEqualToString:@"00000000-0000-0000-0000-000000000000"])
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ongeldige inloggegevens"
-                              message:@"De opgegeven gebruiksnaam en wachtwoord komen niet overeen met gegevens in het systeem."
-                              delegate:nil
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil];
-        [alert show];
-    }
-    else
-    {
-        //CarouselViewController *myNewVC = [[CarouselViewController alloc] init];
-        //myNewVC.GUID = GUID;
-        //[self presentModalViewController:myNewVC animated:YES];
+    //Parse JSON
+    NSError *myError = nil;
+    NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self->receivedData options:NSJSONReadingMutableLeaves error:&myError];
+    
+    // show all values
+    for(id key in res) {
+        id value = [res objectForKey:key];
+        NSString *keyAsString = (NSString *)key;
+        NSString *valueAsString = (NSString *)value;
         
-        [self performSegueWithIdentifier:@"goToCarousel" sender:self];
+        //--------------------DEBUG OUPUT------------------------------
+        
+        NSLog(keyAsString);
+        NSLog(valueAsString);
+        //-------------------------------------------------------------
+        
+        if([keyAsString isEqualToString:@"userToken"])
+        {
+            GUID = valueAsString; //[[NSString alloc] initWithData:valueAsString encoding:NSASCIIStringEncoding];
+            
+            if([GUID isEqualToString:@"00000000-0000-0000-0000-000000000000"])
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ongeldige inloggegevens"
+                                                                message:@"De opgegeven gebruiksnaam en wachtwoord komen niet overeen met gegevens in het systeem."
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+            }
+            else
+            {
+                NSString *formData = @"userToken=";
+                formData = [formData stringByAppendingString:GUID];
+                
+                [self makeApiCall:@"getBuildings" formdata:formData];
+                break;
+            }
+        }
+        else if([keyAsString isEqualToString:@"buildings"])
+        {
+            //CarouselViewController *myNewVC = [[CarouselViewController alloc] init];
+            //myNewVC.GUID = GUID;
+            //[self presentModalViewController:myNewVC animated:YES];
+                
+            [self performSegueWithIdentifier:@"goToCarousel" sender:self];
+            break;
+        }
+        else if([keyAsString isEqualToString:@"error"])
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:valueAsString
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+
+        }
+        else
+        {
+            //Should not happen, but still....
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:keyAsString
+                                                            message:valueAsString
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"LOL"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
     }
 }
 
