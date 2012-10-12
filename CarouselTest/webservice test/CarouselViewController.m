@@ -20,7 +20,7 @@
     int selectedIndex;
 }
 @synthesize GUID;
-@synthesize buildingJSONString;
+@synthesize buildingJSONDict;
 @synthesize carousel;
 @synthesize label;
 @synthesize wrap;
@@ -44,6 +44,25 @@
     //your item views move off-screen
     
     //Parse buildingJSONString JSON (Array with buildings)
+    
+    
+    NSError *myError = nil;
+    NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self->receivedData options:NSJSONReadingMutableLeaves error:&myError];
+    
+    // show all values
+//    for(id key in res) {
+//        NSString *keyAsString = (NSString *)key;
+//        NSLog(keyAsString);
+//        
+//        id value = [res objectForKey:key];
+//        NSString *valueAsString = (NSString *)value;
+//        NSLog(valueAsString);
+//    }
+    
+    
+    
+    
+    
     
     self.buildings = [NSMutableArray arrayWithObjects:@"Bear.png",
                     @"Zebra.png",

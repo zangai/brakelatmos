@@ -18,5 +18,5 @@
 @property (strong, nonatomic) NSMutableArray *buildings;
 @property (strong, nonatomic) NSMutableArray *descriptions;
 @property (strong, nonatomic) NSString *GUID;
-@property (strong, nonatomic) NSString *buildingJSONString;
+@property (strong, nonatomic) NSDictionary *buildingJSONDict;
 @end

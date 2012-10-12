@@ -17,7 +17,7 @@
 @implementation ViewController{
     NSMutableData *receivedData;
     NSString *GUID;
-    NSString* buildingJSONString;
+    id buildingJSON;
     NSString *baseAPIUrl;
     NSMutableArray *trustedHosts;
 }
@@ -30,7 +30,6 @@
 {
     [super viewDidLoad];
     GUID = @"";
-    buildingJSONString = @"";
     baseAPIUrl = @"https://atm-vserver2.avans.nl/api.ashx?command=";
     trustedHosts = [[NSMutableArray alloc] init];
     trustedHosts = [NSMutableArray arrayWithObjects:@"atm-vserver2.avans.nl", @"avans.nl", @"ipsum.groep-t.be", nil];
@@ -154,15 +153,18 @@
     
     // show all values
     for(id key in res) {
+        //NSString *keyAsString =[key stringValue];
         NSString *keyAsString = (NSString *)key;
         NSLog(keyAsString);
         
         id value = [res objectForKey:key];
-        NSString *valueAsString = (NSString *)value;
-        NSLog(valueAsString);
+        //NSString *valueAsString =[value stringValue];
+        //NSString *valueAsString = (NSString *)value;
+        //NSLog(valueAsString);
         
         if([keyAsString isEqualToString:@"userToken"])
         {
+            NSString *valueAsString = (NSString *) value;
             GUID = valueAsString; //[[NSString alloc] initWithData:valueAsString encoding:NSASCIIStringEncoding];
             
             if([GUID isEqualToString:@"00000000-0000-0000-0000-000000000000"])
@@ -180,24 +182,20 @@
                 formData = [formData stringByAppendingString:GUID];
                 
                 [self makeApiCall:@"getBuildings" formdata:formData];
-                break;
+                return;
             }
         }
         else if([keyAsString isEqualToString:@"buildings"])
         {
-            //CarouselViewController *myNewVC = [[CarouselViewController alloc] init];
-            //myNewVC.GUID = GUID;
-            //[self presentModalViewController:myNewVC animated:YES];
+            buildingJSON = value;
             
-            buildingJSONString = valueAsString;
-            
-            [self performSegueWithIdentifier:@"goToCarousel" sender:self];
-            break;
+            [self performSegueWithIdentifier:@"goToCarousel"sender:self];
+            return;
         }
         else if([keyAsString isEqualToString:@"error"])
         {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                            message:valueAsString
+                                                            message:@"lol"//result
                                                            delegate:nil
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
@@ -208,7 +206,7 @@
         {
             //Should not happen, but still....
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:keyAsString
-                                                            message:valueAsString
+                                                            message:@"lol"//result
                                                            delegate:nil
                                                   cancelButtonTitle:@"LOL"
                                                   otherButtonTitles:nil];
@@ -245,7 +243,7 @@
         CarouselViewController *vc = [segue destinationViewController];
         
         vc.GUID = GUID;
-        vc.buildingJSONString = buildingJSONString;
+        vc.buildingJSONDict = buildingJSON;
     }
 }
 
