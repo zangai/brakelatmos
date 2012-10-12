@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+- (IBAction)getToken:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *rawText;
 
 @end

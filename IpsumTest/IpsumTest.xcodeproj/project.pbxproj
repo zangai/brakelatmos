@@ -23,6 +23,11 @@
 		A08BE5A3161DBF150048D799 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08BE57E161DBF0D0048D799 /* Foundation.framework */; };
 		A08BE5AB161DBF150048D799 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A08BE5A9161DBF150048D799 /* InfoPlist.strings */; };
 		A08BE5AE161DBF160048D799 /* IpsumTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A08BE5AD161DBF160048D799 /* IpsumTestTests.m */; };
+		A0B2E68D16243A860048AE3F /* Ipsum.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B2E68C16243A860048AE3F /* Ipsum.m */; };
+		A0B2E68E16243A860048AE3F /* Ipsum.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B2E68C16243A860048AE3F /* Ipsum.m */; };
+		A0B2E691162448F10048AE3F /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B2E690162448F10048AE3F /* Token.m */; };
+		A0B2E692162448F10048AE3F /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B2E690162448F10048AE3F /* Token.m */; };
+		A0CBDF0716284C4B0027DA42 /* WebRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CBDF0616284C4A0027DA42 /* WebRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,12 @@
 		A08BE5AA161DBF150048D799 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A08BE5AC161DBF160048D799 /* IpsumTestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IpsumTestTests.h; sourceTree = "<group>"; };
 		A08BE5AD161DBF160048D799 /* IpsumTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IpsumTestTests.m; sourceTree = "<group>"; };
+		A0B2E68B16243A860048AE3F /* Ipsum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ipsum.h; sourceTree = "<group>"; };
+		A0B2E68C16243A860048AE3F /* Ipsum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ipsum.m; sourceTree = "<group>"; };
+		A0B2E68F162448F10048AE3F /* Token.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Token.h; path = ipsum/ipsum/Token.h; sourceTree = SOURCE_ROOT; };
+		A0B2E690162448F10048AE3F /* Token.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Token.m; path = ipsum/ipsum/Token.m; sourceTree = SOURCE_ROOT; };
+		A0CBDF0516284C4A0027DA42 /* WebRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRequest.h; sourceTree = "<group>"; };
+		A0CBDF0616284C4A0027DA42 /* WebRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +128,7 @@
 		A08BE582161DBF0D0048D799 /* IpsumTest */ = {
 			isa = PBXGroup;
 			children = (
+				A0B2E68A16243A4F0048AE3F /* IpsumLib */,
 				A08BE58B161DBF0F0048D799 /* AppDelegate.h */,
 				A08BE58C161DBF110048D799 /* AppDelegate.m */,
 				A08BE594161DBF120048D799 /* MainStoryboard.storyboard */,
@@ -158,6 +170,19 @@
 				A08BE5A9161DBF150048D799 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A0B2E68A16243A4F0048AE3F /* IpsumLib */ = {
+			isa = PBXGroup;
+			children = (
+				A0B2E68B16243A860048AE3F /* Ipsum.h */,
+				A0B2E68C16243A860048AE3F /* Ipsum.m */,
+				A0B2E68F162448F10048AE3F /* Token.h */,
+				A0B2E690162448F10048AE3F /* Token.m */,
+				A0CBDF0516284C4A0027DA42 /* WebRequest.h */,
+				A0CBDF0616284C4A0027DA42 /* WebRequest.m */,
+			);
+			name = IpsumLib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +298,9 @@
 				A08BE589161DBF0E0048D799 /* main.m in Sources */,
 				A08BE58D161DBF110048D799 /* AppDelegate.m in Sources */,
 				A08BE599161DBF140048D799 /* ViewController.m in Sources */,
+				A0B2E68D16243A860048AE3F /* Ipsum.m in Sources */,
+				A0B2E691162448F10048AE3F /* Token.m in Sources */,
+				A0CBDF0716284C4B0027DA42 /* WebRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +309,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A08BE5AE161DBF160048D799 /* IpsumTestTests.m in Sources */,
+				A0B2E68E16243A860048AE3F /* Ipsum.m in Sources */,
+				A0B2E692162448F10048AE3F /* Token.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +479,7 @@
 				A08BE5B3161DBF160048D799 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A08BE5B4161DBF160048D799 /* Build configuration list for PBXNativeTarget "IpsumTestTests" */ = {
 			isa = XCConfigurationList;
@@ -457,6 +488,7 @@
 				A08BE5B6161DBF160048D799 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

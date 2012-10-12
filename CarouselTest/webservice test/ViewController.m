@@ -102,7 +102,7 @@
     }
 }
 
--(void)makeApiCall:(NSString*)command formdata:(NSString*) parameters
+-(void)makeApiCall:(NSString*)command data:(NSString*) parameters
 {
     NSString *urlString = [baseAPIUrl stringByAppendingString:command];
     NSURL *aUrl = [NSURL URLWithString:urlString];
