@@ -17,6 +17,7 @@
 @implementation ViewController{
     NSMutableData *receivedData;
     NSString *GUID;
+    NSString* buildingJSONString;
     NSString *baseAPIUrl;
     NSMutableArray *trustedHosts;
 }
@@ -29,6 +30,7 @@
 {
     [super viewDidLoad];
     GUID = @"";
+    buildingJSONString = @"";
     baseAPIUrl = @"https://atm-vserver2.avans.nl/api.ashx?command=";
     trustedHosts = [[NSMutableArray alloc] init];
     trustedHosts = [NSMutableArray arrayWithObjects:@"atm-vserver2.avans.nl", @"avans.nl", @"ipsum.groep-t.be", nil];
@@ -104,6 +106,8 @@
 
 -(void)makeApiCall:(NSString*)command data:(NSString*) parameters
 {
+    NSLog([NSString stringWithFormat:@"API CALL - %@ - %@", command, parameters]);
+    
     NSString *urlString = [baseAPIUrl stringByAppendingString:command];
     NSURL *aUrl = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:aUrl
@@ -143,25 +147,73 @@
     // Append the new data to receivedData.
     // receivedData is an instance variable declared elsewhere.
     [receivedData appendData:data];
-    NSString *rData = [[NSString alloc] initWithData:receivedData encoding:NSASCIIStringEncoding];
-    GUID = [rData substringWithRange:NSMakeRange(15, 36)];
     
-    if([GUID isEqualToString:@"00000000-0000-0000-0000-000000000000"])
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ongeldige inloggegevens"
-                              message:@"De opgegeven gebruiksnaam en wachtwoord komen niet overeen met gegevens in het systeem."
-                              delegate:nil
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil];
-        [alert show];
-    }
-    else
-    {
-        //CarouselViewController *myNewVC = [[CarouselViewController alloc] init];
-        //myNewVC.GUID = GUID;
-        //[self presentModalViewController:myNewVC animated:YES];
+    //Parse JSON
+    NSError *myError = nil;
+    NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self->receivedData options:NSJSONReadingMutableLeaves error:&myError];
+    
+    // show all values
+    for(id key in res) {
+        NSString *keyAsString = (NSString *)key;
+        NSLog(keyAsString);
         
-        [self performSegueWithIdentifier:@"goToCarousel" sender:self];
+        id value = [res objectForKey:key];
+        NSString *valueAsString = (NSString *)value;
+        NSLog(valueAsString);
+        
+        if([keyAsString isEqualToString:@"userToken"])
+        {
+            GUID = valueAsString; //[[NSString alloc] initWithData:valueAsString encoding:NSASCIIStringEncoding];
+            
+            if([GUID isEqualToString:@"00000000-0000-0000-0000-000000000000"])
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ongeldige inloggegevens"
+                                                                message:@"De opgegeven gebruiksnaam en wachtwoord komen niet overeen met gegevens in het systeem."
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+            }
+            else
+            {
+                NSString *formData = @"userToken=";
+                formData = [formData stringByAppendingString:GUID];
+                
+                [self makeApiCall:@"getBuildings" formdata:formData];
+                break;
+            }
+        }
+        else if([keyAsString isEqualToString:@"buildings"])
+        {
+            //CarouselViewController *myNewVC = [[CarouselViewController alloc] init];
+            //myNewVC.GUID = GUID;
+            //[self presentModalViewController:myNewVC animated:YES];
+            
+            buildingJSONString = valueAsString;
+            
+            [self performSegueWithIdentifier:@"goToCarousel" sender:self];
+            break;
+        }
+        else if([keyAsString isEqualToString:@"error"])
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:valueAsString
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+
+        }
+        else
+        {
+            //Should not happen, but still....
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:keyAsString
+                                                            message:valueAsString
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"LOL"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
     }
 }
 
@@ -193,6 +245,7 @@
         CarouselViewController *vc = [segue destinationViewController];
         
         vc.GUID = GUID;
+        vc.buildingJSONString = buildingJSONString;
     }
 }
 
