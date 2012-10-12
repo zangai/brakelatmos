@@ -17,6 +17,7 @@
 @implementation ViewController{
     NSMutableData *receivedData;
     NSString *GUID;
+    NSString* buildingJSONString;
     NSString *baseAPIUrl;
     NSMutableArray *trustedHosts;
 }
@@ -29,6 +30,7 @@
 {
     [super viewDidLoad];
     GUID = @"";
+    buildingJSONString = @"";
     baseAPIUrl = @"https://atm-vserver2.avans.nl/api.ashx?command=";
     trustedHosts = [[NSMutableArray alloc] init];
     trustedHosts = [NSMutableArray arrayWithObjects:@"atm-vserver2.avans.nl", @"avans.nl", @"ipsum.groep-t.be", nil];
@@ -104,6 +106,8 @@
 
 -(void)makeApiCall:(NSString*)command formdata:(NSString*) parameters
 {
+    NSLog([NSString stringWithFormat:@"API CALL - %@ - %@", command, parameters]);
+    
     NSString *urlString = [baseAPIUrl stringByAppendingString:command];
     NSURL *aUrl = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:aUrl
@@ -150,15 +154,12 @@
     
     // show all values
     for(id key in res) {
-        id value = [res objectForKey:key];
         NSString *keyAsString = (NSString *)key;
-        NSString *valueAsString = (NSString *)value;
-        
-        //--------------------DEBUG OUPUT------------------------------
-        
         NSLog(keyAsString);
+        
+        id value = [res objectForKey:key];
+        NSString *valueAsString = (NSString *)value;
         NSLog(valueAsString);
-        //-------------------------------------------------------------
         
         if([keyAsString isEqualToString:@"userToken"])
         {
@@ -187,7 +188,9 @@
             //CarouselViewController *myNewVC = [[CarouselViewController alloc] init];
             //myNewVC.GUID = GUID;
             //[self presentModalViewController:myNewVC animated:YES];
-                
+            
+            buildingJSONString = valueAsString;
+            
             [self performSegueWithIdentifier:@"goToCarousel" sender:self];
             break;
         }
@@ -242,6 +245,7 @@
         CarouselViewController *vc = [segue destinationViewController];
         
         vc.GUID = GUID;
+        vc.buildingJSONString = buildingJSONString;
     }
 }
 
