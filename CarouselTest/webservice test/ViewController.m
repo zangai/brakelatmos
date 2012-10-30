@@ -31,9 +31,9 @@
     [super viewDidLoad];
     GUID = @"";
     buildingJSONString = @"";
-    baseAPIUrl = @"https://atm-vserver2.avans.nl/api.ashx?command=";
+    baseAPIUrl = @"https://145.48.128.101/api.ashx?command=";
     trustedHosts = [[NSMutableArray alloc] init];
-    trustedHosts = [NSMutableArray arrayWithObjects:@"atm-vserver2.avans.nl", @"avans.nl", @"ipsum.groep-t.be", nil];
+    trustedHosts = [NSMutableArray arrayWithObjects:@"145.48.128.101", @"atm-vserver2.avans.nl", @"avans.nl", @"ipsum.groep-t.be", nil];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -104,7 +104,7 @@
     }
 }
 
--(void)makeApiCall:(NSString*)command data:(NSString*) parameters
+-(void)makeApiCall:(NSString*)command formdata:(NSString*) parameters
 {
     NSLog([NSString stringWithFormat:@"API CALL - %@ - %@", command, parameters]);
     
