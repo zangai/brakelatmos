@@ -21,13 +21,6 @@
 		8A47A1841626BB8E00A162B8 /* CarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A47A1831626BB8E00A162B8 /* CarouselViewController.m */; };
 		8A47A18B1626BD4F00A162B8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A47A18A1626BD4F00A162B8 /* QuartzCore.framework */; };
 		8A47A18E1626BE1300A162B8 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A47A18D1626BE1300A162B8 /* iCarousel.m */; };
-		8A47A1971626C79500A162B8 /* Bear.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A47A1901626C79500A162B8 /* Bear.png */; };
-		8A47A1981626C79500A162B8 /* Birds.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A47A1911626C79500A162B8 /* Birds.png */; };
-		8A47A1991626C79500A162B8 /* Chimp.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A47A1921626C79500A162B8 /* Chimp.png */; };
-		8A47A19A1626C79500A162B8 /* Giraffe.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A47A1931626C79500A162B8 /* Giraffe.png */; };
-		8A47A19B1626C79500A162B8 /* Goat.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A47A1941626C79500A162B8 /* Goat.png */; };
-		8A47A19C1626C79500A162B8 /* Tiger.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A47A1951626C79500A162B8 /* Tiger.png */; };
-		8A47A19D1626C79500A162B8 /* Zebra.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A47A1961626C79500A162B8 /* Zebra.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,13 +45,6 @@
 		8A47A18A1626BD4F00A162B8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8A47A18C1626BE1300A162B8 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		8A47A18D1626BE1300A162B8 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
-		8A47A1901626C79500A162B8 /* Bear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bear.png; sourceTree = "<group>"; };
-		8A47A1911626C79500A162B8 /* Birds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Birds.png; sourceTree = "<group>"; };
-		8A47A1921626C79500A162B8 /* Chimp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chimp.png; sourceTree = "<group>"; };
-		8A47A1931626C79500A162B8 /* Giraffe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Giraffe.png; sourceTree = "<group>"; };
-		8A47A1941626C79500A162B8 /* Goat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Goat.png; sourceTree = "<group>"; };
-		8A47A1951626C79500A162B8 /* Tiger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tiger.png; sourceTree = "<group>"; };
-		8A47A1961626C79500A162B8 /* Zebra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zebra.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,13 +124,6 @@
 		8A47A18F1626C77F00A162B8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8A47A1901626C79500A162B8 /* Bear.png */,
-				8A47A1911626C79500A162B8 /* Birds.png */,
-				8A47A1921626C79500A162B8 /* Chimp.png */,
-				8A47A1931626C79500A162B8 /* Giraffe.png */,
-				8A47A1941626C79500A162B8 /* Goat.png */,
-				8A47A1951626C79500A162B8 /* Tiger.png */,
-				8A47A1961626C79500A162B8 /* Zebra.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -214,13 +193,6 @@
 				8A2E3D0C161AF60F0065D459 /* Default@2x.png in Resources */,
 				8A2E3D0E161AF60F0065D459 /* Default-568h@2x.png in Resources */,
 				8A2E3D11161AF60F0065D459 /* MainStoryboard.storyboard in Resources */,
-				8A47A1971626C79500A162B8 /* Bear.png in Resources */,
-				8A47A1981626C79500A162B8 /* Birds.png in Resources */,
-				8A47A1991626C79500A162B8 /* Chimp.png in Resources */,
-				8A47A19A1626C79500A162B8 /* Giraffe.png in Resources */,
-				8A47A19B1626C79500A162B8 /* Goat.png in Resources */,
-				8A47A19C1626C79500A162B8 /* Tiger.png in Resources */,
-				8A47A19D1626C79500A162B8 /* Zebra.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

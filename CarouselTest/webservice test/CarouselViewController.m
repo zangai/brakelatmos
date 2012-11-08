@@ -45,14 +45,8 @@
     
     //Parse buildingJSONString JSON (Array with buildings)
     
-    self.buildings = [NSMutableArray arrayWithObjects:@"Bear.png",
-                    @"Zebra.png",
-                    @"Tiger.png",
-                    @"Goat.png",
-                    @"Birds.png",
-                    @"Giraffe.png",
-                    @"Chimp.png",
-                    nil];
+    self.buildings = [[NSMutableArray alloc] initWithObjects:nil];
+    [self fillBuildingArray];
     self.descriptions = [NSMutableArray arrayWithObjects:@"Bears Eat: Honey",
                          @"Zebras Eat: Grass",
                          @"Tigers Eat: Meat",
@@ -66,6 +60,7 @@
 - (void)viewDidLoad
 {
     carousel.type = iCarouselTypeCoverFlow2;
+    
     [super viewDidLoad];
     wrap = NO;
 }
@@ -74,6 +69,7 @@
 {
     [self setLabel:nil];
     [super viewDidUnload];
+    
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
@@ -104,6 +100,18 @@
     return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
+-(void)fillBuildingArray
+{
+    //moet uiteindelijk uit verkregen string/dictionary/file/jsonfile etc worden gehaald, maar voor nu even static
+    [self.buildings addObject: @"http://145.48.128.101/images/1.png"];
+    [self.buildings addObject: @"http://145.48.128.101/images/2.png"];
+    [self.buildings addObject: @"http://145.48.128.101/images/1.png"];
+    [self.buildings addObject: @"http://145.48.128.101/images/2.png"];
+    [self.buildings addObject: @"http://145.48.128.101/images/1.png"];
+    [self.buildings addObject: @"http://145.48.128.101/images/2.png"];
+    [self.buildings addObject: @"http://145.48.128.101/images/1.png"];
+}
+
 
 #pragma mark -
 #pragma mark iCarousel methods
@@ -121,8 +129,12 @@
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
-{   
-    view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[buildings objectAtIndex:index]]];
+{
+    NSURL *url = [NSURL URLWithString: [buildings objectAtIndex:index]];
+   // [NSURL URLWithString: [urlArray objectAtIndex:btnN]
+    UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL:url]];
+    //view  = [[UIImageView alloc]] initWithImage:image] ;
+    view = [[UIImageView alloc] initWithImage:image];
     return view;
 }
 
