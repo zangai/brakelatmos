@@ -17,7 +17,8 @@
 @implementation ViewController{
     NSMutableData *receivedData;
     NSString *GUID;
-    NSString* buildingJSONString;
+    NSMutableArray* buildings;
+    //NSString* buildingJSONString;
     NSString *baseAPIUrl;
     NSMutableArray *trustedHosts;
 }
@@ -26,31 +27,28 @@
 @synthesize WachtwoordText;
 @synthesize tokenLabel;
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     GUID = @"";
-    buildingJSONString = @"";
+    buildings = [[NSMutableArray alloc] init];
+    //buildingJSONString = @"";
     baseAPIUrl = @"https://145.48.128.101/api.ashx?command=";
     trustedHosts = [[NSMutableArray alloc] init];
     trustedHosts = [NSMutableArray arrayWithObjects:@"145.48.128.101", @"atm-vserver2.avans.nl", @"avans.nl", @"ipsum.groep-t.be", nil];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(NSString*) sha1:(NSString*)input
-{
+-(NSString*) sha1:(NSString*)input {
     const char *cstr = [input cStringUsingEncoding:NSUTF8StringEncoding];
     NSData *data = [NSData dataWithBytes:cstr length:input.length];
     
@@ -104,8 +102,7 @@
     }
 }
 
--(void)makeApiCall:(NSString*)command formdata:(NSString*) parameters
-{
+-(void)makeApiCall:(NSString*)command formdata:(NSString*) parameters {
     NSLog([NSString stringWithFormat:@"API CALL - %@ - %@", command, parameters]);
     
     NSString *urlString = [baseAPIUrl stringByAppendingString:command];
@@ -129,8 +126,7 @@
     }
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     // This method is called when the server has determined that it
     // has enough information to create the NSURLResponse.
     
@@ -142,8 +138,7 @@
     
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     // Append the new data to receivedData.
     // receivedData is an instance variable declared elsewhere.
     [receivedData appendData:data];
@@ -157,12 +152,9 @@
         NSString *keyAsString = (NSString *)key;
         NSLog(keyAsString);
         
-        id value = [res objectForKey:key];
-        NSString *valueAsString = (NSString *)value;
-        NSLog(valueAsString);
-        
-        if([keyAsString isEqualToString:@"userToken"])
-        {
+        if([keyAsString isEqualToString:@"userToken"]) {
+            NSString* valueAsString = (NSString *)[res objectForKey:key];
+            NSLog(valueAsString);
             GUID = valueAsString; //[[NSString alloc] initWithData:valueAsString encoding:NSASCIIStringEncoding];
             
             if([GUID isEqualToString:@"00000000-0000-0000-0000-000000000000"])
@@ -183,19 +175,18 @@
                 break;
             }
         }
-        else if([keyAsString isEqualToString:@"buildings"])
-        {
-            //CarouselViewController *myNewVC = [[CarouselViewController alloc] init];
-            //myNewVC.GUID = GUID;
-            //[self presentModalViewController:myNewVC animated:YES];
-            
-            buildingJSONString = valueAsString;
+        else if([keyAsString isEqualToString:@"buildings"]) {
+            id value = [res objectForKey:key];
+            [buildings addObjectsFromArray:(NSArray*)value];
+            //NSLog(valueAsString);
+            //buildingJSONString = valueAsString;
             
             [self performSegueWithIdentifier:@"goToCarousel" sender:self];
             break;
         }
-        else if([keyAsString isEqualToString:@"error"])
-        {
+        else if([keyAsString isEqualToString:@"error"]) {
+            NSString* valueAsString = (NSString *)[res objectForKey:key];
+            NSLog(valueAsString);
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                             message:valueAsString
                                                            delegate:nil
@@ -204,8 +195,10 @@
             [alert show];
 
         }
-        else
-        {
+        else {
+            NSString* valueAsString = (NSString *)[res objectForKey:key];
+            NSLog(valueAsString);
+            
             //Should not happen, but still....
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:keyAsString
                                                             message:valueAsString
@@ -222,13 +215,14 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
-    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust])
-        if ([trustedHosts containsObject:challenge.protectionSpace.host])
-            [challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust] forAuthenticationChallenge:challenge];
-    
+    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
+        if ([trustedHosts containsObject:challenge.protectionSpace.host]) {
+            [challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust]
+                 forAuthenticationChallenge:challenge];
+        }
+    }
     [challenge.sender continueWithoutCredentialForAuthenticationChallenge:challenge];
 }
-
 
 - (void)viewDidUnload {
     [self setWachtwoordText:nil];
@@ -237,15 +231,15 @@
     [super viewDidUnload];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"goToCarousel"]) {
         
         // Get destination view
         CarouselViewController *vc = [segue destinationViewController];
         
         vc.GUID = GUID;
-        vc.buildingJSONString = buildingJSONString;
+        vc.buildings = buildings;
+        //vc.buildingJSONString = buildingJSONString;
     }
 }
 
