@@ -45,7 +45,8 @@
     
     //Parse buildingJSONString JSON (Array with buildings)
     
-    self.buildings = [NSMutableArray arrayWithObjects:@"Bear.png",
+    /*
+     self.buildings = [NSMutableArray arrayWithObjects:@"Bear.png",
                     @"Zebra.png",
                     @"Tiger.png",
                     @"Goat.png",
@@ -53,6 +54,7 @@
                     @"Giraffe.png",
                     @"Chimp.png",
                     nil];
+     */
     self.descriptions = [NSMutableArray arrayWithObjects:@"Bears Eat: Honey",
                          @"Zebras Eat: Grass",
                          @"Tigers Eat: Meat",
@@ -116,13 +118,14 @@
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index
 {
     //create a numbered view
-	UIView *view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[buildings objectAtIndex:index]]];
+	UIView *view = nil; //[[UIImageView alloc] initWithImage:[UIImage imageNamed:[buildings objectAtIndex:index]]];
 	return view;
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
-{   
-    view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[buildings objectAtIndex:index]]];
+{
+    NSLog(@"derp");
+    //view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[buildings objectAtIndex:index]]];
     return view;
 }
 

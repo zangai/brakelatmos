@@ -15,7 +15,7 @@
 @property (strong, nonatomic, retain) IBOutlet iCarousel *carousel;
 @property (strong, nonatomic) IBOutlet UILabel *label;
 @property (nonatomic) BOOL wrap;
-@property (strong, nonatomic) NSMutableArray *buildings;
+@property (strong, nonatomic) NSArray *buildings;
 @property (strong, nonatomic) NSMutableArray *descriptions;
 @property (strong, nonatomic) NSString *GUID;
 @property (strong, nonatomic) NSString *buildingJSONString;
