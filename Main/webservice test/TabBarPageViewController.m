@@ -36,6 +36,8 @@
     for (Widget *widget in widgets) {
         NSLog(widget.description);
     }
+    
+    [self.tabBarItem setImage:nil];
 }
 
 - (void)didReceiveMemoryWarning

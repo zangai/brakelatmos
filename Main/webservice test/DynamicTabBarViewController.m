@@ -7,6 +7,8 @@
 //
 
 #import "DynamicTabBarViewController.h"
+#import "TabBarPageViewController.h"
+#import "APILibrary.h"
 
 @interface DynamicTabBarViewController ()
 
@@ -27,7 +29,28 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    NSLog(@"derp, derp");
+    NSLog(@"Loading XML Layout");
+    
+    //APILibrary* lib = [[APILibrary alloc] init];
+    //[lib makeApiCall:@"getLayout" formdata:@""];
+    [self makeTabsFromJSON:nil];
+}
+
+-(void) makeTabsFromJSON:(NSDictionary*) json
+{
+    NSMutableArray* tabs = [[NSMutableArray alloc] init];
+    
+    //for (NSDictionary* obj in json) {
+        //do stuff
+    //}
+    for (int i =0; i <5; i++) {
+    
+    TabBarPageViewController* tabBar=[[TabBarPageViewController alloc] init];
+    UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController: tabBar];
+    [tabs addObject:controller];
+    }
+    
+    self.viewControllers = [NSArray arrayWithArray:tabs];
 }
 
 - (void)didReceiveMemoryWarning
