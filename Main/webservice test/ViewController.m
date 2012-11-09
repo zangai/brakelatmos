@@ -8,8 +8,7 @@
 
 #import "ViewController.h"
 #import "CarouselViewController.h"
-#import <CommonCrypto/CommonDigest.h>
-
+#import "APILibrary.h"
 
 @interface ViewController ()
 @end
@@ -18,7 +17,6 @@
     NSMutableData *receivedData;
     NSString *GUID;
     NSMutableArray* buildings;
-    //NSString* buildingJSONString;
     NSString *baseAPIUrl;
     NSMutableArray *trustedHosts;
 }
@@ -31,11 +29,9 @@
     [super viewDidLoad];
     GUID = @"";
     buildings = [[NSMutableArray alloc] init];
-    //buildingJSONString = @"";
     baseAPIUrl = @"https://145.48.128.101/api.ashx?command=";
     trustedHosts = [[NSMutableArray alloc] init];
     trustedHosts = [NSMutableArray arrayWithObjects:@"145.48.128.101", @"atm-vserver2.avans.nl", @"avans.nl", @"ipsum.groep-t.be", nil];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -46,23 +42,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(NSString*) sha1:(NSString*)input {
-    const char *cstr = [input cStringUsingEncoding:NSUTF8StringEncoding];
-    NSData *data = [NSData dataWithBytes:cstr length:input.length];
-    
-    uint8_t digest[CC_SHA1_DIGEST_LENGTH];
-    
-    CC_SHA1(data.bytes, data.length, digest);
-    
-    NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
-    
-    for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
-        [output appendFormat:@"%02x", digest[i]];
-    
-    return output;
-    
 }
 
 - (IBAction)logIn:(id)sender {
@@ -90,7 +69,7 @@
         }
         else
         {
-            NSString *hash = [self sha1: [password stringByAppendingString:[self sha1:password]]];
+            NSString *hash = [APILibrary sha1: [password stringByAppendingString:[APILibrary sha1:password]]];
             
             NSString *formData = @"username=";
             formData = [formData stringByAppendingString:username];

@@ -19,5 +19,4 @@
 -(void)authenticateWithUsername:(NSString *)username Password:(NSString *)password;
 
 
-
 @end

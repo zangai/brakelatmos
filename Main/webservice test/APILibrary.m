@@ -7,13 +7,15 @@
 //
 
 #import "APILibrary.h"
+#import <CommonCrypto/CommonDigest.h>
 
 @implementation APILibrary
 {
     NSMutableData *receivedData;
     NSString *baseAPIUrl;
     NSMutableArray *trustedHosts;
-    
+    id _delegate;
+    SEL _handleBy;
 }
 
 -(id) init
@@ -23,8 +25,11 @@
     trustedHosts = [NSMutableArray arrayWithObjects:@"145.48.128.101", @"atm-vserver2.avans.nl", @"avans.nl", @"ipsum.groep-t.be", nil];
 }
 
--(void)makeApiCall:(NSString*)command formdata:(NSString*) parameters {
+-(void)makeApiCall:(NSString*)command formdata:(NSString*) parameters delegate:(id)delegate handleBy:(SEL)handler {
     NSLog([NSString stringWithFormat:@"API CALL - %@ - %@", command, parameters]);
+    
+    _delegate = delegate;
+    _handleBy = handler;
     
     NSString *urlString = [baseAPIUrl stringByAppendingString:command];
     NSURL *aUrl = [NSURL URLWithString:urlString];
@@ -64,7 +69,9 @@
     // receivedData is an instance variable declared elsewhere.
     [receivedData appendData:data];
     
-    //TODO: calback
+    if (_delegate && _handleBy && [_delegate respondsToSelector:_handleBy]) {
+        (void) [_delegate performSelector:_handleBy withObject:data];
+    }
 }
 
 - (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
@@ -81,5 +88,21 @@
     [challenge.sender continueWithoutCredentialForAuthenticationChallenge:challenge];
 }
 
++(NSString*) sha1:(NSString*)input {
+    const char *cstr = [input cStringUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [NSData dataWithBytes:cstr length:input.length];
+    
+    uint8_t digest[CC_SHA1_DIGEST_LENGTH];
+    
+    CC_SHA1(data.bytes, data.length, digest);
+    
+    NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
+    
+    for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
+        [output appendFormat:@"%02x", digest[i]];
+    
+    return output;
+    
+}
 
 @end
