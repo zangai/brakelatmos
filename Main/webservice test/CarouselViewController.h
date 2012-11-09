@@ -19,4 +19,5 @@
 @property (strong, nonatomic) NSMutableArray *descriptions;
 @property (strong, nonatomic) NSString *GUID;
 @property (strong, nonatomic) NSString *buildingJSONString;
+
 @end

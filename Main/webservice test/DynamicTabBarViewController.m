@@ -44,10 +44,11 @@
         //do stuff
     //}
     for (int i =0; i <5; i++) {
-    
-    TabBarPageViewController* tabBar=[[TabBarPageViewController alloc] init];
-    UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController: tabBar];
-    [tabs addObject:controller];
+        TabBarPageViewController* tabBar = [[TabBarPageViewController alloc] init];
+        UITabBarItem* tabBarItem = [[UITabBarItem alloc] initWithTitle:[NSString stringWithFormat:@"Tab %d", i] image:nil tag:i];
+        UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController: tabBar];
+        [controller setTabBarItem:tabBarItem];
+        [tabs addObject:controller];
     }
     
     self.viewControllers = [NSArray arrayWithArray:tabs];
