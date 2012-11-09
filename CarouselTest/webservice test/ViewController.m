@@ -11,6 +11,7 @@
 #import <CommonCrypto/CommonDigest.h>
 
 
+
 @interface ViewController ()
 @end
 
@@ -181,6 +182,10 @@
             //NSLog(valueAsString);
             //buildingJSONString = valueAsString;
             
+            dataStorage *ds = [dataStorage sharedManager];
+            [ds initArrayLists:buildings];
+            
+            
             [self performSegueWithIdentifier:@"goToCarousel" sender:self];
             break;
         }
@@ -232,15 +237,15 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"goToCarousel"]) {
+    //if ([[segue identifier] isEqualToString:@"goToCarousel"]) {
         
         // Get destination view
-        CarouselViewController *vc = [segue destinationViewController];
+      //  CarouselViewController *vc = [segue destinationViewController];
         
-        vc.GUID = GUID;
-        vc.buildings = buildings;
+        //vc.GUID = GUID;
+        //vc.buildings = buildings;
         //vc.buildingJSONString = buildingJSONString;
-    }
+   // }
 }
 
 @end

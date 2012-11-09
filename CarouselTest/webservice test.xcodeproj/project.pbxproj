@@ -21,6 +21,8 @@
 		8A47A1841626BB8E00A162B8 /* CarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A47A1831626BB8E00A162B8 /* CarouselViewController.m */; };
 		8A47A18B1626BD4F00A162B8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A47A18A1626BD4F00A162B8 /* QuartzCore.framework */; };
 		8A47A18E1626BE1300A162B8 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A47A18D1626BE1300A162B8 /* iCarousel.m */; };
+		B0B6C923164D08A000BFDDB9 /* dataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B6C922164D08A000BFDDB9 /* dataStorage.m */; };
+		B0B6C927164D1B0D00BFDDB9 /* Building.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B6C926164D1B0D00BFDDB9 /* Building.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,10 @@
 		8A47A18A1626BD4F00A162B8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8A47A18C1626BE1300A162B8 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		8A47A18D1626BE1300A162B8 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		B0B6C921164D08A000BFDDB9 /* dataStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dataStorage.h; sourceTree = "<group>"; };
+		B0B6C922164D08A000BFDDB9 /* dataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dataStorage.m; sourceTree = "<group>"; };
+		B0B6C925164D1B0D00BFDDB9 /* Building.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Building.h; path = ../Building.h; sourceTree = "<group>"; };
+		B0B6C926164D1B0D00BFDDB9 /* Building.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Building.m; path = ../Building.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,10 @@
 				8A2E3D12161AF60F0065D459 /* ViewController.h */,
 				8A2E3D13161AF60F0065D459 /* ViewController.m */,
 				8A2E3CFE161AF60F0065D459 /* Supporting Files */,
+				B0B6C921164D08A000BFDDB9 /* dataStorage.h */,
+				B0B6C922164D08A000BFDDB9 /* dataStorage.m */,
+				B0B6C925164D1B0D00BFDDB9 /* Building.h */,
+				B0B6C926164D1B0D00BFDDB9 /* Building.m */,
 			);
 			path = "webservice test";
 			sourceTree = "<group>";
@@ -208,6 +218,8 @@
 				8A2E3D14161AF60F0065D459 /* ViewController.m in Sources */,
 				8A47A1841626BB8E00A162B8 /* CarouselViewController.m in Sources */,
 				8A47A18E1626BE1300A162B8 /* iCarousel.m in Sources */,
+				B0B6C923164D08A000BFDDB9 /* dataStorage.m in Sources */,
+				B0B6C927164D1B0D00BFDDB9 /* Building.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

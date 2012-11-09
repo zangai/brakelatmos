@@ -8,6 +8,8 @@
 
 #import "CarouselViewController.h"
 
+#import "Building.h"
+
 @interface CarouselViewController()
 
 @end
@@ -18,13 +20,15 @@
     NSString *baseAPIUrl;
     NSMutableArray *trustedHosts;
     int selectedIndex;
-}
+    
+    }
 @synthesize GUID;
 @synthesize buildingJSONString;
 @synthesize carousel;
 @synthesize label;
 @synthesize wrap;
-@synthesize buildings, descriptions;
+@synthesize buildings;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,25 +47,23 @@
     //or the recycling mechanism will destroy your data once
     //your item views move off-screen
     
-    //Parse buildingJSONString JSON (Array with buildings)
     
-    self.buildings = [[NSMutableArray alloc] initWithObjects:nil];
-    [self fillBuildingArray];
-    self.descriptions = [NSMutableArray arrayWithObjects:@"Bears Eat: Honey",
-                         @"Zebras Eat: Grass",
-                         @"Tigers Eat: Meat",
-                         @"Goats Eat: Weeds",
-                         @"Birds Eat: Seeds",
-                         @"Giraffes Eat: Trees",
-                         @"Chimps Eat: Bananas",
-                         nil];
+    //load from singleton ofzo
+    
+    //Parse buildingJSONString JSON (Array with buildings)
+    dataStorage *sharedManager = [dataStorage sharedManager];
+    self.buildings = [[NSMutableArray alloc] initWithArray:sharedManager.buildings];
+
+    
+
 }
 
 - (void)viewDidLoad
 {
+        
     carousel.type = iCarouselTypeCoverFlow2;
-    
     [super viewDidLoad];
+    
     wrap = NO;
 }
 
@@ -100,17 +102,6 @@
     return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
--(void)fillBuildingArray
-{
-    //moet uiteindelijk uit verkregen string/dictionary/file/jsonfile etc worden gehaald, maar voor nu even static
-    [self.buildings addObject: @"http://145.48.128.101/images/1.png"];
-    [self.buildings addObject: @"http://145.48.128.101/images/2.png"];
-    [self.buildings addObject: @"http://145.48.128.101/images/1.png"];
-    [self.buildings addObject: @"http://145.48.128.101/images/2.png"];
-    [self.buildings addObject: @"http://145.48.128.101/images/1.png"];
-    [self.buildings addObject: @"http://145.48.128.101/images/2.png"];
-    [self.buildings addObject: @"http://145.48.128.101/images/1.png"];
-}
 
 
 #pragma mark -
@@ -123,18 +114,16 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index
 {
-    //create a numbered view
-	UIView *view = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[buildings objectAtIndex:index]]];
+    Building* building = [buildings objectAtIndex:index];
+	UIView *view = [[UIImageView alloc] initWithImage:[building getImage]];
 	return view;
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
 {
-    NSURL *url = [NSURL URLWithString: [buildings objectAtIndex:index]];
-   // [NSURL URLWithString: [urlArray objectAtIndex:btnN]
-    UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL:url]];
+    Building* building = [buildings objectAtIndex:index];
     //view  = [[UIImageView alloc]] initWithImage:image] ;
-    view = [[UIImageView alloc] initWithImage:image];
+    view = [[UIImageView alloc] initWithImage:[building getImage]];
     return view;
 }
 
@@ -152,7 +141,7 @@
 
 - (void)carouselDidEndScrollingAnimation:(iCarousel *)aCarousel
 {
-    [label setText:[NSString stringWithFormat:@"%@", [descriptions objectAtIndex:aCarousel.currentItemIndex]]];
+    [label setText:[NSString stringWithFormat:@"Gebouw %d", aCarousel.currentItemIndex]];
     selectedIndex = aCarousel.currentItemIndex;
 }
 
