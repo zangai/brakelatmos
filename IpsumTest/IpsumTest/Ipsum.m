@@ -15,7 +15,6 @@
 @implementation Ipsum {
     NSString * _privateKey;
     NSString * _host;
-
 }
 
 @synthesize token;
@@ -31,8 +30,10 @@
     return NO;
 }
 
--(void)authenticateWithUsername:(NSString *)username Password:(NSString *)password {
-    
+-(void)authenticateWithUsername:(NSString *)username
+                       Password:(NSString *)password
+                     Completion:(WebRequestCallback)completion {
+    self.callback = completion;
     NSString * hash = [self sha1:[NSString stringWithFormat:@"/auth/%@", _privateKey]];
     NSString * uri = [NSString stringWithFormat:@"%@/auth/%@", _host, hash];
     
@@ -42,19 +43,20 @@
     
     NSLog(@"%@", postData);
     
-    [[WebRequest alloc] doPost:uri
+    WebRequest *wr = [[WebRequest alloc] doPost:uri
                           data:postData
                       delegate:self
                       handleBy:@selector(callHandler:response:)
     ];
     
     token = [[Token alloc]init];
-    token.key = @"MOE touch 2";
+    token.key = @"aapjes";
     token.expire = [[NSDate alloc]initWithTimeIntervalSinceNow:0];
 }
 
 -(void)callHandler:(id)caller
-          response:(NSData *) response {
+          response:(NSData *) response
+{
     
     NSString *rData = [[NSString alloc] initWithData:response encoding:NSASCIIStringEncoding];
     NSLog(@"%@", rData);
@@ -63,14 +65,14 @@
                                                    delegate:nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
-    [alert show];
+    self.callback(rData);
+    
     
 }
 
 -(void) parseXml:(NSData *)data {
     //NSXMLParser *nextParser = [[NSXMLParser alloc]initWithData:data];
 }
-
 
 
 -(NSString*) sha1:(NSString*)input

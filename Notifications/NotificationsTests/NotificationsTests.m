@@ -1,14 +1,14 @@
 //
-//  IpsumTestTests.m
-//  IpsumTestTests
+//  NotificationsTests.m
+//  NotificationsTests
 //
-//  Created by Patrick Decoster on 10/4/12.
+//  Created by Patrick Decoster on 09-11-12.
 //  Copyright (c) 2012 Avans Hogeschool. All rights reserved.
 //
 
-#import "IpsumTestTests.h"
+#import "NotificationsTests.h"
 
-@implementation IpsumTestTests
+@implementation NotificationsTests
 
 - (void)setUp
 {
@@ -26,7 +26,7 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in IpsumTestTests");
+    STFail(@"Unit tests are not implemented yet in NotificationsTests");
 }
 
 @end

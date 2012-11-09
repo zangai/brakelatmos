@@ -1,21 +1,19 @@
 //
 //  ViewController.m
-//  IpsumTest
+//  Notifications
 //
-//  Created by Patrick Decoster on 10/4/12.
+//  Created by Patrick Decoster on 09-11-12.
 //  Copyright (c) 2012 Avans Hogeschool. All rights reserved.
 //
 
 #import "ViewController.h"
-#import "Ipsum.h"
 
 @interface ViewController ()
-    
+
 @end
 
 @implementation ViewController
 
-@synthesize tvResponse;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -27,13 +25,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (IBAction)getToken:(id)sender {
-    Ipsum * ipsum = [[Ipsum alloc] init:@"E8EB7CBB-6C16-4270-93F7-CABBD1F0FBDF"];
-    [ipsum authenticateWithUsername:@"Breda" Password:@"Breda" Completion:^(NSString *data){
-        tvResponse.text = [NSString stringWithFormat:@"%@", data];
-    }];
-}
-
 
 @end

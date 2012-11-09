@@ -11,5 +11,6 @@
 @interface ViewController : UIViewController
 - (IBAction)getToken:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *rawText;
+@property (weak, nonatomic) IBOutlet UITextView *tvResponse;
 
 @end
