@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11E53" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="xUV-dj-stj">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+    </dependencies>
+    <scenes>
+        <!--Navtableviewcontroller - gebouw + locatie-->
+        <scene sceneID="KlY-Jh-N8k">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="Kmp-DI-vkZ" customClass="navtableviewcontroller" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" id="ze8-bE-7x0">
+                        <rect key="frame" x="0.0" y="64" width="320" height="704"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="dcZ-2G-OiB">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="1030"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="Kb7-LA-0ev">
+                                    <rect key="frame" x="49" y="20" width="70" height="70"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="1" backgroundImage="blue.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" backgroundImage="wit.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <state key="selected" title="1"/>
+                                    <state key="highlighted" backgroundImage="yellow.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="liftButton:" destination="Kmp-DI-vkZ" eventType="touchUpInside" id="De0-bg-O6j"/>
+                                        <segue destination="KVm-bo-PlE" kind="replace" identifier="verandereDeTekst" splitViewControllerTargetIndex="1" id="cDh-rI-pfZ"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="wjx-7Z-KN0">
+                                    <rect key="frame" x="198" y="20" width="70" height="70"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="2" backgroundImage="blue.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" backgroundImage="wit.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="yellow.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="liftButton:" destination="Kmp-DI-vkZ" eventType="touchUpInside" id="JM3-xI-paY"/>
+                                        <segue destination="KVm-bo-PlE" kind="replace" identifier="verandereDeTekst" splitViewControllerTargetIndex="1" id="Phw-ph-FwO"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="____________________________________" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jJI-dQ-AT4">
+                                    <rect key="frame" x="-11" y="87" width="341" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="Gbj-sI-3VG">
+                                    <rect key="frame" x="49" y="116" width="70" height="70"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="3" backgroundImage="blue.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" backgroundImage="wit.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <state key="selected" title="1"/>
+                                    <state key="highlighted" backgroundImage="yellow.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="liftButton:" destination="Kmp-DI-vkZ" eventType="touchUpInside" id="6JI-7b-1dn"/>
+                                        <segue destination="KVm-bo-PlE" kind="replace" identifier="verandereDeTekst" splitViewControllerTargetIndex="1" id="25Z-TR-2jc"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="aiv-sf-WE0">
+                                    <rect key="frame" x="198" y="116" width="70" height="70"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="4" backgroundImage="blue.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" backgroundImage="wit.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="yellow.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="liftButton:" destination="Kmp-DI-vkZ" eventType="touchUpInside" id="dRm-0k-CuO"/>
+                                        <segue destination="KVm-bo-PlE" kind="replace" identifier="verandereDeTekst" splitViewControllerTargetIndex="1" id="Q2p-Zz-8uN"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="____________________________________" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yZ9-JJ-Bd1">
+                                    <rect key="frame" x="-11" y="183" width="341" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="Klm-td-nla">
+                                    <rect key="frame" x="49" y="212" width="70" height="70"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="5" backgroundImage="blue.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" backgroundImage="wit.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <state key="selected" title="1"/>
+                                    <state key="highlighted" backgroundImage="yellow.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="liftButton:" destination="Kmp-DI-vkZ" eventType="touchUpInside" id="Y6g-nj-l52"/>
+                                        <segue destination="KVm-bo-PlE" kind="replace" identifier="verandereDeTekst" splitViewControllerTargetIndex="1" id="nGJ-aq-PuI"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="nvR-bU-TFp">
+                                    <rect key="frame" x="198" y="212" width="70" height="70"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="6" backgroundImage="blue.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" backgroundImage="wit.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="yellow.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="liftButton:" destination="Kmp-DI-vkZ" eventType="touchUpInside" id="wbW-Ua-PBJ"/>
+                                        <segue destination="KVm-bo-PlE" kind="replace" identifier="verandereDeTekst" splitViewControllerTargetIndex="1" id="FTU-PU-k5X"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="____________________________________" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="imF-1W-8vy">
+                                    <rect key="frame" x="-11" y="279" width="341" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="08N-pE-oTs">
+                                    <rect key="frame" x="49" y="308" width="70" height="70"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="7" backgroundImage="blue.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" backgroundImage="wit.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <state key="selected" title="1"/>
+                                    <state key="highlighted" backgroundImage="yellow.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="liftButton:" destination="Kmp-DI-vkZ" eventType="touchUpInside" id="jLH-Vq-gF2"/>
+                                        <segue destination="KVm-bo-PlE" kind="replace" identifier="verandereDeTekst" splitViewControllerTargetIndex="1" id="ewV-0g-lHm"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="tGT-Jz-YuB">
+                                    <rect key="frame" x="198" y="308" width="70" height="70"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="8" backgroundImage="blue.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" backgroundImage="wit.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="yellow.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="liftButton:" destination="Kmp-DI-vkZ" eventType="touchUpInside" id="7Pj-bd-Ymj"/>
+                                        <segue destination="KVm-bo-PlE" kind="replace" identifier="verandereDeTekst" splitViewControllerTargetIndex="1" id="UyB-fQ-B03"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="____________________________________" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fnL-2x-M1p">
+                                    <rect key="frame" x="-11" y="375" width="341" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="Na0-7a-Yca">
+                                    <rect key="frame" x="49" y="404" width="70" height="70"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="9" backgroundImage="blue.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" backgroundImage="wit.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <state key="selected" title="1"/>
+                                    <state key="highlighted" backgroundImage="yellow.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="liftButton:" destination="Kmp-DI-vkZ" eventType="touchUpInside" id="C2Y-LW-hjB"/>
+                                        <segue destination="KVm-bo-PlE" kind="replace" identifier="verandereDeTekst" splitViewControllerTargetIndex="1" id="hS1-q0-EpI"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="gvj-8X-jnr">
+                                    <rect key="frame" x="198" y="404" width="70" height="70"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="10" backgroundImage="blue.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" backgroundImage="wit.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="yellow.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="liftButton:" destination="Kmp-DI-vkZ" eventType="touchUpInside" id="0lk-vj-lS9"/>
+                                        <segue destination="KVm-bo-PlE" kind="replace" identifier="verandereDeTekst" splitViewControllerTargetIndex="1" id="S81-yd-xh4"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="____________________________________" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J5z-1A-UsQ">
+                                    <rect key="frame" x="-11" y="471" width="341" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="2YL-p5-xOK">
+                                    <rect key="frame" x="49" y="500" width="70" height="70"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="11" backgroundImage="blue.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" backgroundImage="wit.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <state key="selected" title="1"/>
+                                    <state key="highlighted" backgroundImage="yellow.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="liftButton:" destination="Kmp-DI-vkZ" eventType="touchUpInside" id="YLG-h0-FpW"/>
+                                        <segue destination="KVm-bo-PlE" kind="replace" identifier="verandereDeTekst" splitViewControllerTargetIndex="1" id="Hgb-i1-Tgc"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="eIP-rD-Jd4">
+                                    <rect key="frame" x="198" y="500" width="70" height="70"/>
+                                    <accessibility key="accessibilityConfiguration">
+                                        <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
+                                    </accessibility>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="12" backgroundImage="blue.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" backgroundImage="wit.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="yellow.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="liftButton:" destination="Kmp-DI-vkZ" eventType="touchUpInside" id="VIH-Y0-41y"/>
+                                        <segue destination="KVm-bo-PlE" kind="replace" identifier="verandereDeTekst" splitViewControllerTargetIndex="1" id="bTY-hO-egx"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="____________________________________" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eYv-k4-4ks">
+                                    <rect key="frame" x="-11" y="567" width="341" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="KMI-Fn-wPL">
+                                    <rect key="frame" x="49" y="596" width="70" height="70"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="13" backgroundImage="blue.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" backgroundImage="wit.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <state key="selected" title="1"/>
+                                    <state key="highlighted" backgroundImage="yellow.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="liftButton:" destination="Kmp-DI-vkZ" eventType="touchUpInside" id="VzT-uS-kbl"/>
+                                        <segue destination="KVm-bo-PlE" kind="replace" identifier="verandereDeTekst" splitViewControllerTargetIndex="1" id="hgK-o8-fFc"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="AOy-kZ-1Br">
+                                    <rect key="frame" x="198" y="596" width="70" height="70"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="14" backgroundImage="blue.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" backgroundImage="wit.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="yellow.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="liftButton:" destination="Kmp-DI-vkZ" eventType="touchUpInside" id="b5M-34-bM2"/>
+                                        <segue destination="KVm-bo-PlE" kind="replace" identifier="verandereDeTekst" splitViewControllerTargetIndex="1" id="col-Qf-AOg"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="____________________________________" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fdb-SW-Wpv">
+                                    <rect key="frame" x="-11" y="663" width="341" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="sCG-TC-mU4">
+                                    <rect key="frame" x="49" y="692" width="70" height="70"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="15" backgroundImage="blue.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" backgroundImage="wit.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <state key="selected" title="1"/>
+                                    <state key="highlighted" backgroundImage="yellow.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="liftButton:" destination="Kmp-DI-vkZ" eventType="touchUpInside" id="jIu-Hs-eoG"/>
+                                        <segue destination="KVm-bo-PlE" kind="replace" identifier="verandereDeTekst" splitViewControllerTargetIndex="1" id="HHL-iN-sFF"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="GRt-eW-59B">
+                                    <rect key="frame" x="198" y="692" width="70" height="70"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="16" backgroundImage="blue.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" backgroundImage="wit.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="yellow.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="liftButton:" destination="Kmp-DI-vkZ" eventType="touchUpInside" id="OdM-Pa-UZV"/>
+                                        <segue destination="KVm-bo-PlE" kind="replace" identifier="verandereDeTekst" splitViewControllerTargetIndex="1" id="jqN-ng-AeZ"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="____________________________________" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9d8-kH-Ebh">
+                                    <rect key="frame" x="-11" y="759" width="341" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="z09-NC-1r1">
+                                    <rect key="frame" x="49" y="788" width="70" height="70"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="17" backgroundImage="blue.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" backgroundImage="wit.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <state key="selected" title="1"/>
+                                    <state key="highlighted" backgroundImage="yellow.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="liftButton:" destination="Kmp-DI-vkZ" eventType="touchUpInside" id="9fd-Fm-GtS"/>
+                                        <segue destination="KVm-bo-PlE" kind="replace" identifier="verandereDeTekst" splitViewControllerTargetIndex="1" id="EbT-hz-PkW"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="6Op-nV-WTZ">
+                                    <rect key="frame" x="198" y="788" width="70" height="70"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="18" backgroundImage="blue.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" backgroundImage="wit.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="yellow.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="liftButton:" destination="Kmp-DI-vkZ" eventType="touchUpInside" id="5Ch-iE-bdO"/>
+                                        <segue destination="KVm-bo-PlE" kind="replace" identifier="verandereDeTekst" splitViewControllerTargetIndex="1" id="WVr-nc-Vam"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="____________________________________" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NR9-cv-wQa">
+                                    <rect key="frame" x="-11" y="855" width="341" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="S7J-xs-T4i">
+                                    <rect key="frame" x="49" y="884" width="70" height="70"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="19" backgroundImage="blue.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" backgroundImage="wit.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <state key="selected" title="1"/>
+                                    <state key="highlighted" backgroundImage="yellow.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="liftButton:" destination="Kmp-DI-vkZ" eventType="touchUpInside" id="dyk-1f-Vmq"/>
+                                        <segue destination="KVm-bo-PlE" kind="replace" identifier="verandereDeTekst" splitViewControllerTargetIndex="1" id="bGr-Ho-hKS"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="ima-US-xor">
+                                    <rect key="frame" x="198" y="884" width="70" height="70"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                    <size key="titleShadowOffset" width="1" height="1"/>
+                                    <state key="normal" title="20" backgroundImage="blue.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="disabled" backgroundImage="wit.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" backgroundImage="yellow.png">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="liftButton:" destination="Kmp-DI-vkZ" eventType="touchUpInside" id="wRI-E3-fLS"/>
+                                        <segue destination="KVm-bo-PlE" kind="replace" identifier="verandereDeTekst" splitViewControllerTargetIndex="1" id="4ro-jw-wsg"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="____________________________________" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YkR-Ij-d4I">
+                                    <rect key="frame" x="-11" y="951" width="341" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <accessibilityTraits key="traits" none="YES"/>
+                                <bool key="isElement" value="YES"/>
+                            </accessibility>
+                        </view>
+                        <connections>
+                            <outlet property="dataSource" destination="Kmp-DI-vkZ" id="A0L-x1-o7n"/>
+                            <outlet property="delegate" destination="Kmp-DI-vkZ" id="T3m-ZG-3KW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="gebouw + locatie" id="Dpl-ap-jn6"/>
+                    <connections>
+                        <outlet property="liftPlaatje1" destination="Kb7-LA-0ev" id="bMq-Lf-LVH"/>
+                        <outlet property="liftPlaatje10" destination="gvj-8X-jnr" id="lhf-dR-5rU"/>
+                        <outlet property="liftPlaatje11" destination="2YL-p5-xOK" id="e7S-2i-YcF"/>
+                        <outlet property="liftPlaatje12" destination="eIP-rD-Jd4" id="b9c-wL-e7g"/>
+                        <outlet property="liftPlaatje13" destination="KMI-Fn-wPL" id="Zuk-8H-zWc"/>
+                        <outlet property="liftPlaatje14" destination="AOy-kZ-1Br" id="Qg4-DQ-t2P"/>
+                        <outlet property="liftPlaatje15" destination="sCG-TC-mU4" id="jSs-ta-nMi"/>
+                        <outlet property="liftPlaatje16" destination="GRt-eW-59B" id="Zfu-n8-CVv"/>
+                        <outlet property="liftPlaatje17" destination="z09-NC-1r1" id="NBG-5L-twX"/>
+                        <outlet property="liftPlaatje18" destination="6Op-nV-WTZ" id="7Ox-GM-U4S"/>
+                        <outlet property="liftPlaatje19" destination="S7J-xs-T4i" id="Ggc-8b-JL4"/>
+                        <outlet property="liftPlaatje2" destination="wjx-7Z-KN0" id="UdC-wO-N6h"/>
+                        <outlet property="liftPlaatje20" destination="ima-US-xor" id="yln-wq-ZBN"/>
+                        <outlet property="liftPlaatje3" destination="Gbj-sI-3VG" id="wjk-Uw-0kv"/>
+                        <outlet property="liftPlaatje4" destination="aiv-sf-WE0" id="Ti6-gb-NJM"/>
+                        <outlet property="liftPlaatje5" destination="Klm-td-nla" id="10X-u3-lPh"/>
+                        <outlet property="liftPlaatje6" destination="nvR-bU-TFp" id="vg6-yQ-9T6"/>
+                        <outlet property="liftPlaatje7" destination="08N-pE-oTs" id="j9U-hl-MX5"/>
+                        <outlet property="liftPlaatje8" destination="tGT-Jz-YuB" id="s3y-Wa-oRq"/>
+                        <outlet property="liftPlaatje9" destination="Na0-7a-Yca" id="AYc-vc-R2l"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fW8-a0-ILE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-820" y="-705"/>
+        </scene>
+        <!--Navnavigationcontroller-->
+        <scene sceneID="y7I-yd-ovr">
+            <objects>
+                <navigationController id="KHN-An-PaS" customClass="navnavigationcontroller" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DRQ-hc-4dL">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Kmp-DI-vkZ" kind="relationship" relationship="rootViewController" id="jCd-tu-Ga7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="62C-iH-7jN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1343" y="-838"/>
+        </scene>
+        <!--Navsplitviewcontroller-->
+        <scene sceneID="X3M-uQ-NGE">
+            <objects>
+                <splitViewController id="xUV-dj-stj" customClass="navsplitviewcontroller" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <segue destination="KHN-An-PaS" kind="relationship" relationship="masterViewController" id="zms-Io-Ek7"/>
+                        <segue destination="KVm-bo-PlE" kind="relationship" relationship="detailViewController" id="zN5-o9-ybu"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t1Q-HV-FfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1407" y="622"/>
+        </scene>
+        <!--Nav View Controller-->
+        <scene sceneID="3za-vT-nfz">
+            <objects>
+                <viewController id="KVm-bo-PlE" customClass="navViewController" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="57A-Ih-LPv">
+                        <rect key="frame" x="0.0" y="20" width="703" height="748"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2E6-Id-t3x">
+                                <rect key="frame" x="169" y="421" width="10" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Screen Shot 2012-10-08 at 12.27.31 PM.png" id="Qhb-lo-EeZ">
+                                <rect key="frame" x="0.0" y="0.0" width="703" height="748"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="de testert" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fie-el-It5">
+                                <rect key="frame" x="63" y="331" width="170" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="tester" destination="fie-el-It5" id="i1x-du-41v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1qy-NL-PZm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="-1051"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Screen Shot 2012-10-08 at 12.27.31 PM.png" width="141" height="127"/>
+        <image name="blue.png" width="122" height="122"/>
+        <image name="wit.png" width="12" height="12"/>
+        <image name="yellow.png" width="122" height="122"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="zN5-o9-ybu"/>
+    </inferredMetricsTieBreakers>
+</document>
