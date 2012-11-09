@@ -10,6 +10,7 @@
 
 @interface navtableviewcontroller : UITableViewController
 - (IBAction)liftButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *testlabel;
 @property (weak, nonatomic) IBOutlet UIButton *liftPlaatje1;
 @property (weak, nonatomic) IBOutlet UIButton *liftPlaatje2;
 @property (weak, nonatomic) IBOutlet UIButton *liftPlaatje3;
