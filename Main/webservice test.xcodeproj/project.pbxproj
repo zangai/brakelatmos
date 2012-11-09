@@ -28,6 +28,7 @@
 		8A47A19B1626C79500A162B8 /* Goat.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A47A1941626C79500A162B8 /* Goat.png */; };
 		8A47A19C1626C79500A162B8 /* Tiger.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A47A1951626C79500A162B8 /* Tiger.png */; };
 		8A47A19D1626C79500A162B8 /* Zebra.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A47A1961626C79500A162B8 /* Zebra.png */; };
+		AD6C1EB5164D02BC000D1F8F /* DynamicUIManger.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6C1EB4164D02BC000D1F8F /* DynamicUIManger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,8 @@
 		8A47A1941626C79500A162B8 /* Goat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Goat.png; sourceTree = "<group>"; };
 		8A47A1951626C79500A162B8 /* Tiger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tiger.png; sourceTree = "<group>"; };
 		8A47A1961626C79500A162B8 /* Zebra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zebra.png; sourceTree = "<group>"; };
+		AD6C1EB3164D02BC000D1F8F /* DynamicUIManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicUIManger.h; sourceTree = "<group>"; };
+		AD6C1EB4164D02BC000D1F8F /* DynamicUIManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicUIManger.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 				8A2E3D12161AF60F0065D459 /* ViewController.h */,
 				8A2E3D13161AF60F0065D459 /* ViewController.m */,
 				8A2E3CFE161AF60F0065D459 /* Supporting Files */,
+				AD6C1EB3164D02BC000D1F8F /* DynamicUIManger.h */,
+				AD6C1EB4164D02BC000D1F8F /* DynamicUIManger.m */,
 			);
 			path = "webservice test";
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 				8A2E3D14161AF60F0065D459 /* ViewController.m in Sources */,
 				8A47A1841626BB8E00A162B8 /* CarouselViewController.m in Sources */,
 				8A47A18E1626BE1300A162B8 /* iCarousel.m in Sources */,
+				AD6C1EB5164D02BC000D1F8F /* DynamicUIManger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
