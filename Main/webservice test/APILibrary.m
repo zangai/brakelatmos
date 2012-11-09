@@ -23,6 +23,7 @@
     baseAPIUrl = @"https://145.48.128.101/api.ashx?command=";
     trustedHosts = [[NSMutableArray alloc] init];
     trustedHosts = [NSMutableArray arrayWithObjects:@"145.48.128.101", @"atm-vserver2.avans.nl", @"avans.nl", @"ipsum.groep-t.be", nil];
+    return self;
 }
 
 -(void)makeApiCall:(NSString*)command formdata:(NSString*) parameters delegate:(id)delegate handleBy:(SEL)handler {
@@ -61,7 +62,6 @@
     
     // receivedData is an instance variable declared elsewhere.
     [receivedData setLength:0];
-    
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
