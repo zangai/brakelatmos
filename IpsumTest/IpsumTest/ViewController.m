@@ -15,6 +15,7 @@
 
 @implementation ViewController
 
+@synthesize tvResponse;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -28,9 +29,10 @@
 }
 
 - (IBAction)getToken:(id)sender {
-    Ipsum * ipsum = [[Ipsum alloc]init:@"E8EB7CBB-6C16-4270-93F7-CABBD1F0FBDF"];
-    [ipsum authenticateWithUsername:@"Breda" Password:@"Breda"];
-    _rawText.text = [NSString stringWithFormat:@"%@", ipsum.token.expire];
+    Ipsum * ipsum = [[Ipsum alloc] init:@"E8EB7CBB-6C16-4270-93F7-CABBD1F0FBDF"];
+    [ipsum authenticateWithUsername:@"Breda" Password:@"Breda" Completion:^(NSString *data){
+        tvResponse.text = [NSString stringWithFormat:@"%@", data];
+    }];
 }
 
 

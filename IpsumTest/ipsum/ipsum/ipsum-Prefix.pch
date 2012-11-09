@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'ipsum' target in the 'ipsum' project
-//
-
-#ifdef __OBJC__
-    #import <Foundation/Foundation.h>
-#endif

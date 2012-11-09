@@ -63,8 +63,20 @@
         
     carousel.type = iCarouselTypeCoverFlow2;
     [super viewDidLoad];
+    UITapGestureRecognizer *singleFingerTap =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(handleSingleTap:)];
+    [self.view addGestureRecognizer:singleFingerTap];
+    [singleFingerTap release];
     
     wrap = NO;
+}
+
+//The event handling method
+- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
+    CGPoint location = [recognizer locationInView:[recognizer.view superview]];
+    
+    //Do stuff here...
 }
 
 - (void)viewDidUnload
@@ -115,6 +127,7 @@
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index
 {
     Building* building = [buildings objectAtIndex:index];
+    //UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 	UIView *view = [[UIImageView alloc] initWithImage:[building getImage]];
 	return view;
 }
@@ -124,7 +137,15 @@
     Building* building = [buildings objectAtIndex:index];
     //view  = [[UIImageView alloc]] initWithImage:image] ;
     view = [[UIImageView alloc] initWithImage:[building getImage]];
+    [view setUserInteractionEnabled:YES];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped:)];
+    [view addGestureRecognizer:tap];
     return view;
+}
+
+- (void)imageTapped:(UITapGestureRecognizer *)sender
+{
+    [self performSegueWithIdentifier:@"goToFloorView" sender:self];
 }
 
 - (NSUInteger)numberOfPlaceholdersInCarousel:(iCarousel *)carousel

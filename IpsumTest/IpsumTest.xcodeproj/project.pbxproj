@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0045DE8164BE89700DA8D88 /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = A0045DE5164BE42E00DA8D88 /* Token.m */; };
 		A08BE57D161DBF0D0048D799 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08BE57C161DBF0D0048D799 /* UIKit.framework */; };
 		A08BE57F161DBF0D0048D799 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08BE57E161DBF0D0048D799 /* Foundation.framework */; };
 		A08BE581161DBF0D0048D799 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08BE580161DBF0D0048D799 /* CoreGraphics.framework */; };
@@ -18,29 +19,13 @@
 		A08BE593161DBF120048D799 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A08BE592161DBF120048D799 /* Default-568h@2x.png */; };
 		A08BE596161DBF120048D799 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08BE594161DBF120048D799 /* MainStoryboard.storyboard */; };
 		A08BE599161DBF140048D799 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A08BE598161DBF140048D799 /* ViewController.m */; };
-		A08BE5A1161DBF150048D799 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08BE5A0161DBF150048D799 /* SenTestingKit.framework */; };
-		A08BE5A2161DBF150048D799 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08BE57C161DBF0D0048D799 /* UIKit.framework */; };
-		A08BE5A3161DBF150048D799 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08BE57E161DBF0D0048D799 /* Foundation.framework */; };
-		A08BE5AB161DBF150048D799 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A08BE5A9161DBF150048D799 /* InfoPlist.strings */; };
-		A08BE5AE161DBF160048D799 /* IpsumTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A08BE5AD161DBF160048D799 /* IpsumTestTests.m */; };
 		A0B2E68D16243A860048AE3F /* Ipsum.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B2E68C16243A860048AE3F /* Ipsum.m */; };
-		A0B2E68E16243A860048AE3F /* Ipsum.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B2E68C16243A860048AE3F /* Ipsum.m */; };
-		A0B2E691162448F10048AE3F /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B2E690162448F10048AE3F /* Token.m */; };
-		A0B2E692162448F10048AE3F /* Token.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B2E690162448F10048AE3F /* Token.m */; };
 		A0CBDF0716284C4B0027DA42 /* WebRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CBDF0616284C4A0027DA42 /* WebRequest.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		A08BE5A4161DBF150048D799 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A08BE56F161DBF0D0048D799 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A08BE577161DBF0D0048D799;
-			remoteInfo = IpsumTest;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		A0045DE4164BE42E00DA8D88 /* Token.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Token.h; sourceTree = "<group>"; };
+		A0045DE5164BE42E00DA8D88 /* Token.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Token.m; sourceTree = "<group>"; };
 		A08BE578161DBF0D0048D799 /* IpsumTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IpsumTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A08BE57C161DBF0D0048D799 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A08BE57E161DBF0D0048D799 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -57,16 +42,9 @@
 		A08BE595161DBF120048D799 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A08BE597161DBF130048D799 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A08BE598161DBF140048D799 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A08BE59F161DBF150048D799 /* IpsumTestTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IpsumTestTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A08BE5A0161DBF150048D799 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		A08BE5A8161DBF150048D799 /* IpsumTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IpsumTestTests-Info.plist"; sourceTree = "<group>"; };
-		A08BE5AA161DBF150048D799 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A08BE5AC161DBF160048D799 /* IpsumTestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IpsumTestTests.h; sourceTree = "<group>"; };
-		A08BE5AD161DBF160048D799 /* IpsumTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IpsumTestTests.m; sourceTree = "<group>"; };
 		A0B2E68B16243A860048AE3F /* Ipsum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ipsum.h; sourceTree = "<group>"; };
 		A0B2E68C16243A860048AE3F /* Ipsum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ipsum.m; sourceTree = "<group>"; };
-		A0B2E68F162448F10048AE3F /* Token.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Token.h; path = ipsum/ipsum/Token.h; sourceTree = SOURCE_ROOT; };
-		A0B2E690162448F10048AE3F /* Token.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Token.m; path = ipsum/ipsum/Token.m; sourceTree = SOURCE_ROOT; };
 		A0CBDF0516284C4A0027DA42 /* WebRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRequest.h; sourceTree = "<group>"; };
 		A0CBDF0616284C4A0027DA42 /* WebRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,16 +60,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A08BE59B161DBF140048D799 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A08BE5A1161DBF150048D799 /* SenTestingKit.framework in Frameworks */,
-				A08BE5A2161DBF150048D799 /* UIKit.framework in Frameworks */,
-				A08BE5A3161DBF150048D799 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -99,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				A08BE582161DBF0D0048D799 /* IpsumTest */,
-				A08BE5A6161DBF150048D799 /* IpsumTestTests */,
 				A08BE57B161DBF0D0048D799 /* Frameworks */,
 				A08BE579161DBF0D0048D799 /* Products */,
 			);
@@ -109,7 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				A08BE578161DBF0D0048D799 /* IpsumTest.app */,
-				A08BE59F161DBF150048D799 /* IpsumTestTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,32 +119,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A08BE5A6161DBF150048D799 /* IpsumTestTests */ = {
-			isa = PBXGroup;
-			children = (
-				A08BE5AC161DBF160048D799 /* IpsumTestTests.h */,
-				A08BE5AD161DBF160048D799 /* IpsumTestTests.m */,
-				A08BE5A7161DBF150048D799 /* Supporting Files */,
-			);
-			path = IpsumTestTests;
-			sourceTree = "<group>";
-		};
-		A08BE5A7161DBF150048D799 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A08BE5A8161DBF150048D799 /* IpsumTestTests-Info.plist */,
-				A08BE5A9161DBF150048D799 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		A0B2E68A16243A4F0048AE3F /* IpsumLib */ = {
 			isa = PBXGroup;
 			children = (
+				A0045DE4164BE42E00DA8D88 /* Token.h */,
+				A0045DE5164BE42E00DA8D88 /* Token.m */,
 				A0B2E68B16243A860048AE3F /* Ipsum.h */,
 				A0B2E68C16243A860048AE3F /* Ipsum.m */,
-				A0B2E68F162448F10048AE3F /* Token.h */,
-				A0B2E690162448F10048AE3F /* Token.m */,
 				A0CBDF0516284C4A0027DA42 /* WebRequest.h */,
 				A0CBDF0616284C4A0027DA42 /* WebRequest.m */,
 			);
@@ -205,25 +152,6 @@
 			productReference = A08BE578161DBF0D0048D799 /* IpsumTest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A08BE59E161DBF140048D799 /* IpsumTestTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A08BE5B4161DBF160048D799 /* Build configuration list for PBXNativeTarget "IpsumTestTests" */;
-			buildPhases = (
-				A08BE59A161DBF140048D799 /* Sources */,
-				A08BE59B161DBF140048D799 /* Frameworks */,
-				A08BE59C161DBF140048D799 /* Resources */,
-				A08BE59D161DBF140048D799 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A08BE5A5161DBF150048D799 /* PBXTargetDependency */,
-			);
-			name = IpsumTestTests;
-			productName = IpsumTestTests;
-			productReference = A08BE59F161DBF150048D799 /* IpsumTestTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -246,7 +174,6 @@
 			projectRoot = "";
 			targets = (
 				A08BE577161DBF0D0048D799 /* IpsumTest */,
-				A08BE59E161DBF140048D799 /* IpsumTestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -264,65 +191,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A08BE59C161DBF140048D799 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A08BE5AB161DBF150048D799 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		A08BE59D161DBF140048D799 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A08BE574161DBF0D0048D799 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0045DE8164BE89700DA8D88 /* Token.m in Sources */,
+				A0B2E68D16243A860048AE3F /* Ipsum.m in Sources */,
 				A08BE589161DBF0E0048D799 /* main.m in Sources */,
 				A08BE58D161DBF110048D799 /* AppDelegate.m in Sources */,
 				A08BE599161DBF140048D799 /* ViewController.m in Sources */,
-				A0B2E68D16243A860048AE3F /* Ipsum.m in Sources */,
-				A0B2E691162448F10048AE3F /* Token.m in Sources */,
 				A0CBDF0716284C4B0027DA42 /* WebRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A08BE59A161DBF140048D799 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A08BE5AE161DBF160048D799 /* IpsumTestTests.m in Sources */,
-				A0B2E68E16243A860048AE3F /* Ipsum.m in Sources */,
-				A0B2E692162448F10048AE3F /* Token.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A08BE5A5161DBF150048D799 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A08BE577161DBF0D0048D799 /* IpsumTest */;
-			targetProxy = A08BE5A4161DBF150048D799 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A08BE585161DBF0E0048D799 /* InfoPlist.strings */ = {
@@ -339,14 +224,6 @@
 				A08BE595161DBF120048D799 /* en */,
 			);
 			name = MainStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
-		A08BE5A9161DBF150048D799 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A08BE5AA161DBF150048D799 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -426,40 +303,6 @@
 			};
 			name = Release;
 		};
-		A08BE5B5161DBF160048D799 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IpsumTest.app/IpsumTest";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "IpsumTest/IpsumTest-Prefix.pch";
-				INFOPLIST_FILE = "IpsumTestTests/IpsumTestTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		A08BE5B6161DBF160048D799 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/IpsumTest.app/IpsumTest";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "IpsumTest/IpsumTest-Prefix.pch";
-				INFOPLIST_FILE = "IpsumTestTests/IpsumTestTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -477,15 +320,6 @@
 			buildConfigurations = (
 				A08BE5B2161DBF160048D799 /* Debug */,
 				A08BE5B3161DBF160048D799 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A08BE5B4161DBF160048D799 /* Build configuration list for PBXNativeTarget "IpsumTestTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A08BE5B5161DBF160048D799 /* Debug */,
-				A08BE5B6161DBF160048D799 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
