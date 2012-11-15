@@ -19,4 +19,9 @@
 {
     return [[TemperatureWidget alloc] initWithJson:json];
 }
+
+-(void) draw
+{
+    NSLog(@"temperature");
+}
 @end

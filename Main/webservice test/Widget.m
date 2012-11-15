@@ -15,8 +15,8 @@
 
 -(id)initWithJson:(NSDictionary*)json
 {
-    XCoordinate = json[@"x"];
-    YCoordinate = json[@"y"];
+    XCoordinate = ((NSString*)json[@"x"]).integerValue;
+    YCoordinate = ((NSString*)json[@"y"]).integerValue;
     return self;
 }
 
@@ -40,7 +40,7 @@
 
 -(void) draw
 {
-    //Doe fancy draw dingen?
+    NSLog(@"Normal Base Widget");
 }
 
 @end

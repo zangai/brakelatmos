@@ -46,7 +46,9 @@
 {
     NSError *myError = nil;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&myError];
-    NSMutableDictionary *layout = json[@"layout"];
+    NSString* layoutString = json[@"layout"];
+    NSData* layoutData = [layoutString dataUsingEncoding:NSUTF8StringEncoding];
+    NSMutableDictionary *layout = [NSJSONSerialization JSONObjectWithData:layoutData options:NSJSONReadingMutableLeaves error:&myError];
     [self makeTabsFromJSON:layout];
 }
 

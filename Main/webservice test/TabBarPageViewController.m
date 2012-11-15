@@ -35,14 +35,16 @@
 
 -(id)initWithJson:(NSDictionary*)json
 {
+    widgets = [[NSMutableArray alloc] init];
     Title = json[@"title"];
     NSString* imageUrl = [NSString stringWithFormat:@"https://145.48.128.101/images/%@", json[@"image"]];
-    Image = [[UIImage alloc] init];
+    NSURL *url = [NSURL URLWithString: imageUrl];
+    Image = [UIImage imageWithData: [NSData dataWithContentsOfURL:url]];
     
     NSMutableArray* widgetsArray = json[@"widgets"];
     for (NSDictionary* widgetJson in widgetsArray) {
         NSString* widgetType = widgetJson[@"type"];
-        Widget* widget = [[Widget alloc] initWithJson:widgetJson];
+        Widget* widget = [Widget makeWidgetWithType:widgetType jsonData:widgetJson];
         [self addWidget:widget];
     }
     return self;
@@ -56,10 +58,10 @@
     
     NSLog([NSString stringWithFormat:@"Tab %@ loaded", Title]);
     for (Widget *widget in widgets) {
-        NSLog(widget.Title);
+        [widget draw];
     }
     
-    [self.tabBarItem setImage:nil];
+    [self.tabBarItem setImage:Image];
 }
 
 - (void)didReceiveMemoryWarning

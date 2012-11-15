@@ -18,6 +18,8 @@
 @property (nonatomic) NSInteger YCoordinate;
 
 -(id)initWithJson:(NSDictionary*)json;
+-(void) draw;
+
 +(Widget*)makeWidgetWithType:(NSString*)type jsonData:(NSDictionary*)json;
 
 @end
