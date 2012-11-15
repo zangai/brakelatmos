@@ -7,13 +7,35 @@
 //
 
 #import "Widget.h"
+#import "TemperatureWidget.h"
 
 @implementation Widget
 
+@synthesize WidgetId, Title, Description, XCoordinate, YCoordinate;
+
 -(id)initWithJson:(NSDictionary*)json
 {
-    //Do init stuff
+    XCoordinate = json[@"x"];
+    YCoordinate = json[@"y"];
     return self;
+}
+
++(Widget*)makeWidgetWithType:(NSString*)type jsonData:(NSDictionary*)json
+{
+    NSArray* widgetTypes = [[NSArray alloc] initWithObjects: @"temp", @"air", @"co2", @"change", nil];
+    NSInteger index = [widgetTypes indexOfObject:type];
+    switch (index) {
+        case 0:
+        {
+            return [TemperatureWidget makeWidgetWithType:type jsonData:json];
+            break;
+        }
+        default:
+        {
+            return [[Widget alloc] initWithJson:json];
+            break;
+        }
+    }
 }
 
 -(void) draw

@@ -35,8 +35,14 @@
 
 -(id)initWithJson:(NSDictionary*)json
 {
-    for (NSDictionary* obj in json) {
-        Widget* widget = [[Widget alloc] initWithJson:obj];
+    Title = json[@"title"];
+    NSString* imageUrl = [NSString stringWithFormat:@"https://145.48.128.101/images/%@", json[@"image"]];
+    Image = [[UIImage alloc] init];
+    
+    NSMutableArray* widgetsArray = json[@"widgets"];
+    for (NSDictionary* widgetJson in widgetsArray) {
+        NSString* widgetType = widgetJson[@"type"];
+        Widget* widget = [[Widget alloc] initWithJson:widgetJson];
         [self addWidget:widget];
     }
     return self;
@@ -48,9 +54,9 @@
 	// Do any additional setup after loading the view.
     
     
-    NSLog(@"herp");
+    NSLog([NSString stringWithFormat:@"Tab %@ loaded", Title]);
     for (Widget *widget in widgets) {
-        NSLog(widget.description);
+        NSLog(widget.Title);
     }
     
     [self.tabBarItem setImage:nil];

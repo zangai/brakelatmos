@@ -14,6 +14,10 @@
 @property (nonatomic, strong) NSString* Title;
 @property (nonatomic, strong) NSString* Description;
 
+@property (nonatomic) NSInteger XCoordinate;
+@property (nonatomic) NSInteger YCoordinate;
+
 -(id)initWithJson:(NSDictionary*)json;
++(Widget*)makeWidgetWithType:(NSString*)type jsonData:(NSDictionary*)json;
 
 @end

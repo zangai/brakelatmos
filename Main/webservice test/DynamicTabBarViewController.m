@@ -44,7 +44,6 @@
 
 -(void)callHandler:(id)caller response:(NSData *) response
 {
-    //Parse JSON
     NSError *myError = nil;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&myError];
     [self makeTabsFromJSON:json];
@@ -53,8 +52,8 @@
 -(void) makeTabsFromJSON:(NSDictionary*) json
 {
     NSMutableArray* tabs = [[NSMutableArray alloc] init];
-    
-    for (NSDictionary* pageJson in json) {
+    NSMutableArray *pages = json[@"pages"];
+    for (NSDictionary* pageJson in pages) {
     //for (int i =0; i <5; i++) {
         TabBarPageViewController* tabBar = [[TabBarPageViewController alloc] initWithJson:pageJson];
         UITabBarItem* tabBarItem = [[UITabBarItem alloc] initWithTitle:tabBar.Title image:tabBar.Image tag:tabs.count];

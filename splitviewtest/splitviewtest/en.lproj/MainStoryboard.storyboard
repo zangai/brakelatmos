@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11E53" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="xUV-dj-stj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G56" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="xUV-dj-stj">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Navtableviewcontroller - gebouw + locatie-->
@@ -604,6 +604,47 @@
         <image name="wit.png" width="12" height="12"/>
         <image name="yellow.png" width="122" height="122"/>
     </resources>
+    <classes>
+        <class className="navViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/navViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="verandertekst:"/>
+                <relationship kind="outlet" name="tester" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="navnavigationcontroller" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/navnavigationcontroller.h"/>
+        </class>
+        <class className="navsplitviewcontroller" superclassName="UISplitViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/navsplitviewcontroller.h"/>
+        </class>
+        <class className="navtableviewcontroller" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/navtableviewcontroller.h"/>
+            <relationships>
+                <relationship kind="action" name="liftButton:"/>
+                <relationship kind="outlet" name="liftPlaatje1" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="liftPlaatje10" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="liftPlaatje11" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="liftPlaatje12" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="liftPlaatje13" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="liftPlaatje14" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="liftPlaatje15" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="liftPlaatje16" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="liftPlaatje17" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="liftPlaatje18" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="liftPlaatje19" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="liftPlaatje2" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="liftPlaatje20" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="liftPlaatje3" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="liftPlaatje4" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="liftPlaatje5" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="liftPlaatje6" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="liftPlaatje7" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="liftPlaatje8" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="liftPlaatje9" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
