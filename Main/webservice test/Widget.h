@@ -14,4 +14,6 @@
 @property (nonatomic, strong) NSString* Title;
 @property (nonatomic, strong) NSString* Description;
 
+-(id)initWithJson:(NSDictionary*)json;
+
 @end

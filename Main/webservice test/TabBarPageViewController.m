@@ -17,6 +17,8 @@
 
 @implementation TabBarPageViewController
 
+@synthesize Title, Image;
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight);
@@ -27,6 +29,15 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+    }
+    return self;
+}
+
+-(id)initWithJson:(NSDictionary*)json
+{
+    for (NSDictionary* obj in json) {
+        Widget* widget = [[Widget alloc] initWithJson:obj];
+        [self addWidget:widget];
     }
     return self;
 }

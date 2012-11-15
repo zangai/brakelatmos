@@ -10,6 +10,12 @@
 
 @implementation Widget
 
+-(id)initWithJson:(NSDictionary*)json
+{
+    //Do init stuff
+    return self;
+}
+
 -(void) draw
 {
     //Doe fancy draw dingen?
