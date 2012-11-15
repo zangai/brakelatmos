@@ -36,7 +36,7 @@
 	// Do any additional setup after loading the view.
     NSLog(@"Loading XML Layout");
     
-    NSString* formData = @"derp";
+    NSString* formData = @"userToken=C02417A2-E542-442C-ADBB-F2B01214F355&buildingId=1";
     
     APILibrary* lib = [[APILibrary alloc] init];
     [lib makeApiCall:@"getLayout" formdata:formData delegate:self handleBy:@selector(callHandler:response:)];
@@ -46,7 +46,8 @@
 {
     NSError *myError = nil;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&myError];
-    [self makeTabsFromJSON:json];
+    NSMutableDictionary *layout = json[@"layout"];
+    [self makeTabsFromJSON:layout];
 }
 
 -(void) makeTabsFromJSON:(NSDictionary*) json
