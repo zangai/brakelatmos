@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CarouselViewController.h"
 #import "iCarousel.h"
+#import "dataStorage.h"
 
 @interface CarouselViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
 
@@ -16,7 +17,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *label;
 @property (nonatomic) BOOL wrap;
 @property (strong, nonatomic) NSMutableArray *buildings;
-@property (strong, nonatomic) NSMutableArray *descriptions;
+@property (strong, nonatomic) NSMutableArray *images;
 @property (strong, nonatomic) NSString *GUID;
 @property (strong, nonatomic) NSString *buildingJSONString;
 @end

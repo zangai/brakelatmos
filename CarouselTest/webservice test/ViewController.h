@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "dataStorage.h"
 @interface ViewController : UIViewController
 - (IBAction)logIn:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *WachtwoordText;

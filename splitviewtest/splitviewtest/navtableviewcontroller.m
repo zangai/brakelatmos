@@ -45,10 +45,11 @@ navViewController *navController;
         
     }
     
-    UIButton *myButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    //UIButton *myButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *myButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     myButton.frame = CGRectMake(20, 20, 200, 44); // position in the parent view and set the size of the button
     [myButton setTitle:@"Click Me!" forState:UIControlStateNormal];
-    [myButton setBackgroundImage:[UIImage imageNamed:@"blue"]  forState:UIControlStateNormal];
+   // [myButton setBackgroundImage:[UIImage imageNamed:@"blue"]  forState:UIControlStateNormal];
     //[myButton setBackgroundImage:[UIImage imageNamed:@"nav-button"] forState:UIControlStateNormal];
     
     // add targets and actions
