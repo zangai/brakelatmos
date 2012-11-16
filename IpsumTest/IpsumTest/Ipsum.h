@@ -9,15 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "Token.h"
 
+typedef void (^WebRequestCallback)(NSString *response);
+
 @interface Ipsum : NSObject
 
 @property (nonatomic, strong) Token * token;
+@property (nonatomic, copy) WebRequestCallback callback;
 
 -(id)init:(NSString *)privateKey;
 
 -(BOOL)isAuthenticated;
--(void)authenticateWithUsername:(NSString *)username Password:(NSString *)password;
-
+-(void)authenticateWithUsername:(NSString *)username Password:(NSString *)password Completion:(WebRequestCallback)completion;
 
 
 @end

@@ -1,0 +1,15 @@
+{
+    "pages": [
+        {
+            "title": " Home",
+            "image": "home.png",
+            "widgets": [
+                {
+                    "x": 0,
+                    "y": 0,
+                    "type": "temp"
+                }
+            ]
+        }
+    ]
+}

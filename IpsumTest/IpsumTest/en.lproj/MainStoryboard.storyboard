@@ -15,6 +15,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIk-q0-zxO">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="201" id="1Iq-LA-vbo"/>
+                                    <constraint firstAttribute="width" constant="359" id="Nnn-GS-PQR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Get Token">
@@ -51,6 +52,15 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWa-Es-RVz">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="281" id="UbB-en-6WI"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibE-hj-rpX">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -58,24 +68,26 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rIk-q0-zxO" firstAttribute="baseline" secondItem="YyV-Ea-Jqx" secondAttribute="baseline" type="default" id="5Pg-NZ-AuH"/>
+                            <constraint firstItem="ibE-hj-rpX" firstAttribute="top" secondItem="YyV-Ea-Jqx" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1wb-KL-PoP"/>
                             <constraint firstItem="jmb-hF-o4U" firstAttribute="top" secondItem="5" secondAttribute="top" constant="20" symbolic="YES" type="default" id="8Le-Ai-Dr8"/>
                             <constraint firstAttribute="trailing" secondItem="TWa-Es-RVz" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="B4D-ag-ajY"/>
+                            <constraint firstItem="ibE-hj-rpX" firstAttribute="top" secondItem="rIk-q0-zxO" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="FD4-2X-P1r"/>
                             <constraint firstItem="rIk-q0-zxO" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Gi5-qA-Shz"/>
-                            <constraint firstItem="rIk-q0-zxO" firstAttribute="top" secondItem="5" secondAttribute="top" constant="388" id="OD2-s3-vPI"/>
+                            <constraint firstItem="ibE-hj-rpX" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="OwU-jx-WTq"/>
                             <constraint firstItem="TWa-Es-RVz" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="RqW-82-oTf"/>
+                            <constraint firstAttribute="bottom" secondItem="ibE-hj-rpX" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="fFe-nY-Gx9"/>
                             <constraint firstItem="YyV-Ea-Jqx" firstAttribute="top" secondItem="TWa-Es-RVz" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="iyQ-C2-pPw"/>
                             <constraint firstItem="rIk-q0-zxO" firstAttribute="top" secondItem="TWa-Es-RVz" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jcl-fr-Xpq"/>
+                            <constraint firstAttribute="trailing" secondItem="ibE-hj-rpX" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="kAa-1s-Ryg"/>
                             <constraint firstItem="jmb-hF-o4U" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ofm-Rj-sin"/>
-                            <constraint firstAttribute="trailing" secondItem="YyV-Ea-Jqx" secondAttribute="trailing" constant="22" id="ok9-i8-LQ5"/>
                             <constraint firstItem="YyV-Ea-Jqx" firstAttribute="leading" secondItem="rIk-q0-zxO" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="pe1-oG-Rp0"/>
-                            <constraint firstItem="YyV-Ea-Jqx" firstAttribute="bottom" secondItem="rIk-q0-zxO" secondAttribute="bottom" type="default" id="qvZ-DB-zEJ"/>
                             <constraint firstItem="TWa-Es-RVz" firstAttribute="top" secondItem="jmb-hF-o4U" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="rei-EO-J8G"/>
                             <constraint firstAttribute="trailing" secondItem="jmb-hF-o4U" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="zCq-bF-ahf"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="rawText" destination="TWa-Es-RVz" id="s9y-dA-WZa"/>
+                        <outlet property="tvResponse" destination="ibE-hj-rpX" id="8bi-2R-jkZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>

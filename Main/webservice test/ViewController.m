@@ -8,8 +8,7 @@
 
 #import "ViewController.h"
 #import "CarouselViewController.h"
-#import <CommonCrypto/CommonDigest.h>
-
+#import "APILibrary.h"
 
 @interface ViewController ()
 @end
@@ -18,7 +17,6 @@
     NSMutableData *receivedData;
     NSString *GUID;
     NSMutableArray* buildings;
-    //NSString* buildingJSONString;
     NSString *baseAPIUrl;
     NSMutableArray *trustedHosts;
 }
@@ -31,11 +29,9 @@
     [super viewDidLoad];
     GUID = @"";
     buildings = [[NSMutableArray alloc] init];
-    //buildingJSONString = @"";
     baseAPIUrl = @"https://145.48.128.101/api.ashx?command=";
     trustedHosts = [[NSMutableArray alloc] init];
     trustedHosts = [NSMutableArray arrayWithObjects:@"145.48.128.101", @"atm-vserver2.avans.nl", @"avans.nl", @"ipsum.groep-t.be", nil];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -46,23 +42,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(NSString*) sha1:(NSString*)input {
-    const char *cstr = [input cStringUsingEncoding:NSUTF8StringEncoding];
-    NSData *data = [NSData dataWithBytes:cstr length:input.length];
-    
-    uint8_t digest[CC_SHA1_DIGEST_LENGTH];
-    
-    CC_SHA1(data.bytes, data.length, digest);
-    
-    NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
-    
-    for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
-        [output appendFormat:@"%02x", digest[i]];
-    
-    return output;
-    
 }
 
 - (IBAction)logIn:(id)sender {
@@ -90,18 +69,97 @@
         }
         else
         {
-            NSString *hash = [self sha1: [password stringByAppendingString:[self sha1:password]]];
+            NSString *hash = [APILibrary sha1: [password stringByAppendingString:[APILibrary sha1:password]]];
             
             NSString *formData = @"username=";
             formData = [formData stringByAppendingString:username];
             formData = [formData stringByAppendingString:@"&hash="];
             
             formData = [formData stringByAppendingString:hash];
-            [self makeApiCall:@"login" formdata:formData];
+            //[self makeApiCall:@"login" formdata:formData];
+            
+            APILibrary* lib = [[APILibrary alloc] init];
+            [lib makeApiCall:@"login" formdata:formData delegate:self handleBy:@selector(callHandler:response:)];
         }
     }
 }
 
+-(void)callHandler:(id)caller response:(NSData *) response {
+    // Append the new data to receivedData.
+    // receivedData is an instance variable declared elsewhere.
+    [receivedData appendData:response];
+    
+    //Parse JSON
+    NSError *myError = nil;
+    NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self->receivedData options:NSJSONReadingMutableLeaves error:&myError];
+    
+    // show all values
+    for(id key in res) {
+        NSString *keyAsString = (NSString *)key;
+        NSLog(keyAsString);
+        
+        if([keyAsString isEqualToString:@"userToken"]) {
+            NSString* valueAsString = (NSString *)[res objectForKey:key];
+            NSLog(valueAsString);
+            GUID = valueAsString; //[[NSString alloc] initWithData:valueAsString encoding:NSASCIIStringEncoding];
+            
+            if([GUID isEqualToString:@"00000000-0000-0000-0000-000000000000"])
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ongeldige inloggegevens"
+                                                                message:@"De opgegeven gebruiksnaam en wachtwoord komen niet overeen met gegevens in het systeem."
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+            }
+            else
+            {
+                NSString *formData = @"userToken=";
+                formData = [formData stringByAppendingString:GUID];
+                
+                //[self makeApiCall:@"getBuildings" formdata:formData];
+                APILibrary* lib = [[APILibrary alloc] init];
+                [lib makeApiCall:@"getBuildings" formdata:formData delegate:self handleBy:@selector(callHandler:response:)];
+                break;
+            }
+        }
+        else if([keyAsString isEqualToString:@"buildings"]) {
+            id value = [res objectForKey:key];
+            [buildings addObjectsFromArray:(NSArray*)value];
+            //NSLog(valueAsString);
+            //buildingJSONString = valueAsString;
+            
+            [self performSegueWithIdentifier:@"goToCarousel" sender:self];
+            break;
+        }
+        else if([keyAsString isEqualToString:@"error"]) {
+            NSString* valueAsString = (NSString *)[res objectForKey:key];
+            NSLog(valueAsString);
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:valueAsString
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+            
+        }
+        else {
+            NSString* valueAsString = (NSString *)[res objectForKey:key];
+            NSLog(valueAsString);
+            
+            //Should not happen, but still....
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:keyAsString
+                                                            message:valueAsString
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"LOL"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+    }
+}
+
+
+/*
 -(void)makeApiCall:(NSString*)command formdata:(NSString*) parameters {
     NSLog([NSString stringWithFormat:@"API CALL - %@ - %@", command, parameters]);
     
@@ -135,6 +193,11 @@
     
     // receivedData is an instance variable declared elsewhere.
     [receivedData setLength:0];
+    
+}
+
+-(void)didReceiveData:(NSData*) data
+{
     
 }
 
@@ -223,6 +286,7 @@
     }
     [challenge.sender continueWithoutCredentialForAuthenticationChallenge:challenge];
 }
+*/
 
 - (void)viewDidUnload {
     [self setWachtwoordText:nil];
