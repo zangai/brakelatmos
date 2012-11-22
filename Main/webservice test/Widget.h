@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Widget : NSObject
+@interface Widget : UIView
 
 @property (nonatomic) NSUInteger WidgetId;
 @property (nonatomic, strong) NSString* Title;

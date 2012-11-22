@@ -9,14 +9,20 @@
 #import "Widget.h"
 #import "TemperatureWidget.h"
 
+
 @implementation Widget
 
 @synthesize WidgetId, Title, Description, XCoordinate, YCoordinate;
 
 -(id)initWithJson:(NSDictionary*)json
 {
-    XCoordinate = ((NSString*)json[@"x"]).integerValue;
-    YCoordinate = ((NSString*)json[@"y"]).integerValue;
+    NSInteger x = ((NSString*)json[@"x"]).integerValue;
+    NSInteger y = ((NSString*)json[@"y"]).integerValue;
+    NSInteger w = ((NSString*)json[@"width"]).integerValue;
+    NSInteger h = ((NSString*)json[@"height"]).integerValue;
+    self = [super initWithFrame:CGRectMake(x,y,700,400)];
+    XCoordinate = x;
+    YCoordinate = y;
     return self;
 }
 
@@ -38,7 +44,7 @@
     }
 }
 
--(void) draw
+- (void)drawRect:(CGRect)rect
 {
     NSLog(@"Normal Base Widget");
 }
