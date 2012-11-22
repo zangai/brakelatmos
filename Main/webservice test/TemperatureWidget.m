@@ -10,6 +10,8 @@
 
 @implementation TemperatureWidget
 
+@synthesize drawArea;
+
 -(id)initWithJson:(NSDictionary*)json
 {
     self = [super initWithJson:json];
@@ -20,8 +22,26 @@
     return [[TemperatureWidget alloc] initWithJson:json];
 }
 
--(void) draw
+- (void)drawRect:(CGRect)rect
 {
     NSLog(@"temperature");
+    // Drawing code
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 1.0);
+    // And draw with a blue fill color
+    CGContextSetRGBFillColor(context, 0.0, 0.0, 1.0, 1.0);
+    // Draw them with a 2.0 stroke width so they are a bit more visible.
+    CGContextSetLineWidth(context, 2.0);
+    
+    
+    CGContextAddRect(context, self.bounds);
+    CGContextStrokePath(context);
+    
+    
+    // Close the path
+    CGContextClosePath(context);
+    // Fill & stroke the path
+    CGContextDrawPath(context, kCGPathFillStroke);
 }
 @end
