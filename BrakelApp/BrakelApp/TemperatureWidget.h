@@ -7,7 +7,11 @@
 //
 
 #import "Widget.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface TemperatureWidget : Widget
+
+@property UIButton *button;
+@property CGContextRef context;
 
 @end

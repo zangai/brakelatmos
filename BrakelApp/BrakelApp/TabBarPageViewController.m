@@ -58,7 +58,7 @@
     
     NSLog([NSString stringWithFormat:@"Tab %@ loaded", Title]);
     for (Widget *widget in widgets) {
-        [widget draw];
+        [self.view addSubview:widget];
     }
     
     [self.tabBarItem setImage:Image];

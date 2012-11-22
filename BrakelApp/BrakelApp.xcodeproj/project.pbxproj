@@ -40,6 +40,7 @@
 		AA7BE6B3165681E50096E0FE /* plattegrond1.gif in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE6AE165681E40096E0FE /* plattegrond1.gif */; };
 		AA7BE6B4165681E50096E0FE /* Plattegrond2.gif in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE6AF165681E40096E0FE /* Plattegrond2.gif */; };
 		AA7BE6B5165681E50096E0FE /* plattegrond3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE6B0165681E50096E0FE /* plattegrond3.jpeg */; };
+		AACDA22B165E62240000608B /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = AACDA22A165E62240000608B /* Alarm.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,8 @@
 		AA7BE6AE165681E40096E0FE /* plattegrond1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = plattegrond1.gif; path = ../../../splitviewnormaal/plattegrond1.gif; sourceTree = "<group>"; };
 		AA7BE6AF165681E40096E0FE /* Plattegrond2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Plattegrond2.gif; path = ../../../splitviewnormaal/Plattegrond2.gif; sourceTree = "<group>"; };
 		AA7BE6B0165681E50096E0FE /* plattegrond3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = plattegrond3.jpeg; path = ../../../splitviewnormaal/plattegrond3.jpeg; sourceTree = "<group>"; };
+		AACDA229165E62240000608B /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alarm.h; path = ../Alarm.h; sourceTree = "<group>"; };
+		AACDA22A165E62240000608B /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alarm.m; path = ../Alarm.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,8 @@
 				AA7BE6551656673A0096E0FE /* APILibrary.m */,
 				AA7BE6561656673A0096E0FE /* blue.png */,
 				AA7BE6571656673A0096E0FE /* Building.h */,
+				AACDA229165E62240000608B /* Alarm.h */,
+				AACDA22A165E62240000608B /* Alarm.m */,
 				AA7BE6581656673A0096E0FE /* Building.m */,
 				AA7BE6591656673A0096E0FE /* CarouselViewController.h */,
 				AA7BE65A1656673A0096E0FE /* CarouselViewController.m */,
@@ -304,6 +309,7 @@
 				AA7BE67C1656673A0096E0FE /* TabBarPageViewController.m in Sources */,
 				AA7BE67D1656673A0096E0FE /* TemperatureWidget.m in Sources */,
 				AA7BE67E1656673A0096E0FE /* Widget.m in Sources */,
+				AACDA22B165E62240000608B /* Alarm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +427,7 @@
 				AA7BE64F165665340096E0FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
