@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA7BE62E165665340096E0FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7BE62D165665340096E0FE /* UIKit.framework */; };
+		AA7BE630165665340096E0FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7BE62F165665340096E0FE /* Foundation.framework */; };
+		AA7BE632165665340096E0FE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7BE631165665340096E0FE /* CoreGraphics.framework */; };
+		AA7BE638165665340096E0FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE636165665340096E0FE /* InfoPlist.strings */; };
+		AA7BE63A165665340096E0FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7BE639165665340096E0FE /* main.m */; };
+		AA7BE63E165665340096E0FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7BE63D165665340096E0FE /* AppDelegate.m */; };
+		AA7BE640165665340096E0FE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE63F165665340096E0FE /* Default.png */; };
+		AA7BE642165665340096E0FE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE641165665340096E0FE /* Default@2x.png */; };
+		AA7BE644165665340096E0FE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE643165665340096E0FE /* Default-568h@2x.png */; };
+		AA7BE647165665340096E0FE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE645165665340096E0FE /* MainStoryboard.storyboard */; };
+		AA7BE64A165665340096E0FE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7BE649165665340096E0FE /* LoginViewController.m */; };
+		AA7BE6701656673A0096E0FE /* APILibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7BE6551656673A0096E0FE /* APILibrary.m */; };
+		AA7BE6711656673A0096E0FE /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE6561656673A0096E0FE /* blue.png */; };
+		AA7BE6721656673A0096E0FE /* Building.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7BE6581656673A0096E0FE /* Building.m */; };
+		AA7BE6731656673A0096E0FE /* CarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7BE65A1656673A0096E0FE /* CarouselViewController.m */; };
+		AA7BE6741656673A0096E0FE /* dataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7BE65C1656673A0096E0FE /* dataStorage.m */; };
+		AA7BE6751656673A0096E0FE /* DynamicTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7BE65E1656673A0096E0FE /* DynamicTabBarViewController.m */; };
+		AA7BE6761656673A0096E0FE /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE65F1656673A0096E0FE /* green.png */; };
+		AA7BE6771656673A0096E0FE /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7BE6611656673A0096E0FE /* iCarousel.m */; };
+		AA7BE6781656673A0096E0FE /* navViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7BE6631656673A0096E0FE /* navViewController.m */; };
+		AA7BE6791656673A0096E0FE /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE6641656673A0096E0FE /* red.png */; };
+		AA7BE67A1656673A0096E0FE /* room.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7BE6661656673A0096E0FE /* room.m */; };
+		AA7BE67B1656673A0096E0FE /* RoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7BE6681656673A0096E0FE /* RoomsViewController.m */; };
+		AA7BE67C1656673A0096E0FE /* TabBarPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7BE66A1656673A0096E0FE /* TabBarPageViewController.m */; };
+		AA7BE67D1656673A0096E0FE /* TemperatureWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7BE66C1656673A0096E0FE /* TemperatureWidget.m */; };
+		AA7BE67E1656673A0096E0FE /* Widget.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7BE66E1656673A0096E0FE /* Widget.m */; };
+		AA7BE67F1656673A0096E0FE /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE66F1656673A0096E0FE /* yellow.png */; };
+		AA7BE69F1656764F0096E0FE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7BE69E1656764F0096E0FE /* QuartzCore.framework */; };
+		AA7BE6B1165681E50096E0FE /* gebouw1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE6AC165681E40096E0FE /* gebouw1.jpeg */; };
+		AA7BE6B2165681E50096E0FE /* gebouw2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE6AD165681E40096E0FE /* gebouw2.jpeg */; };
+		AA7BE6B3165681E50096E0FE /* plattegrond1.gif in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE6AE165681E40096E0FE /* plattegrond1.gif */; };
+		AA7BE6B4165681E50096E0FE /* Plattegrond2.gif in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE6AF165681E40096E0FE /* Plattegrond2.gif */; };
+		AA7BE6B5165681E50096E0FE /* plattegrond3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE6B0165681E50096E0FE /* plattegrond3.jpeg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA7BE629165665340096E0FE /* BrakelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrakelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA7BE62D165665340096E0FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AA7BE62F165665340096E0FE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AA7BE631165665340096E0FE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AA7BE635165665340096E0FE /* BrakelApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BrakelApp-Info.plist"; sourceTree = "<group>"; };
+		AA7BE637165665340096E0FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AA7BE639165665340096E0FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AA7BE63B165665340096E0FE /* BrakelApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BrakelApp-Prefix.pch"; sourceTree = "<group>"; };
+		AA7BE63C165665340096E0FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AA7BE63D165665340096E0FE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AA7BE63F165665340096E0FE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		AA7BE641165665340096E0FE /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		AA7BE643165665340096E0FE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AA7BE646165665340096E0FE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		AA7BE648165665340096E0FE /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		AA7BE649165665340096E0FE /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		AA7BE6541656673A0096E0FE /* APILibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APILibrary.h; sourceTree = "<group>"; };
+		AA7BE6551656673A0096E0FE /* APILibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APILibrary.m; sourceTree = "<group>"; };
+		AA7BE6561656673A0096E0FE /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
+		AA7BE6571656673A0096E0FE /* Building.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Building.h; sourceTree = "<group>"; };
+		AA7BE6581656673A0096E0FE /* Building.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Building.m; sourceTree = "<group>"; };
+		AA7BE6591656673A0096E0FE /* CarouselViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselViewController.h; sourceTree = "<group>"; };
+		AA7BE65A1656673A0096E0FE /* CarouselViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselViewController.m; sourceTree = "<group>"; };
+		AA7BE65B1656673A0096E0FE /* dataStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dataStorage.h; sourceTree = "<group>"; };
+		AA7BE65C1656673A0096E0FE /* dataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dataStorage.m; sourceTree = "<group>"; };
+		AA7BE65D1656673A0096E0FE /* DynamicTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicTabBarViewController.h; sourceTree = "<group>"; };
+		AA7BE65E1656673A0096E0FE /* DynamicTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicTabBarViewController.m; sourceTree = "<group>"; };
+		AA7BE65F1656673A0096E0FE /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
+		AA7BE6601656673A0096E0FE /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		AA7BE6611656673A0096E0FE /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		AA7BE6621656673A0096E0FE /* navViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = navViewController.h; sourceTree = "<group>"; };
+		AA7BE6631656673A0096E0FE /* navViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = navViewController.m; sourceTree = "<group>"; };
+		AA7BE6641656673A0096E0FE /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
+		AA7BE6651656673A0096E0FE /* room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = room.h; sourceTree = "<group>"; };
+		AA7BE6661656673A0096E0FE /* room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = room.m; sourceTree = "<group>"; };
+		AA7BE6671656673A0096E0FE /* RoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsViewController.h; sourceTree = "<group>"; };
+		AA7BE6681656673A0096E0FE /* RoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsViewController.m; sourceTree = "<group>"; };
+		AA7BE6691656673A0096E0FE /* TabBarPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarPageViewController.h; sourceTree = "<group>"; };
+		AA7BE66A1656673A0096E0FE /* TabBarPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarPageViewController.m; sourceTree = "<group>"; };
+		AA7BE66B1656673A0096E0FE /* TemperatureWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemperatureWidget.h; sourceTree = "<group>"; };
+		AA7BE66C1656673A0096E0FE /* TemperatureWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemperatureWidget.m; sourceTree = "<group>"; };
+		AA7BE66D1656673A0096E0FE /* Widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Widget.h; sourceTree = "<group>"; };
+		AA7BE66E1656673A0096E0FE /* Widget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Widget.m; sourceTree = "<group>"; };
+		AA7BE66F1656673A0096E0FE /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
+		AA7BE69E1656764F0096E0FE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AA7BE6AC165681E40096E0FE /* gebouw1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = gebouw1.jpeg; path = ../../../splitviewnormaal/gebouw1.jpeg; sourceTree = "<group>"; };
+		AA7BE6AD165681E40096E0FE /* gebouw2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = gebouw2.jpeg; path = ../../../splitviewnormaal/gebouw2.jpeg; sourceTree = "<group>"; };
+		AA7BE6AE165681E40096E0FE /* plattegrond1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = plattegrond1.gif; path = ../../../splitviewnormaal/plattegrond1.gif; sourceTree = "<group>"; };
+		AA7BE6AF165681E40096E0FE /* Plattegrond2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Plattegrond2.gif; path = ../../../splitviewnormaal/Plattegrond2.gif; sourceTree = "<group>"; };
+		AA7BE6B0165681E50096E0FE /* plattegrond3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = plattegrond3.jpeg; path = ../../../splitviewnormaal/plattegrond3.jpeg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA7BE626165665340096E0FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA7BE69F1656764F0096E0FE /* QuartzCore.framework in Frameworks */,
+				AA7BE62E165665340096E0FE /* UIKit.framework in Frameworks */,
+				AA7BE630165665340096E0FE /* Foundation.framework in Frameworks */,
+				AA7BE632165665340096E0FE /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA7BE61E165665340096E0FE = {
+			isa = PBXGroup;
+			children = (
+				AA7BE69E1656764F0096E0FE /* QuartzCore.framework */,
+				AA7BE633165665340096E0FE /* BrakelApp */,
+				AA7BE62C165665340096E0FE /* Frameworks */,
+				AA7BE62A165665340096E0FE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA7BE62A165665340096E0FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA7BE629165665340096E0FE /* BrakelApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA7BE62C165665340096E0FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA7BE62D165665340096E0FE /* UIKit.framework */,
+				AA7BE62F165665340096E0FE /* Foundation.framework */,
+				AA7BE631165665340096E0FE /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA7BE633165665340096E0FE /* BrakelApp */ = {
+			isa = PBXGroup;
+			children = (
+				AA7BE6AC165681E40096E0FE /* gebouw1.jpeg */,
+				AA7BE6AD165681E40096E0FE /* gebouw2.jpeg */,
+				AA7BE6AE165681E40096E0FE /* plattegrond1.gif */,
+				AA7BE6AF165681E40096E0FE /* Plattegrond2.gif */,
+				AA7BE6B0165681E50096E0FE /* plattegrond3.jpeg */,
+				AA7BE6541656673A0096E0FE /* APILibrary.h */,
+				AA7BE6551656673A0096E0FE /* APILibrary.m */,
+				AA7BE6561656673A0096E0FE /* blue.png */,
+				AA7BE6571656673A0096E0FE /* Building.h */,
+				AA7BE6581656673A0096E0FE /* Building.m */,
+				AA7BE6591656673A0096E0FE /* CarouselViewController.h */,
+				AA7BE65A1656673A0096E0FE /* CarouselViewController.m */,
+				AA7BE65B1656673A0096E0FE /* dataStorage.h */,
+				AA7BE65C1656673A0096E0FE /* dataStorage.m */,
+				AA7BE6811656675E0096E0FE /* WidgetPages */,
+				AA7BE65F1656673A0096E0FE /* green.png */,
+				AA7BE6601656673A0096E0FE /* iCarousel.h */,
+				AA7BE6611656673A0096E0FE /* iCarousel.m */,
+				AA7BE6621656673A0096E0FE /* navViewController.h */,
+				AA7BE6631656673A0096E0FE /* navViewController.m */,
+				AA7BE6641656673A0096E0FE /* red.png */,
+				AA7BE6651656673A0096E0FE /* room.h */,
+				AA7BE6661656673A0096E0FE /* room.m */,
+				AA7BE6671656673A0096E0FE /* RoomsViewController.h */,
+				AA7BE6681656673A0096E0FE /* RoomsViewController.m */,
+				AA7BE66F1656673A0096E0FE /* yellow.png */,
+				AA7BE63C165665340096E0FE /* AppDelegate.h */,
+				AA7BE63D165665340096E0FE /* AppDelegate.m */,
+				AA7BE645165665340096E0FE /* MainStoryboard.storyboard */,
+				AA7BE648165665340096E0FE /* LoginViewController.h */,
+				AA7BE649165665340096E0FE /* LoginViewController.m */,
+				AA7BE634165665340096E0FE /* Supporting Files */,
+			);
+			path = BrakelApp;
+			sourceTree = "<group>";
+		};
+		AA7BE634165665340096E0FE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA7BE635165665340096E0FE /* BrakelApp-Info.plist */,
+				AA7BE636165665340096E0FE /* InfoPlist.strings */,
+				AA7BE639165665340096E0FE /* main.m */,
+				AA7BE63B165665340096E0FE /* BrakelApp-Prefix.pch */,
+				AA7BE63F165665340096E0FE /* Default.png */,
+				AA7BE641165665340096E0FE /* Default@2x.png */,
+				AA7BE643165665340096E0FE /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA7BE680165667470096E0FE /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				AA7BE66B1656673A0096E0FE /* TemperatureWidget.h */,
+				AA7BE66C1656673A0096E0FE /* TemperatureWidget.m */,
+				AA7BE66D1656673A0096E0FE /* Widget.h */,
+				AA7BE66E1656673A0096E0FE /* Widget.m */,
+			);
+			name = Widgets;
+			sourceTree = "<group>";
+		};
+		AA7BE6811656675E0096E0FE /* WidgetPages */ = {
+			isa = PBXGroup;
+			children = (
+				AA7BE65D1656673A0096E0FE /* DynamicTabBarViewController.h */,
+				AA7BE65E1656673A0096E0FE /* DynamicTabBarViewController.m */,
+				AA7BE6691656673A0096E0FE /* TabBarPageViewController.h */,
+				AA7BE66A1656673A0096E0FE /* TabBarPageViewController.m */,
+				AA7BE680165667470096E0FE /* Widgets */,
+			);
+			name = WidgetPages;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA7BE628165665340096E0FE /* BrakelApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA7BE64D165665340096E0FE /* Build configuration list for PBXNativeTarget "BrakelApp" */;
+			buildPhases = (
+				AA7BE625165665340096E0FE /* Sources */,
+				AA7BE626165665340096E0FE /* Frameworks */,
+				AA7BE627165665340096E0FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BrakelApp;
+			productName = BrakelApp;
+			productReference = AA7BE629165665340096E0FE /* BrakelApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA7BE620165665340096E0FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Brakel Atmos";
+			};
+			buildConfigurationList = AA7BE623165665340096E0FE /* Build configuration list for PBXProject "BrakelApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AA7BE61E165665340096E0FE;
+			productRefGroup = AA7BE62A165665340096E0FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA7BE628165665340096E0FE /* BrakelApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA7BE627165665340096E0FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA7BE638165665340096E0FE /* InfoPlist.strings in Resources */,
+				AA7BE640165665340096E0FE /* Default.png in Resources */,
+				AA7BE642165665340096E0FE /* Default@2x.png in Resources */,
+				AA7BE644165665340096E0FE /* Default-568h@2x.png in Resources */,
+				AA7BE647165665340096E0FE /* MainStoryboard.storyboard in Resources */,
+				AA7BE6711656673A0096E0FE /* blue.png in Resources */,
+				AA7BE6761656673A0096E0FE /* green.png in Resources */,
+				AA7BE6791656673A0096E0FE /* red.png in Resources */,
+				AA7BE67F1656673A0096E0FE /* yellow.png in Resources */,
+				AA7BE6B1165681E50096E0FE /* gebouw1.jpeg in Resources */,
+				AA7BE6B2165681E50096E0FE /* gebouw2.jpeg in Resources */,
+				AA7BE6B3165681E50096E0FE /* plattegrond1.gif in Resources */,
+				AA7BE6B4165681E50096E0FE /* Plattegrond2.gif in Resources */,
+				AA7BE6B5165681E50096E0FE /* plattegrond3.jpeg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA7BE625165665340096E0FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA7BE63A165665340096E0FE /* main.m in Sources */,
+				AA7BE63E165665340096E0FE /* AppDelegate.m in Sources */,
+				AA7BE64A165665340096E0FE /* LoginViewController.m in Sources */,
+				AA7BE6701656673A0096E0FE /* APILibrary.m in Sources */,
+				AA7BE6721656673A0096E0FE /* Building.m in Sources */,
+				AA7BE6731656673A0096E0FE /* CarouselViewController.m in Sources */,
+				AA7BE6741656673A0096E0FE /* dataStorage.m in Sources */,
+				AA7BE6751656673A0096E0FE /* DynamicTabBarViewController.m in Sources */,
+				AA7BE6771656673A0096E0FE /* iCarousel.m in Sources */,
+				AA7BE6781656673A0096E0FE /* navViewController.m in Sources */,
+				AA7BE67A1656673A0096E0FE /* room.m in Sources */,
+				AA7BE67B1656673A0096E0FE /* RoomsViewController.m in Sources */,
+				AA7BE67C1656673A0096E0FE /* TabBarPageViewController.m in Sources */,
+				AA7BE67D1656673A0096E0FE /* TemperatureWidget.m in Sources */,
+				AA7BE67E1656673A0096E0FE /* Widget.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AA7BE636165665340096E0FE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA7BE637165665340096E0FE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AA7BE645165665340096E0FE /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA7BE646165665340096E0FE /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA7BE64B165665340096E0FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		AA7BE64C165665340096E0FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA7BE64E165665340096E0FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BrakelApp/BrakelApp-Prefix.pch";
+				INFOPLIST_FILE = "BrakelApp/BrakelApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AA7BE64F165665340096E0FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BrakelApp/BrakelApp-Prefix.pch";
+				INFOPLIST_FILE = "BrakelApp/BrakelApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA7BE623165665340096E0FE /* Build configuration list for PBXProject "BrakelApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA7BE64B165665340096E0FE /* Debug */,
+				AA7BE64C165665340096E0FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA7BE64D165665340096E0FE /* Build configuration list for PBXNativeTarget "BrakelApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA7BE64E165665340096E0FE /* Debug */,
+				AA7BE64F165665340096E0FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA7BE620165665340096E0FE /* Project object */;
+}
