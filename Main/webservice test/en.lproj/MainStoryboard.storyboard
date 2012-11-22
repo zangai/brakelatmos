@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YaO-Ik-YmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="791" y="1187"/>
+            <point key="canvasLocation" x="2247" y="267"/>
         </scene>
         <!--Tab Bar Page View Controller-->
         <scene sceneID="hLL-Qn-fAo">
@@ -133,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgm-hb-y7o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2091" y="267"/>
+            <point key="canvasLocation" x="4827" y="257"/>
         </scene>
         <!--Dynamic Tab Bar View Controller-->
         <scene sceneID="CCf-dK-YDp">
@@ -152,40 +152,9 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0aR-oQ-JZ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2091" y="1193"/>
+            <point key="canvasLocation" x="3507" y="257"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CarouselViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarouselViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="carousel" candidateClass="iCarousel"/>
-                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DynamicTabBarViewController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DynamicTabBarViewController.h"/>
-        </class>
-        <class className="TabBarPageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabBarPageViewController.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="logIn:"/>
-                <relationship kind="outlet" name="GebruikerText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="WachtwoordText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="tokenLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="iCarousel" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/iCarousel.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dataSource"/>
-                <relationship kind="outlet" name="delegate"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
