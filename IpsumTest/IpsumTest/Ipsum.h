@@ -22,5 +22,4 @@ typedef void (^WebRequestCallback)(NSString *response);
 -(void)authenticateWithUsername:(NSString *)username Password:(NSString *)password Completion:(WebRequestCallback)completion;
 
 
-
 @end

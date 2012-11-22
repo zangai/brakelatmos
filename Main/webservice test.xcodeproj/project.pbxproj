@@ -32,6 +32,7 @@
 		AD6C1EC5164D092E000D1F8F /* Widget.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6C1EC4164D092E000D1F8F /* Widget.m */; };
 		AD6C1EC8164D1E41000D1F8F /* DynamicTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6C1EC7164D1E41000D1F8F /* DynamicTabBarViewController.m */; };
 		AD6C1ED3164D396F000D1F8F /* APILibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6C1ED2164D396F000D1F8F /* APILibrary.m */; };
+		ADD1D5D916550028003C716A /* TemperatureWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1D5D816550028003C716A /* TemperatureWidget.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,8 @@
 		AD6C1EC7164D1E41000D1F8F /* DynamicTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicTabBarViewController.m; sourceTree = "<group>"; };
 		AD6C1ED1164D396F000D1F8F /* APILibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APILibrary.h; sourceTree = "<group>"; };
 		AD6C1ED2164D396F000D1F8F /* APILibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APILibrary.m; sourceTree = "<group>"; };
+		ADD1D5D716550028003C716A /* TemperatureWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemperatureWidget.h; sourceTree = "<group>"; };
+		ADD1D5D816550028003C716A /* TemperatureWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemperatureWidget.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,7 @@
 			children = (
 				8A47A18F1626C77F00A162B8 /* Resources */,
 				8A47A1AA1626DAE500A162B8 /* iCarousel */,
+				ADD1D5DA16550039003C716A /* Widgets */,
 				8A2E3D06161AF60F0065D459 /* AppDelegate.h */,
 				8A2E3D07161AF60F0065D459 /* AppDelegate.m */,
 				8A47A1831626BB8E00A162B8 /* CarouselViewController.m */,
@@ -128,15 +132,13 @@
 				8A47A1821626BB8E00A162B8 /* CarouselViewController.h */,
 				8A2E3D12161AF60F0065D459 /* ViewController.h */,
 				8A2E3D13161AF60F0065D459 /* ViewController.m */,
-				8A2E3CFE161AF60F0065D459 /* Supporting Files */,
-				AD6C1EC3164D092E000D1F8F /* Widget.h */,
-				AD6C1EC4164D092E000D1F8F /* Widget.m */,
 				AD6C1EBF164D090D000D1F8F /* TabBarPageViewController.h */,
 				AD6C1EC0164D090D000D1F8F /* TabBarPageViewController.m */,
 				AD6C1EC6164D1E41000D1F8F /* DynamicTabBarViewController.h */,
 				AD6C1EC7164D1E41000D1F8F /* DynamicTabBarViewController.m */,
 				AD6C1ED1164D396F000D1F8F /* APILibrary.h */,
 				AD6C1ED2164D396F000D1F8F /* APILibrary.m */,
+				8A2E3CFE161AF60F0065D459 /* Supporting Files */,
 			);
 			path = "webservice test";
 			sourceTree = "<group>";
@@ -176,6 +178,17 @@
 				8A47A18D1626BE1300A162B8 /* iCarousel.m */,
 			);
 			name = iCarousel;
+			sourceTree = "<group>";
+		};
+		ADD1D5DA16550039003C716A /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				AD6C1EC3164D092E000D1F8F /* Widget.h */,
+				AD6C1EC4164D092E000D1F8F /* Widget.m */,
+				ADD1D5D716550028003C716A /* TemperatureWidget.h */,
+				ADD1D5D816550028003C716A /* TemperatureWidget.m */,
+			);
+			name = Widgets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +273,7 @@
 				AD6C1EC5164D092E000D1F8F /* Widget.m in Sources */,
 				AD6C1EC8164D1E41000D1F8F /* DynamicTabBarViewController.m in Sources */,
 				AD6C1ED3164D396F000D1F8F /* APILibrary.m in Sources */,
+				ADD1D5D916550028003C716A /* TemperatureWidget.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

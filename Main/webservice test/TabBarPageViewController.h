@@ -11,6 +11,10 @@
 
 @interface TabBarPageViewController : UIViewController
 
+@property (nonatomic, strong) NSString* Title;
+@property (nonatomic, strong) UIImage* Image;
+
+-(id)initWithJson:(NSDictionary*)json;
 -(void) addWidget:(Widget*) widget;
 -(void) removeWidget:(Widget*) widget;
 -(void) removeWidgetAtIndex:(NSUInteger) index;

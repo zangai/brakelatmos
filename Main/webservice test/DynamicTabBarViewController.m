@@ -16,6 +16,11 @@
 
 @implementation DynamicTabBarViewController
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -31,22 +36,31 @@
 	// Do any additional setup after loading the view.
     NSLog(@"Loading XML Layout");
     
-    //APILibrary* lib = [[APILibrary alloc] init];
-    //[lib makeApiCall:@"getLayout" formdata:@""];
-    [self makeTabsFromJSON:nil];
+    NSString* formData = @"userToken=C02417A2-E542-442C-ADBB-F2B01214F355&buildingId=1";
+    
+    APILibrary* lib = [[APILibrary alloc] init];
+    [lib makeApiCall:@"getLayout" formdata:formData delegate:self handleBy:@selector(callHandler:response:)];
+}
+
+-(void)callHandler:(id)caller response:(NSData *) response
+{
+    NSError *myError = nil;
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&myError];
+    NSString* layoutString = json[@"layout"];
+    NSData* layoutData = [layoutString dataUsingEncoding:NSUTF8StringEncoding];
+    NSMutableDictionary *layout = [NSJSONSerialization JSONObjectWithData:layoutData options:NSJSONReadingMutableLeaves error:&myError];
+    [self makeTabsFromJSON:layout];
 }
 
 -(void) makeTabsFromJSON:(NSDictionary*) json
 {
     NSMutableArray* tabs = [[NSMutableArray alloc] init];
-    
-    //for (NSDictionary* obj in json) {
-        //do stuff
-    //}
-    for (int i =0; i <5; i++) {
-        TabBarPageViewController* tabBar = [[TabBarPageViewController alloc] init];
-        UITabBarItem* tabBarItem = [[UITabBarItem alloc] initWithTitle:[NSString stringWithFormat:@"Tab %d", i] image:nil tag:i];
-        UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController: tabBar];
+    NSMutableArray *pages = json[@"pages"];
+    for (NSDictionary* pageJson in pages) {
+    //for (int i =0; i <5; i++) {
+        TabBarPageViewController* tabBar = [[TabBarPageViewController alloc] initWithJson:pageJson];
+        UITabBarItem* tabBarItem = [[UITabBarItem alloc] initWithTitle:tabBar.Title image:tabBar.Image tag:tabs.count];
+        UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:tabBar];
         [controller setTabBarItem:tabBarItem];
         [tabs addObject:controller];
     }

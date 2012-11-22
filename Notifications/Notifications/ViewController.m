@@ -8,15 +8,20 @@
 
 #import "ViewController.h"
 
+
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
 
+@synthesize notificationLabel;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.notificationLabel = self.notificationLabel;
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

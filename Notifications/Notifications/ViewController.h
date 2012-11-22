@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIApplicationDelegate>
+
+@property (weak, nonatomic) IBOutlet UILabel *notificationLabel;
 
 @end

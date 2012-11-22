@@ -36,14 +36,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A0F40697164D3C56009C6846 /* Notifications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notifications.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0F40697164D3C56009C6846 /* notification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F4069B164D3C56009C6846 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A0F4069D164D3C56009C6846 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A0F4069F164D3C56009C6846 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		A0F406A3164D3C58009C6846 /* Notifications-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Notifications-Info.plist"; sourceTree = "<group>"; };
+		A0F406A3164D3C58009C6846 /* notification-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "notification-Info.plist"; sourceTree = "<group>"; };
 		A0F406A5164D3C59009C6846 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0F406A7164D3C59009C6846 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A0F406A9164D3C59009C6846 /* Notifications-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Notifications-Prefix.pch"; sourceTree = "<group>"; };
+		A0F406A9164D3C59009C6846 /* notification-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "notification-Prefix.pch"; sourceTree = "<group>"; };
 		A0F406AA164D3C59009C6846 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A0F406AB164D3C5A009C6846 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A0F406AD164D3C5A009C6846 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -52,9 +52,9 @@
 		A0F406B4164D3C5B009C6846 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A0F406B6164D3C5C009C6846 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A0F406B7164D3C5C009C6846 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A0F406BE164D3C5C009C6846 /* NotificationsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotificationsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0F406BE164D3C5C009C6846 /* notificationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = notificationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F406BF164D3C5C009C6846 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		A0F406C7164D3C5D009C6846 /* NotificationsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NotificationsTests-Info.plist"; sourceTree = "<group>"; };
+		A0F406C7164D3C5D009C6846 /* notificationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "notificationTests-Info.plist"; sourceTree = "<group>"; };
 		A0F406C9164D3C5D009C6846 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0F406CB164D3C5D009C6846 /* NotificationsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationsTests.h; sourceTree = "<group>"; };
 		A0F406CC164D3C5D009C6846 /* NotificationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationsTests.m; sourceTree = "<group>"; };
@@ -97,8 +97,8 @@
 		A0F40698164D3C56009C6846 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A0F40697164D3C56009C6846 /* Notifications.app */,
-				A0F406BE164D3C5C009C6846 /* NotificationsTests.octest */,
+				A0F40697164D3C56009C6846 /* notification.app */,
+				A0F406BE164D3C5C009C6846 /* notificationTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,10 +130,10 @@
 		A0F406A2164D3C58009C6846 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A0F406A3164D3C58009C6846 /* Notifications-Info.plist */,
+				A0F406A3164D3C58009C6846 /* notification-Info.plist */,
 				A0F406A4164D3C59009C6846 /* InfoPlist.strings */,
 				A0F406A7164D3C59009C6846 /* main.m */,
-				A0F406A9164D3C59009C6846 /* Notifications-Prefix.pch */,
+				A0F406A9164D3C59009C6846 /* notification-Prefix.pch */,
 				A0F406AD164D3C5A009C6846 /* Default.png */,
 				A0F406AF164D3C5A009C6846 /* Default@2x.png */,
 				A0F406B1164D3C5B009C6846 /* Default-568h@2x.png */,
@@ -154,7 +154,7 @@
 		A0F406C6164D3C5D009C6846 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A0F406C7164D3C5D009C6846 /* NotificationsTests-Info.plist */,
+				A0F406C7164D3C5D009C6846 /* notificationTests-Info.plist */,
 				A0F406C8164D3C5D009C6846 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -163,9 +163,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A0F40696164D3C56009C6846 /* Notifications */ = {
+		A0F40696164D3C56009C6846 /* notification */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A0F406D0164D3C5D009C6846 /* Build configuration list for PBXNativeTarget "Notifications" */;
+			buildConfigurationList = A0F406D0164D3C5D009C6846 /* Build configuration list for PBXNativeTarget "notification" */;
 			buildPhases = (
 				A0F40693164D3C56009C6846 /* Sources */,
 				A0F40694164D3C56009C6846 /* Frameworks */,
@@ -175,14 +175,14 @@
 			);
 			dependencies = (
 			);
-			name = Notifications;
+			name = notification;
 			productName = Notifications;
-			productReference = A0F40697164D3C56009C6846 /* Notifications.app */;
+			productReference = A0F40697164D3C56009C6846 /* notification.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A0F406BD164D3C5C009C6846 /* NotificationsTests */ = {
+		A0F406BD164D3C5C009C6846 /* notificationTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A0F406D3164D3C5D009C6846 /* Build configuration list for PBXNativeTarget "NotificationsTests" */;
+			buildConfigurationList = A0F406D3164D3C5D009C6846 /* Build configuration list for PBXNativeTarget "notificationTests" */;
 			buildPhases = (
 				A0F406B9164D3C5C009C6846 /* Sources */,
 				A0F406BA164D3C5C009C6846 /* Frameworks */,
@@ -194,9 +194,9 @@
 			dependencies = (
 				A0F406C4164D3C5C009C6846 /* PBXTargetDependency */,
 			);
-			name = NotificationsTests;
+			name = notificationTests;
 			productName = NotificationsTests;
-			productReference = A0F406BE164D3C5C009C6846 /* NotificationsTests.octest */;
+			productReference = A0F406BE164D3C5C009C6846 /* notificationTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -208,7 +208,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Avans Hogeschool";
 			};
-			buildConfigurationList = A0F40691164D3C55009C6846 /* Build configuration list for PBXProject "Notifications" */;
+			buildConfigurationList = A0F40691164D3C55009C6846 /* Build configuration list for PBXProject "notification" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -220,8 +220,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A0F40696164D3C56009C6846 /* Notifications */,
-				A0F406BD164D3C5C009C6846 /* NotificationsTests */,
+				A0F40696164D3C56009C6846 /* notification */,
+				A0F406BD164D3C5C009C6846 /* notificationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -289,7 +289,7 @@
 /* Begin PBXTargetDependency section */
 		A0F406C4164D3C5C009C6846 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A0F40696164D3C56009C6846 /* Notifications */;
+			target = A0F40696164D3C56009C6846 /* notification */;
 			targetProxy = A0F406C3164D3C5C009C6846 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -331,7 +331,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Patrick Decoster (X8HWXHJJLF)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -346,6 +346,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "40EDC1D2-AC3D-45A0-87B4-74BDBBF44233";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -360,7 +361,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Patrick Decoster (X8HWXHJJLF)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -368,6 +369,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "40EDC1D2-AC3D-45A0-87B4-74BDBBF44233";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -378,9 +380,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Notifications/Notifications-Prefix.pch";
-				INFOPLIST_FILE = "Notifications/Notifications-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Notifications/notification-Prefix.pch";
+				INFOPLIST_FILE = "Notifications/notification-Info.plist";
+				PRODUCT_NAME = notification;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -389,9 +391,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Notifications/Notifications-Prefix.pch";
-				INFOPLIST_FILE = "Notifications/Notifications-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Notifications/notification-Prefix.pch";
+				INFOPLIST_FILE = "Notifications/notification-Info.plist";
+				PRODUCT_NAME = notification;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -406,8 +408,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Notifications/Notifications-Prefix.pch";
-				INFOPLIST_FILE = "NotificationsTests/NotificationsTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "NotificationsTests/notificationTests-Info.plist";
+				PRODUCT_NAME = notificationTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -423,8 +425,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Notifications/Notifications-Prefix.pch";
-				INFOPLIST_FILE = "NotificationsTests/NotificationsTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "NotificationsTests/notificationTests-Info.plist";
+				PRODUCT_NAME = notificationTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -433,7 +435,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A0F40691164D3C55009C6846 /* Build configuration list for PBXProject "Notifications" */ = {
+		A0F40691164D3C55009C6846 /* Build configuration list for PBXProject "notification" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A0F406CE164D3C5D009C6846 /* Debug */,
@@ -442,21 +444,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A0F406D0164D3C5D009C6846 /* Build configuration list for PBXNativeTarget "Notifications" */ = {
+		A0F406D0164D3C5D009C6846 /* Build configuration list for PBXNativeTarget "notification" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A0F406D1164D3C5D009C6846 /* Debug */,
 				A0F406D2164D3C5D009C6846 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		A0F406D3164D3C5D009C6846 /* Build configuration list for PBXNativeTarget "NotificationsTests" */ = {
+		A0F406D3164D3C5D009C6846 /* Build configuration list for PBXNativeTarget "notificationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A0F406D4164D3C5D009C6846 /* Debug */,
 				A0F406D5164D3C5D009C6846 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
