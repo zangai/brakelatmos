@@ -76,6 +76,7 @@
             
             formData = [formData stringByAppendingString:hash];
             //[self makeApiCall:@"login" formdata:formData];
+            formData = [formData stringByAppendingString:@"&device=643b234ee3d38170b4282fee7d9ec54a505f2605e03699f114791e0ca6f3ffb1"];
             
             APILibrary* lib = [[APILibrary alloc] init];
             [lib makeApiCall:@"login" formdata:formData delegate:self handleBy:@selector(callHandler:response:)];
