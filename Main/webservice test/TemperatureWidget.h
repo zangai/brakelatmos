@@ -11,6 +11,7 @@
 
 @interface TemperatureWidget : Widget
 
-@property UIView *drawArea;
+@property UIButton *button;
+@property CGContextRef context;
 
 @end
