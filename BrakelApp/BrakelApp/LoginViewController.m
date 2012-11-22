@@ -31,6 +31,7 @@
     baseAPIUrl = @"https://145.48.128.101/api.ashx?command=";
     trustedHosts = [[NSMutableArray alloc] init];
     trustedHosts = [NSMutableArray arrayWithObjects:@"145.48.128.101", @"atm-vserver2.avans.nl", @"avans.nl", @"ipsum.groep-t.be", nil];
+    receivedData = [[NSMutableData alloc] init];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -87,7 +88,7 @@
     // Append the new data to receivedData.
     // receivedData is an instance variable declared elsewhere.
     [receivedData appendData:response];
-    
+    if(receivedData != nil){
     //Parse JSON
     NSError *myError = nil;
     NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self->receivedData options:NSJSONReadingMutableLeaves error:&myError];
@@ -119,6 +120,7 @@
                 //[self makeApiCall:@"getBuildings" formdata:formData];
                 APILibrary* lib = [[APILibrary alloc] init];
                 [lib makeApiCall:@"getBuildings" formdata:formData delegate:self handleBy:@selector(callHandler:response:)];
+                [receivedData setLength:0];//<-- test
                 break;
             }
         }
@@ -154,6 +156,7 @@
                                                   otherButtonTitles:nil];
             [alert show];
         }
+    }
     }
 }
 
