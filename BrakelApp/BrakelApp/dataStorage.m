@@ -16,6 +16,8 @@
 @synthesize buildings;
 @synthesize userToken;
 @synthesize roomID;
+@synthesize buildingId;
+@synthesize deviceId;
 
 + (id)sharedManager {
     static dataStorage *sharedMyManager = nil;
@@ -31,6 +33,8 @@
         bImages = [[NSMutableArray alloc] initWithObjects:nil];
         buildings = [[NSMutableArray alloc] initWithObjects:nil];
         userToken = [[NSString alloc] init];
+        deviceId = [[NSString alloc] init];
+        roomID = [[NSString alloc] init];
     }
     return self;
 }
@@ -55,6 +59,11 @@
         [buildings addObject:building];
     }
     
+}
+
+- (NSString*) getDeviceId
+{
+    return self.deviceId;
 }
 
 - (NSString*) getUserToken

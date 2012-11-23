@@ -144,7 +144,7 @@
     [view setUserInteractionEnabled:YES];
     NSString* tmp = [building getBuildingID];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped: )];
-    [[dataStorage sharedManager]setBuildingID:building.BuildingID];
+    [[dataStorage sharedManager] setBuildingId:building.BuildingID.integerValue];
     [view addGestureRecognizer:tap];
     return view;
 }
