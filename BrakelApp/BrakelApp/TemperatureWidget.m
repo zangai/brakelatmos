@@ -80,30 +80,11 @@
     
     NSLog([NSString stringWithFormat:@"Long %f", self.bounds.size.width]);
     [self initPlot];
-
-    [self drawGrid:rect];
     [self addSubview:button];
 }
 
 
-- (void)drawGrid:(CGRect)rect
-{
-    NSInteger prevPoint;
-    //bepaal de grote van de cellen
-    NSInteger divider = DIVIDER;
-    NSInteger cellX = self.bounds.size.width/divider;
-    NSInteger cellY = self.bounds.size.height/divider;
-    CGContextBeginPath(context);
-    CGFloat red[4] = {1.0f, 1.0f, 1.0f, 1.0f};
-    CGContextSetStrokeColor(context, red);
-    for(NSInteger i = 0; i < self.bounds.size.width/divider; i++)
-    {
-        CGContextMoveToPoint(context, self.bounds.origin.x+50, self.bounds.origin.y+50);
-        CGContextAddLineToPoint(context, i*cellX, i*cellY);
-        CGContextStrokePath(context);
-        CGContextStrokePath(context);
-    }
-}
+
 
 #pragma mark - CPTPlotDataSource methods
 -(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot {

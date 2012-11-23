@@ -9,7 +9,7 @@
 #import "CarouselViewController.h"
 
 #import "Building.h"
-#import "Alarm.h"
+
 #import "RoomsViewController.h"
 
 @interface CarouselViewController()
@@ -30,6 +30,7 @@
 @synthesize label;
 @synthesize wrap;
 @synthesize buildings;
+@synthesize al;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -141,11 +142,17 @@
     Building* building = [buildings objectAtIndex:index];
     //view  = [[UIImageView alloc]] initWithImage:image] ;
     view = [[UIImageView alloc] initWithImage:[building getImage]];
+
     [view setUserInteractionEnabled:YES];
     NSString* tmp = [building getBuildingID];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped: )];
     [[dataStorage sharedManager] setBuildingId:building.BuildingID.integerValue];
     [view addGestureRecognizer:tap];
+    if(building.hasAlarm)
+    {
+    al = [[Alarm alloc]init];
+    [al drawTheRed:view];
+    }
     return view;
 }
 
