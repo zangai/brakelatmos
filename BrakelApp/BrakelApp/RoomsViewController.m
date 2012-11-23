@@ -18,6 +18,7 @@
 
 @implementation RoomsViewController
 {
+    NSMutableArray *floors;
     NSMutableArray *rooms;
     NSMutableData *receivedData;
 }
@@ -43,9 +44,7 @@ UIButton* laatsteKnop;
     
     //End Testdata
     
-    int knopX = 40;
-    int knopY = 20;
-    NSInteger verdieping = 45;
+
     laatsteKnop = 0;
     receivedData = [[NSMutableData alloc] init];
     
@@ -68,33 +67,7 @@ UIButton* laatsteKnop;
     //[_liftPlaatje1 setEnabled:NO]; // To toggle enabled / disabled
     
     //UIButton *mijnknop = [UIButton buttonWithType:UIButtonTypeCustom];
-    for (NSInteger x = 1; x <= verdieping; x++) {
-        //[_liftPlaatje1 setEnabled:NO];
-        
-        UIButton *liftKnop = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [liftKnop setTitle:[NSString stringWithFormat:@"%d", x] forState:UIControlStateNormal];
-        
-        liftKnop.frame = CGRectMake(knopX, knopY, 70, 70);
-        liftKnop.tag = x;
-        //CGRectMake(20, 20, 20, 44); // position in the parent view and set the size of the button
-        [liftKnop setBackgroundImage:[UIImage imageNamed:@"blue"]  forState:UIControlStateNormal];
-        [liftKnop setBackgroundImage:[UIImage imageNamed:@"yellow"] forState:UIControlStateHighlighted];
-        [liftKnop setBackgroundImage:[UIImage imageNamed:@"green"] forState:UIControlStateDisabled];
-        //liftKnop.titleLabel.font = [UIFont systemFontOfSize:30];
-        [liftKnop.titleLabel setFont:[UIFont  fontWithName:@"Helvetica-Bold" size:30.0]];
-        [liftKnop addTarget:self action:@selector(knopDruk:) forControlEvents:(UIControlEvents)UIControlEventTouchDown];
-        [liftKnop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [liftKnop setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled];
-        [_deuiviewnav addSubview:liftKnop];
-        if(x % 2){
-            knopX = knopX +110;
-        } else {
-            knopY = knopY +90;
-            knopX = knopX -110;
-        }
-    }
-    _deuiviewnav.frame = CGRectMake(0, 0, 250, knopY + 80);
-    [self parseRoom];
+    
 }
 
 -(void)callHandler:(id)caller response:(NSData *) response {
@@ -102,7 +75,38 @@ UIButton* laatsteKnop;
     if(receivedData != nil){
         //Parse JSON
         NSError *myError = nil;
-        NSDictionary *floors = [NSJSONSerialization JSONObjectWithData:self->receivedData options:NSJSONReadingMutableLeaves error:&myError];
+        NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self->receivedData options:NSJSONReadingMutableLeaves error:&myError];
+        floors = [res valueForKey:@"floors"];
+        
+        
+        //Creating elevator buttons
+        int knopX = 40;
+        int knopY = 25;
+        for (NSInteger x = 0; x < floors.count; x++) {
+            UIButton *liftKnop = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+            [liftKnop setTitle:[NSString stringWithFormat:@"%d", x] forState:UIControlStateNormal];
+            liftKnop.frame = CGRectMake(knopX, knopY, 70, 70);
+            liftKnop.tag = x;
+            [liftKnop setBackgroundImage:[UIImage imageNamed:@"blue"]  forState:UIControlStateNormal];
+            [liftKnop setBackgroundImage:[UIImage imageNamed:@"yellow"] forState:UIControlStateHighlighted];
+            [liftKnop setBackgroundImage:[UIImage imageNamed:@"green"] forState:UIControlStateDisabled];
+            [liftKnop.titleLabel setFont:[UIFont  fontWithName:@"Helvetica-Bold" size:30.0]];
+            [liftKnop addTarget:self action:@selector(knopDruk:) forControlEvents:(UIControlEvents)UIControlEventTouchDown];
+            [liftKnop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [liftKnop setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled];
+            [_deuiviewnav addSubview:liftKnop];
+            if(x % 2){
+                knopY = knopY +90;
+                knopX = knopX -110;
+            }else {
+                knopX = knopX +110;
+            }
+        }
+        _deuiviewnav.frame = CGRectMake(0, 0, 250, knopY + 80);
+        
+        
+        
+        //[self parseRoom];
     }
 }
 
@@ -143,7 +147,17 @@ UIButton* laatsteKnop;
     }
     [sender setEnabled:false];
 
-
+    NSInteger currentfloor = [sender tag];
+    
+    NSMutableArray* tmp = [floors valueForKey:@"Rooms"];
+    for(int x=0; x<tmp.count; x++){
+      //  int coordX = [[tmp objectAtIndex:x]valueForKey:@"X"];
+      //  NSInteger coordY = [[tmp objectAtIndex:x]valueForKey:@"Y"];
+      //  int width = [[tmp objectAtIndex:x]valueForKey:@"Width"];
+      //  int height = [[tmp objectAtIndex:x]valueForKey:@"Heigth"];
+      //  CGRect r = CGRectMake(coordX, coordY, width, height);
+        //Room* room = [[Room alloc] initWithRect:r isEnabled:<#(bool)#> isAlarming:<#(bool)#> named:<#(NSString *)#>
+    }
     UIImage *image = [UIImage imageNamed: @"plattegrond1.gif"];  //hier komt het plaatje van de desbetreffende verdieping
     [_viewBackground setImage:image];
     
