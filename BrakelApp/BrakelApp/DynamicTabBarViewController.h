@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DynamicTabBarViewController : UITabBarController
-{
-    NSInteger buildingId;
-}
+
+@property (nonatomic) NSInteger buildingId;
 
 @end
