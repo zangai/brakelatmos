@@ -46,6 +46,7 @@
         NSString* widgetType = widgetJson[@"type"];
         Widget* widget = [Widget makeWidgetWithType:widgetType jsonData:widgetJson];
         [self addWidget:widget];
+        
     }
     return self;
 }

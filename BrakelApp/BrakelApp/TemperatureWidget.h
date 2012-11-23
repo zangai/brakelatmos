@@ -9,9 +9,10 @@
 #import "Widget.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface TemperatureWidget : Widget
+@interface TemperatureWidget : Widget <CPTPlotDataSource>
 
 @property UIButton *button;
 @property CGContextRef context;
+@property (nonatomic, strong) CPTGraphHostingView *hostView;
 
 @end

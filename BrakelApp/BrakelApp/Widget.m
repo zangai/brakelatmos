@@ -26,6 +26,7 @@
     return self;
 }
 
+
 +(Widget*)makeWidgetWithType:(NSString*)type jsonData:(NSDictionary*)json
 {
     NSArray* widgetTypes = [[NSArray alloc] initWithObjects: @"temp", @"air", @"co2", @"change", nil];
