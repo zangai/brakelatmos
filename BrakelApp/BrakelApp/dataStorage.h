@@ -16,11 +16,12 @@
 @property (nonatomic, retain) NSMutableArray *buildings;
 @property (nonatomic, retain) NSMutableArray *bImages;
 @property (nonatomic, retain) NSString* userToken;
-
+@property (nonatomic, retain) NSString* roomID;
+@property (nonatomic) NSInteger buildingId;
 @property (nonatomic, retain) NSString* deviceId;
 
 - (void) initArrayLists:(NSMutableArray *)data;
-- (void) setUserToken:(NSString *)userToken;
+- (void) setUserToken:(NSString *)ut;
 - (NSString*) getUserToken;
 - (NSString*) getDeviceId;
 

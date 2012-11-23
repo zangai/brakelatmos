@@ -10,6 +10,7 @@
 
 #import "Building.h"
 #import "Alarm.h"
+#import "RoomsViewController.h"
 
 @interface CarouselViewController()
 
@@ -130,8 +131,8 @@
     Building* building = [buildings objectAtIndex:index];
     //UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 	UIView *view = [[UIImageView alloc] initWithImage:[building getImage]];
-    Alarm *al = [[Alarm alloc]initWithFrame:(CGRectMake(0, 0, 0, 0)) :view];
-    [al setNeedsDisplay];
+    //Alarm *al = [[Alarm alloc]initWithFrame:(CGRectMake(0, 0, 0, 0)) :view];
+    //[al setNeedsDisplay];
 	return view;
 }
 
@@ -141,7 +142,9 @@
     //view  = [[UIImageView alloc]] initWithImage:image] ;
     view = [[UIImageView alloc] initWithImage:[building getImage]];
     [view setUserInteractionEnabled:YES];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped:)];
+    NSString* tmp = [building getBuildingID];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped: )];
+    [[dataStorage sharedManager] setBuildingId:building.BuildingID.integerValue];
     [view addGestureRecognizer:tap];
     return view;
 }
@@ -149,7 +152,9 @@
 - (void)imageTapped:(UITapGestureRecognizer *)sender
 {
     [self performSegueWithIdentifier:@"goToFloorView" sender:self];
+    
 }
+
 
 - (NSUInteger)numberOfPlaceholdersInCarousel:(iCarousel *)carousel
 {

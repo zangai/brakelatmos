@@ -21,4 +21,9 @@
     return image;
 }
 
+-(NSString*) getBuildingID
+{
+    return BuildingID;
+}
+
 @end

@@ -125,7 +125,7 @@
                 //[self makeApiCall:@"getBuildings" formdata:formData];
                 APILibrary* lib = [[APILibrary alloc] init];
                 [lib makeApiCall:@"getBuildings" formdata:formData delegate:self handleBy:@selector(callHandler:response:)];
-                [receivedData setLength:0];//<-- test
+                [receivedData setLength:0];//empty received data
                 break;
             }
         }

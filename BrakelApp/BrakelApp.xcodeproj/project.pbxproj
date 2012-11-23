@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA4C1299165F7CFF005EDF28 /* gebouw1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AA4C1297165F7CFF005EDF28 /* gebouw1.jpeg */; };
+		AA4C129A165F7CFF005EDF28 /* gebouw2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AA4C1298165F7CFF005EDF28 /* gebouw2.jpeg */; };
 		AA7BE62E165665340096E0FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7BE62D165665340096E0FE /* UIKit.framework */; };
 		AA7BE630165665340096E0FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7BE62F165665340096E0FE /* Foundation.framework */; };
 		AA7BE632165665340096E0FE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7BE631165665340096E0FE /* CoreGraphics.framework */; };
@@ -45,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA4C1297165F7CFF005EDF28 /* gebouw1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gebouw1.jpeg; sourceTree = "<group>"; };
+		AA4C1298165F7CFF005EDF28 /* gebouw2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gebouw2.jpeg; sourceTree = "<group>"; };
 		AA7BE629165665340096E0FE /* BrakelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrakelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7BE62D165665340096E0FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AA7BE62F165665340096E0FE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -221,13 +225,11 @@
 		AA7BE633165665340096E0FE /* BrakelApp */ = {
 			isa = PBXGroup;
 			children = (
-				AD39B818165F81F0001613B1 /* Alarm.h */,
-				AD39B819165F81F0001613B1 /* Alarm.m */,
-				AD39B80E165F8196001613B1 /* gebouw1.jpeg */,
-				AD39B80F165F8196001613B1 /* gebouw2.jpeg */,
-				AD39B810165F8196001613B1 /* plattegrond1.gif */,
-				AD39B811165F8196001613B1 /* Plattegrond2.gif */,
-				AD39B812165F8196001613B1 /* plattegrond3.jpeg */,
+				AA4C1297165F7CFF005EDF28 /* gebouw1.jpeg */,
+				AA4C1298165F7CFF005EDF28 /* gebouw2.jpeg */,
+				AA7BE6AE165681E40096E0FE /* plattegrond1.gif */,
+				AA7BE6AF165681E40096E0FE /* Plattegrond2.gif */,
+				AA7BE6B0165681E50096E0FE /* plattegrond3.jpeg */,
 				AA7BE6541656673A0096E0FE /* APILibrary.h */,
 				AA7BE6551656673A0096E0FE /* APILibrary.m */,
 				AA7BE6561656673A0096E0FE /* blue.png */,
@@ -447,11 +449,11 @@
 				AA7BE6761656673A0096E0FE /* green.png in Resources */,
 				AA7BE6791656673A0096E0FE /* red.png in Resources */,
 				AA7BE67F1656673A0096E0FE /* yellow.png in Resources */,
-				AD39B813165F8196001613B1 /* gebouw1.jpeg in Resources */,
-				AD39B814165F8196001613B1 /* gebouw2.jpeg in Resources */,
-				AD39B815165F8196001613B1 /* plattegrond1.gif in Resources */,
-				AD39B816165F8196001613B1 /* Plattegrond2.gif in Resources */,
-				AD39B817165F8196001613B1 /* plattegrond3.jpeg in Resources */,
+				AA7BE6B3165681E50096E0FE /* plattegrond1.gif in Resources */,
+				AA7BE6B4165681E50096E0FE /* Plattegrond2.gif in Resources */,
+				AA7BE6B5165681E50096E0FE /* plattegrond3.jpeg in Resources */,
+				AA4C1299165F7CFF005EDF28 /* gebouw1.jpeg in Resources */,
+				AA4C129A165F7CFF005EDF28 /* gebouw2.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

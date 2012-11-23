@@ -15,5 +15,6 @@
 @property (nonatomic, strong) NSString* AccessRights;
 
 -(UIImage*) getImage;
+-(NSString*) getBuildingID;
 
 @end
