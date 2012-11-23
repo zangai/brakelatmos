@@ -153,8 +153,6 @@
 				AA7BE6551656673A0096E0FE /* APILibrary.m */,
 				AA7BE6561656673A0096E0FE /* blue.png */,
 				AA7BE6571656673A0096E0FE /* Building.h */,
-				AACDA229165E62240000608B /* Alarm.h */,
-				AACDA22A165E62240000608B /* Alarm.m */,
 				AA7BE6581656673A0096E0FE /* Building.m */,
 				AA7BE6591656673A0096E0FE /* CarouselViewController.h */,
 				AA7BE65A1656673A0096E0FE /* CarouselViewController.m */,
@@ -309,7 +307,7 @@
 				AA7BE67C1656673A0096E0FE /* TabBarPageViewController.m in Sources */,
 				AA7BE67D1656673A0096E0FE /* TemperatureWidget.m in Sources */,
 				AA7BE67E1656673A0096E0FE /* Widget.m in Sources */,
-				AACDA22B165E62240000608B /* Alarm.m in Sources */,
+				AD39B81A165F81F0001613B1 /* Alarm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
