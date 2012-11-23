@@ -39,11 +39,14 @@
 	// Do any additional setup after loading the view.
     NSLog(@"Loading XML Layout");
     
-    NSString* userToken = [[dataStorage sharedManager] getUserToken];
-    NSString* formData = [NSString stringWithFormat:@"userToken=%@&buildingId=%d", userToken, buildingId];
     
-    //test data
-    formData = @"userToken=C02417A2-E542-442C-ADBB-F2B01214F355&buildingId=1";
+    NSString* userToken = [[dataStorage sharedManager] getUserToken];
+    
+    //testValues
+    buildingId = 1;
+    //userToken = @"C02417A2-E542-442C-ADBB-F2B01214F355";
+    
+    NSString* formData = [NSString stringWithFormat:@"userToken=%@&buildingId=%d", userToken, buildingId];
     
     APILibrary* lib = [[APILibrary alloc] init];
     [lib makeApiCall:@"getLayout" formdata:formData delegate:self handleBy:@selector(callHandler:response:)];
