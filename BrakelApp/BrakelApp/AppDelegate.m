@@ -71,6 +71,7 @@
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
 {
 	NSLog(@"Failed to get token, error: %@", error);
+    [[dataStorage sharedManager] setDeviceId:@"643b234ee3d38170b4282fee7d9ec54a505f2605e03699f114791e0ca6f3ffb1"];
 }
 
 - (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary*)userInfo

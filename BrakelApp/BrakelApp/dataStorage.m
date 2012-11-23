@@ -58,6 +58,11 @@
     
 }
 
+- (NSString*) getDeviceId
+{
+    return self.deviceId;
+}
+
 - (NSString*) getUserToken
 {
     return self.userToken;

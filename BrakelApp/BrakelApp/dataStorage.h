@@ -22,6 +22,7 @@
 - (void) initArrayLists:(NSMutableArray *)data;
 - (void) setUserToken:(NSString *)userToken;
 - (NSString*) getUserToken;
+- (NSString*) getDeviceId;
 
 + (id)sharedManager;
 @end
