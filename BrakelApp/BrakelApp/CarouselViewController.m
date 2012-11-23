@@ -10,6 +10,7 @@
 
 #import "Building.h"
 #import "Alarm.h"
+#import "RoomsViewController.h"
 
 @interface CarouselViewController()
 
@@ -149,6 +150,20 @@
 - (void)imageTapped:(UITapGestureRecognizer *)sender
 {
     [self performSegueWithIdentifier:@"goToFloorView" sender:self];
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"YOUR_SEGUE_NAME_HERE"])
+    {
+        // Get reference to the destination view controller
+        RoomsViewController *vc = [segue destinationViewController];
+        
+        // Pass any objects to the view controller here, like...
+        [vc setAPIinfo: GUID 
+    }
 }
 
 - (NSUInteger)numberOfPlaceholdersInCarousel:(iCarousel *)carousel

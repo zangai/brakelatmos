@@ -82,6 +82,9 @@ UIButton* laatsteKnop;
     _deuiviewnav.frame = CGRectMake(0, 0, 250, knopY + 80);
     [self parseRoom];
 }
+
+-(void)setAPIinfo:(NSString*)GUID 
+
 - (void)parseRoom
 {
     for(Room *roomie in rooms){
