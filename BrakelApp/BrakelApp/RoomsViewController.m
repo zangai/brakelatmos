@@ -88,7 +88,10 @@ UIButton* laatsteKnop;
     [self parseRoom];
 }
 
--(void)setAPIinfo:(NSString*)GUID 
+-(void)setAPIinfo:(NSString*)GUID
+{
+    
+}
 
 - (void)parseRoom
 {

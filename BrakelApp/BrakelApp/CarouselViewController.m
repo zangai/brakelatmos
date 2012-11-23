@@ -143,29 +143,17 @@
     view = [[UIImageView alloc] initWithImage:[building getImage]];
     [view setUserInteractionEnabled:YES];
     NSString* tmp = [building getBuildingID];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped:)];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped: )];
     [view addGestureRecognizer:tap];
     return view;
 }
 
-- (void)imageTapped:(UITapGestureRecognizer *)sender //buildingID:(NSString*)bID
+- (void)imageTapped:(UITapGestureRecognizer *)sender
 {
     [self performSegueWithIdentifier:@"goToFloorView" sender:self];
     
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Make sure your segue name in storyboard is the same as this line
-    if ([[segue identifier] isEqualToString:@"YOUR_SEGUE_NAME_HERE"])
-    {
-        // Get reference to the destination view controller
-        RoomsViewController *vc = [segue destinationViewController];
-        
-        // Pass any objects to the view controller here, like...
-        [vc setAPIinfo: GUID 
-    }
-}
 
 - (NSUInteger)numberOfPlaceholdersInCarousel:(iCarousel *)carousel
 {
