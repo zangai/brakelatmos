@@ -17,6 +17,8 @@
 @property (nonatomic, retain) NSMutableArray *bImages;
 @property (nonatomic, retain) NSString* userToken;
 
+@property (nonatomic, retain) NSString* deviceId;
+
 - (void) initArrayLists:(NSMutableArray *)data;
 - (void) setUserToken:(NSString *)userToken;
 - (NSString*) getUserToken;
