@@ -35,7 +35,10 @@ UIButton* laatsteKnop;
     [rooms addObject:room];
     [rooms addObject:room2];
     
+    
     //End Testdata
+    
+    dataStorage *sharedManager = [dataStorage sharedManager];
     
     laatsteKnop = 0;
     
@@ -117,7 +120,8 @@ UIButton* laatsteKnop;
     if([segue.identifier isEqual:@"goToInformatiepagina"])
     {
         DynamicTabBarViewController* dest = (DynamicTabBarViewController*)segue.destinationViewController;
-        dest.buildingId =  1; // get buildingId
+        [[dataStorage sharedManager]setBuildingId:1];
+        [[dataStorage sharedManager]setRoomID:@""];
     }
 }
 

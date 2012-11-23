@@ -14,7 +14,8 @@
 
 @synthesize bImages;
 @synthesize buildings;
-
+@synthesize userToken;
+@synthesize roomID;
 
 + (id)sharedManager {
     static dataStorage *sharedMyManager = nil;
@@ -29,6 +30,7 @@
     if (self = [super init]) {
         bImages = [[NSMutableArray alloc] initWithObjects:nil];
         buildings = [[NSMutableArray alloc] initWithObjects:nil];
+        userToken = [[NSString alloc] init];
     }
     return self;
 }
@@ -60,10 +62,15 @@
     return self.userToken;
 }
 
-- (void) setUserToken:(NSString *)userToken
+- (void) setUserToken:(NSString *)ut
 {
-    self.userToken = userToken;
+    self->userToken = ut;
     //start 20 minute timer, on complete invalidate token and getnew one
+}
+
+-(void) setRoomID:(NSString *)RID
+{
+    self->roomID = RID;
 }
 
 @end
