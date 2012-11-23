@@ -11,15 +11,19 @@
 #import <QuartzCore/QuartzCore.h>
 #import "dataStorage.h"
 #import "DynamicTabBarViewController.h"
+#import "APILibrary.h"
 
 @interface RoomsViewController ()
-
 @end
 
 @implementation RoomsViewController
 {
     NSMutableArray *rooms;
+    NSMutableData *receivedData;
 }
+
+@synthesize buildingIdentifier;
+
 UIButton* laatsteKnop;
 
 - (void)viewDidLoad
@@ -34,28 +38,30 @@ UIButton* laatsteKnop;
     room2 = [room2 initWithRect:CGRectMake(120, 160, 100, 100) isEnabled:true isAlarming:false named:@"Room2"];
     [rooms addObject:room];
     [rooms addObject:room2];
-    
+    UIImage *image = [UIImage imageNamed: @"gebouw1.jpeg"];
+    [_viewBackground setImage:image];
     
     //End Testdata
-    
-    dataStorage *sharedManager = [dataStorage sharedManager];
-    
-    laatsteKnop = 0;
     
     int knopX = 40;
     int knopY = 20;
     NSInteger verdieping = 45;
+    laatsteKnop = 0;
+    receivedData = [[NSMutableData alloc] init];
     
-    NSString* userToken = [[dataStorage sharedManager] getUserToken];
-    //api call met deze userToken
+    dataStorage *sharedManager = [dataStorage sharedManager];    
+    buildingIdentifier = sharedManager.buildingId;
+    NSString* userToken = [sharedManager getUserToken];
+    APILibrary* lib = [[APILibrary alloc] init];
     
-    //UIColor *background = [[UIColor alloc]
-     //                      initWithPatternImage:[UIImage imageNamed:@"gebouw1.jpeg"]];
-    
-    //s//elf.mainView.backgroundColor = background;
+    NSString *formData = @"userToken=";
+    formData = [formData stringByAppendingString:userToken];
+    formData = [formData stringByAppendingString:@"&buildingId="];
+    formData = [formData stringByAppendingFormat:@"%d", buildingIdentifier];
+    formData = [formData stringByAppendingString:@"&getRooms=true"];
+    [lib makeApiCall:@"getFloors" formdata:formData delegate:self handleBy:@selector(callHandler:response:)];
 
-    UIImage *image = [UIImage imageNamed: @"gebouw1.jpeg"];
-    [_viewBackground setImage:image];
+    
     //_testlabel.text = @"test";
     
     
@@ -91,9 +97,13 @@ UIButton* laatsteKnop;
     [self parseRoom];
 }
 
--(void)setAPIinfo:(NSString*)GUID
-{
-    
+-(void)callHandler:(id)caller response:(NSData *) response {
+    [receivedData appendData:response];
+    if(receivedData != nil){
+        //Parse JSON
+        NSError *myError = nil;
+        NSDictionary *floors = [NSJSONSerialization JSONObjectWithData:self->receivedData options:NSJSONReadingMutableLeaves error:&myError];
+    }
 }
 
 - (void)parseRoom
@@ -111,7 +121,8 @@ UIButton* laatsteKnop;
     }
 }
 
--(IBAction)buttonclick:(id)sender{
+-(IBAction)buttonclick:(id)sender
+{
     [self performSegueWithIdentifier:@"goToInformatiepagina" sender:sender];
 }
 
@@ -120,7 +131,7 @@ UIButton* laatsteKnop;
     if([segue.identifier isEqual:@"goToInformatiepagina"])
     {
         DynamicTabBarViewController* dest = (DynamicTabBarViewController*)segue.destinationViewController;
-        [[dataStorage sharedManager]setBuildingId:1];
+        [[dataStorage sharedManager]setBuildingId:buildingIdentifier];
         [[dataStorage sharedManager]setRoomID:@""];
     }
 }

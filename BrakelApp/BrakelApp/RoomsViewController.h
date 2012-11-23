@@ -12,5 +12,6 @@
 @property (strong, nonatomic) IBOutlet UIView *deuiviewnav;
 @property (strong, nonatomic) IBOutlet UIView *mainView;
 @property (strong, nonatomic) IBOutlet UIImageView *viewBackground;
+@property (nonatomic) int buildingIdentifier;
 
 @end

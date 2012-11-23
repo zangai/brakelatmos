@@ -144,9 +144,8 @@
     view = [[UIImageView alloc] initWithImage:[building getImage]];
 
     [view setUserInteractionEnabled:YES];
-    NSString* tmp = [building getBuildingID];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped: )];
-    [[dataStorage sharedManager] setBuildingId:building.BuildingID.integerValue];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped:)];
+
     [view addGestureRecognizer:tap];
     if(building.hasAlarm)
     {
@@ -158,6 +157,8 @@
 
 - (void)imageTapped:(UITapGestureRecognizer *)sender
 {
+    Building* building = [buildings objectAtIndex:selectedIndex];
+    [[dataStorage sharedManager] setBuildingId:building.BuildingID.integerValue];
     [self performSegueWithIdentifier:@"goToFloorView" sender:self];
     
 }
