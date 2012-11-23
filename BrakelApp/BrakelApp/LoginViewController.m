@@ -123,9 +123,10 @@
                 formData = [formData stringByAppendingString:GUID];
                 
                 //[self makeApiCall:@"getBuildings" formdata:formData];
+                [receivedData setLength:0];//empty received data
                 APILibrary* lib = [[APILibrary alloc] init];
                 [lib makeApiCall:@"getBuildings" formdata:formData delegate:self handleBy:@selector(callHandler:response:)];
-                [receivedData setLength:0];//empty received data
+                
                 break;
             }
         }
