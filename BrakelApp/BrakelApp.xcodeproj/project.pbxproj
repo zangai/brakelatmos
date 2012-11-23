@@ -37,13 +37,9 @@
 		AA7BE67E1656673A0096E0FE /* Widget.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7BE66E1656673A0096E0FE /* Widget.m */; };
 		AA7BE67F1656673A0096E0FE /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE66F1656673A0096E0FE /* yellow.png */; };
 		AA7BE69F1656764F0096E0FE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7BE69E1656764F0096E0FE /* QuartzCore.framework */; };
-		AD39B813165F8196001613B1 /* gebouw1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AD39B80E165F8196001613B1 /* gebouw1.jpeg */; };
-		AD39B814165F8196001613B1 /* gebouw2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AD39B80F165F8196001613B1 /* gebouw2.jpeg */; };
-		AD39B815165F8196001613B1 /* plattegrond1.gif in Resources */ = {isa = PBXBuildFile; fileRef = AD39B810165F8196001613B1 /* plattegrond1.gif */; };
-		AD39B816165F8196001613B1 /* Plattegrond2.gif in Resources */ = {isa = PBXBuildFile; fileRef = AD39B811165F8196001613B1 /* Plattegrond2.gif */; };
-		AD39B817165F8196001613B1 /* plattegrond3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AD39B812165F8196001613B1 /* plattegrond3.jpeg */; };
 		AD39B81A165F81F0001613B1 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = AD39B819165F81F0001613B1 /* Alarm.m */; };
 		B04250BC165F8F9D009A2384 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B04250BB165F8F9D009A2384 /* libCorePlot-CocoaTouch.a */; };
+		B04250C4165F90E8009A2384 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = B04250C3165F90E8009A2384 /* Alarm.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,12 +90,6 @@
 		AA7BE66E1656673A0096E0FE /* Widget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Widget.m; sourceTree = "<group>"; };
 		AA7BE66F1656673A0096E0FE /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
 		AA7BE69E1656764F0096E0FE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		AD39B80E165F8196001613B1 /* gebouw1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gebouw1.jpeg; sourceTree = "<group>"; };
-		AD39B80F165F8196001613B1 /* gebouw2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gebouw2.jpeg; sourceTree = "<group>"; };
-		AD39B810165F8196001613B1 /* plattegrond1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = plattegrond1.gif; sourceTree = "<group>"; };
-		AD39B811165F8196001613B1 /* Plattegrond2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Plattegrond2.gif; sourceTree = "<group>"; };
-		AD39B812165F8196001613B1 /* plattegrond3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = plattegrond3.jpeg; sourceTree = "<group>"; };
-		AD39B818165F81F0001613B1 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
 		AD39B819165F81F0001613B1 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 		B0425071165F8F9C009A2384 /* CorePlot-CocoaTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CorePlot-CocoaTouch.h"; sourceTree = "<group>"; };
 		B0425072165F8F9C009A2384 /* CPTAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTAnnotation.h; sourceTree = "<group>"; };
@@ -176,6 +166,8 @@
 		B04250B9165F8F9D009A2384 /* NSDecimalNumberExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDecimalNumberExtensions.h; sourceTree = "<group>"; };
 		B04250BA165F8F9D009A2384 /* NSNumberExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSNumberExtensions.h; sourceTree = "<group>"; };
 		B04250BB165F8F9D009A2384 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
+		B04250C2165F90E8009A2384 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
+		B04250C3165F90E8009A2384 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,11 +217,10 @@
 		AA7BE633165665340096E0FE /* BrakelApp */ = {
 			isa = PBXGroup;
 			children = (
+				B04250C2165F90E8009A2384 /* Alarm.h */,
+				B04250C3165F90E8009A2384 /* Alarm.m */,
 				AA4C1297165F7CFF005EDF28 /* gebouw1.jpeg */,
 				AA4C1298165F7CFF005EDF28 /* gebouw2.jpeg */,
-				AA7BE6AE165681E40096E0FE /* plattegrond1.gif */,
-				AA7BE6AF165681E40096E0FE /* Plattegrond2.gif */,
-				AA7BE6B0165681E50096E0FE /* plattegrond3.jpeg */,
 				AA7BE6541656673A0096E0FE /* APILibrary.h */,
 				AA7BE6551656673A0096E0FE /* APILibrary.m */,
 				AA7BE6561656673A0096E0FE /* blue.png */,
@@ -449,9 +440,6 @@
 				AA7BE6761656673A0096E0FE /* green.png in Resources */,
 				AA7BE6791656673A0096E0FE /* red.png in Resources */,
 				AA7BE67F1656673A0096E0FE /* yellow.png in Resources */,
-				AA7BE6B3165681E50096E0FE /* plattegrond1.gif in Resources */,
-				AA7BE6B4165681E50096E0FE /* Plattegrond2.gif in Resources */,
-				AA7BE6B5165681E50096E0FE /* plattegrond3.jpeg in Resources */,
 				AA4C1299165F7CFF005EDF28 /* gebouw1.jpeg in Resources */,
 				AA4C129A165F7CFF005EDF28 /* gebouw2.jpeg in Resources */,
 			);
@@ -480,6 +468,7 @@
 				AA7BE67D1656673A0096E0FE /* TemperatureWidget.m in Sources */,
 				AA7BE67E1656673A0096E0FE /* Widget.m in Sources */,
 				AD39B81A165F81F0001613B1 /* Alarm.m in Sources */,
+				B04250C4165F90E8009A2384 /* Alarm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +555,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/BrakelApp\"",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -581,6 +571,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/BrakelApp\"",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
