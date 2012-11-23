@@ -142,12 +142,13 @@
     //view  = [[UIImageView alloc]] initWithImage:image] ;
     view = [[UIImageView alloc] initWithImage:[building getImage]];
     [view setUserInteractionEnabled:YES];
+    NSString* tmp = [building getBuildingID];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped:)];
     [view addGestureRecognizer:tap];
     return view;
 }
 
-- (void)imageTapped:(UITapGestureRecognizer *)sender
+- (void)imageTapped:(UITapGestureRecognizer *)sender //buildingID:(NSString*)bID
 {
     [self performSegueWithIdentifier:@"goToFloorView" sender:self];
     
