@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA4C1299165F7CFF005EDF28 /* gebouw1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AA4C1297165F7CFF005EDF28 /* gebouw1.jpeg */; };
+		AA4C129A165F7CFF005EDF28 /* gebouw2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AA4C1298165F7CFF005EDF28 /* gebouw2.jpeg */; };
 		AA7BE62E165665340096E0FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7BE62D165665340096E0FE /* UIKit.framework */; };
 		AA7BE630165665340096E0FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7BE62F165665340096E0FE /* Foundation.framework */; };
 		AA7BE632165665340096E0FE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7BE631165665340096E0FE /* CoreGraphics.framework */; };
@@ -35,8 +37,6 @@
 		AA7BE67E1656673A0096E0FE /* Widget.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7BE66E1656673A0096E0FE /* Widget.m */; };
 		AA7BE67F1656673A0096E0FE /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE66F1656673A0096E0FE /* yellow.png */; };
 		AA7BE69F1656764F0096E0FE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7BE69E1656764F0096E0FE /* QuartzCore.framework */; };
-		AA7BE6B1165681E50096E0FE /* gebouw1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE6AC165681E40096E0FE /* gebouw1.jpeg */; };
-		AA7BE6B2165681E50096E0FE /* gebouw2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE6AD165681E40096E0FE /* gebouw2.jpeg */; };
 		AA7BE6B3165681E50096E0FE /* plattegrond1.gif in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE6AE165681E40096E0FE /* plattegrond1.gif */; };
 		AA7BE6B4165681E50096E0FE /* Plattegrond2.gif in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE6AF165681E40096E0FE /* Plattegrond2.gif */; };
 		AA7BE6B5165681E50096E0FE /* plattegrond3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE6B0165681E50096E0FE /* plattegrond3.jpeg */; };
@@ -44,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA4C1297165F7CFF005EDF28 /* gebouw1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gebouw1.jpeg; sourceTree = "<group>"; };
+		AA4C1298165F7CFF005EDF28 /* gebouw2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gebouw2.jpeg; sourceTree = "<group>"; };
 		AA7BE629165665340096E0FE /* BrakelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrakelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7BE62D165665340096E0FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AA7BE62F165665340096E0FE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -89,8 +91,6 @@
 		AA7BE66E1656673A0096E0FE /* Widget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Widget.m; sourceTree = "<group>"; };
 		AA7BE66F1656673A0096E0FE /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
 		AA7BE69E1656764F0096E0FE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		AA7BE6AC165681E40096E0FE /* gebouw1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = gebouw1.jpeg; path = ../../../splitviewnormaal/gebouw1.jpeg; sourceTree = "<group>"; };
-		AA7BE6AD165681E40096E0FE /* gebouw2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = gebouw2.jpeg; path = ../../../splitviewnormaal/gebouw2.jpeg; sourceTree = "<group>"; };
 		AA7BE6AE165681E40096E0FE /* plattegrond1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = plattegrond1.gif; path = ../../../splitviewnormaal/plattegrond1.gif; sourceTree = "<group>"; };
 		AA7BE6AF165681E40096E0FE /* Plattegrond2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Plattegrond2.gif; path = ../../../splitviewnormaal/Plattegrond2.gif; sourceTree = "<group>"; };
 		AA7BE6B0165681E50096E0FE /* plattegrond3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = plattegrond3.jpeg; path = ../../../splitviewnormaal/plattegrond3.jpeg; sourceTree = "<group>"; };
@@ -144,8 +144,8 @@
 		AA7BE633165665340096E0FE /* BrakelApp */ = {
 			isa = PBXGroup;
 			children = (
-				AA7BE6AC165681E40096E0FE /* gebouw1.jpeg */,
-				AA7BE6AD165681E40096E0FE /* gebouw2.jpeg */,
+				AA4C1297165F7CFF005EDF28 /* gebouw1.jpeg */,
+				AA4C1298165F7CFF005EDF28 /* gebouw2.jpeg */,
 				AA7BE6AE165681E40096E0FE /* plattegrond1.gif */,
 				AA7BE6AF165681E40096E0FE /* Plattegrond2.gif */,
 				AA7BE6B0165681E50096E0FE /* plattegrond3.jpeg */,
@@ -279,11 +279,11 @@
 				AA7BE6761656673A0096E0FE /* green.png in Resources */,
 				AA7BE6791656673A0096E0FE /* red.png in Resources */,
 				AA7BE67F1656673A0096E0FE /* yellow.png in Resources */,
-				AA7BE6B1165681E50096E0FE /* gebouw1.jpeg in Resources */,
-				AA7BE6B2165681E50096E0FE /* gebouw2.jpeg in Resources */,
 				AA7BE6B3165681E50096E0FE /* plattegrond1.gif in Resources */,
 				AA7BE6B4165681E50096E0FE /* Plattegrond2.gif in Resources */,
 				AA7BE6B5165681E50096E0FE /* plattegrond3.jpeg in Resources */,
+				AA4C1299165F7CFF005EDF28 /* gebouw1.jpeg in Resources */,
+				AA4C129A165F7CFF005EDF28 /* gebouw2.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
