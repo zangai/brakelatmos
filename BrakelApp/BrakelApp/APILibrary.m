@@ -20,6 +20,7 @@
 
 -(id) init
 {
+    //TODO: Terugzetten op https later. Nu voor debug doeleinden op gewoon http gezet.
     baseAPIUrl = @"http://145.48.128.101/api.ashx?command=";
     trustedHosts = [[NSMutableArray alloc] init];
     trustedHosts = [NSMutableArray arrayWithObjects:@"145.48.128.101", @"atm-vserver2.avans.nl", @"avans.nl", @"ipsum.groep-t.be", nil];

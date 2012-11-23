@@ -9,6 +9,9 @@
 #import "RoomsViewController.h"
 #import "room.h"
 #import <QuartzCore/QuartzCore.h>
+#import "dataStorage.h"
+#import "DynamicTabBarViewController.h"
+
 @interface RoomsViewController ()
 
 @end
@@ -40,6 +43,8 @@ UIButton* laatsteKnop;
     int knopY = 20;
     NSInteger verdieping = 45;
     
+    NSString* userToken = [[dataStorage sharedManager] getUserToken];
+    //api call met deze userToken
     
     //UIColor *background = [[UIColor alloc]
      //                      initWithPatternImage:[UIImage imageNamed:@"gebouw1.jpeg"]];
@@ -102,6 +107,15 @@ UIButton* laatsteKnop;
 
 -(IBAction)buttonclick:(id)sender{
     [self performSegueWithIdentifier:@"goToInformatiepagina" sender:sender];
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqual:@"goToInformatiepagina"])
+    {
+        DynamicTabBarViewController* dest = (DynamicTabBarViewController*)segue.destinationViewController;
+        dest.buildingId =  1; // get buildingId
+    }
 }
 
 - (IBAction)knopDruk:(id)sender

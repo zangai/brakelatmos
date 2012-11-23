@@ -10,4 +10,6 @@
 
 @interface DynamicTabBarViewController : UITabBarController
 
+@property (nonatomic) NSInteger buildingId;
+
 @end
