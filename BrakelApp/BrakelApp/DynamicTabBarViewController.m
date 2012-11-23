@@ -9,12 +9,15 @@
 #import "DynamicTabBarViewController.h"
 #import "TabBarPageViewController.h"
 #import "APILibrary.h"
+#import "dataStorage.h"
 
 @interface DynamicTabBarViewController ()
 
 @end
 
 @implementation DynamicTabBarViewController
+
+@synthesize buildingId;
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
@@ -36,7 +39,11 @@
 	// Do any additional setup after loading the view.
     NSLog(@"Loading XML Layout");
     
-    NSString* formData = @"userToken=C02417A2-E542-442C-ADBB-F2B01214F355&buildingId=1";
+    NSString* userToken = [[dataStorage sharedManager] getUserToken];
+    NSString* formData = [NSString stringWithFormat:@"userToken=%@&buildingId=%d", userToken, buildingId];
+    
+    //test data
+    formData = @"userToken=C02417A2-E542-442C-ADBB-F2B01214F355&buildingId=1";
     
     APILibrary* lib = [[APILibrary alloc] init];
     [lib makeApiCall:@"getLayout" formdata:formData delegate:self handleBy:@selector(callHandler:response:)];

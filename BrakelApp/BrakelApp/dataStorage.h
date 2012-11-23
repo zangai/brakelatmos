@@ -15,8 +15,11 @@
 
 @property (nonatomic, retain) NSMutableArray *buildings;
 @property (nonatomic, retain) NSMutableArray *bImages;
-- (void) initArrayLists:(NSMutableArray *)data;
+@property (nonatomic, retain) NSString* userToken;
 
+- (void) initArrayLists:(NSMutableArray *)data;
+- (void) setUserToken:(NSString *)userToken;
+- (NSString*) getUserToken;
 
 + (id)sharedManager;
 @end

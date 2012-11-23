@@ -115,6 +115,8 @@
             }
             else
             {
+                [[dataStorage sharedManager] setUserToken:GUID];
+                
                 NSString *formData = @"userToken=";
                 formData = [formData stringByAppendingString:GUID];
                 
@@ -128,8 +130,7 @@
         else if([keyAsString isEqualToString:@"buildings"]) {
             id value = [res objectForKey:key];
             [buildings addObjectsFromArray:(NSArray*)value];
-            dataStorage *ds = [dataStorage sharedManager];
-            [ds initArrayLists:buildings];
+            [[dataStorage sharedManager] initArrayLists:buildings];
             
             [self performSegueWithIdentifier:@"goToCarousel" sender:self];
             break;

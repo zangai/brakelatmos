@@ -55,4 +55,15 @@
     
 }
 
+- (NSString*) getUserToken
+{
+    return self.userToken;
+}
+
+- (void) setUserToken:(NSString *)userToken
+{
+    self.userToken = userToken;
+    //start 20 minute timer, on complete invalidate token and getnew one
+}
+
 @end

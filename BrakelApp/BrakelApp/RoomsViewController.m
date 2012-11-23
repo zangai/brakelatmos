@@ -9,6 +9,8 @@
 #import "RoomsViewController.h"
 #import "room.h"
 #import <QuartzCore/QuartzCore.h>
+#import "dataStorage.h"
+
 @interface RoomsViewController ()
 
 @end
@@ -40,6 +42,8 @@ UIButton* laatsteKnop;
     int knopY = 20;
     NSInteger verdieping = 45;
     
+    NSString* userToken = [[dataStorage sharedManager] getUserToken];
+    //api call met deze userToken
     
     //UIColor *background = [[UIColor alloc]
      //                      initWithPatternImage:[UIImage imageNamed:@"gebouw1.jpeg"]];
