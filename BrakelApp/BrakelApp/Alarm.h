@@ -10,9 +10,7 @@
 
 @interface Alarm : UIView
 
-- (void)drawOverlay:(CGRect)rect view:(UIView*)overlayView;
-- (id)initWithFrame:(CGRect)frame : (UIView*) viewa;
+- (void)drawTheRed:(UIView*)view;
 
-@property UIView *viewForOverlay;
 
 @end

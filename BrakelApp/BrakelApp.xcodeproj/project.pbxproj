@@ -39,6 +39,7 @@
 		AA7BE69F1656764F0096E0FE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7BE69E1656764F0096E0FE /* QuartzCore.framework */; };
 		B04250BC165F8F9D009A2384 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B04250BB165F8F9D009A2384 /* libCorePlot-CocoaTouch.a */; };
 		B04250C7165F91EB009A2384 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = B04250C6165F91EB009A2384 /* Alarm.m */; };
+		B04250CA165FA0D4009A2384 /* AlarmTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = B04250C9165FA0D4009A2384 /* AlarmTestView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -166,6 +167,8 @@
 		B04250BB165F8F9D009A2384 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
 		B04250C5165F91EB009A2384 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
 		B04250C6165F91EB009A2384 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
+		B04250C8165FA0D3009A2384 /* AlarmTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmTestView.h; sourceTree = "<group>"; };
+		B04250C9165FA0D4009A2384 /* AlarmTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmTestView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +249,8 @@
 				AA7BE648165665340096E0FE /* LoginViewController.h */,
 				AA7BE649165665340096E0FE /* LoginViewController.m */,
 				AA7BE634165665340096E0FE /* Supporting Files */,
+				B04250C8165FA0D3009A2384 /* AlarmTestView.h */,
+				B04250C9165FA0D4009A2384 /* AlarmTestView.m */,
 			);
 			path = BrakelApp;
 			sourceTree = "<group>";
@@ -466,6 +471,7 @@
 				AA7BE67D1656673A0096E0FE /* TemperatureWidget.m in Sources */,
 				AA7BE67E1656673A0096E0FE /* Widget.m in Sources */,
 				B04250C7165F91EB009A2384 /* Alarm.m in Sources */,
+				B04250CA165FA0D4009A2384 /* AlarmTestView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,6 +32,7 @@
     trustedHosts = [[NSMutableArray alloc] init];
     trustedHosts = [NSMutableArray arrayWithObjects:@"145.48.128.101", @"atm-vserver2.avans.nl", @"avans.nl", @"ipsum.groep-t.be", nil];
     receivedData = [[NSMutableData alloc] init];
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

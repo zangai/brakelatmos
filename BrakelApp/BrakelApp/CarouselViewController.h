@@ -10,6 +10,7 @@
 #import "CarouselViewController.h"
 #import "iCarousel.h"
 #import "dataStorage.h"
+#import "Alarm.h"
 
 @interface CarouselViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
 
@@ -20,4 +21,6 @@
 @property (strong, nonatomic) NSMutableArray *images;
 @property (strong, nonatomic) NSString *GUID;
 @property (strong, nonatomic) NSString *buildingJSONString;
+@property (nonatomic, strong) Alarm* al;
+
 @end

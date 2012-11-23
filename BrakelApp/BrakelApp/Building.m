@@ -10,7 +10,7 @@
 
 @implementation Building
 
-@synthesize BuildingID, BuildingName, AccessRights;
+@synthesize BuildingID, BuildingName, AccessRights, hasAlarm;
 
 -(UIImage*) getImage
 {
@@ -24,6 +24,11 @@
 -(NSString*) getBuildingID
 {
     return BuildingID;
+}
+
+-(Boolean*) hasAlarm
+{    
+    return hasAlarm;
 }
 
 @end

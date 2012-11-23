@@ -10,35 +10,26 @@
 
 @implementation Alarm
 
-@synthesize viewForOverlay;
 
-- (id)initWithFrame:(CGRect)frame : (UIView*) viewa
+
+- (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        viewForOverlay = viewa;
-        // Initialization code
     }
     return self;
 }
 
-- (void)drawOverlay:(UIView*)overlayView
-{
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    CGColorRef redColor =
-    [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0].CGColor;
-    CGContextSetFillColorWithColor(ctx, redColor);
-    CGContextSetStrokeColorWithColor(ctx, redColor);
-    CGContextSetFillColorWithColor(ctx,redColor);
-    CGContextFillRect(ctx, overlayView.bounds);
-    CGContextAddRect(ctx, overlayView.bounds);
-    [overlayView addSubview:self];
-}
 
-- (void)drawRect:(CGRect)rect
+
+- (void)drawTheRed:(UIView*)view
 {
-[self drawOverlay:viewForOverlay];
-    // Drawing code
+    CGColorRef redColor =
+    [UIColor colorWithRed:0.5 green:0.0 blue:0.0 alpha:1.0].CGColor;
+    UIView *rectangle = [[UIView alloc] initWithFrame:CGRectMake(0, 0, view.bounds.size.width, view.bounds.size.height)];
+    rectangle.backgroundColor = [UIColor redColor];
+    rectangle.alpha=0.5;
+    [view addSubview:rectangle];
 }
 
 

@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSString* BuildingID;
 @property (nonatomic, strong) NSString* BuildingName;
 @property (nonatomic, strong) NSString* AccessRights;
+@property (nonatomic)Boolean *hasAlarm;
 
 -(UIImage*) getImage;
 -(NSString*) getBuildingID;

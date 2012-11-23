@@ -55,7 +55,7 @@
         building.BuildingID = [tempDict valueForKey:(@"BuildingID")];
         building.BuildingName = [tempDict valueForKey:(@"BuildingName")];
         building.AccessRights = [tempDict valueForKey:(@"AccesRole")];
-        
+        building.hasAlarm = (Boolean)[tempDict valueForKey:(@"HasAlarm")];
         [buildings addObject:building];
     }
     
