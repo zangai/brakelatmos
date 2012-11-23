@@ -37,9 +37,8 @@
 		AA7BE67E1656673A0096E0FE /* Widget.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7BE66E1656673A0096E0FE /* Widget.m */; };
 		AA7BE67F1656673A0096E0FE /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE66F1656673A0096E0FE /* yellow.png */; };
 		AA7BE69F1656764F0096E0FE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7BE69E1656764F0096E0FE /* QuartzCore.framework */; };
-		AD39B81A165F81F0001613B1 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = AD39B819165F81F0001613B1 /* Alarm.m */; };
 		B04250BC165F8F9D009A2384 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B04250BB165F8F9D009A2384 /* libCorePlot-CocoaTouch.a */; };
-		B04250C4165F90E8009A2384 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = B04250C3165F90E8009A2384 /* Alarm.m */; };
+		B04250C7165F91EB009A2384 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = B04250C6165F91EB009A2384 /* Alarm.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,7 +89,6 @@
 		AA7BE66E1656673A0096E0FE /* Widget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Widget.m; sourceTree = "<group>"; };
 		AA7BE66F1656673A0096E0FE /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
 		AA7BE69E1656764F0096E0FE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		AD39B819165F81F0001613B1 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 		B0425071165F8F9C009A2384 /* CorePlot-CocoaTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CorePlot-CocoaTouch.h"; sourceTree = "<group>"; };
 		B0425072165F8F9C009A2384 /* CPTAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTAnnotation.h; sourceTree = "<group>"; };
 		B0425073165F8F9C009A2384 /* CPTAnnotationHostLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTAnnotationHostLayer.h; sourceTree = "<group>"; };
@@ -166,8 +164,8 @@
 		B04250B9165F8F9D009A2384 /* NSDecimalNumberExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDecimalNumberExtensions.h; sourceTree = "<group>"; };
 		B04250BA165F8F9D009A2384 /* NSNumberExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSNumberExtensions.h; sourceTree = "<group>"; };
 		B04250BB165F8F9D009A2384 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
-		B04250C2165F90E8009A2384 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
-		B04250C3165F90E8009A2384 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
+		B04250C5165F91EB009A2384 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
+		B04250C6165F91EB009A2384 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,8 +215,8 @@
 		AA7BE633165665340096E0FE /* BrakelApp */ = {
 			isa = PBXGroup;
 			children = (
-				B04250C2165F90E8009A2384 /* Alarm.h */,
-				B04250C3165F90E8009A2384 /* Alarm.m */,
+				B04250C5165F91EB009A2384 /* Alarm.h */,
+				B04250C6165F91EB009A2384 /* Alarm.m */,
 				AA4C1297165F7CFF005EDF28 /* gebouw1.jpeg */,
 				AA4C1298165F7CFF005EDF28 /* gebouw2.jpeg */,
 				AA7BE6541656673A0096E0FE /* APILibrary.h */,
@@ -467,8 +465,7 @@
 				AA7BE67C1656673A0096E0FE /* TabBarPageViewController.m in Sources */,
 				AA7BE67D1656673A0096E0FE /* TemperatureWidget.m in Sources */,
 				AA7BE67E1656673A0096E0FE /* Widget.m in Sources */,
-				AD39B81A165F81F0001613B1 /* Alarm.m in Sources */,
-				B04250C4165F90E8009A2384 /* Alarm.m in Sources */,
+				B04250C7165F91EB009A2384 /* Alarm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
