@@ -131,8 +131,8 @@
     Building* building = [buildings objectAtIndex:index];
     //UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 	UIView *view = [[UIImageView alloc] initWithImage:[building getImage]];
-    Alarm *al = [[Alarm alloc]initWithFrame:(CGRectMake(0, 0, 0, 0)) :view];
-    [al setNeedsDisplay];
+    //Alarm *al = [[Alarm alloc]initWithFrame:(CGRectMake(0, 0, 0, 0)) :view];
+    //[al setNeedsDisplay];
 	return view;
 }
 
