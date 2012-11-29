@@ -113,8 +113,9 @@ UIButton* laatsteKnop;
                 BOOL alarm = [[actualRoom valueForKey:@"HasAlarm"] boolValue];
                 NSString* name = [actualRoom valueForKey:@"RoomName"];
                 NSInteger floorID = [[actualRoom valueForKey:@"BuildingID"] integerValue];
+                NSInteger roomID = [[actualRoom valueForKey:@"RoomID"] integerValue];
 
-                Room* room =[[Room alloc] initWithRect:r isEnabled:enabled isAlarming:alarm named:name belongsToFloor:floorID];
+                Room* room =[[Room alloc] initWithRect:r isEnabled:enabled isAlarming:alarm named:name belongsToFloor:floorID roomID:roomID];
                 [rooms addObject:room];
             }
         }       
@@ -132,7 +133,8 @@ UIButton* laatsteKnop;
     {
         DynamicTabBarViewController* dest = (DynamicTabBarViewController*)segue.destinationViewController;
         [[dataStorage sharedManager]setBuildingId:buildingIdentifier];
-        [[dataStorage sharedManager]setRoomID:@""];
+        NSString* tmp = [NSString stringWithFormat:@"%d", [sender tag]];
+        [[dataStorage sharedManager]setRoomID:tmp];
     }
 }
 
@@ -157,6 +159,7 @@ UIButton* laatsteKnop;
             roomButton.frame = roomie.rect;
             roomButton.enabled = roomie.enabled;
             roomButton.alpha = 0.5;
+            [roomButton setTag:currentfloor];
             [[roomButton layer] setBorderWidth:1.0f];
             [[roomButton layer] setBorderColor:[UIColor blackColor].CGColor];
             [roomButton addTarget:self action:@selector(buttonclick:) forControlEvents:UIControlEventTouchUpInside];

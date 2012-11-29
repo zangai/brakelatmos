@@ -14,6 +14,7 @@
 @property bool alarm;
 @property NSString *roomName;
 @property NSInteger floorID;
+@property NSInteger theRoomID;
 
--(id)initWithRect:(CGRect)_rect isEnabled:(bool)_enabled isAlarming:(bool)_alarming named:(NSString*)name belongsToFloor:(NSInteger)floorID;
+-(id)initWithRect:(CGRect)_rect isEnabled:(bool)_enabled isAlarming:(bool)_alarming named:(NSString*)_name belongsToFloor:(NSInteger)_floorID roomID:(NSInteger) _roomID;
 @end
