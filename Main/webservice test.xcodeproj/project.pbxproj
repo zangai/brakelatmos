@@ -32,6 +32,7 @@
 		AD6C1EC5164D092E000D1F8F /* Widget.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6C1EC4164D092E000D1F8F /* Widget.m */; };
 		AD6C1EC8164D1E41000D1F8F /* DynamicTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6C1EC7164D1E41000D1F8F /* DynamicTabBarViewController.m */; };
 		AD6C1ED3164D396F000D1F8F /* APILibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6C1ED2164D396F000D1F8F /* APILibrary.m */; };
+		ADB67C4616675A520028CFCB /* ControlWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB67C4516675A520028CFCB /* ControlWidget.m */; };
 		ADD1D5D916550028003C716A /* TemperatureWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1D5D816550028003C716A /* TemperatureWidget.m */; };
 		B0A03AAE165E391B009C405A /* iiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A03AAD165E391B009C405A /* iiViewController.m */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,8 @@
 		AD6C1EC7164D1E41000D1F8F /* DynamicTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicTabBarViewController.m; sourceTree = "<group>"; };
 		AD6C1ED1164D396F000D1F8F /* APILibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APILibrary.h; sourceTree = "<group>"; };
 		AD6C1ED2164D396F000D1F8F /* APILibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APILibrary.m; sourceTree = "<group>"; };
+		ADB67C4416675A520028CFCB /* ControlWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlWidget.h; sourceTree = "<group>"; };
+		ADB67C4516675A520028CFCB /* ControlWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlWidget.m; sourceTree = "<group>"; };
 		ADD1D5D716550028003C716A /* TemperatureWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemperatureWidget.h; sourceTree = "<group>"; };
 		ADD1D5D816550028003C716A /* TemperatureWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemperatureWidget.m; sourceTree = "<group>"; };
 		B0A03AAC165E391B009C405A /* iiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iiViewController.h; sourceTree = "<group>"; };
@@ -192,6 +195,8 @@
 				AD6C1EC4164D092E000D1F8F /* Widget.m */,
 				ADD1D5D716550028003C716A /* TemperatureWidget.h */,
 				ADD1D5D816550028003C716A /* TemperatureWidget.m */,
+				ADB67C4416675A520028CFCB /* ControlWidget.h */,
+				ADB67C4516675A520028CFCB /* ControlWidget.m */,
 			);
 			name = Widgets;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 				AD6C1ED3164D396F000D1F8F /* APILibrary.m in Sources */,
 				ADD1D5D916550028003C716A /* TemperatureWidget.m in Sources */,
 				B0A03AAE165E391B009C405A /* iiViewController.m in Sources */,
+				ADB67C4616675A520028CFCB /* ControlWidget.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
