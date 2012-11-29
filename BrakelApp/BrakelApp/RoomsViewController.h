@@ -10,8 +10,9 @@
 
 @interface RoomsViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIView *deuiviewnav;
-@property (strong, nonatomic) IBOutlet UIView *mainView;
-@property (strong, nonatomic) IBOutlet UIImageView *viewBackground;
+@property (strong, nonatomic) IBOutlet UIImageView *mainView;
+
 @property (nonatomic) int buildingIdentifier;
+
 
 @end

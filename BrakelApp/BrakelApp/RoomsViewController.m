@@ -30,7 +30,7 @@ UIButton* laatsteKnop;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    //[self viewBackground
     rooms = [[NSMutableArray alloc] init];
     laatsteKnop = 0;
     receivedData = [[NSMutableData alloc] init];
@@ -146,14 +146,12 @@ UIButton* laatsteKnop;
         }
     }
     
-    
-    
-    
+    //Set background of that floor.
     NSString *imageString = [NSString stringWithFormat: @"http://145.48.128.101/images/%d.png", currentfloor];
     NSURL *url = [NSURL URLWithString: imageString];
     UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL:url]];
-    [self.viewBackground setImage:image];
-    [_viewBackground setImage:image];
+    [_mainView setImage:image];
+    
     laatsteKnop = sender;
 }
 
