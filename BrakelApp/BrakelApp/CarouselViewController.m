@@ -76,10 +76,9 @@
 }
 
 //The event handling method
-- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
+- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer
+{
     CGPoint location = [recognizer locationInView:[recognizer.view superview]];
-    
-    //Do stuff here...
 }
 
 - (void)viewDidUnload
