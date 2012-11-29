@@ -37,7 +37,7 @@
 {
     widgets = [[NSMutableArray alloc] init];
     Title = json[@"title"];
-    NSString* imageUrl = [NSString stringWithFormat:@"https://145.48.128.101/images/%@", json[@"image"]];
+    NSString* imageUrl = [NSString stringWithFormat:@"http://145.48.128.101/images/%@", json[@"image"]];
     NSURL *url = [NSURL URLWithString: imageUrl];
     Image = [UIImage imageWithData: [NSData dataWithContentsOfURL:url]];
     
@@ -48,6 +48,9 @@
         [self addWidget:widget];
         
     }
+    
+    
+    
     return self;
 }
 
