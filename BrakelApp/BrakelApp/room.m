@@ -12,17 +12,19 @@
 @synthesize rect;
 @synthesize alarm;
 @synthesize enabled;
-@synthesize roomID;
+@synthesize roomName;
+@synthesize floorID;
 
 
--(id)initWithRect:(CGRect)_rect isEnabled:(bool)_enabled isAlarming:(bool)_alarming named:(NSString*)name
+-(id)initWithRect:(CGRect)_rect isEnabled:(bool)_enabled isAlarming:(bool)_alarming named:(NSString*)_name belongsToFloor:(NSInteger)_floorID
 {
     if (self = [super init])
     {
         rect = _rect;
         enabled = _enabled;
         alarm = _alarming;
-        roomID = name;
+        roomName = _name;
+        floorID = _floorID;
     }
     return self;
 }
