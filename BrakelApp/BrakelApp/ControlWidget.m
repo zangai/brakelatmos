@@ -30,9 +30,9 @@
     return self;
 }
 
--(void)makeGroups:(id)caller response:(NSData*)result
+-(void)makeGroups:(id)caller response:(NSData*)response
 {
-    NSLog([result description]);
+    NSLog([response description]);
 }
 
 - (void)drawRect:(CGRect)rect
@@ -104,9 +104,12 @@
     [lib makeApiCall:@"changeGroups" formdata:changes delegate:self handleBy:@selector(changeGroups:response:)];
 }
 
--(void)changeGroups:(id)caller response:(NSData*)result
+-(void)changeGroups:(id)caller response:(NSData*)response
 {
-    NSLog([result description]);
+    NSError *myError = nil;
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&myError];
+    //NSString* layoutString = json[@"changes"];
+    NSLog([json description]);
 }
 
 @end
