@@ -16,6 +16,7 @@
 @implementation navtableviewcontroller
 navViewController *navController;
 
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -25,17 +26,37 @@ navViewController *navController;
     return self;
 }
 
+
 - (void)viewDidLoad
 {
- //NSString r = @"test";
+    NSInteger verdieping = 5;
+    _testlabel.text = @"test";
+    verdieping = 5;
+    
+
     
     
-    for (NSInteger x = 1; x < 21; x++) {
-        //[_liftPlaatje1 setEnabled:NO];
-    }
+
     //[_liftPlaatje1 setEnabled:NO]; // To toggle enabled / disabled
     [super viewDidLoad];
-
+    //UIButton *mijnknop = [UIButton buttonWithType:UIButtonTypeCustom];
+    for (NSInteger x = 1; x < verdieping; x++) {
+        //[_liftPlaatje1 setEnabled:NO];
+        
+    }
+    
+    //UIButton *myButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *myButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    myButton.frame = CGRectMake(20, 20, 200, 44); // position in the parent view and set the size of the button
+    [myButton setTitle:@"Click Me!" forState:UIControlStateNormal];
+   // [myButton setBackgroundImage:[UIImage imageNamed:@"blue"]  forState:UIControlStateNormal];
+    //[myButton setBackgroundImage:[UIImage imageNamed:@"nav-button"] forState:UIControlStateNormal];
+    
+    // add targets and actions
+    [myButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    // add to a view
+    [self.view addSubview:myButton];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  

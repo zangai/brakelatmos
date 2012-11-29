@@ -33,6 +33,7 @@
 		AD6C1EC8164D1E41000D1F8F /* DynamicTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6C1EC7164D1E41000D1F8F /* DynamicTabBarViewController.m */; };
 		AD6C1ED3164D396F000D1F8F /* APILibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6C1ED2164D396F000D1F8F /* APILibrary.m */; };
 		ADD1D5D916550028003C716A /* TemperatureWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1D5D816550028003C716A /* TemperatureWidget.m */; };
+		B0A03AAE165E391B009C405A /* iiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A03AAD165E391B009C405A /* iiViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,8 @@
 		AD6C1ED2164D396F000D1F8F /* APILibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APILibrary.m; sourceTree = "<group>"; };
 		ADD1D5D716550028003C716A /* TemperatureWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemperatureWidget.h; sourceTree = "<group>"; };
 		ADD1D5D816550028003C716A /* TemperatureWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemperatureWidget.m; sourceTree = "<group>"; };
+		B0A03AAC165E391B009C405A /* iiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iiViewController.h; sourceTree = "<group>"; };
+		B0A03AAD165E391B009C405A /* iiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iiViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 				8A2E3D07161AF60F0065D459 /* AppDelegate.m */,
 				8A47A1831626BB8E00A162B8 /* CarouselViewController.m */,
 				8A2E3D0F161AF60F0065D459 /* MainStoryboard.storyboard */,
+				B0A03AAC165E391B009C405A /* iiViewController.h */,
+				B0A03AAD165E391B009C405A /* iiViewController.m */,
 				8A47A1821626BB8E00A162B8 /* CarouselViewController.h */,
 				8A2E3D12161AF60F0065D459 /* ViewController.h */,
 				8A2E3D13161AF60F0065D459 /* ViewController.m */,
@@ -274,6 +279,7 @@
 				AD6C1EC8164D1E41000D1F8F /* DynamicTabBarViewController.m in Sources */,
 				AD6C1ED3164D396F000D1F8F /* APILibrary.m in Sources */,
 				ADD1D5D916550028003C716A /* TemperatureWidget.m in Sources */,
+				B0A03AAE165E391B009C405A /* iiViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

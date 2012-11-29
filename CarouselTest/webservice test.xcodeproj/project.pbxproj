@@ -51,6 +51,14 @@
 		B0B6C922164D08A000BFDDB9 /* dataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dataStorage.m; sourceTree = "<group>"; };
 		B0B6C925164D1B0D00BFDDB9 /* Building.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Building.h; path = ../Building.h; sourceTree = "<group>"; };
 		B0B6C926164D1B0D00BFDDB9 /* Building.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Building.m; path = ../Building.m; sourceTree = "<group>"; };
+		B0B6C930164D502800BFDDB9 /* APILibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APILibrary.h; sourceTree = "<group>"; };
+		B0B6C931164D502800BFDDB9 /* APILibrary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APILibrary.m; sourceTree = "<group>"; };
+		B0B6C933164D503700BFDDB9 /* DynamicTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicTabBarViewController.h; sourceTree = "<group>"; };
+		B0B6C934164D503700BFDDB9 /* DynamicTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicTabBarViewController.m; sourceTree = "<group>"; };
+		B0B6C935164D504400BFDDB9 /* Widget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Widget.h; sourceTree = "<group>"; };
+		B0B6C936164D504400BFDDB9 /* Widget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Widget.m; sourceTree = "<group>"; };
+		B0B6C93B164D50AD00BFDDB9 /* TabBarPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarPageViewController.h; sourceTree = "<group>"; };
+		B0B6C93C164D50AD00BFDDB9 /* TabBarPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarPageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,14 @@
 		8A2E3CFD161AF60F0065D459 /* webservice test */ = {
 			isa = PBXGroup;
 			children = (
+				B0B6C93B164D50AD00BFDDB9 /* TabBarPageViewController.h */,
+				B0B6C93C164D50AD00BFDDB9 /* TabBarPageViewController.m */,
+				B0B6C935164D504400BFDDB9 /* Widget.h */,
+				B0B6C936164D504400BFDDB9 /* Widget.m */,
+				B0B6C933164D503700BFDDB9 /* DynamicTabBarViewController.h */,
+				B0B6C934164D503700BFDDB9 /* DynamicTabBarViewController.m */,
+				B0B6C930164D502800BFDDB9 /* APILibrary.h */,
+				B0B6C931164D502800BFDDB9 /* APILibrary.m */,
 				8A47A18F1626C77F00A162B8 /* Resources */,
 				8A47A1AA1626DAE500A162B8 /* iCarousel */,
 				8A2E3D06161AF60F0065D459 /* AppDelegate.h */,
