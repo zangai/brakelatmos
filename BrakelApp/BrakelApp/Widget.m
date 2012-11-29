@@ -8,7 +8,7 @@
 
 #import "Widget.h"
 #import "TemperatureWidget.h"
-
+#import "ControlWidget.h"
 
 @implementation Widget
 
@@ -23,18 +23,23 @@
     self = [super initWithFrame:CGRectMake(x,y,700,400)];
     XCoordinate = x;
     YCoordinate = y;
-    return self;
+        return self;
 }
 
 
 +(Widget*)makeWidgetWithType:(NSString*)type jsonData:(NSDictionary*)json
 {
-    NSArray* widgetTypes = [[NSArray alloc] initWithObjects: @"temp", @"air", @"co2", @"change", nil];
+    NSArray* widgetTypes = [[NSArray alloc] initWithObjects: @"temp", @"air", @"co2", @"control", nil];
     NSInteger index = [widgetTypes indexOfObject:type];
     switch (index) {
         case 0:
         {
             return [TemperatureWidget makeWidgetWithType:type jsonData:json];
+            break;
+        }
+        case 3:
+        {
+            return [ControlWidget makeWidgetWithType:type jsonData:json];
             break;
         }
         default:
