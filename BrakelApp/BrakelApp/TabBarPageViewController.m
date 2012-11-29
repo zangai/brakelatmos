@@ -48,9 +48,7 @@
         [self addWidget:widget];
         
     }
-    
-    
-    
+
     return self;
 }
 
@@ -59,6 +57,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    UIImage *bannerImage = [UIImage imageNamed:@"header"];
+    UIImageView* banner = [[UIImageView alloc] initWithImage:bannerImage];
+    banner.frame = CGRectMake(0.0, 0, 1024, 100.0);
+    //[self.window addSubview:banner];
     
     NSLog([NSString stringWithFormat:@"Tab %@ loaded", Title]);
     for (Widget *widget in widgets) {

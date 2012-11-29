@@ -42,6 +42,11 @@
 	// Do any additional setup after loading the view.
     NSLog(@"Loading XML Layout");
     
+    UIImage *bannerImage = [UIImage imageNamed:@"header"];
+    UIImageView* banner = [[UIImageView alloc] initWithImage:bannerImage];
+    banner.frame = CGRectMake(0.0, 0, 1024, 100.0);
+    //[self.window addSubview:banner];
+    //[self addChildViewController:banner];
     
     NSString* userToken = [[dataStorage sharedManager] getUserToken];
     
@@ -70,10 +75,7 @@
 
 -(void)styleTabbar
 {
-    
     [self.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar.png"]];
-
-    
 }
 
 -(void) makeTabsFromJSON:(NSDictionary*) json
@@ -89,8 +91,6 @@
                                                  [UIColor whiteColor], UITextAttributeTextColor,[UIColor grayColor], UITextAttributeTextShadowColor,
                                                  nil] forState:UIControlStateNormal];
         UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:tabBar];
-        
-        
      
         [controller setTabBarItem:ctabBarItem];
         [tabs addObject:controller];
