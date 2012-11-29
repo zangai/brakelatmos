@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G56" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Q7Q-ZA-y0s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G56" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="OKI-Ll-lPY">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -148,26 +148,51 @@
             </objects>
             <point key="canvasLocation" x="1250" y="147"/>
         </scene>
-        <!--View Controller-->
+        <!--Tab Bar Page View Controller-->
         <scene sceneID="2Z1-Gm-Dwf">
             <objects>
-                <viewController id="OKI-Ll-lPY" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lrh-Ye-Uqk" customClass="AlarmTestView">
+                <viewController id="OKI-Ll-lPY" customClass="TabBarPageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lrh-Ye-Uqk">
                         <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5D-Oq-pd0">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="M2j-w3-3KM" kind="embed" id="PGE-Mf-4Nl"/>
+                                </connections>
+                            </containerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="header.png" translatesAutoresizingMaskIntoConstraints="NO" id="G6c-Yl-yBZ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="208" id="tk5-Yq-35M"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="G6c-Yl-yBZ" firstAttribute="leading" secondItem="lrh-Ye-Uqk" secondAttribute="leading" type="default" id="HhA-PW-9PB"/>
+                            <constraint firstItem="O5D-Oq-pd0" firstAttribute="bottom" secondItem="lrh-Ye-Uqk" secondAttribute="bottom" type="default" id="HmR-Qh-YV9"/>
+                            <constraint firstItem="G6c-Yl-yBZ" firstAttribute="trailing" secondItem="lrh-Ye-Uqk" secondAttribute="trailing" type="default" id="JON-5I-qNn"/>
+                            <constraint firstItem="O5D-Oq-pd0" firstAttribute="top" secondItem="lrh-Ye-Uqk" secondAttribute="top" constant="161" id="K56-Ju-yE4"/>
+                            <constraint firstItem="O5D-Oq-pd0" firstAttribute="leading" secondItem="lrh-Ye-Uqk" secondAttribute="leading" type="default" id="SYi-wB-Xdw"/>
+                            <constraint firstItem="G6c-Yl-yBZ" firstAttribute="top" secondItem="lrh-Ye-Uqk" secondAttribute="top" type="default" id="jHl-tf-4RH"/>
+                            <constraint firstItem="O5D-Oq-pd0" firstAttribute="trailing" secondItem="lrh-Ye-Uqk" secondAttribute="trailing" type="default" id="tcS-0D-sVh"/>
+                        </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPT-QK-Y9p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1313" y="1327"/>
+            <point key="canvasLocation" x="1019" y="1211"/>
         </scene>
         <!--Dynamic Tab Bar View Controller-->
         <scene sceneID="0Nn-Yz-kee">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="A8B-7P-JoJ" customClass="DynamicTabBarViewController" sceneMemberID="viewController">
+                <tabBarController definesPresentationContext="YES" modalTransitionStyle="crossDissolve" id="A8B-7P-JoJ" customClass="DynamicTabBarViewController" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -238,11 +263,27 @@
             </objects>
             <point key="canvasLocation" x="2350" y="131"/>
         </scene>
+        <!--Dynamic Tab Bar View Controller-->
+        <scene sceneID="B9Q-3T-0Dv">
+            <objects>
+                <viewController id="M2j-w3-3KM" customClass="DynamicTabBarViewController" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="E19-hQ-tUj">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="587"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cUV-WL-r1p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2231" y="1363"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="header.png" width="1755" height="367"/>
+    </resources>
     <classes>
-        <class className="AlarmTestView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlarmTestView.h"/>
-        </class>
         <class className="CarouselViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CarouselViewController.h"/>
             <relationships>
@@ -270,11 +311,12 @@
         <class className="RoomsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RoomsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="buttonclick:"/>
-                <relationship kind="action" name="knopDruk:"/>
                 <relationship kind="outlet" name="deuiviewnav" candidateClass="UIView"/>
                 <relationship kind="outlet" name="mainView" candidateClass="UIImageView"/>
             </relationships>
+        </class>
+        <class className="TabBarPageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabBarPageViewController.h"/>
         </class>
         <class className="iCarousel" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/iCarousel.h"/>
