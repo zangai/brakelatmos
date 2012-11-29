@@ -9,6 +9,7 @@
 #import "ControlWidget.h"
 #import "Changes.h"
 #import "APILibrary.h"
+#include "dataStorage.h"
 
 #define VALUE_CLOSED [UIColor redColor]
 #define VALUE_OPEN [UIColor blueColor]
@@ -24,14 +25,14 @@
     changesQueue = [[NSMutableDictionary alloc] init];
     
     NSString* formData = [NSString stringWithFormat:@"buildingId=%d", 1];
-    [[APILibrary alloc] makeApiCall:@"getGroups" formdata:formData delegate:self handleBy:@selector(makeGroups:)];
+    [[APILibrary alloc] makeApiCall:@"getGroups" formdata:formData delegate:self handleBy:@selector(makeGroups:response:)];
     
     return self;
 }
 
--(void)makeGroups:(NSData*)result
+-(void)makeGroups:(id)caller response:(NSData*)response
 {
-    NSLog([result description]);
+    NSLog([response description]);
 }
 
 - (void)drawRect:(CGRect)rect
@@ -86,7 +87,10 @@
 
 - (IBAction)makeChanges:(id)sender
 {
-    NSString* changes = @"changes=[";
+    NSString* userToken = [[dataStorage sharedManager] getUserToken];
+    userToken = @"C02417A2-E542-442C-ADBB-F2B01214F355";
+    
+    NSString* changes = [NSString stringWithFormat:@"userToken=%@&changes=[", userToken];
     Boolean isFirst = true;
     for (NSString* key in changesQueue) {
         NSString* change = changesQueue[key];
@@ -96,12 +100,16 @@
     changes = [changes stringByAppendingFormat:@"]"];
     //urlencode(changes);
     
-    [[APILibrary alloc] makeApiCall:@"changeGroups" formdata:changes delegate:self handleBy:@selector(groupsChanges:)];
+    APILibrary* lib = [[APILibrary alloc] init];
+    [lib makeApiCall:@"changeGroups" formdata:changes delegate:self handleBy:@selector(changeGroups:response:)];
 }
 
--(void)changeGroups:(NSData*)result
+-(void)changeGroups:(id)caller response:(NSData*)response
 {
-    NSLog([result description]);
+    NSError *myError = nil;
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&myError];
+    //NSString* layoutString = json[@"changes"];
+    NSLog([json description]);
 }
 
 @end
