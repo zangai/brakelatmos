@@ -20,7 +20,7 @@
     NSInteger y = ((NSString*)json[@"y"]).integerValue;
     NSInteger w = ((NSString*)json[@"width"]).integerValue;
     NSInteger h = ((NSString*)json[@"height"]).integerValue;
-    self = [super initWithFrame:CGRectMake(x,y,700,400)];
+    self = [super initWithFrame:CGRectMake(x,y,800,400)];
     XCoordinate = x;
     YCoordinate = y;
         return self;
