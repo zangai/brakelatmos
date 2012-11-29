@@ -24,6 +24,7 @@
 - (void) setUserToken:(NSString *)ut;
 - (NSString*) getUserToken;
 - (NSString*) getDeviceId;
+-(void) setRoomID:(NSString *)RID;
 
 + (id)sharedManager;
 @end
