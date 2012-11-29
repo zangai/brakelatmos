@@ -42,6 +42,10 @@
 		B04250BC165F8F9D009A2384 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B04250BB165F8F9D009A2384 /* libCorePlot-CocoaTouch.a */; };
 		B04250C7165F91EB009A2384 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = B04250C6165F91EB009A2384 /* Alarm.m */; };
 		B04250CA165FA0D4009A2384 /* AlarmTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = B04250C9165FA0D4009A2384 /* AlarmTestView.m */; };
+		B0455A2D166767460044EB3B /* icon_check.png in Resources */ = {isa = PBXBuildFile; fileRef = B0455A2C166767460044EB3B /* icon_check.png */; };
+		B0455A30166772190044EB3B /* tabbar.png in Resources */ = {isa = PBXBuildFile; fileRef = B0455A2F166772190044EB3B /* tabbar.png */; };
+		B0455A321667785D0044EB3B /* HeaderRevisioned.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0455A311667785D0044EB3B /* HeaderRevisioned.jpg */; };
+		B0455A341667786E0044EB3B /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = B0455A331667786E0044EB3B /* header.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,6 +179,10 @@
 		B04250C6165F91EB009A2384 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 		B04250C8165FA0D3009A2384 /* AlarmTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmTestView.h; sourceTree = "<group>"; };
 		B04250C9165FA0D4009A2384 /* AlarmTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmTestView.m; sourceTree = "<group>"; };
+		B0455A2C166767460044EB3B /* icon_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_check.png; sourceTree = "<group>"; };
+		B0455A2F166772190044EB3B /* tabbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar.png; sourceTree = "<group>"; };
+		B0455A311667785D0044EB3B /* HeaderRevisioned.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HeaderRevisioned.jpg; sourceTree = "<group>"; };
+		B0455A331667786E0044EB3B /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +232,10 @@
 		AA7BE633165665340096E0FE /* BrakelApp */ = {
 			isa = PBXGroup;
 			children = (
+				B0455A331667786E0044EB3B /* header.png */,
+				B0455A311667785D0044EB3B /* HeaderRevisioned.jpg */,
+				B0455A2F166772190044EB3B /* tabbar.png */,
+				B0455A2C166767460044EB3B /* icon_check.png */,
 				B04250C5165F91EB009A2384 /* Alarm.h */,
 				B04250C6165F91EB009A2384 /* Alarm.m */,
 				AA4C1297165F7CFF005EDF28 /* gebouw1.jpeg */,
@@ -455,6 +467,10 @@
 				AA7BE67F1656673A0096E0FE /* yellow.png in Resources */,
 				AA4C1299165F7CFF005EDF28 /* gebouw1.jpeg in Resources */,
 				AA4C129A165F7CFF005EDF28 /* gebouw2.jpeg in Resources */,
+				B0455A2D166767460044EB3B /* icon_check.png in Resources */,
+				B0455A30166772190044EB3B /* tabbar.png in Resources */,
+				B0455A321667785D0044EB3B /* HeaderRevisioned.jpg in Resources */,
+				B0455A341667786E0044EB3B /* header.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

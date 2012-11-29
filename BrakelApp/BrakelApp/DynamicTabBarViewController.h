@@ -11,5 +11,6 @@
 @interface DynamicTabBarViewController : UITabBarController
 
 @property (nonatomic) NSInteger buildingId;
+@property (weak, nonatomic) IBOutlet UITabBar *tabbar;
 
 @end

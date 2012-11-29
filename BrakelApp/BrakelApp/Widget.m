@@ -23,7 +23,7 @@
     self = [super initWithFrame:CGRectMake(x,y,700,400)];
     XCoordinate = x;
     YCoordinate = y;
-    return self;
+        return self;
 }
 
 

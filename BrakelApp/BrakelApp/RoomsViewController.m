@@ -59,15 +59,6 @@ UIButton* laatsteKnop;
     formData = [formData stringByAppendingFormat:@"%d", buildingIdentifier];
     formData = [formData stringByAppendingString:@"&getRooms=true"];
     [lib makeApiCall:@"getFloors" formdata:formData delegate:self handleBy:@selector(callHandler:response:)];
-
-    
-    //_testlabel.text = @"test";
-    
-    
-    //[_liftPlaatje1 setEnabled:NO]; // To toggle enabled / disabled
-    
-    //UIButton *mijnknop = [UIButton buttonWithType:UIButtonTypeCustom];
-    
 }
 
 -(void)callHandler:(id)caller response:(NSData *) response {
