@@ -30,21 +30,8 @@ UIButton* laatsteKnop;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //Testdata
     
-    rooms = [[NSMutableArray alloc]init];
-    Room *room = [Room alloc];
-    Room *room2 = [Room alloc];
-    room = [room initWithRect:CGRectMake(10, 50, 100, 100) isEnabled:true isAlarming:false named:@"Room1"];
-    room2 = [room2 initWithRect:CGRectMake(120, 160, 100, 100) isEnabled:true isAlarming:false named:@"Room2"];
-    [rooms addObject:room];
-    [rooms addObject:room2];
-    UIImage *image = [UIImage imageNamed: @"gebouw1.jpeg"];
-    [_viewBackground setImage:image];
-    
-    //End Testdata
-    
-
+    rooms = [[NSMutableArray alloc] init];
     laatsteKnop = 0;
     receivedData = [[NSMutableData alloc] init];
     
@@ -59,15 +46,6 @@ UIButton* laatsteKnop;
     formData = [formData stringByAppendingFormat:@"%d", buildingIdentifier];
     formData = [formData stringByAppendingString:@"&getRooms=true"];
     [lib makeApiCall:@"getFloors" formdata:formData delegate:self handleBy:@selector(callHandler:response:)];
-
-    
-    //_testlabel.text = @"test";
-    
-    
-    //[_liftPlaatje1 setEnabled:NO]; // To toggle enabled / disabled
-    
-    //UIButton *mijnknop = [UIButton buttonWithType:UIButtonTypeCustom];
-    
 }
 
 -(void)callHandler:(id)caller response:(NSData *) response {
@@ -77,8 +55,7 @@ UIButton* laatsteKnop;
         NSError *myError = nil;
         NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self->receivedData options:NSJSONReadingMutableLeaves error:&myError];
         floors = [res valueForKey:@"floors"];
-        
-        
+                
         //Creating elevator buttons
         int knopX = 40;
         int knopY = 25;
@@ -86,7 +63,7 @@ UIButton* laatsteKnop;
             UIButton *liftKnop = [UIButton buttonWithType:UIButtonTypeRoundedRect];
             [liftKnop setTitle:[NSString stringWithFormat:@"%d", x] forState:UIControlStateNormal];
             liftKnop.frame = CGRectMake(knopX, knopY, 70, 70);
-            liftKnop.tag = x;
+            liftKnop.tag = [[[floors objectAtIndex:x] valueForKey:@"BuildingID"] integerValue];
             [liftKnop setBackgroundImage:[UIImage imageNamed:@"blue"]  forState:UIControlStateNormal];
             [liftKnop setBackgroundImage:[UIImage imageNamed:@"yellow"] forState:UIControlStateHighlighted];
             [liftKnop setBackgroundImage:[UIImage imageNamed:@"green"] forState:UIControlStateDisabled];
@@ -104,24 +81,26 @@ UIButton* laatsteKnop;
         }
         _deuiviewnav.frame = CGRectMake(0, 0, 250, knopY + 80);
         
-        
-        
-        //[self parseRoom];
-    }
-}
+        //Adding ALL the rooms to the rooms array
+        NSMutableArray* tmp = [floors valueForKey:@"Rooms"];
+        for(NSArray* roomsPerFloor in tmp)
+        {
+            for(NSObject* actualRoom in roomsPerFloor)
+            {
+                NSInteger x = [[actualRoom valueForKey:@"X"] integerValue];
+                NSInteger y = [[actualRoom valueForKey:@"Y"] integerValue];
+                NSInteger width = [[actualRoom valueForKey:@"Width"] integerValue];
+                NSInteger height = [[actualRoom valueForKey:@"Height"] integerValue];
+                CGRect r = CGRectMake(x, y, width, height);
+                BOOL enabled = [[actualRoom valueForKey:@"Enabled"] boolValue];
+                BOOL alarm = [[actualRoom valueForKey:@"HasAlarm"] boolValue];
+                NSString* name = [actualRoom valueForKey:@"RoomName"];
+                NSInteger floorID = [[actualRoom valueForKey:@"BuildingID"] integerValue];
 
-- (void)parseRoom
-{
-    for(Room *roomie in rooms){
-        UIButton *roomButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [roomButton setTitle:roomie.roomID forState:UIControlStateNormal];
-        roomButton.frame = roomie.rect;
-        roomButton.enabled = roomie.enabled;
-        roomButton.alpha = 0.5;
-        [[roomButton layer] setBorderWidth:1.0f];
-        [[roomButton layer] setBorderColor:[UIColor blackColor].CGColor];
-        [roomButton addTarget:self action:@selector(buttonclick:) forControlEvents:UIControlEventTouchUpInside];
-        [self.mainView addSubview:roomButton];
+                Room* room =[[Room alloc] initWithRect:r isEnabled:enabled isAlarming:alarm named:name belongsToFloor:floorID];
+                [rooms addObject:room];
+            }
+        }       
     }
 }
 
@@ -142,34 +121,45 @@ UIButton* laatsteKnop;
 
 - (IBAction)knopDruk:(id)sender
 {
+    //selects current elevator button, deselects last one.
     if(laatsteKnop != nil){
         [laatsteKnop setEnabled:true];
     }
     [sender setEnabled:false];
-
+    
+    //remove everything from the mainview, the room buttons normally.
+    [[self.mainView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    //create and add the roombuttons
     NSInteger currentfloor = [sender tag];
-    
-    NSMutableArray* tmp = [floors valueForKey:@"Rooms"];
-    for(int x=0; x<tmp.count; x++){
-      //  int coordX = [[tmp objectAtIndex:x]valueForKey:@"X"];
-      //  NSInteger coordY = [[tmp objectAtIndex:x]valueForKey:@"Y"];
-      //  int width = [[tmp objectAtIndex:x]valueForKey:@"Width"];
-      //  int height = [[tmp objectAtIndex:x]valueForKey:@"Heigth"];
-      //  CGRect r = CGRectMake(coordX, coordY, width, height);
-        //Room* room = [[Room alloc] initWithRect:r isEnabled:<#(bool)#> isAlarming:<#(bool)#> named:<#(NSString *)#>
+    for(Room *roomie in rooms){
+        if(roomie.floorID == currentfloor){
+            UIButton *roomButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            [roomButton setTitle:roomie.roomName forState:UIControlStateNormal];
+            roomButton.frame = roomie.rect;
+            roomButton.enabled = roomie.enabled;
+            roomButton.alpha = 0.5;
+            [[roomButton layer] setBorderWidth:1.0f];
+            [[roomButton layer] setBorderColor:[UIColor blackColor].CGColor];
+            [roomButton addTarget:self action:@selector(buttonclick:) forControlEvents:UIControlEventTouchUpInside];
+            [self.mainView addSubview:roomButton];
+        }
     }
-    UIImage *image = [UIImage imageNamed: @"plattegrond1.gif"];  //hier komt het plaatje van de desbetreffende verdieping
-    [_viewBackground setImage:image];
     
+    
+    
+    
+    NSString *imageString = [NSString stringWithFormat: @"http://145.48.128.101/images/%d.png", currentfloor];
+    NSURL *url = [NSURL URLWithString: imageString];
+    UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL:url]];
+    [self.viewBackground setImage:image];
+    [_viewBackground setImage:image];
     laatsteKnop = sender;
 }
-
-
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     //Dispose of any resources that can be recreated.
 }
-
 @end
