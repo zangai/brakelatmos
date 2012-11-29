@@ -37,6 +37,7 @@
 		AA7BE67E1656673A0096E0FE /* Widget.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7BE66E1656673A0096E0FE /* Widget.m */; };
 		AA7BE67F1656673A0096E0FE /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE66F1656673A0096E0FE /* yellow.png */; };
 		AA7BE69F1656764F0096E0FE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7BE69E1656764F0096E0FE /* QuartzCore.framework */; };
+		ADB67C4E16675BAA0028CFCB /* ControlWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB67C4D16675BAA0028CFCB /* ControlWidget.m */; };
 		B04250BC165F8F9D009A2384 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B04250BB165F8F9D009A2384 /* libCorePlot-CocoaTouch.a */; };
 		B04250C7165F91EB009A2384 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = B04250C6165F91EB009A2384 /* Alarm.m */; };
 		B04250CA165FA0D4009A2384 /* AlarmTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = B04250C9165FA0D4009A2384 /* AlarmTestView.m */; };
@@ -94,6 +95,8 @@
 		AA7BE66E1656673A0096E0FE /* Widget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Widget.m; sourceTree = "<group>"; };
 		AA7BE66F1656673A0096E0FE /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
 		AA7BE69E1656764F0096E0FE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		ADB67C4C16675BAA0028CFCB /* ControlWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlWidget.h; sourceTree = "<group>"; };
+		ADB67C4D16675BAA0028CFCB /* ControlWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlWidget.m; sourceTree = "<group>"; };
 		B0425071165F8F9C009A2384 /* CorePlot-CocoaTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CorePlot-CocoaTouch.h"; sourceTree = "<group>"; };
 		B0425072165F8F9C009A2384 /* CPTAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTAnnotation.h; sourceTree = "<group>"; };
 		B0425073165F8F9C009A2384 /* CPTAnnotationHostLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTAnnotationHostLayer.h; sourceTree = "<group>"; };
@@ -285,10 +288,12 @@
 			isa = PBXGroup;
 			children = (
 				B042506E165F8F79009A2384 /* CorePlot */,
-				AA7BE66B1656673A0096E0FE /* TemperatureWidget.h */,
-				AA7BE66C1656673A0096E0FE /* TemperatureWidget.m */,
 				AA7BE66D1656673A0096E0FE /* Widget.h */,
 				AA7BE66E1656673A0096E0FE /* Widget.m */,
+				AA7BE66B1656673A0096E0FE /* TemperatureWidget.h */,
+				AA7BE66C1656673A0096E0FE /* TemperatureWidget.m */,
+				ADB67C4C16675BAA0028CFCB /* ControlWidget.h */,
+				ADB67C4D16675BAA0028CFCB /* ControlWidget.m */,
 			);
 			name = Widgets;
 			sourceTree = "<group>";
@@ -488,6 +493,7 @@
 				AA7BE67E1656673A0096E0FE /* Widget.m in Sources */,
 				B04250C7165F91EB009A2384 /* Alarm.m in Sources */,
 				B04250CA165FA0D4009A2384 /* AlarmTestView.m in Sources */,
+				ADB67C4E16675BAA0028CFCB /* ControlWidget.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
