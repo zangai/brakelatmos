@@ -15,4 +15,6 @@
 @property CGContextRef context;
 @property (nonatomic, strong) CPTGraphHostingView *hostView;
 
++(TemperatureWidget*)makeWidgetWithType:(NSString*)type jsonData:(NSDictionary*)json;
+
 @end

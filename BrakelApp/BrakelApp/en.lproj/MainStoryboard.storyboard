@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G56" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Q7Q-ZA-y0s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G56" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Q7Q-ZA-y0s">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -259,8 +259,6 @@
         <class className="RoomsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RoomsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="buttonclick:"/>
-                <relationship kind="action" name="knopDruk:"/>
                 <relationship kind="outlet" name="deuiviewnav" candidateClass="UIView"/>
                 <relationship kind="outlet" name="mainView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="viewBackground" candidateClass="UIImageView"/>

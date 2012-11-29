@@ -10,4 +10,9 @@
 
 @interface ControlWidget : Widget
 
++(ControlWidget*)makeWidgetWithType:(NSString*)type jsonData:(NSDictionary*)json;
+
+- (IBAction)queueForChange:(id)sender;
+- (IBAction)makeChanges:(id)sender;
+
 @end

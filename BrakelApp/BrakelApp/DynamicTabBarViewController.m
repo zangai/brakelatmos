@@ -44,7 +44,7 @@
     
     //testValues
     buildingId = 1;
-    //userToken = @"C02417A2-E542-442C-ADBB-F2B01214F355";
+    userToken = @"C02417A2-E542-442C-ADBB-F2B01214F355";
     
     NSString* formData = [NSString stringWithFormat:@"userToken=%@&buildingId=%d", userToken, buildingId];
     
