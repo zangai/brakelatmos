@@ -11,6 +11,7 @@
 @interface Building : NSObject
 
 @property (nonatomic, strong) NSString* BuildingID;
+@property (nonatomic, strong) NSString* Parent;
 @property (nonatomic, strong) NSString* BuildingName;
 @property (nonatomic, strong) NSString* AccessRights;
 @property (nonatomic)Boolean *hasAlarm;

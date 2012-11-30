@@ -54,8 +54,9 @@
         Building* building = [[Building alloc] init];
         building.BuildingID = [tempDict valueForKey:(@"BuildingID")];
         building.BuildingName = [tempDict valueForKey:(@"BuildingName")];
-        building.AccessRights = [tempDict valueForKey:(@"AccesRole")];
-        building.hasAlarm = (Boolean)[tempDict valueForKey:(@"HasAlarm")];
+        building.AccessRights = [tempDict valueForKey:(@"AccessRole")];
+        building.Parent = [tempDict valueForKey:(@"Parent")];
+        building.hasAlarm = [[tempDict valueForKey:(@"HasAlarm")] boolValue];
         [buildings addObject:building];
     }
     
