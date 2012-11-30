@@ -90,7 +90,10 @@
     NSString* userToken = [[dataStorage sharedManager] getUserToken];
     userToken = @"C02417A2-E542-442C-ADBB-F2B01214F355";
     
-    NSString* changes = [NSString stringWithFormat:@"userToken=%@&changes=[", userToken];
+    NSInteger buildingId = [[dataStorage sharedManager] buildingId];
+    buildingId = 1;
+    
+    NSString* changes = [NSString stringWithFormat:@"userToken=%@&buildingId=%d&changes=[", userToken, buildingId];
     Boolean isFirst = true;
     for (NSString* key in changesQueue) {
         NSString* change = changesQueue[key];
