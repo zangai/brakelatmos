@@ -163,12 +163,13 @@ UIButton* laatsteKnop;
             [[roomButton layer] setBorderWidth:1.0f];
             [[roomButton layer] setBorderColor:[UIColor blackColor].CGColor];
             [roomButton addTarget:self action:@selector(buttonclick:) forControlEvents:UIControlEventTouchUpInside];
+          
+            [self.mainView addSubview:roomButton];
             if(roomie.alarm)
             {
                 al = [[Alarm alloc]init];
                 [al drawTheRed:roomButton];
             }
-            [self.mainView addSubview:roomButton];
         }
     }
     

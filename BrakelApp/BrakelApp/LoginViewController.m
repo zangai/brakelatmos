@@ -35,6 +35,25 @@
     
 }
 
+- (id)init
+{
+    self = [super init];
+
+    if (self) {
+        
+        
+        
+    }
+    return self;
+}
+- (id)initWithNib { // Load the view nib
+    if (self = [super initWithNibName:nil bundle:nil]) {
+        // do ivar initialization here, if needed
+    }
+    return self;
+}
+
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight);
@@ -136,9 +155,7 @@
             [buildings addObjectsFromArray:(NSArray*)value];
             [[dataStorage sharedManager] initArrayLists:buildings];
             
-            CarouselViewController *cView = [[CarouselViewController alloc] init];
-            
-            self.parentViewController.view = cView;
+            [self performSegueWithIdentifier:@"goToCarousel" sender:self];
             break;
         }
         else if([keyAsString isEqualToString:@"error"]) {
@@ -175,14 +192,12 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"goToCarousel"]) {
+    if ([[segue identifier] isEqualToString:@"goToCarousel"])
+    {
         
-        // Get destination view
-       // CarouselViewController *vc = [segue destinationViewController];
         
-       // vc.GUID = GUID;
-       // vc.buildings = buildings;
-        //vc.buildingJSONString = buildingJSONString;
+        
+        
     }
 }
 

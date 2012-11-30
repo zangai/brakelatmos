@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
 
+
 @interface containerViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UIViewController *container;
 
 
 

@@ -14,5 +14,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *WachtwoordText;
 
 - (IBAction)logIn:(id)sender;
+-(id)initWithNib;
 
 @end
