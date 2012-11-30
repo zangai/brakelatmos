@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G56" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="OKI-Ll-lPY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G56" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="iNp-GY-gVB">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -9,7 +9,7 @@
             <objects>
                 <viewController id="Q7Q-ZA-y0s" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mN1-dy-VfP">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <rect key="frame" x="0.0" y="20" width="1024" height="622"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Username" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCS-FY-1Jr">
@@ -61,9 +61,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="8iy-5Z-fwU" kind="modal" identifier="goToCarousel" id="RbA-N2-Pq8"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -93,11 +90,12 @@
                     <connections>
                         <outlet property="GebruikerText" destination="SKn-zH-WMs" id="ej1-s8-LPA"/>
                         <outlet property="WachtwoordText" destination="wgu-cG-CvZ" id="1ah-AW-X8B"/>
+                        <segue destination="8iy-5Z-fwU" kind="custom" identifier="goToCarousel" id="4vm-Wl-Vaz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJO-7E-Z56" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="153"/>
+            <point key="canvasLocation" x="-62" y="153"/>
         </scene>
         <!--Carousel View Controller-->
         <scene sceneID="zGc-gy-olq">
@@ -146,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQf-q3-N1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1250" y="147"/>
+            <point key="canvasLocation" x="1258" y="48"/>
         </scene>
         <!--Tab Bar Page View Controller-->
         <scene sceneID="2Z1-Gm-Dwf">
@@ -187,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPT-QK-Y9p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="1059"/>
+            <point key="canvasLocation" x="-462" y="1707"/>
         </scene>
         <!--Dynamic Tab Bar View Controller-->
         <scene sceneID="0Nn-Yz-kee">
@@ -263,6 +261,44 @@
             </objects>
             <point key="canvasLocation" x="2350" y="131"/>
         </scene>
+        <!--Container View Controller-->
+        <scene sceneID="FmQ-xe-I5l">
+            <objects>
+                <viewController id="iNp-GY-gVB" customClass="containerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mll-Hk-rv1">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="HeaderRevisioned.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="yHr-M4-On4">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="107" id="60g-Pb-pYQ"/>
+                                </constraints>
+                            </imageView>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omP-Fc-Zet">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="Q7Q-ZA-y0s" kind="embed" id="mmC-Jd-o5R"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yHr-M4-On4" firstAttribute="trailing" secondItem="Mll-Hk-rv1" secondAttribute="trailing" type="default" id="1xh-LC-VIs"/>
+                            <constraint firstItem="yHr-M4-On4" firstAttribute="top" secondItem="Mll-Hk-rv1" secondAttribute="top" type="default" id="B2w-5O-Ver"/>
+                            <constraint firstItem="omP-Fc-Zet" firstAttribute="leading" secondItem="Mll-Hk-rv1" secondAttribute="leading" type="default" id="H2k-qF-foe"/>
+                            <constraint firstItem="omP-Fc-Zet" firstAttribute="trailing" secondItem="Mll-Hk-rv1" secondAttribute="trailing" type="default" id="UFX-Hb-lZa"/>
+                            <constraint firstItem="yHr-M4-On4" firstAttribute="leading" secondItem="Mll-Hk-rv1" secondAttribute="leading" type="default" id="j6g-Oy-PKz"/>
+                            <constraint firstItem="omP-Fc-Zet" firstAttribute="bottom" secondItem="Mll-Hk-rv1" secondAttribute="bottom" type="default" id="nP4-fh-bHk"/>
+                            <constraint firstItem="omP-Fc-Zet" firstAttribute="top" secondItem="Mll-Hk-rv1" secondAttribute="top" constant="106" id="tiE-ni-TO9"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ju3-jO-6gK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1231" y="90"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="B9Q-3T-0Dv">
             <objects>
@@ -317,9 +353,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="8iy-5Z-fwU" kind="modal" identifier="goToCarousel" id="vQG-Gz-P86"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Bt-eA-NFb">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -357,10 +390,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cUV-WL-r1p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1281" y="1149"/>
+            <point key="canvasLocation" x="1177" y="1865"/>
         </scene>
     </scenes>
     <resources>
+        <image name="HeaderRevisioned.jpg" width="1754" height="149"/>
         <image name="header.png" width="1755" height="367"/>
     </resources>
     <classes>
@@ -400,6 +434,9 @@
         <class className="TabBarPageViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TabBarPageViewController.h"/>
         </class>
+        <class className="containerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/containerViewController.h"/>
+        </class>
         <class className="iCarousel" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/iCarousel.h"/>
             <relationships>
@@ -413,7 +450,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="vQG-Gz-P86"/>
-    </inferredMetricsTieBreakers>
 </document>

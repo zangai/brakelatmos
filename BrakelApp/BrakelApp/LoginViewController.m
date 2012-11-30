@@ -136,7 +136,9 @@
             [buildings addObjectsFromArray:(NSArray*)value];
             [[dataStorage sharedManager] initArrayLists:buildings];
             
-            [self performSegueWithIdentifier:@"goToCarousel" sender:self];
+            CarouselViewController *cView = [[CarouselViewController alloc] init];
+            
+            self.parentViewController.view = cView;
             break;
         }
         else if([keyAsString isEqualToString:@"error"]) {

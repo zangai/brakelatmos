@@ -39,6 +39,7 @@
 		AA7BE69F1656764F0096E0FE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7BE69E1656764F0096E0FE /* QuartzCore.framework */; };
 		ADB67C4E16675BAA0028CFCB /* ControlWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB67C4D16675BAA0028CFCB /* ControlWidget.m */; };
 		ADB67C5216675FE50028CFCB /* Changes.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB67C5116675FE50028CFCB /* Changes.m */; };
+		B002F1731668B36A00636406 /* containerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B002F1721668B36A00636406 /* containerViewController.m */; };
 		B04250BC165F8F9D009A2384 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B04250BB165F8F9D009A2384 /* libCorePlot-CocoaTouch.a */; };
 		B04250C7165F91EB009A2384 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = B04250C6165F91EB009A2384 /* Alarm.m */; };
 		B04250CA165FA0D4009A2384 /* AlarmTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = B04250C9165FA0D4009A2384 /* AlarmTestView.m */; };
@@ -100,6 +101,8 @@
 		ADB67C4D16675BAA0028CFCB /* ControlWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlWidget.m; sourceTree = "<group>"; };
 		ADB67C5016675FE50028CFCB /* Changes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Changes.h; sourceTree = "<group>"; };
 		ADB67C5116675FE50028CFCB /* Changes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Changes.m; sourceTree = "<group>"; };
+		B002F1711668B36A00636406 /* containerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = containerViewController.h; sourceTree = "<group>"; };
+		B002F1721668B36A00636406 /* containerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = containerViewController.m; sourceTree = "<group>"; };
 		B0425071165F8F9C009A2384 /* CorePlot-CocoaTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CorePlot-CocoaTouch.h"; sourceTree = "<group>"; };
 		B0425072165F8F9C009A2384 /* CPTAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTAnnotation.h; sourceTree = "<group>"; };
 		B0425073165F8F9C009A2384 /* CPTAnnotationHostLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTAnnotationHostLayer.h; sourceTree = "<group>"; };
@@ -271,6 +274,8 @@
 				B04250C9165FA0D4009A2384 /* AlarmTestView.m */,
 				ADB67C5016675FE50028CFCB /* Changes.h */,
 				ADB67C5116675FE50028CFCB /* Changes.m */,
+				B002F1711668B36A00636406 /* containerViewController.h */,
+				B002F1721668B36A00636406 /* containerViewController.m */,
 			);
 			path = BrakelApp;
 			sourceTree = "<group>";
@@ -500,6 +505,7 @@
 				B04250CA165FA0D4009A2384 /* AlarmTestView.m in Sources */,
 				ADB67C4E16675BAA0028CFCB /* ControlWidget.m in Sources */,
 				ADB67C5216675FE50028CFCB /* Changes.m in Sources */,
+				B002F1731668B36A00636406 /* containerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
