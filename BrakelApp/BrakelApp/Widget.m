@@ -24,6 +24,7 @@
     self = [super initWithFrame:CGRectMake(x,y,800,400)];
     XCoordinate = x;
     YCoordinate = y;
+    self.backgroundColor = [[UIColor alloc]initWithRed:0 green:0 blue:0 alpha:0];
         return self;
 }
 
