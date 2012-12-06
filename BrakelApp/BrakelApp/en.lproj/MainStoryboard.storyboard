@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G56" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="8q9-u4-URE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11E53" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="cPw-zn-h5b">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
@@ -138,7 +138,6 @@
         <!--Carousel View Controller-->
         <scene sceneID="zGc-gy-olq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uQf-q3-N1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="8iy-5Z-fwU" customClass="CarouselViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3uq-Jp-3Ye">
                         <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
@@ -181,6 +180,7 @@
                         <segue destination="4fr-fa-nj9" kind="modal" identifier="goToFloorView" id="nPt-59-Alf"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uQf-q3-N1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1037" y="97"/>
         </scene>
@@ -243,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AWv-BA-Wko" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2310" y="46"/>
+            <point key="canvasLocation" x="2258" y="56"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="PZ3-N3-mfk">
@@ -380,54 +380,6 @@
     <resources>
         <image name="HeaderRevisioned.jpg" width="1754" height="149"/>
     </resources>
-    <classes>
-        <class className="CarouselViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarouselViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="carousel" candidateClass="iCarousel"/>
-                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DynamicTabBarViewController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DynamicTabBarViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tabbar" candidateClass="UITabBar"/>
-            </relationships>
-        </class>
-        <class className="LoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="logIn:"/>
-                <relationship kind="outlet" name="GebruikerText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="WachtwoordText" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="RoomsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoomsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonclick:"/>
-                <relationship kind="action" name="knopDruk:"/>
-                <relationship kind="outlet" name="deuiviewnav" candidateClass="UIView"/>
-                <relationship kind="outlet" name="mainView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="containerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/containerViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="container" candidateClass="UIViewController"/>
-            </relationships>
-        </class>
-        <class className="iCarousel" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/iCarousel.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dataSource"/>
-                <relationship kind="outlet" name="delegate"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
