@@ -13,6 +13,7 @@
 @interface ViewController ()
 {
     Token* token;
+    Ipsum * ipsum;
 }
 @end
 
@@ -23,6 +24,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    ipsum = [[Ipsum alloc] init:@"E8EB7CBB-6C16-4270-93F7-CABBD1F0FBDF"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -32,12 +34,10 @@
 }
 
 - (IBAction)getToken:(id)sender {
-    Ipsum * ipsum = [[Ipsum alloc] init:@"E8EB7CBB-6C16-4270-93F7-CABBD1F0FBDF"];
     [ipsum authenticateWithUsername:@"Breda" Password:@"Breda"];
 }
 
 - (IBAction)getLocations:(id)sender {
-    Ipsum * ipsum = [[Ipsum alloc] init:@"E8EB7CBB-6C16-4270-93F7-CABBD1F0FBDF"];
     [ipsum getLocations: ^(NSString *data){
         tvResponse.text = [NSString stringWithFormat:@"%@", data];
     }];

@@ -9,7 +9,7 @@
 #import "Ipsum.h"
 #import "WebRequest.h"
 #import <CommonCrypto/CommonDigest.h>
-
+#import "TokenParser.h"
 
 
 @implementation Ipsum {
@@ -52,21 +52,37 @@
 -(void)loginCallHandler:(id)caller
           response:(NSData *) response
 {
-    NSString *rData = [[NSString alloc] initWithData:response encoding:NSASCIIStringEncoding];
+    NSString *rData = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     NSLog(@"Ipsum Response Body: %@", rData);
-    
-    token = [[Token alloc] initWithXML:rData];
-}
 
+    NSData* data = [rData dataUsingEncoding:NSUTF8StringEncoding];
+    
+    // create and init NSXMLParser object
+    NSXMLParser *nsXmlParser = [[NSXMLParser alloc] initWithData:data];
+    TokenParser* parser = [[TokenParser alloc] initXMLParser];
+    [nsXmlParser setDelegate:parser];
+    BOOL success = [nsXmlParser parse];
+    
+    // test the result
+    if (success) {
+        token = parser.token;
+    } else {
+        NSLog(@"Error parsing document!");
+        NSLog([NSString stringWithFormat:@"%@", [nsXmlParser parserError]]);
+    }
+}
 
 -(void)getLocations:(WebRequestCallback)completion {
     self.callback = completion;
-    NSString * hash = [self sha1:[NSString stringWithFormat:@"/auth/%@", _privateKey]];
-    NSString * uri = [NSString stringWithFormat:@"%@/auth/%@", _host, hash];
+    NSString * hash = [self sha1:[NSString stringWithFormat:@"/select/%@/@%", token.key, _privateKey]];
+    NSString * uri = [NSString stringWithFormat:@"%@/select/%@/%@", _host, token.key, hash];
     
     NSLog(@"Ipsum Request URI: %@", uri);
     
-    NSString * postData = [NSString stringWithFormat:@"<UserLogin><username>%@</username><password>%@</password></UserLogin>", @"", @""];
+    NSString* selectClause = [NSString stringWithFormat:@"<field><name></name></field>"];
+    NSString* whereClause = [NSString stringWithFormat:@""];
+    
+    NSString * postData = [NSString stringWithFormat:@"<get><start>2012-01-01T00:00:00</start><end>2999-12-31T23:59:59</end><select>%@</select>%@</get>", selectClause, whereClause];
     
     NSLog(@"Ipsum Request Body: %@", postData);
     
@@ -74,7 +90,7 @@
                           data:postData
                       delegate:self
                       handleBy:@selector(proxyCallHandler:response:)
-     ];
+    ];
 }
 
 -(void)proxyCallHandler:(id)caller
