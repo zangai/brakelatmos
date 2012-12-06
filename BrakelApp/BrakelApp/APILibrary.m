@@ -106,4 +106,24 @@
     
 }
 
+-(void) startAutoAuthenticate:(NSString*) username password:(NSString*)password deviceId:(NSString*)deviceId
+{
+    
+    NSString *hash = [APILibrary sha1: [password stringByAppendingString:[APILibrary sha1:password]]];
+    
+    NSString *formData = @"username=";
+    formData = [formData stringByAppendingString:username];
+    formData = [formData stringByAppendingString:@"&hash="];
+    
+    formData = [formData stringByAppendingString:hash];
+    //[self makeApiCall:@"login" formdata:formData];
+    formData = [formData stringByAppendingString:@"&device="];
+    formData = [formData stringByAppendingString:deviceId];
+    
+    APILibrary* lib = [[APILibrary alloc] init];
+    [lib makeApiCall:@"login" formdata:formData delegate:self handleBy:@selector(callHandler:response:)];
+
+    NSTimer* nst_Timer = [NSTimer scheduledTimerWithTimeInterval:1200 target:self selector:@selector(showTime) userInfo:nil repeats:NO];
+}
+
 @end
