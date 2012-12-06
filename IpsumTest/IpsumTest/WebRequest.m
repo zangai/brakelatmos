@@ -22,7 +22,7 @@
     trustedHosts = [NSMutableArray arrayWithObjects:@"atm-vserver2.avans.nl", @"avans.nl", @"ipsum.groept.be", nil];
 }
 
--(id)doPost:(NSString*)command
+-(void)doPost:(NSString*)command
               data:(NSString*)parameters
           delegate:(id)delegate
           handleBy:(SEL)handler {
@@ -49,7 +49,6 @@
     } else {
         // Inform the user that the connection failed.
     }
-    return self;
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -72,7 +71,7 @@
     [receivedData appendData:data];
     if (_delegate && _handleBy && [_delegate respondsToSelector:_handleBy]) {
         (void) [_delegate performSelector:_handleBy
-                              withObject:data];
+                               withObject:data];
     }
     
 }

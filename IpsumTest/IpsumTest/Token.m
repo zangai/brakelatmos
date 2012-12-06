@@ -12,4 +12,11 @@
 
 @synthesize key, expire;
 
+-(id) initWithXML:(NSString*)xmlData
+{
+    self.key = @"aapjes";
+    self.expire = [[NSDate alloc]initWithTimeIntervalSinceNow:0];
+    return self;
+}
+
 @end

@@ -16,10 +16,12 @@ typedef void (^WebRequestCallback)(NSString *response);
 @property (nonatomic, strong) Token * token;
 @property (nonatomic, copy) WebRequestCallback callback;
 
++(Ipsum*) getInstance;
+
 -(id)init:(NSString *)privateKey;
 
 -(BOOL)isAuthenticated;
--(void)authenticateWithUsername:(NSString *)username Password:(NSString *)password Completion:(WebRequestCallback)completion;
-
+-(void)authenticateWithUsername:(NSString *)username Password:(NSString *)password;
+-(void)getLocations:(WebRequestCallback)completion;
 
 @end

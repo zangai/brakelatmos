@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 - (IBAction)getToken:(id)sender;
+- (IBAction)getLocations:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *rawText;
 @property (weak, nonatomic) IBOutlet UITextView *tvResponse;
 
