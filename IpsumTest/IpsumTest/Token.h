@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface Token : NSObject
+{
+    NSString* key;
+    NSDate* expire;
+}
 
-@property (nonatomic, strong) NSString * key;
-@property (nonatomic, strong) NSDate * expire;
-
--(id) initWithXML:(NSString*)xmlData;
+@property (nonatomic, strong) NSString* key;
+@property (nonatomic, strong) NSDate* expire;
 
 @end

@@ -16,8 +16,6 @@ typedef void (^WebRequestCallback)(NSString *response);
 @property (nonatomic, strong) Token * token;
 @property (nonatomic, copy) WebRequestCallback callback;
 
-+(Ipsum*) getInstance;
-
 -(id)init:(NSString *)privateKey;
 
 -(BOOL)isAuthenticated;

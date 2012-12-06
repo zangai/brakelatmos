@@ -21,6 +21,7 @@
 		A08BE599161DBF140048D799 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A08BE598161DBF140048D799 /* ViewController.m */; };
 		A0B2E68D16243A860048AE3F /* Ipsum.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B2E68C16243A860048AE3F /* Ipsum.m */; };
 		A0CBDF0716284C4B0027DA42 /* WebRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CBDF0616284C4A0027DA42 /* WebRequest.m */; };
+		AD4E95581670CF8C00D5C420 /* TokenParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AD4E95571670CF8C00D5C420 /* TokenParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		A0B2E68C16243A860048AE3F /* Ipsum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ipsum.m; sourceTree = "<group>"; };
 		A0CBDF0516284C4A0027DA42 /* WebRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRequest.h; sourceTree = "<group>"; };
 		A0CBDF0616284C4A0027DA42 /* WebRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRequest.m; sourceTree = "<group>"; };
+		AD4E95561670CF8B00D5C420 /* TokenParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenParser.h; sourceTree = "<group>"; };
+		AD4E95571670CF8C00D5C420 /* TokenParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				A0B2E68C16243A860048AE3F /* Ipsum.m */,
 				A0CBDF0516284C4A0027DA42 /* WebRequest.h */,
 				A0CBDF0616284C4A0027DA42 /* WebRequest.m */,
+				AD4E95561670CF8B00D5C420 /* TokenParser.h */,
+				AD4E95571670CF8C00D5C420 /* TokenParser.m */,
 			);
 			name = IpsumLib;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 				A08BE58D161DBF110048D799 /* AppDelegate.m in Sources */,
 				A08BE599161DBF140048D799 /* ViewController.m in Sources */,
 				A0CBDF0716284C4B0027DA42 /* WebRequest.m in Sources */,
+				AD4E95581670CF8C00D5C420 /* TokenParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
