@@ -27,53 +27,64 @@
 }
 
 -(BOOL)isAuthenticated {
-    return NO;
+    return (token != nil);
 }
 
 -(void)authenticateWithUsername:(NSString *)username
-                       Password:(NSString *)password
-                     Completion:(WebRequestCallback)completion {
+                       Password:(NSString *)password {
+    NSString * hash = [self sha1:[NSString stringWithFormat:@"/auth/%@", _privateKey]];
+    NSString * uri = [NSString stringWithFormat:@"%@/auth/%@", _host, hash];
+    
+    NSLog(@"Ipsum Request URI: %@", uri);
+    
+    NSString * postData = [NSString stringWithFormat:@"<UserLogin><username>%@</username><password>%@</password></UserLogin>", username, password];
+    
+    NSLog(@"Ipsum Request Body: %@", postData);
+    
+    [[WebRequest alloc] doPost:uri
+                          data:postData
+                      delegate:self
+                      handleBy:@selector(loginCallHandler:response:)
+    ];
+    token = nil;
+}
+
+-(void)loginCallHandler:(id)caller
+          response:(NSData *) response
+{
+    NSString *rData = [[NSString alloc] initWithData:response encoding:NSASCIIStringEncoding];
+    NSLog(@"Ipsum Response Body: %@", rData);
+    
+    token = [[Token alloc] initWithXML:rData];
+}
+
+
+-(void)getLocations:(WebRequestCallback)completion {
     self.callback = completion;
     NSString * hash = [self sha1:[NSString stringWithFormat:@"/auth/%@", _privateKey]];
     NSString * uri = [NSString stringWithFormat:@"%@/auth/%@", _host, hash];
     
-    NSLog(@"%@", uri);
+    NSLog(@"Ipsum Request URI: %@", uri);
     
-    NSString * postData = [NSString stringWithFormat:@"<UserLogin><username>%@</username><password>%@</password></UserLogin>", username, password];
+    NSString * postData = [NSString stringWithFormat:@"<UserLogin><username>%@</username><password>%@</password></UserLogin>", @"", @""];
     
-    NSLog(@"%@", postData);
+    NSLog(@"Ipsum Request Body: %@", postData);
     
-    WebRequest *wr = [[WebRequest alloc] doPost:uri
+    [[WebRequest alloc] doPost:uri
                           data:postData
                       delegate:self
-                      handleBy:@selector(callHandler:response:)
-    ];
-    
-    token = [[Token alloc]init];
-    token.key = @"aapjes";
-    token.expire = [[NSDate alloc]initWithTimeIntervalSinceNow:0];
+                      handleBy:@selector(proxyCallHandler:response:)
+     ];
 }
 
--(void)callHandler:(id)caller
-          response:(NSData *) response
+-(void)proxyCallHandler:(id)caller
+               response:(NSData *) response
 {
-    
     NSString *rData = [[NSString alloc] initWithData:response encoding:NSASCIIStringEncoding];
-    NSLog(@"%@", rData);
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Response van Ipsum"
-                                                    message:rData
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
+    NSLog(@"Ipsum Response Body: %@", rData);
+    
     self.callback(rData);
-    
-    
 }
-
--(void) parseXml:(NSData *)data {
-    //NSXMLParser *nextParser = [[NSXMLParser alloc]initWithData:data];
-}
-
 
 -(NSString*) sha1:(NSString*)input
 {
@@ -91,12 +102,5 @@
     
     return output;
 }
-
-
-
-
-
-
-
 
 @end

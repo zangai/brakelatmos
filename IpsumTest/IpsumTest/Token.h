@@ -13,5 +13,6 @@
 @property (nonatomic, strong) NSString * key;
 @property (nonatomic, strong) NSDate * expire;
 
+-(id) initWithXML:(NSString*)xmlData;
 
 @end

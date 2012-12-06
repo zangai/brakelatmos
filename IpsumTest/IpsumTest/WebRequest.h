@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface WebRequest : NSObject
--(id)doPost:(NSString*)command
+-(void)doPost:(NSString*)command
                    data:(NSString*)parameters
                delegate:(id)delegate
                handleBy:(SEL)handler;
