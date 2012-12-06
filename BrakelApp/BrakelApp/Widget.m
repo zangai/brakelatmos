@@ -10,6 +10,7 @@
 #import "TemperatureWidget.h"
 #import "ControlWidget.h"
 #import "WindWidget.h"
+#import "CO2Widget.h"
 
 @implementation Widget
 

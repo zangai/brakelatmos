@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA2B76B51670B4EA00BC88B9 /* WindWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2B76B41670B4EA00BC88B9 /* WindWidget.m */; };
 		AA2B76B71670D37900BC88B9 /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2B76B61670D37800BC88B9 /* compass.png */; };
 		AA2B76B91670E0D100BC88B9 /* windroos.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2B76B81670E0D100BC88B9 /* windroos.png */; };
 		AA4C1299165F7CFF005EDF28 /* gebouw1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AA4C1297165F7CFF005EDF28 /* gebouw1.jpeg */; };
@@ -50,11 +49,14 @@
 		B0455A30166772190044EB3B /* tabbar.png in Resources */ = {isa = PBXBuildFile; fileRef = B0455A2F166772190044EB3B /* tabbar.png */; };
 		B0455A321667785D0044EB3B /* HeaderRevisioned.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0455A311667785D0044EB3B /* HeaderRevisioned.jpg */; };
 		B0455A341667786E0044EB3B /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = B0455A331667786E0044EB3B /* header.png */; };
+		C09777CE1670ED6E00DCFAA6 /* CO2Widget.m in Sources */ = {isa = PBXBuildFile; fileRef = C09777CD1670ED6E00DCFAA6 /* CO2Widget.m */; };
+		C09777D81670EE8900DCFAA6 /* Wind.m in Sources */ = {isa = PBXBuildFile; fileRef = C09777D41670EE8900DCFAA6 /* Wind.m */; };
+		C09777D91670EE8900DCFAA6 /* WindWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = C09777D51670EE8900DCFAA6 /* WindWidget.m */; };
+		C09777DD1670F76400DCFAA6 /* widgetTestVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C09777DC1670F76400DCFAA6 /* widgetTestVCViewController.m */; };
+		C09777E0167133E200DCFAA6 /* CO2.png in Resources */ = {isa = PBXBuildFile; fileRef = C09777DF167133E200DCFAA6 /* CO2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AA2B76B31670B4E900BC88B9 /* WindWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindWidget.h; sourceTree = "<group>"; };
-		AA2B76B41670B4EA00BC88B9 /* WindWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindWidget.m; sourceTree = "<group>"; };
 		AA2B76B61670D37800BC88B9 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass.png; sourceTree = "<group>"; };
 		AA2B76B81670E0D100BC88B9 /* windroos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = windroos.png; sourceTree = "<group>"; };
 		AA4C1297165F7CFF005EDF28 /* gebouw1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gebouw1.jpeg; sourceTree = "<group>"; };
@@ -193,6 +195,15 @@
 		B0455A2F166772190044EB3B /* tabbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar.png; sourceTree = "<group>"; };
 		B0455A311667785D0044EB3B /* HeaderRevisioned.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HeaderRevisioned.jpg; sourceTree = "<group>"; };
 		B0455A331667786E0044EB3B /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header.png; sourceTree = "<group>"; };
+		C09777CC1670ED6E00DCFAA6 /* CO2Widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CO2Widget.h; sourceTree = "<group>"; };
+		C09777CD1670ED6E00DCFAA6 /* CO2Widget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CO2Widget.m; sourceTree = "<group>"; };
+		C09777D41670EE8900DCFAA6 /* Wind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wind.m; sourceTree = "<group>"; };
+		C09777D51670EE8900DCFAA6 /* WindWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindWidget.m; sourceTree = "<group>"; };
+		C09777D61670EE8900DCFAA6 /* Wind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wind.h; sourceTree = "<group>"; };
+		C09777D71670EE8900DCFAA6 /* WindWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindWidget.h; sourceTree = "<group>"; };
+		C09777DB1670F76300DCFAA6 /* widgetTestVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = widgetTestVCViewController.h; sourceTree = "<group>"; };
+		C09777DC1670F76400DCFAA6 /* widgetTestVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = widgetTestVCViewController.m; sourceTree = "<group>"; };
+		C09777DF167133E200DCFAA6 /* CO2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CO2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +253,7 @@
 		AA7BE633165665340096E0FE /* BrakelApp */ = {
 			isa = PBXGroup;
 			children = (
+				C09777DE167133B500DCFAA6 /* Images */,
 				AA2B76B61670D37800BC88B9 /* compass.png */,
 				B0455A331667786E0044EB3B /* header.png */,
 				B0455A311667785D0044EB3B /* HeaderRevisioned.jpg */,
@@ -276,6 +288,8 @@
 				AA7BE63C165665340096E0FE /* AppDelegate.h */,
 				AA7BE63D165665340096E0FE /* AppDelegate.m */,
 				AA7BE645165665340096E0FE /* MainStoryboard.storyboard */,
+				C09777DB1670F76300DCFAA6 /* widgetTestVCViewController.h */,
+				C09777DC1670F76400DCFAA6 /* widgetTestVCViewController.m */,
 				AA7BE648165665340096E0FE /* LoginViewController.h */,
 				AA7BE649165665340096E0FE /* LoginViewController.m */,
 				AA7BE634165665340096E0FE /* Supporting Files */,
@@ -306,6 +320,10 @@
 		AA7BE680165667470096E0FE /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				C09777D41670EE8900DCFAA6 /* Wind.m */,
+				C09777D51670EE8900DCFAA6 /* WindWidget.m */,
+				C09777D61670EE8900DCFAA6 /* Wind.h */,
+				C09777D71670EE8900DCFAA6 /* WindWidget.h */,
 				B042506E165F8F79009A2384 /* CorePlot */,
 				AA7BE66D1656673A0096E0FE /* Widget.h */,
 				AA7BE66E1656673A0096E0FE /* Widget.m */,
@@ -313,8 +331,8 @@
 				AA7BE66C1656673A0096E0FE /* TemperatureWidget.m */,
 				ADB67C4C16675BAA0028CFCB /* ControlWidget.h */,
 				ADB67C4D16675BAA0028CFCB /* ControlWidget.m */,
-				AA2B76B31670B4E900BC88B9 /* WindWidget.h */,
-				AA2B76B41670B4EA00BC88B9 /* WindWidget.m */,
+				C09777CC1670ED6E00DCFAA6 /* CO2Widget.h */,
+				C09777CD1670ED6E00DCFAA6 /* CO2Widget.m */,
 			);
 			name = Widgets;
 			sourceTree = "<group>";
@@ -421,6 +439,14 @@
 			path = CorePlotHeaders;
 			sourceTree = "<group>";
 		};
+		C09777DE167133B500DCFAA6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C09777DF167133E200DCFAA6 /* CO2.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -489,6 +515,7 @@
 				B0455A341667786E0044EB3B /* header.png in Resources */,
 				AA2B76B71670D37900BC88B9 /* compass.png in Resources */,
 				AA2B76B91670E0D100BC88B9 /* windroos.png in Resources */,
+				C09777E0167133E200DCFAA6 /* CO2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,7 +546,10 @@
 				ADB67C4E16675BAA0028CFCB /* ControlWidget.m in Sources */,
 				ADB67C5216675FE50028CFCB /* Changes.m in Sources */,
 				B002F1731668B36A00636406 /* containerViewController.m in Sources */,
-				AA2B76B51670B4EA00BC88B9 /* WindWidget.m in Sources */,
+				C09777CE1670ED6E00DCFAA6 /* CO2Widget.m in Sources */,
+				C09777D81670EE8900DCFAA6 /* Wind.m in Sources */,
+				C09777D91670EE8900DCFAA6 /* WindWidget.m in Sources */,
+				C09777DD1670F76400DCFAA6 /* widgetTestVCViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
