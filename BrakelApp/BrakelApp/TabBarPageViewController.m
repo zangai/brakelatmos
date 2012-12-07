@@ -48,6 +48,7 @@
         [self addWidget:widget];
         
     }
+    
 
     return self;
 }
