@@ -59,7 +59,6 @@
     APILibrary* lib = [[APILibrary alloc] init];
     [lib makeApiCall:@"getLayout" formdata:formData delegate:self handleBy:@selector(callHandler:response:)];
 
-
 }
 
 -(void)callHandler:(id)caller response:(NSData *) response
