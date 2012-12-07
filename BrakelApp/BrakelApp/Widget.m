@@ -22,7 +22,7 @@
     NSInteger y = ((NSString*)json[@"y"]).integerValue;
     NSInteger w = ((NSString*)json[@"width"]).integerValue;
     NSInteger h = ((NSString*)json[@"height"]).integerValue;
-    self = [super initWithFrame:CGRectMake(x,y,800,400)];
+    self = [super initWithFrame:CGRectMake(x,y,w,h)];
     XCoordinate = x;
     YCoordinate = y;
     self.backgroundColor = [[UIColor alloc]initWithRed:0 green:0 blue:0 alpha:0];
@@ -45,6 +45,12 @@
             return [WindWidget makeWidgetWithType:type jsonData:json];
             break;
         }
+        case 2:
+        {
+            return [CO2Widget makeWidgetWithType:type jsonData:json];
+            break;
+        }
+            
         case 3:
         {
             return [ControlWidget makeWidgetWithType:type jsonData:json];
