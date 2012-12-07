@@ -20,9 +20,9 @@
 {
     NSInteger x = ((NSString*)json[@"x"]).integerValue;
     NSInteger y = ((NSString*)json[@"y"]).integerValue;
-    NSInteger w = ((NSString*)json[@"width"]).integerValue;
-    NSInteger h = ((NSString*)json[@"height"]).integerValue;
-    self = [super initWithFrame:CGRectMake(x,y,800,400)];
+    NSInteger w = ((NSString*)json[@"w"]).integerValue;
+    NSInteger h = ((NSString*)json[@"h"]).integerValue;
+    self = [super initWithFrame:CGRectMake(x,y,w,h)];
     XCoordinate = x;
     YCoordinate = y;
     self.backgroundColor = [[UIColor alloc]initWithRed:0 green:0 blue:0 alpha:0];
