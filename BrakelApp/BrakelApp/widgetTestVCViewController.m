@@ -28,7 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	CO2Widget *coWidget = [[CO2Widget alloc]initWithFrame:CGRectMake(0,0,1024,768)];
+	CO2Widget *coWidget = [[CO2Widget alloc]initWithFrame:CGRectMake(0,0,778,378)];
     [self.view addSubview:coWidget];
 }
 
