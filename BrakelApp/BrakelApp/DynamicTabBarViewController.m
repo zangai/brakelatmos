@@ -42,9 +42,9 @@
 	// Do any additional setup after loading the view.
     NSLog(@"Loading XML Layout");
     
-    UIImage *bannerImage = [UIImage imageNamed:@"header"];
-    UIImageView* banner = [[UIImageView alloc] initWithImage:bannerImage];
-    banner.frame = CGRectMake(0.0, 0, 1024, 100.0);
+    //UIImage *bannerImage = [UIImage imageNamed:@"header"];
+    //UIImageView* banner = [[UIImageView alloc] initWithImage:bannerImage];
+    //banner.frame = CGRectMake(0.0, 0, 1024, 100.0);
     //[self.window addSubview:banner];
     //[self addChildViewController:banner];
     
@@ -68,6 +68,7 @@
     NSString* layoutString = json[@"layout"];
     NSData* layoutData = [layoutString dataUsingEncoding:NSUTF8StringEncoding];
     NSMutableDictionary *layout = [NSJSONSerialization JSONObjectWithData:layoutData options:NSJSONReadingMutableLeaves error:&myError];
+    
     [self makeTabsFromJSON:layout];
     [self styleTabbar];
 }
