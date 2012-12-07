@@ -61,14 +61,14 @@
     
     int buttonHeight = 30;
     int buttonWidth = 200;
-    for (int i=0; i <4 /*groups.count*/; i++) {
+    for (int i=0; i <groups.count; i++) {
         
         
         UISwitch* switcher = [UISwitch alloc];
         [switcher initWithFrame: CGRectMake(0, (i*buttonHeight), buttonWidth, buttonHeight) ];
-        //bool tmp = [[[groups objectAtIndex:i]valueForKey:@"status"] boolValue];
+        bool tmp = [[[groups objectAtIndex:i]valueForKey:@"status"] boolValue];
         switcher.tag =i;
-        if(true){
+        if(tmp){
             [switcher setOn:true];
 
             switcher.onTintColor = VALUE_OPEN;

@@ -55,6 +55,18 @@
 -(id)initWithJson:(NSDictionary *)json
 {
     self = [super initWithJson:json];
+    xAxisValues = [[NSMutableArray alloc]initWithObjects: @"1",nil];
+    iphoneBlue =
+    [UIColor colorWithRed:0.121653f green:0.558395f blue:0.837748f alpha:1];
+    self.layer.cornerRadius = 25;
+    self.layer.masksToBounds = YES;
+    [self initPlot];
+    [self addButtons];
+    [self addleftLabels];
+    midBorder = [[UIView alloc]initWithFrame:CGRectMake(leftView.bounds.size.width-5, 0, 5, self.frame.size.height)];
+    [midBorder setBackgroundColor:[UIColor blackColor]];
+    [self addSubview:midBorder];
+
     return self;
 }
 
@@ -82,7 +94,7 @@
     int labelWidth = leftView.frame.size.width-(paddingXleftLabels+5);
     int labelHeight = (leftView.frame.size.height/6);
     
-    self.logo = [[UIImageView alloc]initWithFrame:CGRectMake(((leftView.bounds.size.width/2)-leftView.bounds.size.height/6), leftView.bounds.origin.y, leftView.bounds.size.height/6*2, leftView.bounds.size.height/6*2)];
+    self.logo = [[UIImageView alloc]initWithFrame:CGRectMake(((leftView.bounds.size.width/2)-(leftView.bounds.size.height/6)/2), leftView.bounds.origin.y, leftView.bounds.size.height/6, leftView.bounds.size.height/6)];
     UIImage *myImage = [UIImage imageNamed:@"CO2.png"];
     [logo setImage:myImage];
     logo.tag = 111;
