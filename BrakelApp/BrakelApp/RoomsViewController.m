@@ -66,6 +66,8 @@ UIButton* laatsteKnop;
         int knopY = 25;
         
         
+        
+        
         for (NSInteger x = 0; x < floors.count; x++) {
             
             
@@ -155,21 +157,19 @@ UIButton* laatsteKnop;
         if(roomie.floorID == currentfloor){
           
             UIButton *roomButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            [roomButton setTitle:roomie.roomName forState:UIControlStateNormal];
+            //[roomButton setTitle:roomie.roomName forState:UIControlStateNormal];
             roomButton.frame = roomie.rect;
             roomButton.enabled = roomie.enabled;
             roomButton.alpha = 0.5;
             [roomButton setTag:currentfloor];
             [[roomButton layer] setBorderWidth:1.0f];
             [[roomButton layer] setBorderColor:[UIColor blackColor].CGColor];
+            if(roomie.alarm){
+                [roomButton setBackgroundColor:[UIColor colorWithRed:255 green:0 blue:0 alpha:0.5]];
+            }
             [roomButton addTarget:self action:@selector(buttonclick:) forControlEvents:UIControlEventTouchUpInside];
           
             [self.mainView addSubview:roomButton];
-            if(roomie.alarm)
-            {
-                al = [[Alarm alloc]init];
-                [al drawTheRed:roomButton];
-            }
         }
     }
     
