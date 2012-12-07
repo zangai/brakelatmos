@@ -53,24 +53,19 @@
         NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self->receivedData options:NSJSONReadingMutableLeaves error:&myError];
         groups = [res valueForKey:@"group"];
     }
-}
-
-- (void)drawRect:(CGRect)rect
-{
-    NSLog(@"Control widget is showing now");
+    
+    
+    
     
     int buttonHeight = 30;
     int buttonWidth = 200;
-    for (int i=0; i <groups.count; i++) {
-        
-        
+    for (int i=0; i <4/*groups.count*/; i++) {
         UISwitch* switcher = [UISwitch alloc];
         [switcher initWithFrame: CGRectMake(0, (i*buttonHeight), buttonWidth, buttonHeight) ];
         bool tmp = [[[groups objectAtIndex:i]valueForKey:@"status"] boolValue];
         switcher.tag =i;
-        if(tmp){
+        if(true/*tmp*/){
             [switcher setOn:true];
-
             switcher.onTintColor = VALUE_OPEN;
         }
         else{
@@ -79,13 +74,13 @@
         [switcher addTarget:self action:@selector(queueForChange:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:switcher];
         
-//        UIButton* button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-//        button.frame = CGRectMake(0, (i * buttonHeight), buttonWidth, buttonHeight);
-//        [button setTitle:[NSString stringWithFormat:@"Change Group %d", i] forState:UIControlStateNormal];
-//        button.tag = i;
-//        button.backgroundColor = VALUE_CLOSED;
-//        [button addTarget:self action:@selector(queueForChange:) forControlEvents:UIControlEventTouchUpInside];
-//        [self addSubview:button];
+        //        UIButton* button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        //        button.frame = CGRectMake(0, (i * buttonHeight), buttonWidth, buttonHeight);
+        //        [button setTitle:[NSString stringWithFormat:@"Change Group %d", i] forState:UIControlStateNormal];
+        //        button.tag = i;
+        //        button.backgroundColor = VALUE_CLOSED;
+        //        [button addTarget:self action:@selector(queueForChange:) forControlEvents:UIControlEventTouchUpInside];
+        //        [self addSubview:button];
     }
     
     //Confirm button
@@ -94,6 +89,13 @@
     [button setTitle:[NSString stringWithFormat:@"Make Changes"] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(makeChanges:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:button];
+}
+
+- (void)drawRect:(CGRect)rect
+{
+    NSLog(@"Control widget is showing now");
+    
+    
 }
 
 +(ControlWidget*)makeWidgetWithType:(NSString*)type jsonData:(NSDictionary*)json

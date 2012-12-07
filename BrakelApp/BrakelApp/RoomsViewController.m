@@ -13,7 +13,6 @@
 #import "DynamicTabBarViewController.h"
 #import "APILibrary.h"
 
-
 @interface RoomsViewController ()
 
 @end
@@ -62,8 +61,20 @@ UIButton* laatsteKnop;
         floors = [res valueForKey:@"floors"];
                 
         //Creating elevator buttons
-        int knopX = 40;
+        int knopX = 150;
         int knopY = 25;
+        UIButton *homeKnop = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        homeKnop.frame = CGRectMake(40, 25, 70, 70);
+        [homeKnop setTitle:@"Home" forState:UIControlStateNormal];
+        [homeKnop setTag:[[dataStorage sharedManager] buildingId]];
+        [homeKnop setBackgroundImage:[UIImage imageNamed:@"blue"]  forState:UIControlStateNormal];
+        [homeKnop setBackgroundImage:[UIImage imageNamed:@"yellow"] forState:UIControlStateHighlighted];
+        [homeKnop setBackgroundImage:[UIImage imageNamed:@"green"] forState:UIControlStateDisabled];
+        [homeKnop addTarget:self action:@selector(knopDruk:) forControlEvents:UIControlEventTouchDown];
+        
+        [_deuiviewnav addSubview:homeKnop];
+        
+        
         
         
         for (NSInteger x = 0; x < floors.count; x++) {
@@ -90,10 +101,11 @@ UIButton* laatsteKnop;
             
             [_deuiviewnav addSubview:liftKnop];
             if(x % 2){
+                knopX = knopX +110;
+            }else {
                 knopY = knopY +90;
                 knopX = knopX -110;
-            }else {
-                knopX = knopX +110;
+                
             }
         }
         _deuiviewnav.frame = CGRectMake(0, 0, 250, knopY + 80);
@@ -146,35 +158,35 @@ UIButton* laatsteKnop;
     }
     [sender setEnabled:false];
     
-    //remove everything from the mainview, the room buttons normally.
+    //remove every subview from the mainview, these subviews should be rooms.
     [[self.mainView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
     //create and add the roombuttons
-    NSInteger currentfloor = [sender tag];
-    for(Room *roomie in rooms){
-        if(roomie.floorID == currentfloor){
-          
-            UIButton *roomButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            [roomButton setTitle:roomie.roomName forState:UIControlStateNormal];
-            roomButton.frame = roomie.rect;
-            roomButton.enabled = roomie.enabled;
-            roomButton.alpha = 0.5;
-            [roomButton setTag:currentfloor];
-            [[roomButton layer] setBorderWidth:1.0f];
-            [[roomButton layer] setBorderColor:[UIColor blackColor].CGColor];
-            [roomButton addTarget:self action:@selector(buttonclick:) forControlEvents:UIControlEventTouchUpInside];
-          
-            [self.mainView addSubview:roomButton];
-            if(roomie.alarm)
-            {
-                al = [[Alarm alloc]init];
-                [al drawTheRed:roomButton];
+    NSInteger selectedFloor = [sender tag];
+
+        for(Room *roomie in rooms){
+            if(roomie.floorID == selectedFloor){
+              
+                UIButton *roomButton = [UIButton buttonWithType:UIButtonTypeCustom];
+                //[roomButton setTitle:roomie.roomName forState:UIControlStateNormal];
+                roomButton.frame = roomie.rect;
+                roomButton.enabled = roomie.enabled;
+                roomButton.alpha = 0.5;
+                [roomButton setTag:selectedFloor];
+                [[roomButton layer] setBorderWidth:1.0f];
+                [[roomButton layer] setBorderColor:[UIColor blackColor].CGColor];
+                if(roomie.alarm){
+                    [roomButton setBackgroundColor:[UIColor colorWithRed:255 green:0 blue:0 alpha:1]];
+                }
+                [roomButton addTarget:self action:@selector(buttonclick:) forControlEvents:UIControlEventTouchUpInside];
+              
+                [self.mainView addSubview:roomButton];
             }
         }
-    }
+
     
     //Set background of that floor.
-    NSString *imageString = [NSString stringWithFormat: @"http://145.48.128.101/images/%d.png", currentfloor];
+    NSString *imageString = [NSString stringWithFormat: @"http://145.48.128.101/images/%d.png", selectedFloor];
     NSURL *url = [NSURL URLWithString: imageString];
     UIImage *image = [UIImage imageWithData: [NSData dataWithContentsOfURL:url]];
     [_mainView setImage:image];
