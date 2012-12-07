@@ -7,6 +7,7 @@
 //
 
 #import "containerViewController.h"
+#import "dataStorage.h"
 
 @interface containerViewController ()
 
@@ -20,8 +21,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-
-   
         
     }
     return self;
@@ -31,8 +30,15 @@
 {
     [super viewDidLoad];
 
-
-    
+    UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    int w = 100;
+    int h = 30;
+    int x = (self.view.frame.size.width - w);
+    int y = 50;
+    CGRect rect = { {x, y}, {w, h} };
+    [button setFrame:rect];
+    [button setTitle:[[dataStorage sharedManager] buildingTitle] forState:UIControlStateNormal];
+    [self.view addSubview:button];
 }
 
 - (void)didReceiveMemoryWarning

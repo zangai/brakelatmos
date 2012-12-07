@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSString* userToken;
 @property (nonatomic, retain) NSString* roomID;
 @property (nonatomic) NSInteger buildingId;
+@property (nonatomic, retain) NSString* buildingTitle;
 @property (nonatomic, retain) NSString* deviceId;
 
 - (void) initArrayLists:(NSMutableArray *)data;

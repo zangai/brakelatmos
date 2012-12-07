@@ -57,8 +57,6 @@
     dataStorage *sharedManager = [dataStorage sharedManager];
     self.buildings = [[NSMutableArray alloc] initWithArray:sharedManager.buildings];
 
-    
-
 }
 
 - (void)viewDidLoad
@@ -158,8 +156,8 @@
 {
     Building* building = [buildings objectAtIndex:selectedIndex];
     [[dataStorage sharedManager] setBuildingId:building.BuildingID.integerValue];
+    [[dataStorage sharedManager] setBuildingTitle:building.BuildingName];
     [self performSegueWithIdentifier:@"goToFloorView" sender:self];
-    
 }
 
 

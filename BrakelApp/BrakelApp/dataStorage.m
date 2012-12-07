@@ -11,13 +11,7 @@
 
 @implementation dataStorage
 
-
-@synthesize bImages;
-@synthesize buildings;
-@synthesize userToken;
-@synthesize roomID;
-@synthesize buildingId;
-@synthesize deviceId;
+@synthesize bImages, buildings, userToken, roomID, buildingId, buildingTitle, deviceId;
 
 + (id)sharedManager {
     static dataStorage *sharedMyManager = nil;
@@ -35,6 +29,7 @@
         userToken = [[NSString alloc] init];
         deviceId = [[NSString alloc] init];
         roomID = [[NSString alloc] init];
+        buildingTitle = [[NSString alloc] init];
     }
     return self;
 }
