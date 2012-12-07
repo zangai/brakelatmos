@@ -99,8 +99,8 @@
 
 -(void)getLocations:(WebRequestCallback)completion {
     self.callback = completion;
-    NSString * hash = [self sha1:[NSString stringWithFormat:@"/select/%@/@%", token.key, _privateKey]];
-    NSString * uri = [NSString stringWithFormat:@"%@/select/%@/%@", _host, token.key, hash];
+    NSString * hash = [self sha1:[NSString stringWithFormat:@"/select/%@/%@/@%", token.key, @"2033", _privateKey]];
+    NSString * uri = [NSString stringWithFormat:@"%@/select/%@/%@/%@", _host, token.key, @"2033", hash];
     
     NSLog(@"Ipsum Request URI: %@", uri);
     
