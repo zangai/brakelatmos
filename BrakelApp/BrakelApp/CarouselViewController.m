@@ -158,7 +158,8 @@
     [[dataStorage sharedManager] setBuildingId:building.BuildingID.integerValue];
     [[dataStorage sharedManager] setBuildingTitle:building.BuildingName];
     [self performSegueWithIdentifier:@"goToFloorView" sender:self];
-}
+    
+    }
 
 
 - (NSUInteger)numberOfPlaceholdersInCarousel:(iCarousel *)carousel

@@ -8,11 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
+#import "dataStorage.h"
+#import "CarouselViewController.h"
 
+#define heightHeaderImage 160
+#define widthHeaderImage    1024
+#define terugKnopTekst  "Kies ander gebouw"
 
 @interface containerViewController : UIViewController
-
+{
+    UILabel* gebouwNaam;
+}
 @property (weak, nonatomic) IBOutlet UIViewController *container;
+@property (weak, nonatomic) IBOutlet UIImageView *headerImage;
+@property (strong, nonatomic) UILabel * gebouwNaam;
+- (IBAction)Home:(id)sender;
 
 
 
