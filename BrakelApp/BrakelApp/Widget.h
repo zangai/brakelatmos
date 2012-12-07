@@ -16,6 +16,8 @@
 
 @property (nonatomic) NSInteger XCoordinate;
 @property (nonatomic) NSInteger YCoordinate;
+@property (nonatomic) NSInteger Width;
+@property (nonatomic) NSInteger Height;
 
 -(id)initWithJson:(NSDictionary*)json;
 -(void) draw;

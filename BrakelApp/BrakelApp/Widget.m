@@ -14,7 +14,7 @@
 
 @implementation Widget
 
-@synthesize WidgetId, Title, Description, XCoordinate, YCoordinate;
+@synthesize WidgetId, Title, Description, XCoordinate, YCoordinate, Width, Height;
 
 -(id)initWithJson:(NSDictionary*)json
 {
@@ -25,8 +25,10 @@
     self = [super initWithFrame:CGRectMake(x,y,w,h)];
     XCoordinate = x;
     YCoordinate = y;
+    Width = w;
+    Height = h;
     self.backgroundColor = [[UIColor alloc]initWithRed:0 green:0 blue:0 alpha:0];
-        return self;
+    return self;
 }
 
 
