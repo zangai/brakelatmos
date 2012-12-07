@@ -8,9 +8,13 @@
 
 #import "ViewController.h"
 #import "Ipsum.h"
+#import "Token.h"
 
 @interface ViewController ()
-    
+{
+    Token* token;
+    Ipsum * ipsum;
+}
 @end
 
 @implementation ViewController
@@ -20,6 +24,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    ipsum = [[Ipsum alloc] init:@"E8EB7CBB-6C16-4270-93F7-CABBD1F0FBDF"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -29,11 +34,14 @@
 }
 
 - (IBAction)getToken:(id)sender {
-    Ipsum * ipsum = [[Ipsum alloc] init:@"E8EB7CBB-6C16-4270-93F7-CABBD1F0FBDF"];
-    [ipsum authenticateWithUsername:@"Breda" Password:@"Breda" Completion:^(NSString *data){
-        tvResponse.text = [NSString stringWithFormat:@"%@", data];
-    }];
+    [ipsum authenticateWithUsername:@"Breda" Password:@"Breda"];
 }
 
+- (IBAction)getLocations:(id)sender {
+    [ipsum getLocations: ^(NSString *data){
+        tvResponse.text = [NSString stringWithFormat:@"%@", data];
+    }];
+
+}
 
 @end

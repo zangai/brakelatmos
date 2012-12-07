@@ -16,13 +16,12 @@
     SEL _handleBy;
 };
 
-
 -(void)setup {
     trustedHosts = [[NSMutableArray alloc] init];
     trustedHosts = [NSMutableArray arrayWithObjects:@"atm-vserver2.avans.nl", @"avans.nl", @"ipsum.groept.be", nil];
 }
 
--(id)doPost:(NSString*)command
+-(void)doPost:(NSString*)command
               data:(NSString*)parameters
           delegate:(id)delegate
           handleBy:(SEL)handler {
@@ -36,6 +35,7 @@
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:60.0];
     
+    //[request setValue:@"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[parameters dataUsingEncoding:NSUTF8StringEncoding]];
     
@@ -43,38 +43,23 @@
                                                                  delegate:self];
     
     if (connection) {
-        // Create the NSMutableData to hold the received data.
-        // receivedData is an instance variable declared elsewhere.
         receivedData = [NSMutableData data];
     } else {
-        // Inform the user that the connection failed.
     }
-    return self;
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-    // This method is called when the server has determined that it
-    // has enough information to create the NSURLResponse.
-    
-    // It can be called multiple times, for example in the case of a
-    // redirect, so each time we reset the data.
-    
-    // receivedData is an instance variable declared elsewhere.
     [receivedData setLength:0];
-    
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    // Append the new data to receivedData.
-    // receivedData is an instance variable declared elsewhere.
     [receivedData appendData:data];
     if (_delegate && _handleBy && [_delegate respondsToSelector:_handleBy]) {
         (void) [_delegate performSelector:_handleBy
-                              withObject:data];
+                               withObject:data];
     }
-    
 }
 
 - (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
