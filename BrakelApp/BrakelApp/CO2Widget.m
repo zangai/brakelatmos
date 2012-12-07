@@ -77,12 +77,14 @@
 
 
 
-
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    NSLog(@"CO2 Widget");
+    // Drawing code
 }
-
+*/
 -(void)addleftLabels
 {  
 
@@ -92,7 +94,7 @@
     int labelWidth = leftView.frame.size.width-(paddingXleftLabels+5);
     int labelHeight = (leftView.frame.size.height/6);
     
-    self.logo = [[UIImageView alloc]initWithFrame:CGRectMake(((leftView.bounds.size.width/2)-((leftView.bounds.size.height/6)/2)), leftView.bounds.origin.y, leftView.bounds.size.height/6, leftView.bounds.size.height/6)];
+    self.logo = [[UIImageView alloc]initWithFrame:CGRectMake(((leftView.bounds.size.width/2)-(leftView.bounds.size.height/6)/2), leftView.bounds.origin.y, leftView.bounds.size.height/6, leftView.bounds.size.height/6)];
     UIImage *myImage = [UIImage imageNamed:@"CO2.png"];
     [logo setImage:myImage];
     logo.tag = 111;

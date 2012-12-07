@@ -11,8 +11,8 @@
 #import "APILibrary.h"
 #include "dataStorage.h"
 
-#define VALUE_CLOSED [UIColor colorWithRed:0.8 green:0.2 blue:0.0 alpha:1.0]
-#define VALUE_OPEN [UIColor greenColor]
+#define VALUE_CLOSED [UIColor redColor]
+#define VALUE_OPEN [UIColor blueColor]
 
 @implementation ControlWidget
 {
@@ -58,54 +58,42 @@
 - (void)drawRect:(CGRect)rect
 {
     NSLog(@"Control widget is showing now");
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetRGBFillColor(context, 1,0,0,0.75);
-    
-    //CGRect rect = [CGRectMake(rect.origin.x+100, rect.origin.y+50, rect.size.width, rect.size.height)]
-    NSInteger radius = 100;
-    
-    CGContextMoveToPoint(context, rect.origin.x, rect.origin.y + radius);
-    CGContextAddLineToPoint(context, rect.origin.x, rect.origin.y + rect.size.height - radius);
-    CGContextAddArc(context, rect.origin.x + radius, rect.origin.y + rect.size.height - radius,
-                    radius, M_PI, M_PI / 2, 1); //STS fixed
-    CGContextAddLineToPoint(context, rect.origin.x + rect.size.width - radius,
-                            rect.origin.y + rect.size.height);
-    CGContextAddArc(context, rect.origin.x + rect.size.width - radius,
-                    rect.origin.y + rect.size.height - radius, radius, M_PI / 2, 0.0f, 1);
-    CGContextAddLineToPoint(context, rect.origin.x + rect.size.width, rect.origin.y + radius);
-    CGContextAddArc(context, rect.origin.x + rect.size.width - radius, rect.origin.y + radius,
-                    radius, 0.0f, -M_PI / 2, 1);
-    CGContextAddLineToPoint(context, rect.origin.x + radius, rect.origin.y);
-    CGContextAddArc(context, rect.origin.x + radius, rect.origin.y + radius, radius,
-                    -M_PI / 2, M_PI, 1);
-    
-    CGContextFillPath(context);
     
     int buttonHeight = 30;
-    int buttonWidth = 100;
-    for (int i=0; i < 4; i++) {
-        UISwitch* switc = [[UISwitch alloc] init];
-        UILabel* label = [[UILabel alloc]init];
-        switc.frame = CGRectMake(0, (i * buttonHeight), buttonWidth, buttonHeight);
-        label.frame = CGRectMake(buttonWidth + 10, (i * buttonHeight), buttonWidth, buttonHeight);
-        label.text = [NSString stringWithFormat:@"Groep %i",i];
-        label.textColor = [UIColor whiteColor];
-        label.backgroundColor = [UIColor blackColor];
-        switc.tag = i;
-        switc.backgroundColor = VALUE_CLOSED;
-        [switc addTarget:self action:@selector(queueForChange:) forControlEvents:UIControlEventTouchUpInside];
-        switc.alpha = 0.5;
-        [self addSubview:switc];
-        [self addSubview:label];
+    int buttonWidth = 200;
+    for (int i=0; i <groups.count; i++) {
+        
+        
+        UISwitch* switcher = [UISwitch alloc];
+        [switcher initWithFrame: CGRectMake(0, (i*buttonHeight), buttonWidth, buttonHeight) ];
+        bool tmp = [[[groups objectAtIndex:i]valueForKey:@"status"] boolValue];
+        switcher.tag =i;
+        if(tmp){
+            [switcher setOn:true];
+
+            switcher.onTintColor = VALUE_OPEN;
+        }
+        else{
+            [switcher setOn:false];
+        }
+        [switcher addTarget:self action:@selector(queueForChange:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:switcher];
+        
+//        UIButton* button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//        button.frame = CGRectMake(0, (i * buttonHeight), buttonWidth, buttonHeight);
+//        [button setTitle:[NSString stringWithFormat:@"Change Group %d", i] forState:UIControlStateNormal];
+//        button.tag = i;
+//        button.backgroundColor = VALUE_CLOSED;
+//        [button addTarget:self action:@selector(queueForChange:) forControlEvents:UIControlEventTouchUpInside];
+//        [self addSubview:button];
     }
     
     //Confirm button
-    UISwitch* switcer = [[UISwitch alloc] init];
-    switcer.frame = CGRectMake(0, (6 * buttonHeight), buttonWidth, buttonHeight);
-    switcer.backgroundColor = VALUE_CLOSED;
-    [switcer addTarget:self action:@selector(makeChanges:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:switcer];
-    
+    UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button.frame = CGRectMake(0, (6 * buttonHeight), buttonWidth, buttonHeight);
+    [button setTitle:[NSString stringWithFormat:@"Make Changes"] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(makeChanges:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:button];
 }
 
 +(ControlWidget*)makeWidgetWithType:(NSString*)type jsonData:(NSDictionary*)json
@@ -119,17 +107,15 @@
     Changes* change = [[Changes alloc] init];
     change.GroupID = btn.tag;
     
-    if(btn.backgroundColor != VALUE_OPEN)
+    if(btn.on)
     {
-        change.ChangeValue = 1;
-        btn.backgroundColor = VALUE_OPEN;
-        btn.alpha = 1.0;
+        change.ChangeValue = 255;
+        btn.onTintColor = VALUE_OPEN;
     }
     else
     {
         change.ChangeValue = 0;
-        btn.backgroundColor = VALUE_CLOSED;
-        btn.alpha = 0.5;
+        //btn.tintColor = VALUE_CLOSED;
     }
     NSString* key = [NSString stringWithFormat:@"%d", change.GroupID];
     changesQueue[key] = [change toJSONString];    

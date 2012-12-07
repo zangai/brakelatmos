@@ -50,7 +50,6 @@
             return [CO2Widget makeWidgetWithType:type jsonData:json];
             break;
         }
-            
         case 3:
         {
             return [ControlWidget makeWidgetWithType:type jsonData:json];
