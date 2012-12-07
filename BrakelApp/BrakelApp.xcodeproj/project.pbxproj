@@ -44,16 +44,13 @@
 		B002F1731668B36A00636406 /* containerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B002F1721668B36A00636406 /* containerViewController.m */; };
 		B04250BC165F8F9D009A2384 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B04250BB165F8F9D009A2384 /* libCorePlot-CocoaTouch.a */; };
 		B04250C7165F91EB009A2384 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = B04250C6165F91EB009A2384 /* Alarm.m */; };
-		B04250CA165FA0D4009A2384 /* AlarmTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = B04250C9165FA0D4009A2384 /* AlarmTestView.m */; };
 		B0455A2D166767460044EB3B /* icon_check.png in Resources */ = {isa = PBXBuildFile; fileRef = B0455A2C166767460044EB3B /* icon_check.png */; };
 		B0455A30166772190044EB3B /* tabbar.png in Resources */ = {isa = PBXBuildFile; fileRef = B0455A2F166772190044EB3B /* tabbar.png */; };
 		B0455A321667785D0044EB3B /* HeaderRevisioned.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0455A311667785D0044EB3B /* HeaderRevisioned.jpg */; };
 		B0455A341667786E0044EB3B /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = B0455A331667786E0044EB3B /* header.png */; };
 		B0A792841672149B00C4622E /* temp.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A792831672149B00C4622E /* temp.png */; };
 		C09777CE1670ED6E00DCFAA6 /* CO2Widget.m in Sources */ = {isa = PBXBuildFile; fileRef = C09777CD1670ED6E00DCFAA6 /* CO2Widget.m */; };
-		C09777D81670EE8900DCFAA6 /* Wind.m in Sources */ = {isa = PBXBuildFile; fileRef = C09777D41670EE8900DCFAA6 /* Wind.m */; };
 		C09777D91670EE8900DCFAA6 /* WindWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = C09777D51670EE8900DCFAA6 /* WindWidget.m */; };
-		C09777DD1670F76400DCFAA6 /* widgetTestVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C09777DC1670F76400DCFAA6 /* widgetTestVCViewController.m */; };
 		C09777E0167133E200DCFAA6 /* CO2.png in Resources */ = {isa = PBXBuildFile; fileRef = C09777DF167133E200DCFAA6 /* CO2.png */; };
 /* End PBXBuildFile section */
 
@@ -190,8 +187,6 @@
 		B04250BB165F8F9D009A2384 /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
 		B04250C5165F91EB009A2384 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
 		B04250C6165F91EB009A2384 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
-		B04250C8165FA0D3009A2384 /* AlarmTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmTestView.h; sourceTree = "<group>"; };
-		B04250C9165FA0D4009A2384 /* AlarmTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmTestView.m; sourceTree = "<group>"; };
 		B0455A2C166767460044EB3B /* icon_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_check.png; sourceTree = "<group>"; };
 		B0455A2F166772190044EB3B /* tabbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar.png; sourceTree = "<group>"; };
 		B0455A311667785D0044EB3B /* HeaderRevisioned.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HeaderRevisioned.jpg; sourceTree = "<group>"; };
@@ -199,12 +194,8 @@
 		B0A792831672149B00C4622E /* temp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temp.png; sourceTree = "<group>"; };
 		C09777CC1670ED6E00DCFAA6 /* CO2Widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CO2Widget.h; sourceTree = "<group>"; };
 		C09777CD1670ED6E00DCFAA6 /* CO2Widget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CO2Widget.m; sourceTree = "<group>"; };
-		C09777D41670EE8900DCFAA6 /* Wind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wind.m; sourceTree = "<group>"; };
 		C09777D51670EE8900DCFAA6 /* WindWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindWidget.m; sourceTree = "<group>"; };
-		C09777D61670EE8900DCFAA6 /* Wind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wind.h; sourceTree = "<group>"; };
 		C09777D71670EE8900DCFAA6 /* WindWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindWidget.h; sourceTree = "<group>"; };
-		C09777DB1670F76300DCFAA6 /* widgetTestVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = widgetTestVCViewController.h; sourceTree = "<group>"; };
-		C09777DC1670F76400DCFAA6 /* widgetTestVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = widgetTestVCViewController.m; sourceTree = "<group>"; };
 		C09777DF167133E200DCFAA6 /* CO2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CO2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -231,6 +222,7 @@
 				AA7BE633165665340096E0FE /* BrakelApp */,
 				AA7BE62C165665340096E0FE /* Frameworks */,
 				AA7BE62A165665340096E0FE /* Products */,
+				AA7BE634165665340096E0FE /* Supporting Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -255,48 +247,31 @@
 		AA7BE633165665340096E0FE /* BrakelApp */ = {
 			isa = PBXGroup;
 			children = (
+				AA7BE6811656675E0096E0FE /* WidgetPages */,
 				C09777DE167133B500DCFAA6 /* Images */,
-				AA2B76B61670D37800BC88B9 /* compass.png */,
-				B0455A331667786E0044EB3B /* header.png */,
-				B0455A311667785D0044EB3B /* HeaderRevisioned.jpg */,
-				B0455A2F166772190044EB3B /* tabbar.png */,
-				B0455A2C166767460044EB3B /* icon_check.png */,
 				B04250C5165F91EB009A2384 /* Alarm.h */,
 				B04250C6165F91EB009A2384 /* Alarm.m */,
-				AA4C1297165F7CFF005EDF28 /* gebouw1.jpeg */,
-				AA4C1298165F7CFF005EDF28 /* gebouw2.jpeg */,
-				AA2B76B81670E0D100BC88B9 /* windroos.png */,
 				AA7BE6541656673A0096E0FE /* APILibrary.h */,
 				AA7BE6551656673A0096E0FE /* APILibrary.m */,
-				AA7BE6561656673A0096E0FE /* blue.png */,
 				AA7BE6571656673A0096E0FE /* Building.h */,
 				AA7BE6581656673A0096E0FE /* Building.m */,
 				AA7BE6591656673A0096E0FE /* CarouselViewController.h */,
 				AA7BE65A1656673A0096E0FE /* CarouselViewController.m */,
 				AA7BE65B1656673A0096E0FE /* dataStorage.h */,
 				AA7BE65C1656673A0096E0FE /* dataStorage.m */,
-				AA7BE6811656675E0096E0FE /* WidgetPages */,
-				AA7BE65F1656673A0096E0FE /* green.png */,
 				AA7BE6601656673A0096E0FE /* iCarousel.h */,
 				AA7BE6611656673A0096E0FE /* iCarousel.m */,
 				AA7BE6621656673A0096E0FE /* navViewController.h */,
 				AA7BE6631656673A0096E0FE /* navViewController.m */,
-				AA7BE6641656673A0096E0FE /* red.png */,
 				AA7BE6651656673A0096E0FE /* room.h */,
 				AA7BE6661656673A0096E0FE /* room.m */,
 				AA7BE6671656673A0096E0FE /* RoomsViewController.h */,
 				AA7BE6681656673A0096E0FE /* RoomsViewController.m */,
-				AA7BE66F1656673A0096E0FE /* yellow.png */,
 				AA7BE63C165665340096E0FE /* AppDelegate.h */,
 				AA7BE63D165665340096E0FE /* AppDelegate.m */,
 				AA7BE645165665340096E0FE /* MainStoryboard.storyboard */,
-				C09777DB1670F76300DCFAA6 /* widgetTestVCViewController.h */,
-				C09777DC1670F76400DCFAA6 /* widgetTestVCViewController.m */,
 				AA7BE648165665340096E0FE /* LoginViewController.h */,
 				AA7BE649165665340096E0FE /* LoginViewController.m */,
-				AA7BE634165665340096E0FE /* Supporting Files */,
-				B04250C8165FA0D3009A2384 /* AlarmTestView.h */,
-				B04250C9165FA0D4009A2384 /* AlarmTestView.m */,
 				ADB67C5016675FE50028CFCB /* Changes.h */,
 				ADB67C5116675FE50028CFCB /* Changes.m */,
 				B002F1711668B36A00636406 /* containerViewController.h */,
@@ -317,6 +292,7 @@
 				AA7BE643165665340096E0FE /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			path = BrakelApp;
 			sourceTree = "<group>";
 		};
 		AA7BE680165667470096E0FE /* Widgets */ = {
@@ -444,6 +420,18 @@
 		C09777DE167133B500DCFAA6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AA2B76B61670D37800BC88B9 /* compass.png */,
+				B0455A331667786E0044EB3B /* header.png */,
+				B0455A311667785D0044EB3B /* HeaderRevisioned.jpg */,
+				B0455A2F166772190044EB3B /* tabbar.png */,
+				B0455A2C166767460044EB3B /* icon_check.png */,
+				AA4C1297165F7CFF005EDF28 /* gebouw1.jpeg */,
+				AA4C1298165F7CFF005EDF28 /* gebouw2.jpeg */,
+				AA2B76B81670E0D100BC88B9 /* windroos.png */,
+				AA7BE6561656673A0096E0FE /* blue.png */,
+				AA7BE65F1656673A0096E0FE /* green.png */,
+				AA7BE6641656673A0096E0FE /* red.png */,
+				AA7BE66F1656673A0096E0FE /* yellow.png */,
 				B0A792831672149B00C4622E /* temp.png */,
 				C09777DF167133E200DCFAA6 /* CO2.png */,
 			);
@@ -546,14 +534,11 @@
 				AA7BE67D1656673A0096E0FE /* TemperatureWidget.m in Sources */,
 				AA7BE67E1656673A0096E0FE /* Widget.m in Sources */,
 				B04250C7165F91EB009A2384 /* Alarm.m in Sources */,
-				B04250CA165FA0D4009A2384 /* AlarmTestView.m in Sources */,
 				ADB67C4E16675BAA0028CFCB /* ControlWidget.m in Sources */,
 				ADB67C5216675FE50028CFCB /* Changes.m in Sources */,
 				B002F1731668B36A00636406 /* containerViewController.m in Sources */,
 				C09777CE1670ED6E00DCFAA6 /* CO2Widget.m in Sources */,
-				C09777D81670EE8900DCFAA6 /* Wind.m in Sources */,
 				C09777D91670EE8900DCFAA6 /* WindWidget.m in Sources */,
-				C09777DD1670F76400DCFAA6 /* widgetTestVCViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
