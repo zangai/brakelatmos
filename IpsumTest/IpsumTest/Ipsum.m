@@ -55,6 +55,30 @@
     NSString *rData = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     NSLog(@"Ipsum Response Body: %@", rData);
 
+    NSRange range;
+    token = [[Token alloc] init];
+    
+    NSRange startrange = [rData rangeOfString: @"<token>"];
+    NSRange endrange = [rData rangeOfString: @"</token>"];
+    range.location = (startrange.location + startrange.length);
+    range.length = (endrange.location - range.location);
+    
+    NSString* tokenString = [rData substringWithRange:range];
+    token.key = tokenString;
+    
+    startrange = [rData rangeOfString: @"<expire>"];
+    endrange = [rData rangeOfString: @"</expire>"];
+    range.location = (startrange.location + startrange.length);
+    range.length = (endrange.location - range.location);
+    
+    tokenString = [rData substringWithRange:range];
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    
+    //2012-12-07T10:22:36
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    token.expire = [dateFormatter dateFromString:tokenString];
+    
+    /*
     NSData* data = [rData dataUsingEncoding:NSUTF8StringEncoding];
     
     // create and init NSXMLParser object
@@ -70,6 +94,7 @@
         NSLog(@"Error parsing document!");
         NSLog([NSString stringWithFormat:@"%@", [nsXmlParser parserError]]);
     }
+     */
 }
 
 -(void)getLocations:(WebRequestCallback)completion {
