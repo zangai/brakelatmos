@@ -82,7 +82,7 @@
     int labelWidth = leftView.frame.size.width-(paddingXleftLabels+5);
     int labelHeight = (leftView.frame.size.height/6);
     
-    self.logo = [[UIImageView alloc]initWithFrame:CGRectMake(leftView.bounds.origin.x, leftView.bounds.origin.y, leftView.bounds.size.width-5, leftView.bounds.size.width-5)];
+    self.logo = [[UIImageView alloc]initWithFrame:CGRectMake(((leftView.bounds.size.width/2)-leftView.bounds.size.height/6), leftView.bounds.origin.y, leftView.bounds.size.height/6*2, leftView.bounds.size.height/6*2)];
     UIImage *myImage = [UIImage imageNamed:@"CO2.png"];
     [logo setImage:myImage];
     logo.tag = 111;
@@ -157,14 +157,14 @@
     [showJaar addTarget:self
                  action:@selector(changeGraph:)
      forControlEvents:UIControlEventTouchUpInside];
-    [showJaar setTitle:@"Jaar" forState:UIControlStateNormal];
+    [showJaar setTitle:@"Year" forState:UIControlStateNormal];
     showJaar.frame = CGRectMake(bottomView.bounds.origin.x, bottomView.bounds.origin.y, bottomView.bounds.size.width/4, bottomView.bounds.size.height);
     //[self styleButton:showJaar];
     showMaand = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [showMaand addTarget:self
                   action:@selector(changeGraph:)
        forControlEvents:UIControlEventTouchUpInside];
-    [showMaand setTitle:@"Maand" forState:UIControlStateNormal];
+    [showMaand setTitle:@"Month" forState:UIControlStateNormal];
     showMaand.frame = CGRectMake((bottomView.bounds.size.width/4), bottomView.bounds.origin.y, bottomView.bounds.size.width/4, bottomView.bounds.size.height);
     showMaand.tag = 2;
     showWeek = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -178,7 +178,7 @@
     [showDag addTarget:self
                  action:@selector(changeGraph:)
        forControlEvents:UIControlEventTouchUpInside];
-    [showDag setTitle:@"Dag" forState:UIControlStateNormal];
+    [showDag setTitle:@"Day" forState:UIControlStateNormal];
     showDag.frame = CGRectMake(((bottomView.bounds.size.width/4)*3), bottomView.bounds.origin.y, bottomView.bounds.size.width/4, bottomView.bounds.size.height);
     showDag.tag = 4;
     //self.showMaand = [[UIButton alloc]initWithFrame:CGRectMake((bottomView.bounds.size.width/3), bottomView.bounds.origin.y, bottomView.bounds.size.width/3, bottomView.bounds.size.height)]
@@ -204,21 +204,21 @@
     {
         case 1:
         {
-            times = 12;
+            times = 13;
             multiplier = 60*60*24*7*4;
             [datum setDateFormat:@"MM" ];       
             break;
         }
         case 2:
         {
-            times = 4;
+            times = 5;
             multiplier = 60*60*24*7;
             [datum setDateFormat:@"MM/ww" ]; 
             break;
         }
         case 3:
         {
-            times = 7;
+            times = 8;
             multiplier = 60*60*24;
             [datum setDateFormat:@"MM/dd" ];            
             break;
@@ -227,17 +227,17 @@
         }
           case 4:
         {
-            times = 24;
+            times = 25;
             multiplier = 60*60;
             [datum setDateFormat:@"HH" ];
             break;
         }
     }
     
-    //Een week heeft 7 dagen
+
     for(int i = 0; i < times; i++)
     {
-        NSDate *temp = [aDate dateByAddingTimeInterval:-(multiplier*i)];
+        NSDate *temp = [aDate dateByAddingTimeInterval:-(multiplier*(i))];
         NSString *toAdd = [datum stringFromDate:temp];
         [xAxisValues addObject:toAdd];
     }
@@ -364,7 +364,7 @@
     CPTAxis *x = axisSet.xAxis;
     x.title = @xAxisName;
     x.titleTextStyle = axisTitleStyle;
-    x.titleOffset = -45.0f;
+    x.titleOffset = 0.0f;
     x.axisLineStyle = axisLineStyle;
     x.labelingPolicy = CPTAxisLabelingPolicyNone;
     x.labelTextStyle = axisTextStyle;

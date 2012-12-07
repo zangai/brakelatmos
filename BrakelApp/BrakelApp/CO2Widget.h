@@ -8,8 +8,8 @@
 
 #import "Widget.h"
 #import <QuartzCore/QuartzCore.h>
-#define graphTitle             "Showing CO2 level"
-#define yAxisName              "CO2 Percentage"
+#define graphTitle             "CO2 level"
+#define yAxisName              "CO2 percentage"
 #define xAxisName               "Time"
 #define gemmideldeco2label  "Average:"
 #define huidigco2label      "Current:"
