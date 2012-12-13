@@ -298,10 +298,6 @@
 		AA7BE680165667470096E0FE /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
-				C09777D41670EE8900DCFAA6 /* Wind.m */,
-				C09777D61670EE8900DCFAA6 /* Wind.h */,
-				C09777D71670EE8900DCFAA6 /* WindWidget.h */,
-				C09777D51670EE8900DCFAA6 /* WindWidget.m */,
 				B042506E165F8F79009A2384 /* CorePlot */,
 				AA7BE66D1656673A0096E0FE /* Widget.h */,
 				AA7BE66E1656673A0096E0FE /* Widget.m */,
@@ -311,6 +307,8 @@
 				ADB67C4D16675BAA0028CFCB /* ControlWidget.m */,
 				C09777CC1670ED6E00DCFAA6 /* CO2Widget.h */,
 				C09777CD1670ED6E00DCFAA6 /* CO2Widget.m */,
+				C09777D71670EE8900DCFAA6 /* WindWidget.h */,
+				C09777D51670EE8900DCFAA6 /* WindWidget.m */,
 			);
 			name = Widgets;
 			sourceTree = "<group>";

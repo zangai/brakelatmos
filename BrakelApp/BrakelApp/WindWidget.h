@@ -11,13 +11,15 @@
 #define graphTitle             "Wind level"
 #define yAxisName              "Wind percentage"
 #define xAxisName               "Time"
-#define gemmideldeWindlabel  "Average:"
-#define huidigWindlabel      "Current:"
+#define gemmideldeWindlabel  "windsnelheid"
+#define huidigWindlabel      "windrichting:"
 #define paddingXleftLabels  25
 
 
 @interface WindWidget : Widget <CPTPlotDataSource>
 {
+    
+    
     //Buttons
     UIButton *showWeek;
     UIButton *showMaand;
@@ -29,6 +31,8 @@
     UIView   *leftView;
     CPTGraphHostingView *graphView;
     UIImageView *logo;
+    UIView *windVaan;
+    UIImageView *windvaanlogo;
     
     //Labels
     UILabel *gemmWind;
@@ -48,6 +52,8 @@
 @property (nonatomic, strong) UIView *leftView;
 @property (nonatomic, strong) UIView *midBorder;
 @property (nonatomic, strong) UIImageView *logo;
+@property (nonatomic, strong) UIView *windVaan;
+@property (nonatomic, strong) UIImageView *windvaanlogo;
 
 //Buttons
 @property (nonatomic, strong) UIButton *showWeek;
