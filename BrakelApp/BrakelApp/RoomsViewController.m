@@ -157,7 +157,7 @@ UIButton* laatsteKnop;
     
     //create and add the roombuttons
     NSInteger selectedFloor = [sender tag];
-
+        
         for(Room *roomie in rooms){
             if(roomie.floorID == selectedFloor){
               
