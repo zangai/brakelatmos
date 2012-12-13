@@ -163,7 +163,6 @@
     //NSString* layoutString = json[@"changes"];
     NSMutableArray *arr = [[NSMutableArray alloc]initWithArray:[json valueForKey:@"changes"]];
     NSLog([arr description]);
-    int sdf = arr.count;
     for(int i = 0; i < arr.count; i++){
         if( ! [[[arr objectAtIndex:i]valueForKey:@"ChangeStatus"]boolValue])
         {
