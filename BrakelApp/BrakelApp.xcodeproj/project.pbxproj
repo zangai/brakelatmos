@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA22D6C61679F8EA00728DCF /* backgroundgrey.png in Resources */ = {isa = PBXBuildFile; fileRef = AA22D6C51679F8EA00728DCF /* backgroundgrey.png */; };
+		AA22D6C81679FA2000728DCF /* backgroundwhite.png in Resources */ = {isa = PBXBuildFile; fileRef = AA22D6C71679FA2000728DCF /* backgroundwhite.png */; };
 		AA2B76B71670D37900BC88B9 /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2B76B61670D37800BC88B9 /* compass.png */; };
 		AA2B76B91670E0D100BC88B9 /* windroos.png in Resources */ = {isa = PBXBuildFile; fileRef = AA2B76B81670E0D100BC88B9 /* windroos.png */; };
 		AA4C1299165F7CFF005EDF28 /* gebouw1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AA4C1297165F7CFF005EDF28 /* gebouw1.jpeg */; };
@@ -55,6 +57,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA22D6C51679F8EA00728DCF /* backgroundgrey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundgrey.png; sourceTree = "<group>"; };
+		AA22D6C71679FA2000728DCF /* backgroundwhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundwhite.png; sourceTree = "<group>"; };
 		AA2B76B61670D37800BC88B9 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass.png; sourceTree = "<group>"; };
 		AA2B76B81670E0D100BC88B9 /* windroos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = windroos.png; sourceTree = "<group>"; };
 		AA4C1297165F7CFF005EDF28 /* gebouw1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gebouw1.jpeg; sourceTree = "<group>"; };
@@ -215,6 +219,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA22D6C31679E07000728DCF /* archive */ = {
+			isa = PBXGroup;
+			children = (
+				AA7BE6621656673A0096E0FE /* navViewController.h */,
+				AA7BE6631656673A0096E0FE /* navViewController.m */,
+			);
+			name = archive;
+			sourceTree = "<group>";
+		};
 		AA7BE61E165665340096E0FE = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +260,7 @@
 		AA7BE633165665340096E0FE /* BrakelApp */ = {
 			isa = PBXGroup;
 			children = (
+				AA22D6C31679E07000728DCF /* archive */,
 				AA7BE6811656675E0096E0FE /* WidgetPages */,
 				C09777DE167133B500DCFAA6 /* Images */,
 				B04250C5165F91EB009A2384 /* Alarm.h */,
@@ -261,8 +275,6 @@
 				AA7BE65C1656673A0096E0FE /* dataStorage.m */,
 				AA7BE6601656673A0096E0FE /* iCarousel.h */,
 				AA7BE6611656673A0096E0FE /* iCarousel.m */,
-				AA7BE6621656673A0096E0FE /* navViewController.h */,
-				AA7BE6631656673A0096E0FE /* navViewController.m */,
 				AA7BE6651656673A0096E0FE /* room.h */,
 				AA7BE6661656673A0096E0FE /* room.m */,
 				AA7BE6671656673A0096E0FE /* RoomsViewController.h */,
@@ -418,6 +430,8 @@
 		C09777DE167133B500DCFAA6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AA22D6C71679FA2000728DCF /* backgroundwhite.png */,
+				AA22D6C51679F8EA00728DCF /* backgroundgrey.png */,
 				AA2B76B61670D37800BC88B9 /* compass.png */,
 				B0455A331667786E0044EB3B /* header.png */,
 				B0455A311667785D0044EB3B /* HeaderRevisioned.jpg */,
@@ -506,6 +520,8 @@
 				AA2B76B91670E0D100BC88B9 /* windroos.png in Resources */,
 				C09777E0167133E200DCFAA6 /* CO2.png in Resources */,
 				B0A792841672149B00C4622E /* temp.png in Resources */,
+				AA22D6C61679F8EA00728DCF /* backgroundgrey.png in Resources */,
+				AA22D6C81679FA2000728DCF /* backgroundwhite.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

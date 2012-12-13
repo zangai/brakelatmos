@@ -151,7 +151,7 @@
     
 }
 
-#pragma mark - currentWindc
+#pragma mark - currentWindcfgh
 
 -(NSString*)getCurrentWindVal
 {

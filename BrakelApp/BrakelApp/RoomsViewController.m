@@ -22,8 +22,6 @@
     NSMutableArray *floors;
     NSMutableArray *rooms;
     NSMutableData *receivedData;
-   
-   
 }
 
 @synthesize buildingIdentifier;
@@ -59,10 +57,10 @@ UIButton* laatsteKnop;
         NSError *myError = nil;
         NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self->receivedData options:NSJSONReadingMutableLeaves error:&myError];
         floors = [res valueForKey:@"floors"];
-                
+
         //Creating elevator buttons
-        int knopX = 150;
-        int knopY = 25;
+        int knopX = 0;
+        int knopY = 115;
         UIButton *homeKnop = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         homeKnop.frame = CGRectMake(40, 25, 70, 70);
         [homeKnop setTitle:@"Home" forState:UIControlStateNormal];
@@ -84,29 +82,25 @@ UIButton* laatsteKnop;
            
             
             [liftKnop setTitle:[NSString stringWithFormat:@"%d", x] forState:UIControlStateNormal];
-            liftKnop.frame = CGRectMake(knopX, knopY, 70, 70);
+            liftKnop.frame = CGRectMake(knopX, knopY, 245, 100);
             
             liftKnop.tag = [[[floors objectAtIndex:x] valueForKey:@"BuildingID"] integerValue];
-            [liftKnop setBackgroundImage:[UIImage imageNamed:@"blue"]  forState:UIControlStateNormal];
+            [liftKnop setBackgroundColor:[UIColor whiteColor]];
+            [liftKnop setBackgroundImage:[UIImage imageNamed:@"backgroundwhite.png"]  forState:UIControlStateNormal];
             [liftKnop setBackgroundImage:[UIImage imageNamed:@"yellow"] forState:UIControlStateHighlighted];
-            [liftKnop setBackgroundImage:[UIImage imageNamed:@"green"] forState:UIControlStateDisabled];
+            [liftKnop setBackgroundImage:[UIImage imageNamed:@"backgroundgrey.png"] forState:UIControlStateDisabled];
             [liftKnop.titleLabel setFont:[UIFont  fontWithName:@"Helvetica-Bold" size:30.0]];
             [liftKnop addTarget:self action:@selector(knopDruk:) forControlEvents:(UIControlEvents)UIControlEventTouchDown];
-            [liftKnop setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            [liftKnop setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled];
+            [liftKnop setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [liftKnop setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
             
             if([[[floors objectAtIndex:x]valueForKey:@"HasAlarm"]boolValue]){
                 [liftKnop setBackgroundImage:[UIImage imageNamed:@"red"] forState:UIControlStateNormal];
             }
             
             [_deuiviewnav addSubview:liftKnop];
-            if(x % 2){
-                knopX = knopX +110;
-            }else {
-                knopY = knopY +90;
-                knopX = knopX -110;
-                
-            }
+            knopY = knopY +100;
+
         }
         _deuiviewnav.frame = CGRectMake(0, 0, 250, knopY + 80);
         
