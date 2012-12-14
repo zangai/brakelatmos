@@ -91,6 +91,7 @@
         [ctabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                  [UIColor whiteColor], UITextAttributeTextColor,[UIColor grayColor], UITextAttributeTextShadowColor,
                                                  nil] forState:UIControlStateNormal];
+        
         UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:tabBar];
      
         [controller setTabBarItem:ctabBarItem];
