@@ -20,6 +20,7 @@
 @property (nonatomic) NSInteger buildingId;
 @property (nonatomic, retain) NSString* buildingTitle;
 @property (nonatomic, retain) NSString* deviceId;
+@property (nonatomic, retain) NSString* friendlyName;
 
 - (void) initArrayLists:(NSMutableArray *)data;
 - (void) setUserToken:(NSString *)ut;

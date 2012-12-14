@@ -158,6 +158,10 @@
             [self performSegueWithIdentifier:@"goToCarousel" sender:self];
             break;
         }
+        else if([keyAsString isEqualToString:@"friendlyName"]){
+            
+            [[dataStorage sharedManager] setFriendlyName:[NSString stringWithFormat:@", %@", [res objectForKey:key]]];
+        }
         else if([keyAsString isEqualToString:@"error"]) {
             NSString* valueAsString = (NSString *)[res objectForKey:key];
             NSLog(valueAsString);

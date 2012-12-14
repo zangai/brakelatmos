@@ -176,7 +176,8 @@
 
 - (void)carouselDidEndScrollingAnimation:(iCarousel *)aCarousel
 {
-    [label setText:[NSString stringWithFormat:@"Gebouw %d", aCarousel.currentItemIndex]];
+    Building *build= [buildings objectAtIndex:aCarousel.currentItemIndex];
+    [label setText:[build BuildingName]];
     selectedIndex = aCarousel.currentItemIndex;
 }
 

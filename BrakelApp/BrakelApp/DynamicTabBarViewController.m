@@ -51,8 +51,8 @@
     NSString* userToken = [[dataStorage sharedManager] getUserToken];
     
     //testValues
-    buildingId = 1;
-    userToken = @"C02417A2-E542-442C-ADBB-F2B01214F355";
+    buildingId = [[dataStorage sharedManager] buildingId];
+    //userToken = @"C02417A2-E542-442C-ADBB-F2B01214F355";
     
     NSString* formData = [NSString stringWithFormat:@"userToken=%@&buildingId=%d", userToken, buildingId];
     self.navigationController.toolbar.hidden = FALSE;
@@ -85,6 +85,7 @@
     for (NSDictionary* pageJson in pages) {
     //for (int i =0; i <5; i++) {
         TabBarPageViewController* tabBar = [[TabBarPageViewController alloc] initWithJson:pageJson];
+        
         UITabBarItem* ctabBarItem = [[UITabBarItem alloc] initWithTitle:tabBar.Title image:nil tag:tabs.count];
         [ctabBarItem setFinishedSelectedImage:tabBar.Image withFinishedUnselectedImage:tabBar.Image];
         [ctabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
