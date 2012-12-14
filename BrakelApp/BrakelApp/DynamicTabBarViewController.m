@@ -82,15 +82,33 @@
 {
     NSMutableArray* tabs = [[NSMutableArray alloc] init];
     NSMutableArray *pages = json[@"pages"];
+    UIImage *img;
+    UIImage *selImg;
     for (NSDictionary* pageJson in pages) {
     //for (int i =0; i <5; i++) {
         TabBarPageViewController* tabBar = [[TabBarPageViewController alloc] initWithJson:pageJson];
-        
+        if([tabBar.Title isEqualToString:@"Home"]){
+            img  = [UIImage imageNamed:@"home.png"];
+            selImg = [UIImage imageNamed:@"home_selected.png"];
+        }
+        if([tabBar.Title isEqualToString:@"Control"]){
+            img  = [UIImage imageNamed:@"control.png"];
+            selImg = [UIImage imageNamed:@"control_selected.png"];
+        }
+        if([tabBar.Title isEqualToString:@"Meteo"]){
+            img  = [UIImage imageNamed:@"meteo.png"];
+            selImg = [UIImage imageNamed:@"meteo_selected.png"];
+        }
+        if([tabBar.Title isEqualToString:@"Lucht"]){
+            img  = [UIImage imageNamed:@"lucht.png"];
+            selImg = [UIImage imageNamed:@"lucht_selected.png"];
+        }
         UITabBarItem* ctabBarItem = [[UITabBarItem alloc] initWithTitle:tabBar.Title image:nil tag:tabs.count];
-        [ctabBarItem setFinishedSelectedImage:tabBar.Image withFinishedUnselectedImage:tabBar.Image];
+        [ctabBarItem setFinishedSelectedImage:selImg withFinishedUnselectedImage:img];
         [ctabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                  [UIColor whiteColor], UITextAttributeTextColor,[UIColor grayColor], UITextAttributeTextShadowColor,
                                                  nil] forState:UIControlStateNormal];
+        
         UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:tabBar];
      
         [controller setTabBarItem:ctabBarItem];
