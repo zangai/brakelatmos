@@ -59,13 +59,21 @@
     int buttonHeight = 30;
     int buttonWidth = 200;
     for (int i=0; i <groups.count; i++) {
-        UISwitch* switcher = [UISwitch alloc];
-        UILabel* lab = [ [UILabel alloc ] initWithFrame:CGRectMake(0, (i*2*buttonHeight), 150, buttonHeight)];
+        UIView *groupView = [[UIView alloc]initWithFrame:CGRectMake((self.frame.size.width/2)-(((150 + buttonWidth+10)/2)), i*2*buttonHeight, 150 + buttonWidth+10, buttonHeight+10)];
+        UIColor *iphoneBlue =
+        [UIColor colorWithRed:0.121653f green:0.558395f blue:0.837748f alpha:1];
         
+        [groupView setBackgroundColor:iphoneBlue];
+        //[groupView setAlpha:0.5f];
+        groupView.layer.cornerRadius = 10;
+        UISwitch* switcher = [UISwitch alloc];
+        UILabel* lab = [ [UILabel alloc ] initWithFrame:CGRectMake(0, 5, 150, buttonHeight)];
+         [lab setBackgroundColor:iphoneBlue];
         [lab setTextAlignment:NSTextAlignmentRight];
         NSString* groupname = [[groups objectAtIndex:i]valueForKey:@"GroupName"];
         [lab setText:groupname];
-        [switcher initWithFrame: CGRectMake(180, (i*2*buttonHeight), buttonWidth, buttonHeight) ];
+        [lab setTextColor:[UIColor whiteColor]];
+        [switcher initWithFrame: CGRectMake(180, 7, buttonWidth, buttonHeight) ];
         int tmp = [[[groups objectAtIndex:i]valueForKey:@"ChangeValue"] integerValue];
         switcher.tag =[[[groups objectAtIndex:i]valueForKey:@"GroupID"] integerValue];
         if(tmp>128){
@@ -76,13 +84,19 @@
             [switcher setOn:false];
         }
         [switcher addTarget:self action:@selector(queueForChange:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:lab];
-        [self addSubview:switcher];
+        
+        
+        [groupView addSubview:lab];
+        [groupView addSubview:switcher];
+        [groupView bringSubviewToFront:lab];
+        [groupView bringSubviewToFront:switcher];
+        
+        [self addSubview:groupView];
     }
     
     //Confirm button
     
-    confirmButton.frame = CGRectMake(0, ((groups.count *2)* buttonHeight), buttonWidth, buttonHeight);
+    confirmButton.frame = CGRectMake((self.frame.size.width/2)-(((buttonWidth)/2)), ((groups.count *2)* buttonHeight), buttonWidth, buttonHeight);
     [confirmButton setTitle:[NSString stringWithFormat:@"Make Changes"] forState:UIControlStateNormal];
     [confirmButton addTarget:self action:@selector(makeChanges:) forControlEvents:UIControlEventTouchUpInside];
     [confirmButton setEnabled:false];

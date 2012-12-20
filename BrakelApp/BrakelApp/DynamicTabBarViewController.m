@@ -76,6 +76,7 @@
 -(void)styleTabbar
 {
     [self.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar.png"]];
+    
 }
 
 -(void) makeTabsFromJSON:(NSDictionary*) json
@@ -103,6 +104,7 @@
             img  = [UIImage imageNamed:@"lucht.png"];
             selImg = [UIImage imageNamed:@"lucht_selected.png"];
         }
+        
         UITabBarItem* ctabBarItem = [[UITabBarItem alloc] initWithTitle:/*tabBar.Title*/@"" image:nil tag:tabs.count];
         [ctabBarItem setFinishedSelectedImage:selImg withFinishedUnselectedImage:img];
         //[ctabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
