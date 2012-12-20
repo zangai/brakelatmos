@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G56" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="8q9-u4-URE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11E53" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="8q9-u4-URE">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
         <!--Container View Controller-->
@@ -65,14 +65,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SKn-zH-WMs">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="maarten" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SKn-zH-WMs">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="65L-7c-Kbb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wgu-cG-CvZ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="welkom" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wgu-cG-CvZ">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
@@ -109,16 +109,16 @@
                             <constraint firstItem="tCS-FY-1Jr" firstAttribute="leading" secondItem="mN1-dy-VfP" secondAttribute="leading" constant="262" id="2A7-dA-Ac7"/>
                             <constraint firstItem="SKn-zH-WMs" firstAttribute="centerX" secondItem="mN1-dy-VfP" secondAttribute="centerX" type="default" id="D94-8S-6VY"/>
                             <constraint firstItem="wgu-cG-CvZ" firstAttribute="baseline" secondItem="vFH-QH-dHf" secondAttribute="baseline" type="default" id="Flc-eL-Cpf"/>
+                            <constraint firstItem="JYc-DY-f29" firstAttribute="top" secondItem="mN1-dy-VfP" secondAttribute="top" constant="152" id="Sdh-Zw-peU"/>
                             <constraint firstItem="wgu-cG-CvZ" firstAttribute="leading" secondItem="vFH-QH-dHf" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Xvk-7i-wfq"/>
                             <constraint firstItem="wgu-cG-CvZ" firstAttribute="leading" secondItem="SKn-zH-WMs" secondAttribute="leading" type="default" id="bO8-2I-9vD"/>
-                            <constraint firstItem="SKn-zH-WMs" firstAttribute="top" secondItem="JYc-DY-f29" secondAttribute="top" type="default" id="ciC-iE-dgs"/>
                             <constraint firstItem="tCS-FY-1Jr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mN1-dy-VfP" secondAttribute="leading" constant="126" type="user" id="gjp-VX-xSE"/>
                             <constraint firstItem="JYc-DY-f29" firstAttribute="leading" secondItem="wgu-cG-CvZ" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="hjW-ee-hsc"/>
                             <constraint firstItem="JYc-DY-f29" firstAttribute="leading" secondItem="SKn-zH-WMs" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="iSw-Ey-Gqd"/>
                             <constraint firstItem="plP-7J-hxL" firstAttribute="leading" secondItem="mN1-dy-VfP" secondAttribute="leading" constant="1500" id="noC-OI-f1g"/>
                             <constraint firstItem="tCS-FY-1Jr" firstAttribute="baseline" secondItem="SKn-zH-WMs" secondAttribute="baseline" type="default" id="qvu-93-s8W"/>
                             <constraint firstItem="SKn-zH-WMs" firstAttribute="top" secondItem="mN1-dy-VfP" secondAttribute="top" constant="153" id="sIn-En-K42"/>
-                            <constraint firstItem="JYc-DY-f29" firstAttribute="bottom" secondItem="wgu-cG-CvZ" secondAttribute="bottom" type="default" id="ul2-UY-3Ud"/>
+                            <constraint firstItem="wgu-cG-CvZ" firstAttribute="top" secondItem="mN1-dy-VfP" secondAttribute="top" constant="195" id="xDW-ve-PN2"/>
                             <constraint firstItem="plP-7J-hxL" firstAttribute="top" secondItem="mN1-dy-VfP" secondAttribute="top" constant="1500" id="yMO-xh-0GT"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -326,28 +326,28 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="91u-Kx-822">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" type="user" id="bTp-lX-0fy"/>
+                                    <constraint firstAttribute="width" priority="290" constant="250" type="user" id="Dyp-Hc-Q5q"/>
                                 </constraints>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="fwq-he-66e">
-                                    <rect key="frame" x="0.0" y="0.0" width="250" height="1800"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="564"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </view>
                             </tableView>
-                            <imageView alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MxL-jc-Hym">
+                            <imageView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MxL-jc-Hym">
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="775" id="p9A-rd-QIa"/>
+                                    <constraint firstAttribute="width" constant="780" id="8GR-IW-fu9"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="MxL-jc-Hym" firstAttribute="leading" secondItem="5cW-u7-HI3" secondAttribute="leading" constant="245" id="GJD-0R-bEV"/>
                             <constraint firstItem="91u-Kx-822" firstAttribute="leading" secondItem="5cW-u7-HI3" secondAttribute="leading" type="default" id="KJD-Id-day"/>
-                            <constraint firstItem="MxL-jc-Hym" firstAttribute="leading" secondItem="5cW-u7-HI3" secondAttribute="leading" constant="251" id="VVg-FR-kYm"/>
                             <constraint firstItem="91u-Kx-822" firstAttribute="top" secondItem="5cW-u7-HI3" secondAttribute="top" type="default" id="Vv3-OO-fAx"/>
                             <constraint firstItem="91u-Kx-822" firstAttribute="bottom" secondItem="5cW-u7-HI3" secondAttribute="bottom" type="default" id="dvP-wd-hL9"/>
                             <constraint firstItem="MxL-jc-Hym" firstAttribute="bottom" secondItem="5cW-u7-HI3" secondAttribute="bottom" type="default" id="ikr-Jb-iSA"/>
@@ -361,6 +361,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="deuiviewnav" destination="fwq-he-66e" id="hCU-H2-9id"/>
+                        <outlet property="deuiviewnav2" destination="91u-Kx-822" id="Tsg-qo-YZO"/>
                         <outlet property="mainView" destination="MxL-jc-Hym" id="dLF-ui-gmL"/>
                         <segue destination="cPw-zn-h5b" kind="modal" identifier="goToInformatiepagina" id="Cek-qX-A0M"/>
                     </connections>
@@ -408,56 +409,6 @@
     <resources>
         <image name="header.png" width="1024" height="160"/>
     </resources>
-    <classes>
-        <class className="CarouselViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CarouselViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="carousel" candidateClass="iCarousel"/>
-                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DynamicTabBarViewController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DynamicTabBarViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tabbar" candidateClass="UITabBar"/>
-            </relationships>
-        </class>
-        <class className="LoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="logIn:"/>
-                <relationship kind="outlet" name="GebruikerText" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="WachtwoordText" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="RoomsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoomsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buttonclick:"/>
-                <relationship kind="action" name="knopDruk:"/>
-                <relationship kind="outlet" name="deuiviewnav" candidateClass="UIView"/>
-                <relationship kind="outlet" name="mainView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="containerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/containerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Home:"/>
-                <relationship kind="outlet" name="container" candidateClass="UIViewController"/>
-                <relationship kind="outlet" name="headerImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="iCarousel" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/iCarousel.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dataSource"/>
-                <relationship kind="outlet" name="delegate"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

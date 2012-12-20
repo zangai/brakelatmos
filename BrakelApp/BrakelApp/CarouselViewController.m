@@ -70,7 +70,7 @@
     [self.view addGestureRecognizer:singleFingerTap];
     [singleFingerTap release];
     
-    wrap = NO;
+    wrap = YES;
 }
 
 //The event handling method

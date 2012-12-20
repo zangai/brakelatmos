@@ -62,12 +62,12 @@ UIButton* laatsteKnop;
         int knopX = 0;
         int knopY = 115;
         UIButton *homeKnop = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        homeKnop.frame = CGRectMake(40, 25, 70, 70);
+        homeKnop.frame = CGRectMake(0, 0, 245, 100);
         [homeKnop setTitle:@"Home" forState:UIControlStateNormal];
         [homeKnop setTag:[[dataStorage sharedManager] buildingId]];
-        [homeKnop setBackgroundImage:[UIImage imageNamed:@"blue"]  forState:UIControlStateNormal];
-        [homeKnop setBackgroundImage:[UIImage imageNamed:@"yellow"] forState:UIControlStateHighlighted];
-        [homeKnop setBackgroundImage:[UIImage imageNamed:@"green"] forState:UIControlStateDisabled];
+        [homeKnop setBackgroundImage:[UIImage imageNamed:@"buttonBlauw.png"]  forState:UIControlStateNormal];
+        [homeKnop setBackgroundImage:[UIImage imageNamed:@"buttonBlauw.png"] forState:UIControlStateHighlighted];
+        [homeKnop setBackgroundImage:[UIImage imageNamed:@"buttonDonkerBlauw"] forState:UIControlStateDisabled];
         [homeKnop addTarget:self action:@selector(knopDruk:) forControlEvents:UIControlEventTouchDown];
         
         [_deuiviewnav addSubview:homeKnop];
@@ -80,14 +80,20 @@ UIButton* laatsteKnop;
             
             UIButton *liftKnop = [UIButton buttonWithType:UIButtonTypeRoundedRect];
            
-            
-            [liftKnop setTitle:[NSString stringWithFormat:@"%d", x] forState:UIControlStateNormal];
+            if (x == 0)
+            {
+                [liftKnop setTitle:[NSString stringWithFormat:@"Begane Grond"] forState:UIControlStateNormal];
+            }
+            else
+            {
+                [liftKnop setTitle:[NSString stringWithFormat:@"verdieping %d", x] forState:UIControlStateNormal];
+            }
             liftKnop.frame = CGRectMake(knopX, knopY, 245, 100);
             
             liftKnop.tag = [[[floors objectAtIndex:x] valueForKey:@"BuildingID"] integerValue];
             [liftKnop setBackgroundColor:[UIColor whiteColor]];
-            [liftKnop setBackgroundImage:[UIImage imageNamed:@"backgroundwhite.png"]  forState:UIControlStateNormal];
-            [liftKnop setBackgroundImage:[UIImage imageNamed:@"yellow"] forState:UIControlStateHighlighted];
+            [liftKnop setBackgroundImage:[UIImage imageNamed:@"buttonBlauw.png"]  forState:UIControlStateNormal];
+            [liftKnop setBackgroundImage:[UIImage imageNamed:@"buttonBlauw.png"] forState:UIControlStateHighlighted];
             [liftKnop setBackgroundImage:[UIImage imageNamed:@"backgroundgrey.png"] forState:UIControlStateDisabled];
             [liftKnop.titleLabel setFont:[UIFont  fontWithName:@"Helvetica-Bold" size:30.0]];
             [liftKnop addTarget:self action:@selector(knopDruk:) forControlEvents:(UIControlEvents)UIControlEventTouchDown];
@@ -95,14 +101,21 @@ UIButton* laatsteKnop;
             [liftKnop setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
             
             if([[[floors objectAtIndex:x]valueForKey:@"HasAlarm"]boolValue]){
-                [liftKnop setBackgroundImage:[UIImage imageNamed:@"red"] forState:UIControlStateNormal];
+                [liftKnop setBackgroundImage:[UIImage imageNamed:@"buttonRood.png"] forState:UIControlStateNormal];
             }
             
             [_deuiviewnav addSubview:liftKnop];
+            
             knopY = knopY +100;
 
         }
-        _deuiviewnav.frame = CGRectMake(0, 0, 250, knopY + 80);
+        
+        //knopY = knopY /2;
+        _deuiviewnav.frame = CGRectMake(0, 0, 250, knopY);
+        //_deuiviewnav2.frame = CGRectMake(0, 0, 250, knopY);
+        //[self.view
+                
+        //_deuiviewnav.frame.size.height = 1800;
         
         //Adding ALL the rooms to the rooms array
         NSMutableArray* tmp = [floors valueForKey:@"Rooms"];
@@ -120,8 +133,10 @@ UIButton* laatsteKnop;
                 NSString* name = [actualRoom valueForKey:@"RoomName"];
                 NSInteger floorID = [[actualRoom valueForKey:@"BuildingID"] integerValue];
                 NSInteger roomID = [[actualRoom valueForKey:@"RoomID"] integerValue];
+                
 
                 Room* room =[[Room alloc] initWithRect:r isEnabled:enabled isAlarming:alarm named:name belongsToFloor:floorID roomID:roomID];
+                
                 [rooms addObject:room];
             }
         }       
@@ -166,15 +181,20 @@ UIButton* laatsteKnop;
                 roomButton.frame = roomie.rect;
                 roomButton.enabled = roomie.enabled;
                 roomButton.alpha = 0.5;
+                [roomButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                [roomButton setTitle:roomie.roomName forState:UIControlStateNormal];
                 [roomButton setTag:selectedFloor];
                 [[roomButton layer] setBorderWidth:1.0f];
                 [[roomButton layer] setBorderColor:[UIColor blackColor].CGColor];
                 if(roomie.alarm){
                     [roomButton setBackgroundColor:[UIColor colorWithRed:255 green:0 blue:0 alpha:1]];
+                    //NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(toggleButtonImage:) userInfo:nil repeats:YES];
+                    //[timer start]
                 }
                 [roomButton addTarget:self action:@selector(buttonclick:) forControlEvents:UIControlEventTouchUpInside];
               
                 [self.mainView addSubview:roomButton];
+                
             }
         }
 
@@ -187,7 +207,20 @@ UIButton* laatsteKnop;
     
     laatsteKnop = sender;
 }
-
+/*
+- (void)toggleButtonImage:(NSTimer*)timer
+{
+    if(toggle)
+    {
+        [test setImage:[UIImage imageNamed:@"Button1.png"] forState: UIControlStateNormal];
+    }
+    else
+    {
+        [test setImage:[UIImage imageNamed:@"ButtonPressed.png"] forState: UIControlStateNormal];
+    }
+    toggle = !toggle;
+}
+*/
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

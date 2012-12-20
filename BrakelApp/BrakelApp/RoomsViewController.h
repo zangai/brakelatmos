@@ -12,6 +12,7 @@
 @property (strong, nonatomic) IBOutlet UIView *deuiviewnav;
 @property (strong, nonatomic) IBOutlet UIImageView *mainView;
 @property (nonatomic, strong) Alarm* al;
+@property (strong, nonatomic) IBOutlet UITableView *deuiviewnav2;
 
 
 @property (nonatomic) int buildingIdentifier;

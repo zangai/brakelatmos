@@ -53,6 +53,10 @@
 		AA7BE67E1656673A0096E0FE /* Widget.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7BE66E1656673A0096E0FE /* Widget.m */; };
 		AA7BE67F1656673A0096E0FE /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = AA7BE66F1656673A0096E0FE /* yellow.png */; };
 		AA7BE69F1656764F0096E0FE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7BE69E1656764F0096E0FE /* QuartzCore.framework */; };
+		AA8B88AA168316C200D812BC /* figuuralarm.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8B88A9168316C200D812BC /* figuuralarm.png */; };
+		AA8B88AD16831D7600D812BC /* buttonRood.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8B88AC16831D7600D812BC /* buttonRood.png */; };
+		AA8B88AF16831DC700D812BC /* buttonBlauw.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8B88AE16831DC700D812BC /* buttonBlauw.png */; };
+		AA8B88B116831E5000D812BC /* buttonDonkerBlauw.png in Resources */ = {isa = PBXBuildFile; fileRef = AA8B88B016831E5000D812BC /* buttonDonkerBlauw.png */; };
 		ADB67C4E16675BAA0028CFCB /* ControlWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB67C4D16675BAA0028CFCB /* ControlWidget.m */; };
 		ADB67C5216675FE50028CFCB /* Changes.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB67C5116675FE50028CFCB /* Changes.m */; };
 		B002F1731668B36A00636406 /* containerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B002F1721668B36A00636406 /* containerViewController.m */; };
@@ -132,6 +136,10 @@
 		AA7BE66E1656673A0096E0FE /* Widget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Widget.m; sourceTree = "<group>"; };
 		AA7BE66F1656673A0096E0FE /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
 		AA7BE69E1656764F0096E0FE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AA8B88A9168316C200D812BC /* figuuralarm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = figuuralarm.png; sourceTree = "<group>"; };
+		AA8B88AC16831D7600D812BC /* buttonRood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonRood.png; sourceTree = "<group>"; };
+		AA8B88AE16831DC700D812BC /* buttonBlauw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonBlauw.png; sourceTree = "<group>"; };
+		AA8B88B016831E5000D812BC /* buttonDonkerBlauw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonDonkerBlauw.png; sourceTree = "<group>"; };
 		ADB67C4C16675BAA0028CFCB /* ControlWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlWidget.h; sourceTree = "<group>"; };
 		ADB67C4D16675BAA0028CFCB /* ControlWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlWidget.m; sourceTree = "<group>"; };
 		ADB67C5016675FE50028CFCB /* Changes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Changes.h; sourceTree = "<group>"; };
@@ -456,6 +464,7 @@
 		C09777DE167133B500DCFAA6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AA8B88A9168316C200D812BC /* figuuralarm.png */,
 				8A053F85167B635C00188B69 /* control_selected.png */,
 				8A053F86167B635C00188B69 /* control.png */,
 				8A053F87167B635D00188B69 /* home_selected.png */,
@@ -475,12 +484,15 @@
 				B0455A2C166767460044EB3B /* icon_check.png */,
 				AA4C1297165F7CFF005EDF28 /* gebouw1.jpeg */,
 				AA4C1298165F7CFF005EDF28 /* gebouw2.jpeg */,
+				AA8B88B016831E5000D812BC /* buttonDonkerBlauw.png */,
 				AA2B76B81670E0D100BC88B9 /* windroos.png */,
 				AA7BE6561656673A0096E0FE /* blue.png */,
 				AA7BE65F1656673A0096E0FE /* green.png */,
+				AA8B88AC16831D7600D812BC /* buttonRood.png */,
 				AA7BE6641656673A0096E0FE /* red.png */,
 				AA7BE66F1656673A0096E0FE /* yellow.png */,
 				B0A792831672149B00C4622E /* temp.png */,
+				AA8B88AE16831DC700D812BC /* buttonBlauw.png */,
 				C09777DF167133E200DCFAA6 /* CO2.png */,
 			);
 			name = Images;
@@ -570,6 +582,10 @@
 				8A053F96167B635F00188B69 /* meteo.png in Resources */,
 				8A053F97167B635F00188B69 /* tempButton_selected.png in Resources */,
 				8A053F98167B635F00188B69 /* tempButton.png in Resources */,
+				AA8B88AA168316C200D812BC /* figuuralarm.png in Resources */,
+				AA8B88AD16831D7600D812BC /* buttonRood.png in Resources */,
+				AA8B88AF16831DC700D812BC /* buttonBlauw.png in Resources */,
+				AA8B88B116831E5000D812BC /* buttonDonkerBlauw.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
