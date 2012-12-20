@@ -22,7 +22,7 @@
 
 -(id)init:(NSString *)privateKey {
     _privateKey = [privateKey lowercaseString];
-    _host = @"http://ipsum.groept.be";
+    _host = @"http://ipsum.groept.be/";
     return self;
 }
 
@@ -100,29 +100,29 @@
 -(void)getLocations:(WebRequestCallback)completion {
     self.callback = completion;
     
-    int userId = 2033;
-    
-    NSString* destination = [NSString stringWithFormat:@"%d", userId];
-    
+    int userId = 17;
+    int instalationId = 19;
+    int sensorGroup = 314;
+    int sensorId = 2022;
     
     NSDate *date = [[NSDate alloc] init];
     NSTimeInterval timestamp = [date timeIntervalSince1970];
     
-    long checksum = timestamp + userId;
+    NSString* destination = [NSString stringWithFormat:@"%d:%d:%d:%d", userId, instalationId, sensorGroup, sensorId];
+    long checksum = timestamp + userId + instalationId + sensorGroup + sensorId;
     
     NSString* checkString = [NSString stringWithFormat:@"%ld", checksum];
-    checkString = [checkString substringFromIndex:[checkString length]];
+    checkString = [checkString substringFromIndex:([checkString length]-6)];
     
     destination = [NSString stringWithFormat:@"%@:%f:%@", destination, timestamp, checkString];
     destination = [self Base64Encode:[destination dataUsingEncoding:NSUTF8StringEncoding]];
     
     
-    NSString* code = [NSString stringWithFormat:@"/select/%@/%@/%@", token.key, destination, _privateKey];
-    NSString * hash = [[self sha1:code] lowercaseString];
+    NSString* code = [NSString stringWithFormat:@"select/%@/%@/%@", token.key, destination, _privateKey];
+    NSString * hash = [[[self sha1:code] stringByReplacingOccurrencesOfString:@"-" withString:@""] lowercaseString];
     
-    NSString* request = [NSString stringWithFormat:@"/select/%@/%@/%@", token.key, destination, hash];
-    request = [[request stringByReplacingOccurrencesOfString:@"-" withString:@""] lowercaseString];
-    NSString * uri = [NSString stringWithFormat:@"%@%@/", _host, request];
+    NSString* request = [NSString stringWithFormat:@"select/%@/%@/%@", token.key, destination, hash];
+    NSString * uri = [NSString stringWithFormat:@"%@%@", _host, request];
     
     NSLog(@"\nIpsum Request URI: %@\n", uri);
     
