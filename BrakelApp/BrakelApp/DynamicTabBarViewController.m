@@ -103,11 +103,11 @@
             img  = [UIImage imageNamed:@"lucht.png"];
             selImg = [UIImage imageNamed:@"lucht_selected.png"];
         }
-        UITabBarItem* ctabBarItem = [[UITabBarItem alloc] initWithTitle:tabBar.Title image:nil tag:tabs.count];
+        UITabBarItem* ctabBarItem = [[UITabBarItem alloc] initWithTitle:/*tabBar.Title*/@"" image:nil tag:tabs.count];
         [ctabBarItem setFinishedSelectedImage:selImg withFinishedUnselectedImage:img];
-        [ctabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                 [UIColor whiteColor], UITextAttributeTextColor,[UIColor grayColor], UITextAttributeTextShadowColor,
-                                                 nil] forState:UIControlStateNormal];
+        //[ctabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+        //                                        [UIColor blackColor], UITextAttributeTextColor,[UIColor grayColor], UITextAttributeTextShadowColor,
+        //                                         nil] forState:UIControlStateNormal];
         
         UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:tabBar];
      
