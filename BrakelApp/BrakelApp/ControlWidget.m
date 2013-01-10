@@ -73,7 +73,9 @@
         NSString* groupname = [[groups objectAtIndex:i]valueForKey:@"GroupName"];
         [lab setText:groupname];
         [lab setTextColor:[UIColor whiteColor]];
-        [switcher initWithFrame: CGRectMake(180, 7, buttonWidth, buttonHeight) ];
+        
+        //lykwtf
+        switcher = [switcher initWithFrame: CGRectMake(180, 7, buttonWidth, buttonHeight) ];
         int tmp = [[[groups objectAtIndex:i]valueForKey:@"ChangeValue"] integerValue];
         switcher.tag =[[[groups objectAtIndex:i]valueForKey:@"GroupID"] integerValue];
         if(tmp>128){

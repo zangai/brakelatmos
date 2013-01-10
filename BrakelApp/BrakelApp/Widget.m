@@ -65,7 +65,7 @@
     }
 }
 
-- (void)drawRect:(CGRect)rect
+- (void)draw
 {
     NSLog(@"Normal Base Widget");
 }

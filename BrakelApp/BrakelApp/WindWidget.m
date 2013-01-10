@@ -120,8 +120,8 @@
     huidigWindValue.tag = 3;
     gemmWind.text = @gemmideldeWindlabel;
     huidWind.text = @huidigWindlabel;
-    huidigWindValue.text = [NSString stringWithFormat:@"%@ %@",[self getCurrentWindVal], @"%"];
-    gemmWindValue.text = [NSString stringWithFormat:@"%@ %@",[self getAverageWind], @""];
+    huidigWindValue.text = [self getCurrentWindVal];
+    gemmWindValue.text = [NSString stringWithFormat:@"%@ %@",[self getAverageWind], @"km/h"];
     
     [self.leftView addSubview:gemmWindValue];
     [self.leftView addSubview:huidWind];
@@ -163,7 +163,7 @@
 #pragma mark - average Wind
 -(NSString*)getAverageWind
 {
-    NSString* currentString = @"9001";
+    NSString* currentString = @"6";
     return currentString;
 }
 
@@ -211,7 +211,6 @@
 -(void)changeGraph:(id) sender
 {
     UIButton *clicked = (UIButton *) sender;
-    NSMutableArray *revOrder = [[NSMutableArray alloc]init];
     NSLog(@"%d",clicked.tag);//check welke knop is ingedrukt
     NSInteger times = 0;
     NSInteger multiplier;

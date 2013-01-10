@@ -26,7 +26,7 @@
     return BuildingID;
 }
 
--(Boolean*) hasAlarm
+-(Boolean) hasAlarm
 {    
     return hasAlarm;
 }

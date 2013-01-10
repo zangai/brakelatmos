@@ -48,6 +48,7 @@
     //[self.window addSubview:banner];
     //[self addChildViewController:banner];
     
+    
     NSString* userToken = [[dataStorage sharedManager] getUserToken];
     
     //testValues
@@ -116,7 +117,7 @@
         [controller setTabBarItem:ctabBarItem];
         [tabs addObject:controller];
     }
-       self.viewControllers = [NSArray arrayWithArray:tabs];
+    self.viewControllers = [NSArray arrayWithArray:tabs];
 }
 
 - (void)didReceiveMemoryWarning

@@ -152,7 +152,6 @@ UIButton* laatsteKnop;
 {
     if([segue.identifier isEqual:@"goToInformatiepagina"])
     {
-        DynamicTabBarViewController* dest = (DynamicTabBarViewController*)segue.destinationViewController;
         [[dataStorage sharedManager]setBuildingId:buildingIdentifier];
         NSString* tmp = [NSString stringWithFormat:@"%d", [sender tag]];
         [[dataStorage sharedManager]setRoomID:tmp];

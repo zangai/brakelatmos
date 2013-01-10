@@ -68,8 +68,9 @@
         CarouselViewController *myNewVC = [[CarouselViewController alloc] init];
         
         // do any setup you need for myNewVC
-        
-        [self presentModalViewController:myNewVC animated:YES];
+    
+    [self presentViewController:myNewVC animated:YES completion:nil];
+    //[self presentModalViewController:myNewVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

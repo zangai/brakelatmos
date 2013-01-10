@@ -123,7 +123,7 @@
     APILibrary* lib = [[APILibrary alloc] init];
     [lib makeApiCall:@"login" formdata:formData delegate:self handleBy:@selector(callHandler:response:)];
 
-    NSTimer* nst_Timer = [NSTimer scheduledTimerWithTimeInterval:1200 target:self selector:@selector(showTime) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:1200 target:self selector:@selector(showTime) userInfo:nil repeats:NO];
 }
 
 @end
