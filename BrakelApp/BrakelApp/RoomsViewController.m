@@ -69,6 +69,7 @@ UIButton* laatsteKnop;
         [homeKnop setBackgroundImage:[UIImage imageNamed:@"buttonBlauw.png"] forState:UIControlStateHighlighted];
         [homeKnop setBackgroundImage:[UIImage imageNamed:@"buttonDonkerBlauw"] forState:UIControlStateDisabled];
         [homeKnop addTarget:self action:@selector(knopDruk:) forControlEvents:UIControlEventTouchDown];
+        [homeKnop.titleLabel setFont:[UIFont  fontWithName:@"Helvetica-Bold" size:30.0]];
         
         [_deuiviewnav addSubview:homeKnop];
         
