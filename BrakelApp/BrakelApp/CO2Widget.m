@@ -150,14 +150,14 @@
 -(NSString*)getCurrentCO2Val
 {
     //get current CO2 from database
-    NSString* currentString = @"0.2";
+    NSString* currentString = @"0";
     return currentString;
 }
 
 #pragma mark - average co2
 -(NSString*)getAverageCO2
 {
-    NSString* currentString = @"0.037";
+    NSString* currentString = @"0";
     return currentString;
 }
 
@@ -205,7 +205,6 @@
 -(void)changeGraph:(id) sender
 {
     UIButton *clicked = (UIButton *) sender;
-    NSMutableArray *revOrder = [[NSMutableArray alloc]init];
     NSLog(@"%d",clicked.tag);//check welke knop is ingedrukt
     NSInteger times = 0;
     NSInteger multiplier;
@@ -344,7 +343,7 @@
 -(NSArray*)yAxisDummy
 {
     NSArray *yup= [NSArray arrayWithObjects:
-                   @"10", @"0", @"5", @"10", @"20", @"30",@"30",@"30", @"10", @"0", @"5", @"10", @"20", @"30",@"30",@"30", @"10", @"0", @"5", @"10", @"20", @"30",@"30",@"30", @"10", @"0", @"5",@"10", @"0", @"5",@"10", @"0", @"5",nil];
+                   @"0", @"0", @"0", @"0", @"0", @"0",@"0",@"0",@"0",@"0",@"1",@"0",@"0",@"0",@"0",@"1",@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"1",@"0",@"0"@"1",@"1",@"1",@"1",@"0",@"0",@"1",@"0",@"0",@"0",nil];
     
     //yup = [[yup reverseObjectEnumerator]allObjects];
     return yup;

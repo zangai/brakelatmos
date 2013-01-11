@@ -19,6 +19,7 @@
     NSMutableDictionary* changesQueue;
     NSMutableArray* groups;
     NSMutableData* receivedData;
+    UIButton* confirmButton;
 }
 
 -(id)initWithJson:(NSDictionary*)json
@@ -27,6 +28,7 @@
     changesQueue = [[NSMutableDictionary alloc] init];
     groups = [[NSMutableArray alloc]init];
     receivedData = [[NSMutableData alloc] init];
+    confirmButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     
     dataStorage *sharedManager = [dataStorage sharedManager];
     NSInteger buildingIdentifier = sharedManager.buildingId;
@@ -51,44 +53,56 @@
         //Parse JSON
         NSError *myError = nil;
         NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self->receivedData options:NSJSONReadingMutableLeaves error:&myError];
-        groups = [res valueForKey:@"group"];
+        groups = [res valueForKey:@"groups"];
     }
-    
-    
-    
     
     int buttonHeight = 30;
     int buttonWidth = 200;
-    for (int i=0; i <4/*groups.count*/; i++) {
+    for (int i=0; i <groups.count; i++) {
+        UIView *groupView = [[UIView alloc]initWithFrame:CGRectMake((self.frame.size.width/2)-(((150 + buttonWidth+10)/2)), i*2*buttonHeight, 150 + buttonWidth+10, buttonHeight+10)];
+        UIColor *iphoneBlue =
+        [UIColor colorWithRed:0.121653f green:0.558395f blue:0.837748f alpha:1];
+        
+        [groupView setBackgroundColor:iphoneBlue];
+        //[groupView setAlpha:0.5f];
+        groupView.layer.cornerRadius = 10;
         UISwitch* switcher = [UISwitch alloc];
-        [switcher initWithFrame: CGRectMake(0, (i*buttonHeight), buttonWidth, buttonHeight) ];
-        bool tmp = [[[groups objectAtIndex:i]valueForKey:@"status"] boolValue];
-        switcher.tag =i;
-        if(true/*tmp*/){
+        UILabel* lab = [ [UILabel alloc ] initWithFrame:CGRectMake(0, 5, 150, buttonHeight)];
+         [lab setBackgroundColor:iphoneBlue];
+        [lab setTextAlignment:NSTextAlignmentRight];
+        NSString* groupname = [[groups objectAtIndex:i]valueForKey:@"GroupName"];
+        [lab setText:groupname];
+        [lab setTextColor:[UIColor whiteColor]];
+        
+        //lykwtf
+        switcher = [switcher initWithFrame: CGRectMake(180, 7, buttonWidth, buttonHeight) ];
+        int tmp = [[[groups objectAtIndex:i]valueForKey:@"ChangeValue"] integerValue];
+        switcher.tag =[[[groups objectAtIndex:i]valueForKey:@"GroupID"] integerValue];
+        if(tmp>128){
             [switcher setOn:true];
             switcher.onTintColor = VALUE_OPEN;
         }
-        else{
+        else if(tmp<128){
             [switcher setOn:false];
         }
         [switcher addTarget:self action:@selector(queueForChange:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:switcher];
         
-        //        UIButton* button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        //        button.frame = CGRectMake(0, (i * buttonHeight), buttonWidth, buttonHeight);
-        //        [button setTitle:[NSString stringWithFormat:@"Change Group %d", i] forState:UIControlStateNormal];
-        //        button.tag = i;
-        //        button.backgroundColor = VALUE_CLOSED;
-        //        [button addTarget:self action:@selector(queueForChange:) forControlEvents:UIControlEventTouchUpInside];
-        //        [self addSubview:button];
+        
+        [groupView addSubview:lab];
+        [groupView addSubview:switcher];
+        [groupView bringSubviewToFront:lab];
+        [groupView bringSubviewToFront:switcher];
+        
+        [self addSubview:groupView];
     }
     
     //Confirm button
-    UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button.frame = CGRectMake(0, (6 * buttonHeight), buttonWidth, buttonHeight);
-    [button setTitle:[NSString stringWithFormat:@"Make Changes"] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(makeChanges:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:button];
+    
+    confirmButton.frame = CGRectMake((self.frame.size.width/2)-(((buttonWidth)/2)), ((groups.count *2)* buttonHeight), buttonWidth, buttonHeight);
+    [confirmButton setTitle:[NSString stringWithFormat:@"Make Changes"] forState:UIControlStateNormal];
+    [confirmButton addTarget:self action:@selector(makeChanges:) forControlEvents:UIControlEventTouchUpInside];
+    [confirmButton setEnabled:false];
+    [self addSubview:confirmButton];
 }
 
 - (void)drawRect:(CGRect)rect
@@ -105,6 +119,7 @@
 
 - (IBAction)queueForChange:(id)sender
 {
+    [confirmButton setEnabled:true];
     UISwitch* btn = (UISwitch*)sender;
     Changes* change = [[Changes alloc] init];
     change.GroupID = btn.tag;
@@ -148,9 +163,30 @@
 -(void)changeGroups:(id)caller response:(NSData*)response
 {
     NSError *myError = nil;
+    bool hasFinishedWithErrors;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&myError];
     //NSString* layoutString = json[@"changes"];
-    NSLog([json description]);
+    NSMutableArray *arr = [[NSMutableArray alloc]initWithArray:[json valueForKey:@"changes"]];
+    NSLog([arr description]);
+    for(int i = 0; i < arr.count; i++){
+        if( ! [[[arr objectAtIndex:i]valueForKey:@"ChangeStatus"]boolValue])
+        {
+            hasFinishedWithErrors = true;
+        }
+    }
+    
+    if(hasFinishedWithErrors)
+    {
+        UIAlertView* alertView = [[UIAlertView alloc]initWithTitle:@"Error" message:@"One or more groups could not be changed" delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:@"OK" , nil];
+        [alertView show];
+        hasFinishedWithErrors = false;
+    }
+    //NSLog([json description]);
+    
+    
+    
+    
+    
 }
 
 @end

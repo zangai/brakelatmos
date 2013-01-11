@@ -22,6 +22,8 @@
 @synthesize leftView;
 @synthesize graphView;
 @synthesize midBorder;
+@synthesize windVaan;
+@synthesize windvaanlogo;
 
 @synthesize gemmWind;
 @synthesize huidWind;
@@ -95,10 +97,12 @@
     int labelHeight = (leftView.frame.size.height/6);
     
     self.logo = [[UIImageView alloc]initWithFrame:CGRectMake(((leftView.bounds.size.width/2)-(leftView.bounds.size.height/6)/2), leftView.bounds.origin.y, leftView.bounds.size.height/6, leftView.bounds.size.height/6)];
-    UIImage *myImage = [UIImage imageNamed:@"Wind.png"];
+    self.windvaanlogo = [[UIImageView alloc]initWithFrame:CGRectMake(((leftView.bounds.size.width/2)-(leftView.bounds.size.height/6)/2), leftView.bounds.origin.y, leftView.bounds.size.height/6, leftView.bounds.size.height/6)];
+    UIImage *windvaanimage = [UIImage imageNamed:@"windroos.png"];
+    UIImage *myImage = [UIImage imageNamed:@"compass.png"];
     [logo setImage:myImage];
     logo.tag = 111;
-    
+    [windvaanlogo setImage:windvaanimage];
     
     [leftView setBackgroundColor:iphoneBlue];
     self.gemmWind = [[UILabel alloc]initWithFrame:CGRectMake(
@@ -116,17 +120,19 @@
     huidigWindValue.tag = 3;
     gemmWind.text = @gemmideldeWindlabel;
     huidWind.text = @huidigWindlabel;
-    huidigWindValue.text = [NSString stringWithFormat:@"%@ %@",[self getCurrentWindVal], @"%"];
-    gemmWindValue.text = [NSString stringWithFormat:@"%@ %@",[self getAverageWind], @"%"];
+    huidigWindValue.text = [self getCurrentWindVal];
+    gemmWindValue.text = [NSString stringWithFormat:@"%@ %@",[self getAverageWind], @"km/h"];
     
     [self.leftView addSubview:gemmWindValue];
     [self.leftView addSubview:huidWind];
     [self.leftView addSubview:gemmWind];
     [self.leftView addSubview:huidigWindValue];
+    
     for (UILabel *label in self.leftView.subviews) {
         [self transformLabelforLeft:label:label.tag];
     }
     [self.leftView addSubview:logo];
+    [self.leftView addSubview:windvaanlogo];
     [self addSubview:leftView];
 }
 -(void)transformLabelforLeft:(UILabel*)label : (int)sender
@@ -145,19 +151,19 @@
     
 }
 
-#pragma mark - currentWind
+#pragma mark - currentWindcfgh
 
 -(NSString*)getCurrentWindVal
 {
     //get current Wind from database
-    NSString* currentString = @"0.2";
+    NSString* currentString = @"Noordoost";
     return currentString;
 }
 
 #pragma mark - average Wind
 -(NSString*)getAverageWind
 {
-    NSString* currentString = @"0.037";
+    NSString* currentString = @"6";
     return currentString;
 }
 
@@ -205,7 +211,6 @@
 -(void)changeGraph:(id) sender
 {
     UIButton *clicked = (UIButton *) sender;
-    NSMutableArray *revOrder = [[NSMutableArray alloc]init];
     NSLog(@"%d",clicked.tag);//check welke knop is ingedrukt
     NSInteger times = 0;
     NSInteger multiplier;

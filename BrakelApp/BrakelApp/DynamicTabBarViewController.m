@@ -48,11 +48,12 @@
     //[self.window addSubview:banner];
     //[self addChildViewController:banner];
     
+    
     NSString* userToken = [[dataStorage sharedManager] getUserToken];
     
     //testValues
-    buildingId = 1;
-    userToken = @"C02417A2-E542-442C-ADBB-F2B01214F355";
+    buildingId = [[dataStorage sharedManager] buildingId];
+    //userToken = @"C02417A2-E542-442C-ADBB-F2B01214F355";
     
     NSString* formData = [NSString stringWithFormat:@"userToken=%@&buildingId=%d", userToken, buildingId];
     self.navigationController.toolbar.hidden = FALSE;
@@ -76,26 +77,47 @@
 -(void)styleTabbar
 {
     [self.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar.png"]];
+    
 }
 
 -(void) makeTabsFromJSON:(NSDictionary*) json
 {
     NSMutableArray* tabs = [[NSMutableArray alloc] init];
     NSMutableArray *pages = json[@"pages"];
+    UIImage *img;
+    UIImage *selImg;
     for (NSDictionary* pageJson in pages) {
     //for (int i =0; i <5; i++) {
         TabBarPageViewController* tabBar = [[TabBarPageViewController alloc] initWithJson:pageJson];
-        UITabBarItem* ctabBarItem = [[UITabBarItem alloc] initWithTitle:tabBar.Title image:nil tag:tabs.count];
-        [ctabBarItem setFinishedSelectedImage:tabBar.Image withFinishedUnselectedImage:tabBar.Image];
-        [ctabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                 [UIColor whiteColor], UITextAttributeTextColor,[UIColor grayColor], UITextAttributeTextShadowColor,
-                                                 nil] forState:UIControlStateNormal];
+        if([tabBar.Title isEqualToString:@"Home"]){
+            img  = [UIImage imageNamed:@"home.png"];
+            selImg = [UIImage imageNamed:@"home_selected.png"];
+        }
+        if([tabBar.Title isEqualToString:@"Control"]){
+            img  = [UIImage imageNamed:@"control.png"];
+            selImg = [UIImage imageNamed:@"control_selected.png"];
+        }
+        if([tabBar.Title isEqualToString:@"Meteo"]){
+            img  = [UIImage imageNamed:@"meteo.png"];
+            selImg = [UIImage imageNamed:@"meteo_selected.png"];
+        }
+        if([tabBar.Title isEqualToString:@"Lucht"]){
+            img  = [UIImage imageNamed:@"lucht.png"];
+            selImg = [UIImage imageNamed:@"lucht_selected.png"];
+        }
+        
+        UITabBarItem* ctabBarItem = [[UITabBarItem alloc] initWithTitle:/*tabBar.Title*/@"" image:nil tag:tabs.count];
+        [ctabBarItem setFinishedSelectedImage:selImg withFinishedUnselectedImage:img];
+        //[ctabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+        //                                        [UIColor blackColor], UITextAttributeTextColor,[UIColor grayColor], UITextAttributeTextShadowColor,
+        //                                         nil] forState:UIControlStateNormal];
+        
         UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:tabBar];
      
         [controller setTabBarItem:ctabBarItem];
         [tabs addObject:controller];
     }
-       self.viewControllers = [NSArray arrayWithArray:tabs];
+    self.viewControllers = [NSArray arrayWithArray:tabs];
 }
 
 - (void)didReceiveMemoryWarning

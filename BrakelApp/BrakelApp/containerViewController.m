@@ -40,15 +40,17 @@
     int y = heightHeaderImage-(h);
     CGRect rect = { {x, y}, {w, h} };
     [button setFrame:rect];
-    gebouwNaam = [[UILabel alloc]initWithFrame:CGRectMake(x-(2*w), y, w, h)];
+    gebouwNaam = [[UILabel alloc]initWithFrame:CGRectMake(x-(2*w), y, 400, h)];
     [gebouwNaam setAdjustsFontSizeToFitWidth:YES];
     [gebouwNaam setText:[[dataStorage sharedManager] buildingTitle]];
     [gebouwNaam setBackgroundColor:iphoneBlue];
     [gebouwNaam setTextColor:[UIColor whiteColor]];
-    [gebouwNaam setText:@"Welkom"];
-    NSLog(@"Dit is de buildingTitle: %@", [[dataStorage sharedManager] buildingTitle] );
+    
+    
+    //NSLog(@"Dit is de buildingTitle: %@", [[dataStorage sharedManager] buildingTitle] );
     if([[[dataStorage sharedManager] buildingTitle] isEqualToString:@""])
     {
+        [gebouwNaam setText:[NSString stringWithFormat:@"Welkom%@", [[dataStorage sharedManager]friendlyName]]];
     }
     else
     {
@@ -66,8 +68,9 @@
         CarouselViewController *myNewVC = [[CarouselViewController alloc] init];
         
         // do any setup you need for myNewVC
-        
-        [self presentModalViewController:myNewVC animated:YES];
+    
+    [self presentViewController:myNewVC animated:YES completion:nil];
+    //[self presentModalViewController:myNewVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

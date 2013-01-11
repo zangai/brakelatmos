@@ -24,8 +24,6 @@
 
 - (void)drawTheRed:(UIView*)view
 {
-    CGColorRef redColor =
-    [UIColor colorWithRed:0.5 green:0.0 blue:0.0 alpha:1.0].CGColor;
     UIView *rectangle = [[UIView alloc] initWithFrame:CGRectMake(0, 0, view.bounds.size.width, view.bounds.size.height)];
     rectangle.backgroundColor = [UIColor redColor];
     rectangle.alpha=0.5;
