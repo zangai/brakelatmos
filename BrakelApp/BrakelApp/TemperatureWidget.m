@@ -245,9 +245,9 @@
         }
     }
     
-    
     for(int i = 0; i < times; i++)
     {
+        
         NSDate *temp = [aDate dateByAddingTimeInterval:-(multiplier*(i))];
         NSString *toAdd = [datum stringFromDate:temp];
         [xAxisValues addObject:toAdd];
@@ -283,7 +283,15 @@
 
 -(void)configureHost {
     
+if(graphView == nil)
+{
     self.graphView = [(CPTGraphHostingView *) [CPTGraphHostingView alloc] initWithFrame:CGRectMake((self.frame.size.width/4), (self.frame.size.height/6), (self.frame.size.width/4)*3, (self.frame.size.height/6)*5)];
+}
+else
+{
+    
+}
+    
     self.graphView.allowPinchScaling = YES;
     [self addSubview:self.graphView];
 }

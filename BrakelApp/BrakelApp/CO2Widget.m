@@ -283,7 +283,14 @@
 
 -(void)configureHost {
     
-    self.graphView = [(CPTGraphHostingView *) [CPTGraphHostingView alloc] initWithFrame:CGRectMake((self.frame.size.width/4), (self.frame.size.height/6), (self.frame.size.width/4)*3, (self.frame.size.height/6)*5)];
+    if(graphView == nil)
+    {
+        self.graphView = [(CPTGraphHostingView *) [CPTGraphHostingView alloc] initWithFrame:CGRectMake((self.frame.size.width/4), (self.frame.size.height/6), (self.frame.size.width/4)*3, (self.frame.size.height/6)*5)];
+    }
+    else
+    {
+        
+    }
     self.graphView.allowPinchScaling = YES;
     [self addSubview:self.graphView];
 }
